@@ -1,0 +1,4 @@
+pydantic-settings
+fastapi
+sqlalchemy
+python-dotenv
