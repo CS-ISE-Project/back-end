@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from app.schemas.user import User
 from app.models.user import UserModel
-from app.core.database import SessionLocal
+from app.database.setup import SessionLocal
 
 def create_user_controller(user: UserModel, db: Session = SessionLocal()):
     db_user = User(id=user.id, username=user.username, email=user.email)

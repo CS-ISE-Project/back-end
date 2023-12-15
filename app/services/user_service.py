@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from app.models.user import User
-from app.core.database import SessionLocal
+from app.database.setup import SessionLocal
 
 def get_user(user_id: int):
     db = SessionLocal()

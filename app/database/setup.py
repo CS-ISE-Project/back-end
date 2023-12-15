@@ -1,4 +1,4 @@
-from app.core.creds import DATABASE_URL
+from app.config.creds import DATABASE_URL
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
