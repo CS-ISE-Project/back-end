@@ -1,12 +1,14 @@
-from fastapi import HTTPException
-from app.models.user import User
-from app.services.user_service import get_user, create_user
+from sqlalchemy.orm import Session
+from app.schemas.user import User
+from app.models.user import UserModel
+from app.core.database import SessionLocal
 
-def get_user_controller(user_id: int):
-    user = get_user(user_id)
-    if not user:
-        raise HTTPException(status_code=404, detail="User not found")
-    return user
+def create_user_controller(user: UserModel, db: Session = SessionLocal()):
+    db_user = User(id=user.id, username=user.username, email=user.email)
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
 
-def create_user_controller(user: User):
-    return create_user(user)
+def get_user_controller(user_id: int, db: Session = SessionLocal()):
+    return db.query(User).filter(User.id == user_id).first()

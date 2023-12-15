@@ -1,11 +1,11 @@
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import DeclarativeMeta, declarative_base
-from sqlalchemy.orm import sessionmaker
-from app.core.config import settings
+from app.core.creds import DATABASE_URL
 
-DATABASE_URL = settings.database_url
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from app.schemas.user import Base
 
 engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-Base: DeclarativeMeta = declarative_base()
+Base.metadata.create_all(bind=engine)
+
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
