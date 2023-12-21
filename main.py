@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from app.routers import user_router
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
 
 @app.get("/")

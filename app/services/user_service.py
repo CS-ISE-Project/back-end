@@ -1,15 +1,14 @@
 from sqlalchemy.orm import Session
-from app.models.user import User
+from app.schemas.user import User
+from app.models.user import UserModel
 from app.database.setup import SessionLocal
 
-def get_user(user_id: int):
-    db = SessionLocal()
-    return db.query(User).filter(User.id == user_id).first()
-
-def create_user(user: User):
-    db = SessionLocal()
-    db_user = User(**user.dict())
+def create_user(user: UserModel, db: Session = SessionLocal()):
+    db_user = User(id=user.id, username=user.username, email=user.email)
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
     return db_user
+
+def get_user(user_id: int, db: Session = SessionLocal()):
+    return db.query(User).filter(User.id == user_id).first()

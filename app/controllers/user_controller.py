@@ -1,14 +1,17 @@
-from sqlalchemy.orm import Session
-from app.schemas.user import User
 from app.models.user import UserModel
-from app.database.setup import SessionLocal
 
-def create_user_controller(user: UserModel, db: Session = SessionLocal()):
-    db_user = User(id=user.id, username=user.username, email=user.email)
-    db.add(db_user)
-    db.commit()
-    db.refresh(db_user)
-    return db_user
+from app.services.user_service import create_user, get_user
 
-def get_user_controller(user_id: int, db: Session = SessionLocal()):
-    return db.query(User).filter(User.id == user_id).first()
+def create_user_controller(user: UserModel):
+    try:
+        db_user = create_user(user)
+        return db_user
+    except Exception as e:
+        raise e
+    
+def get_user_controller(user_id: int):
+    try:
+        db_user = get_user(user_id)
+        return db_user
+    except Exception as e:
+        raise e
