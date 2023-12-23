@@ -11,7 +11,7 @@ class Moderator(Base):
     first_name = Column(String, index=True)
     last_name = Column(String, index=True)
     email = Column(String, index=True)
-    passoword = Column(String, index=True)
+    password = Column(String, index=True)
     isActive  = Column(Boolean, default=False)
     
     
