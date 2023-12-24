@@ -1,6 +1,7 @@
 from fastapi import APIRouter,Depends
 from app.controllers.elasticsearch_controler import *
 from app.models.article import ArticleModel
+from app.models.advanced_query import AdvanceQueryModel
 
 router = APIRouter()
 
@@ -15,3 +16,7 @@ def index_document(document: ArticleModel,document_id: int):
 @router.get("/simple_query_search/")
 def simple_query_search(query: str):
     return simple_query_search_controler(query)
+
+@router.post("/advance_query_search/")
+def advance_query_search(query: AdvanceQueryModel):
+    return advance_query_search_controler(query)
