@@ -31,5 +31,6 @@ def advance_query_search_controler(query: AdvanceQueryModel):
         response = advance_quey_search(query)
         return response
     except Exception as e:
-        print("error when getting !")
+        print("error with the advance search !")
+        print(e)
         raise e
