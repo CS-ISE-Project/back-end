@@ -8,6 +8,10 @@ router = APIRouter()
 def get_document(document_id: int):
     return get_document_controler(document_id)
 
-@router.post("/index_document")
-def index_document(document: ArticleModel):
-    return index_document_controler(document)
+@router.post("/index_document/{document_id}")
+def index_document(document: ArticleModel,document_id: int):
+    return index_document_controler(document,document_id)
+
+@router.get("/simple_query_search/")
+def simple_query_search(query: str):
+    return simple_query_search_controler(query)
