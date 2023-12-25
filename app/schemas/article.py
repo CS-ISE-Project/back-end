@@ -12,8 +12,8 @@ class Article(Base):
     title = Column(String, index=True)
     abstract = Column(String, index=True)
     content = Column(String, index=True)
-    institues = Column(String, index=True)
     authors = Column(String, index=True)
+    institues = Column(String, index=True)
     references = Column(String, index=True)
     
     favorites = relationship('Favorite', back_populates='article')

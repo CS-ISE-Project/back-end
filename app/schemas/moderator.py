@@ -13,5 +13,3 @@ class Moderator(Base):
     email = Column(String, index=True)
     password = Column(String, index=True)
     is_active  = Column(Boolean, default=False)
-    
-    

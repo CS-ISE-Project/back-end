@@ -1,5 +1,3 @@
-import time
-
 from app.config.creds import DATABASE_URL
 
 from sqlalchemy import create_engine

@@ -1,16 +1,11 @@
-from typing import Optional
-
 from pydantic import BaseModel
 
-# ! URL type should be changed to a resp
-
 class ArticleModel(BaseModel):
-    id: Optional[int]
-    title: str
-    summury : str
+    id: int | None
     url: str
-    text : str
-    institues: str
+    title: str
+    abstract : str
+    content : str
     authors : str
+    institues: str
     references: str
-    id_favorites : Optional[int]

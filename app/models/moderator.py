@@ -1,14 +1,10 @@
-from typing import Optional
-
 from pydantic import BaseModel
 
-# ! email type should be changed
-
 class ModeratorModel(BaseModel):
-    id: Optional[int]
+    id: int | None
     first_name: str
     last_name : str
     email: str
     password : str
-    isActive : bool
+    is_active : bool
     

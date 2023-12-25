@@ -1,10 +1,6 @@
-from typing import Optional
-
 from pydantic import BaseModel
 
-
 class FavoriteModel(BaseModel):
-    id: Optional[int]
+    id: int | None
     id_user: int
     id_article : int
-    

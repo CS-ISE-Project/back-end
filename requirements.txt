@@ -1,7 +1,8 @@
 -e .
+python-dotenv
 pydantic-settings
 fastapi
-sqlalchemy
-python-dotenv
 uvicorn
+sqlalchemy
+elasticsearch
 psycopg2-binary
