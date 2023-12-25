@@ -1,13 +1,11 @@
 from app.models.article import ArticleModel
 from app.models.advanced_query import AdvanceQueryModel
 from app.config.creds import INDEX_NAME
-from elasticsearch import Elasticsearch
-from app.elasticsearch.setup import es
+from app.scripts.elasticsearch.setup import es
 
 def get_document(document_id: int):
     return es.get(index=INDEX_NAME, id=document_id)
     
-        
 def index_document(document: ArticleModel,document_id: int):
     return es.index(index=INDEX_NAME,id=document_id, body=document.dict())
 
