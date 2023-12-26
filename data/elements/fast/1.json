@@ -1,0 +1,1526 @@
+[
+    {
+        "element_id": "57647cd6-82b9-4974-bfbc-3710333097c8",
+        "metadata": {},
+        "text": "Interactive and Adaptable Media",
+        "type": "Title"
+    },
+    {
+        "element_id": "50898212-519a-4fd0-bfa9-3d53b12012c6",
+        "metadata": {},
+        "text": "AI Model for Computer games based on Case Based Reasoning and AI Planning",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "89cd4c4c-99bb-4e07-9b7c-6e82bf079cf5",
+        "metadata": {},
+        "text": "Vlado Menkovski Athens Information Technology",
+        "type": "Title"
+    },
+    {
+        "element_id": "e8af1cf3-4a1c-4e0f-8947-9f246ad0432b",
+        "metadata": {},
+        "text": "Dimitrios Metafas Athens Information Technology",
+        "type": "Title"
+    },
+    {
+        "element_id": "277af312-3c0b-4dd6-995c-101061f453e2",
+        "metadata": {},
+        "text": "0.8km Markopoulou Ave.",
+        "type": "Title"
+    },
+    {
+        "element_id": "df12abc0-2b3a-48af-85f5-3a8146d1b07a",
+        "metadata": {},
+        "text": "0.8km Markopoulou Ave.",
+        "type": "Title"
+    },
+    {
+        "element_id": "3a06d04f-807a-403f-aea8-09730e8aabb6",
+        "metadata": {},
+        "text": "Peania, 19002, Greece",
+        "type": "Title"
+    },
+    {
+        "element_id": "60c407c4-d93e-4926-9f79-d169778f58e8",
+        "metadata": {},
+        "text": "Peania, 19002, Greece",
+        "type": "Title"
+    },
+    {
+        "element_id": "d8c85e19-f000-48e1-8aa5-95b7bfe28d2f",
+        "metadata": {},
+        "text": "vmen@ait.edu.gr",
+        "type": "EmailAddress"
+    },
+    {
+        "element_id": "7941a039-303b-4c00-b300-78a4f2126a6e",
+        "metadata": {},
+        "text": "dmeta@ait.edu.gr",
+        "type": "EmailAddress"
+    },
+    {
+        "element_id": "8e9c754d-6a5e-47a9-883f-ba03f8973ed4",
+        "metadata": {},
+        "text": "Abstract",
+        "type": "Title"
+    },
+    {
+        "element_id": "96fa9a7d-7449-41f0-9501-8e909daed6d4",
+        "metadata": {},
+        "text": "Making efficient AI models for games with imperfect information can be a particular challenge. Considering the large number of possible moves and the incorporated uncertainties building game trees for these games becomes very difficult due to the exponential growth of the number of nodes at each level. This effort is focused on presenting a method of combined Case Based Reasoning (CBR) with AI Planning which drastically reduces the size of game trees. Instead of looking at all possible combinations we can focus only on the moves that lead us to specific strategies in effect discarding meaningless moves. These strategies are selected by finding similarities to cases in the CBR database. The strategies are formed by a set of desired goals. The AI planning is responsible for creating a plan to reach these goals. The plan is basically a set of moves that brings the player to this goal. By following these steps and not regarding the vast number of other possible moves the model develops Game Trees which grows slower so they can be built with more feature moves restricted by the same amount of memory.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "51404095-81a3-4ecc-95b3-fff550b38e88",
+        "metadata": {},
+        "text": "Categories and Subject Descriptors",
+        "type": "Title"
+    },
+    {
+        "element_id": "993540e5-ab2b-4067-a88b-1b89fbb99a40",
+        "metadata": {},
+        "text": "I.2.1 [Applications and Expert Systems]: Games",
+        "type": "Title"
+    },
+    {
+        "element_id": "b423fa19-6f60-4dcc-a531-68abd0ba3476",
+        "metadata": {},
+        "text": "General Terms Algorithms, Performance.",
+        "type": "Title"
+    },
+    {
+        "element_id": "d9316f03-0888-4c3d-aab4-d067c40685c4",
+        "metadata": {},
+        "text": "Keywords Game AI, Case Based Reasoning, AI Planning, Game Trees",
+        "type": "Title"
+    },
+    {
+        "element_id": "536f9f08-96f9-48bd-b55c-da103de2714e",
+        "metadata": {},
+        "text": "With the advancement in computer hardware increasingly more computing power is left for executing AI algorithms in games. In the past AI in games was mainly a cheating set of instructions that simulated the increasing difficulty in the game environment so that the player had the illusion of real counterpart. Improvement in available memory and processing power allows implementation of more intelligent algorithms for building the game environment as well as direct interaction with the human players.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "21f79ad3-b869-4a76-9e9e-c94b44b68b18",
+        "metadata": {},
+        "text": "In this particular research the emphasis is put on the interaction between the AI agent and a computer player in the realm of the game rules. It is particularly focused on turn based games that have the elements of uncertainty like dice or concealed information. At the beginning a description of Game AI algorithms are given; such as Game Trees and Minimax. The following section describes an approach of using AI Planning to improve building Game Trees imperfect information where Game Trees tend to be very large with high growth ratio. Section 4 discusses another approach that provides a significant reduction to the number of considered moves in order to find the favorable strategy of the AI player. This approach uses AI Planning techniques and Case Base Reasoning (CBR) to plan for different scenarios in predetermined strategies which would be analogous to human player experience in the particular game. The CBR database illustrates a set of past experiences for the AI problem and the AI Planning illustrates the procedure to deal with the given situation in the game. In the next two sections implementations and evaluations of both approaches are given. The AI Planning approach is implemented with the Tic-tac-toe game and the combined AI Planning and CBR approach is implemented with a model for the Monopoly game. The last part contains conclusions and future work ideas.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "611302f5-0126-4cf6-bdc6-a7be9bacf806",
+        "metadata": {},
+        "text": "in games with",
+        "type": "Title"
+    },
+    {
+        "element_id": "503d9444-8860-42cd-8a8a-3c828d8c35e2",
+        "metadata": {},
+        "text": "1. Introduction",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "fdd28bfe-67fb-4586-8482-0b3b03147fb8",
+        "metadata": {},
+        "text": "The goal of this effort is to explore a model for design and implementation of an AI agent for turn based games. This model provides for building more capable computer opponents that rely on strategies that closely resemble human approach in solving problems opposed to classical computational centric heuristics in game AI. In this manner the computational resources can be focused on more sensible strategies for the game play.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6848bcdf-dbbc-4ebb-9cac-34e957cfbaa1",
+        "metadata": {},
+        "text": "Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. DIMEA\u201908, September 10\u201312, 2008, Athens, Greece. Copyright 2008 ACM 978-1-60558-248-1/08/09... $5.00",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f8b1363c-638f-4fc0-9b3e-15396327c89d",
+        "metadata": {},
+        "text": "2. Game Trees and Minimax",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "093315ab-fae4-4fe3-8430-2cc9053fad44",
+        "metadata": {},
+        "text": "Game Trees are common model for evaluating how different combinations of moves from the player and his opponents will affect the future position of the player and eventually the end result of the game. An algorithm that decides on the next move by evaluating the results from the built Game Tree is minimax [1]. Minimax assumes that the player at hand will always choose the best possible move for him, in other words the player will try to select the move that maximizes the result of the evaluation function over the game state. So basically the player at hand needs to choose the best move overall while taking into account that the next player(s) will try to do the same thing. Minimax tries to maximize the minimum gain. Minimax can be applied to multiple",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "072433da-318c-48fc-bab5-b23d568c0be4",
+        "metadata": {},
+        "text": "3rd International Conference on Digital Interactive Media in Entertainment and Arts",
+        "type": "Title"
+    },
+    {
+        "element_id": "307647e8-ef3d-4354-bb10-3b415dd85948",
+        "metadata": {},
+        "text": "295",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f562f0c8-0571-4731-82bd-c4788753d4e9",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "073f2209-c498-4bb8-86b5-ee1a76fb868e",
+        "metadata": {},
+        "text": "296",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c9c74244-ceda-4ddb-b483-ce5b36c3b2f4",
+        "metadata": {},
+        "text": "DIMEA 2008",
+        "type": "Title"
+    },
+    {
+        "element_id": "d0727774-65e4-463d-9f95-3cb3696dcf33",
+        "metadata": {},
+        "text": "levels of nodes on the game tree, where the leaves bring the final known (or considered) game state.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "26b5c3e5-fb9c-46cc-b334-6b6c00414bfa",
+        "metadata": {},
+        "text": "The minimax theorem states:",
+        "type": "Title"
+    },
+    {
+        "element_id": "5aa76ce1-d8b5-4ea8-9897-c65fd15288e3",
+        "metadata": {},
+        "text": "For every two-person, zero-sum game there is a mixed strategy for each player, such that the expected payoff for both is the same value V when the players use these strategies. Furthermore, V is the best payoff each can expect to receive from a play of the game; that is, these mixed strategies are the optimal strategies for the two players.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3b9116ce-4839-4d09-a201-93952cd62b6c",
+        "metadata": {},
+        "text": "This theorem was established by John von Neumann, who is quoted as saying \"As far as I can see, there could be no theory of games \u2026 without that theorem \u2026 I thought there was nothing worth publishing until the Minimax Theorem was proved\" [2].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "59735015-4ea9-4244-88be-192ec92da8b1",
+        "metadata": {},
+        "text": "problem is the enormous number of possibilities that the player can choose from in making his move. In addition some of the moves are accompanied with probabilities based on the random elements the games. The number of possible moves exponentially grows with each move so the depth of the search has to be very limited to accommodate for the memory limitations.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "08f1b019-3212-48e1-af7d-d7998445ff92",
+        "metadata": {},
+        "text": "in",
+        "type": "Title"
+    },
+    {
+        "element_id": "0ac6c50f-5388-4f22-aad3-6a9a46af0d7b",
+        "metadata": {},
+        "text": "The basic idea behind using HTN for building game trees is that the HTN provides the means of expressing high level goals and describing strategies how to reach those goals. These goals may be decomposed in goals at lower level called sub-goals. This approach closely resembles the way a human player usually addresses a complex problem. It is also good for domains where classical search for solution is not feasible due to the vastness of the problem domain or uncertainties.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "002ef738-f2d7-4124-96df-c2b7baf81797",
+        "metadata": {},
+        "text": "A simple example of minimax can be observed by building a game tree of the tic-tac-toe game. The tic-tac-toe game is a simple game which can end by the first player wining, the second player wining or a tie. There are nine positions for each of the players in which at each turn the player puts X or O sign. If the player has three adjacent signs in a row, column or the two diagonals he or she wins. This game has limited number of position and it is well suited for building the whole game tree. The leaves of this tree will be final positions in the game. A heuristics evaluation function will also need to be written to evaluate the value of each node along the way. 3. AI Planning for building Game Trees 3.1.1 AI Planning",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "54560a08-358c-48fa-ba24-82715b57b608",
+        "metadata": {},
+        "text": "3.2.1 Hierarchical Task Networks",
+        "type": "Title"
+    },
+    {
+        "element_id": "ad742bcf-c2dc-495e-b644-0cd4b1ac3416",
+        "metadata": {},
+        "text": "The Hierarchical Task Network, or HTN, is an approach to automated planning in which the dependency among actions can be given in the form of networks [9] [Figure 1].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5a8cc377-bb21-417f-9ff7-1170fcc17c3b",
+        "metadata": {},
+        "text": "A simple task network (or just a task network for short) is an acyclic digraph (cid:2) (cid:3) (cid:4)(cid:5)(cid:6) (cid:7)(cid:8) in which U is the node set, E is the edge set, and each node (cid:9) (cid:10) (cid:5) contains a task (cid:11)(cid:12). The edges of (cid:2) define a partial ordering of U. If the partial ordering is total, then we say that (cid:2) is totally ordered, in which case (cid:2) can be written as a sequence of tasks (cid:2) (cid:3) (cid:13)(cid:11)(cid:14)(cid:6) (cid:11)(cid:15)(cid:6) (cid:16) (cid:6) (cid:11)(cid:17)(cid:18).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "014b98bb-cdf1-4c3c-883a-34fbb2653ee7",
+        "metadata": {},
+        "text": "AI Planning also referred as Automated Planning and Scheduling is a branch of Artificial Intelligence that focuses on finding strategies or sequences of actions that reach a predefined goal [3]. Typical execution of AI Planning algorithms is by intelligent agents, autonomous robots and unmanned vehicles. Opposed to classical control or classification AI Planning results with complex solutions that are derived from multidimensional space.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6aacb53f-69de-4797-b674-8a927d56580c",
+        "metadata": {},
+        "text": "AI Planning algorithms are also common in the video game development. They solve broad range of problems from path finding to action planning. A typical planner takes three inputs: a description of the initial state of the world, a description of the desired goal, and a set of possible actions. Some efforts for incorporating planning techniques for building game trees have also shown up, similar to the approach explored in this effort. In addition Cased Based Reasoning [4] techniques are also gathering popularity in developing strategies based in prior knowledge about the problems in the games. One of the benefits from Hierarchical Task Network (HTN) [5] planning is the possibility to build Game Trees based on HTN plans; this method is described in the following section.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1f859db2-befe-4c4a-8de1-6b67ae99e596",
+        "metadata": {},
+        "text": "Buy milk",
+        "type": "Title"
+    },
+    {
+        "element_id": "eac4c05f-2291-412e-9f43-6d536bf06dc8",
+        "metadata": {},
+        "text": "Go to (shop)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7ebeb9ae-e24e-4f75-8e69-48a4b1f9f4d3",
+        "metadata": {},
+        "text": "Purchase",
+        "type": "Title"
+    },
+    {
+        "element_id": "3c2e37b9-2d59-4dfb-acd5-0f99eeaac807",
+        "metadata": {},
+        "text": "Go to (home)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bfde3f67-64b2-497e-b5a2-cddffcd6e086",
+        "metadata": {},
+        "text": "Figure 1: Simple Hierarchical Task Network",
+        "type": "Title"
+    },
+    {
+        "element_id": "dca4598e-807e-4a28-a058-364a39804fbb",
+        "metadata": {},
+        "text": "A Simple Task Network (STN) method is a 4-tuple of its name, task, precondition and a task network. The name of the method lets us refer unambiguously to substitution instances of the method, without having to write the preconditions and effects explicitly. The task tells what kind of task can be applied if the preconditions are met. The preconditions specify the conditions that the current state needs to satisfy in order for the method to be applied. And the network defines the specific subtasks to accomplish in order to accomplish the task.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "843e10e4-65ba-4e95-8b2f-e9c6bc1ddb93",
+        "metadata": {},
+        "text": "A method is relevant for a task if the current state satisfies the preconditions of a method that implements that task. This task can be then substituted with the instance of the method. The substitution is basically giving the method network as a solution for the task.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dc92bb2f-1a23-49bb-81de-777686c0c6aa",
+        "metadata": {},
+        "text": "3.2 Game Trees with AI Planning",
+        "type": "Title"
+    },
+    {
+        "element_id": "f22efa5c-da09-4a56-92b0-298967fdce61",
+        "metadata": {},
+        "text": "An adaptation of the HTN planning can be used to build much smaller and more efficient game trees. This idea has already been implemented in the Bridge Baron a computer program for the game of Contact Bridge [6].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f981b88c-c9e3-4894-9306-56daccee4cd2",
+        "metadata": {},
+        "text": "If there is a task \u201cGo home\u201d and the distance to home is 3km [Figure 2] and there exists a method walk-to and this method has a precondition that the distance is less than 5km, then a substation to the task \u201cGo home\u201d can be made with this method instance.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "29d3d1b9-bb7c-4899-825f-8f18c89aa743",
+        "metadata": {},
+        "text": "Go-to (from, to)",
+        "type": "Title"
+    },
+    {
+        "element_id": "3aef2b2a-4805-48dd-9122-6b5c825a0081",
+        "metadata": {},
+        "text": "Computer programs based on Game Tree search techniques are now as good as or better than humans in many games like Chess [7] and checkers [8], but there are some difficulties in building a game tree for games that have imperfect information and added uncertainty like card or games with dice. The main",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6807c8ee-501e-4931-9161-0997ea4e9fa4",
+        "metadata": {},
+        "text": "If (to \u2013 from) < 5km",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e6f92f47-59a2-42d3-917b-65656e3c5a7d",
+        "metadata": {},
+        "text": "Walk (to)",
+        "type": "Title"
+    },
+    {
+        "element_id": "5aed6b3e-842f-4e97-9a98-7b94583c4a80",
+        "metadata": {},
+        "text": "Figure 2: HTN Method",
+        "type": "Title"
+    },
+    {
+        "element_id": "89729596-d94b-4251-80ba-11001361bd0a",
+        "metadata": {},
+        "text": "3rd International Conference on Digital Interactive Media in Entertainment and Arts",
+        "type": "Title"
+    },
+    {
+        "element_id": "62a55d46-0fe2-45e7-8d4d-4a9c09feb2a4",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "100bdc37-0527-4329-afce-2dc6c7de41b7",
+        "metadata": {},
+        "text": "Interactive and Adaptable Media",
+        "type": "Title"
+    },
+    {
+        "element_id": "2bea80c7-24d0-46d0-90f4-18f8b31d619a",
+        "metadata": {},
+        "text": "If the distance is larger than 5km another meth to be substituted [Figure 3].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "100fd42c-62a1-45aa-8182-4988b7baec7c",
+        "metadata": {},
+        "text": "Go-to (from, to)",
+        "type": "Title"
+    },
+    {
+        "element_id": "15841efc-4c1f-4a91-8776-6e6ba7e1b5f9",
+        "metadata": {},
+        "text": "hod instance needs",
+        "type": "Title"
+    },
+    {
+        "element_id": "fc8cdd83-157f-4561-aec9-6e1691575394",
+        "metadata": {},
+        "text": "plan. The branches of the game tree rep the methods. Tignum2 applies all met state of the world to produce new continues recursively until there are n have not already been applied to th world.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7d91d923-5c3d-4f58-af6c-a77d0af79b5d",
+        "metadata": {},
+        "text": "If(to \u2013 from) < 5km",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e2d73430-6934-4d8a-b5d2-13dacc38cbfc",
+        "metadata": {},
+        "text": "If(t",
+        "type": "Title"
+    },
+    {
+        "element_id": "d72663b3-0187-4d1b-af47-4ff1bec4e4c3",
+        "metadata": {},
+        "text": "to \u2013 from) < 200km",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "05532ed9-6bd5-45c8-98b0-cf9c40717753",
+        "metadata": {},
+        "text": "Walk (to)",
+        "type": "Title"
+    },
+    {
+        "element_id": "638ad430-d6f2-4ecc-9201-7220341ec4ac",
+        "metadata": {},
+        "text": "Drive(to",
+        "type": "Title"
+    },
+    {
+        "element_id": "7940432b-7f98-4ad8-96d9-b6ecdf7cf87d",
+        "metadata": {},
+        "text": "Figure 3: HTN Method 2",
+        "type": "Title"
+    },
+    {
+        "element_id": "a188ecc7-9efa-44b4-ba7e-b0322ad1f4c1",
+        "metadata": {},
+        "text": ")",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9f8b36b0-a4a2-493d-b395-e84d37d4bbaa",
+        "metadata": {},
+        "text": "In the task network generated by Tignu actions will occur is determined by th By listing the actions in the order network can be \u201cserialized\u201d into a gam",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "79778862-0df2-489a-b00e-b69a6284b212",
+        "metadata": {},
+        "text": "An STN planning domain is a set of operatio methods M. A STN planning problem is a 4-tu state S0, the task network w called initial task STN domain. A plan (cid:19) (cid:3) (cid:13)(cid:20)(cid:14)(cid:6) (cid:16) (cid:6) (cid:20)(cid:21)(cid:18) is a soluti problem if there is a way to decompose w into \u03c0 and each decomposition is applicable in the ap the world. The algorithm that is capable to networks into plans is called Total-forward-deco [9] or Partial-forward-decomposition (PFD). H cases where one does not want to use a forwa procedure. HTN planning is generalization of S gives the planning procedure more freedom construct the task networks.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9bc4568d-edec-4953-aea2-46ba162ba20b",
+        "metadata": {},
+        "text": "ons O and a set of uple of the initial k network and the ion for a planning \u03c0 if \u03c0 is executable ppropriate state of decompose these omposition (TFD) However there are ard-decomposition STN planning that m about how to",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6c0d8fd1-10e6-4374-8c61-bfd1f92a563e",
+        "metadata": {},
+        "text": "In order to provide this freedom, a bookke is needed to represent constraints that the plann not yet enforced. The bookkeeping is done by unenforced constraints explicitly in the task netw",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c2396a46-8d4d-481d-87a7-c81d8d47910c",
+        "metadata": {},
+        "text": "eeping mechanism ning algorithm has y representing the work.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f3575f95-e23f-4c5a-9ee2-0e3668ba76f1",
+        "metadata": {},
+        "text": "Figure 4: HTN to Game Tr",
+        "type": "Title"
+    },
+    {
+        "element_id": "77c566ef-1b7f-4560-9395-3259d77b072a",
+        "metadata": {},
+        "text": "The HTN generalizes the definition of a STN. A task network is the pair (cid:2) (cid:3) (cid:4)(cid:5)(cid:6) (cid:23)(cid:8) w task nodes and C is a set of constraints. Eac specifies a requirement that must be satisfied by a solution to a planning problem.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "183dc540-0ee3-4002-a637-af090e883492",
+        "metadata": {},
+        "text": "a task network in where (cid:5) is a set of h constraint in C y every plan that is",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "578531ab-e572-403e-80fb-a3fd0c4f2b8d",
+        "metadata": {},
+        "text": "The definition of a method in HTN also definition used in STN planning. A HTN pla name, task, subtasks, and constraints. The s constraints form the task network. The HTN plan identical to STN planning domains except they u instead of STN methods.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9490a19f-d999-446b-86ce-d404f5eafde7",
+        "metadata": {},
+        "text": "o generalizes the an is a 4-tuple of subtasks and the nning domains are use HTN methods",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "785b4395-bd65-4c11-bb06-0d70131b3315",
+        "metadata": {},
+        "text": "Figure 5: Game Tree built fr",
+        "type": "Title"
+    },
+    {
+        "element_id": "f6fb6d24-6a62-4689-ba98-bfc63db49342",
+        "metadata": {},
+        "text": "Compared to classical planners the prim HTN planners is their sophisticated knowledge r reasoning capabilities. They can represent and non-classical planning problems; with a good guide them, they can solve classical planning p magnitude more quickly than classical or neoc The primary disadvantage of HTN is the nee author to write not only a set of planning opera of methods. 3.2.2 HTN Planning in building Game",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ce264fee-592f-417f-be7e-dc463cf4fbed",
+        "metadata": {},
+        "text": "For a HTN planning algorithm to be adap trees we need to define the domain (set of H operators) which is the domain of the game. Thi a knowledge representation of the rules of the environments and possible strategies of game pla",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dc2d9f01-c9f2-48a4-82cb-f25415d47a1e",
+        "metadata": {},
+        "text": "In this domain the game rules as well as kn tackle specific task are defined. The implem is called Tign Tree building with HTN implementation uses simila decomposition, but adapted to build up a game",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "25c9ec04-09c7-4fb7-80ad-b58cd508cba5",
+        "metadata": {},
+        "text": "a procedure",
+        "type": "Title"
+    },
+    {
+        "element_id": "d3c7c0d2-b09c-44b8-8a86-4fdb27c3c25b",
+        "metadata": {},
+        "text": "mary advantage of representation and solve a variety of d set of HTNs to problems orders of classical planners. ed of the domain ators but also a set",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e4e36421-b090-4cab-8850-5521e232bbb2",
+        "metadata": {},
+        "text": "Trees",
+        "type": "Title"
+    },
+    {
+        "element_id": "d696bae5-d80c-4642-8681-4f72ed51a88b",
+        "metadata": {},
+        "text": "ted to build game HTN methods and is is in some sense e game, the game ay.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cfedda70-f577-491c-a30c-f212c454faf7",
+        "metadata": {},
+        "text": "nown strategies to mentation of Game [9]. This num2 ar forward- to tree rather than a",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "646526c8-8334-4d6f-aad8-26688157e49c",
+        "metadata": {},
+        "text": "4. Case Based Reasoning in 4.1 Case Based Reasoning Case-based reasoning (CBR) is a Artificial Intelligence (AI), both as problems and as a basis for standalone Case-based reasoning is a paradigm solving and learning that has became applied subfield of AI of recent yea intuition that problems tend to recur. I are often similar to previously en therefore, that past solutions may be of [10].",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "646526c8-8334-4d6f-aad8-26688157e49c",
+        "metadata": {},
+        "text": "4. Case Based Reasoning in 4.1 Case Based Reasoning Case-based reasoning (CBR) is a Artificial Intelligence (AI), both as problems and as a basis for standalone Case-based reasoning is a paradigm solving and learning that has became applied subfield of AI of recent yea intuition that problems tend to recur. I are often similar to previously en therefore, that past solutions may be of [10].",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "83e0b00b-b88c-4f97-beda-d55120139bf5",
+        "metadata": {},
+        "text": "CBR is particularly applicable to probl available, even when the domain is n for a deep domain model. Helpdesks, systems have been the most successfu to determine a fault or diagnostic attributes, or to determine whether or repair is necessary given a set of past s",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3b35a3d3-8bf4-4a80-8643-8387fbe0218f",
+        "metadata": {},
+        "text": "3rd International Conference on Digital Interactive Media in Entertainment and Arts",
+        "type": "Title"
+    },
+    {
+        "element_id": "05b18f74-5643-4aa7-b421-7da25fc37de2",
+        "metadata": {},
+        "text": "297",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0275ca44-9f77-4751-a13c-807fa6c0e792",
+        "metadata": {},
+        "text": "present moves generated by thods applicable to a given w states of the world and no applicable methods that he appropriate state of the",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "50be5ef5-45d3-47b4-9c51-197007c77f6e",
+        "metadata": {},
+        "text": "um2, the order in which the e total-ordering constraints. they will occur, the task me tree [Figure 4] [Figure 5].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0d43136d-5ec3-46f0-83ca-f9b6611fa4fb",
+        "metadata": {},
+        "text": "ree Algorithm",
+        "type": "Title"
+    },
+    {
+        "element_id": "fd30a456-1412-46b9-b501-910ba0addf8d",
+        "metadata": {},
+        "text": "rom HTN",
+        "type": "Title"
+    },
+    {
+        "element_id": "0c7a4f86-53ea-41b1-b074-706d89cd437e",
+        "metadata": {},
+        "text": "n Game Strategies",
+        "type": "Title"
+    },
+    {
+        "element_id": "c5505d5c-bbd1-400c-9a8c-7124c9b43636",
+        "metadata": {},
+        "text": "m for combining problem- one of the most successful ars. CBR is based on the It means that new problems ncountered problems and, f use in the current situation",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "45879542-c72a-4a29-a884-36664c3e32df",
+        "metadata": {},
+        "text": "lems where earlier cases are not understood well enough , diagnosis or classification ul areas of application, e.g., an illness from observed r not a certain treatment or olved cases [11].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "58342e0c-39b8-4a13-a8e0-51a25247c312",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "92a2f157-eb79-4081-805f-a59917bd958b",
+        "metadata": {},
+        "text": "298",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9df883ba-4b8c-4785-a43d-765014c33cc3",
+        "metadata": {},
+        "text": "DIMEA 2008",
+        "type": "Title"
+    },
+    {
+        "element_id": "713fa0f0-0433-42bd-9611-06593c0db9db",
+        "metadata": {},
+        "text": "Central tasks that all CBR methods have to deal with are [12]: \"to identify the current problem situation, find a past case similar to the new one, use that case to suggest a solution to the current problem, evaluate the proposed solution, and update the system by learning from this experience. How this is done, what part of the process that is focused, what type of problems that drives the methods, etc. varies considerably, however\".",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "627cb77e-37b1-4b5b-abd9-ccc6c8a3eeef",
+        "metadata": {},
+        "text": "And in the third position if the two of center, middle top and middle left are available the position is a certain victory.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0b5f64de-6013-4db3-917f-f3804965be14",
+        "metadata": {},
+        "text": "There are many different arrangements of the player\u2019s tokens that give equivalent positions as these three positions. By using planning we do not need to consider all possible layouts but just consider these three similar to what a human would consider.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0adea74c-1cb5-4f02-ac45-a40f256c7f31",
+        "metadata": {},
+        "text": "ideas of CBR can be applied While consistently specific implementation of the CBR methods \u2013in particular retrieval and similarity functions\u2013 is highly customized to the application at hand. 4.2 CBR and Games",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dff784df-ed09-473b-acea-3d372b9883b9",
+        "metadata": {},
+        "text": "the underlying",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "61862d39-321c-41f9-a151-d5b515eec6d8",
+        "metadata": {},
+        "text": "across",
+        "type": "Title"
+    },
+    {
+        "element_id": "248cbdfc-915e-4d54-89e9-4ea22779ac5f",
+        "metadata": {},
+        "text": "application",
+        "type": "Title"
+    },
+    {
+        "element_id": "bacb2c00-c2f6-43cc-a2fa-9f8d3ba83785",
+        "metadata": {},
+        "text": "domains,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "69afbe83-1dee-40b6-939a-84c0887a3d4b",
+        "metadata": {},
+        "text": "the",
+        "type": "Title"
+    },
+    {
+        "element_id": "7590b1d1-ee14-4f17-8edf-ab1d5820f88c",
+        "metadata": {},
+        "text": "The game starts from an empty table.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a248271a-6f76-495e-b2b3-66fbe3f25b46",
+        "metadata": {},
+        "text": "The two relevant strategies that would lead to these positions",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b5f23b89-bba0-44e5-aaf6-3acab677ffdf",
+        "metadata": {},
+        "text": "are to take one corner or to take the center [Figure 7].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e6b6f183-02ac-4463-9284-953cba972fae",
+        "metadata": {},
+        "text": "Many different implementations of CBR exist in games. CBR technology is nicely suited for recognizing complex situations much easier and more elegant than traditional parameter comparison or function evaluation. There are especially evident cases in real time strategies where different attack and defense of global strategies are nicely defined by CBR datasets and later used in the running games. Also intelligent bots behavior is also another typical example. Depending on the number of enemy bots the layout of the terrain and position of human players the CBR system finds the closest CBR case and employs that strategy against the human players which in prior evaluation was proved to be highly efficient.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5b69b110-8923-49ee-a77d-338193f1fbac",
+        "metadata": {},
+        "text": "Figure 7: Tic-tac-toe Two starting moves",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "be3cc6fc-8bd4-4ba4-8fa7-91574b1a3495",
+        "metadata": {},
+        "text": "The center position as we can see in the simulation results lead to a bigger number of victorious endings but it is also a straight forward strategy with obvious defense strategy.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9c3814ce-12ff-424e-b2ab-086d15567232",
+        "metadata": {},
+        "text": "At this point we need to consider the moves of the opponent. If we take the left branch the opponent moves can be a center, a corner or a middle field. We also need to differentiate with a move to a corner adjacent with our like top left or bottom right or across the center to bottom right [Figure 8].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "01f83aca-ffd7-472f-a145-2f6a875e6c1b",
+        "metadata": {},
+        "text": "5. Game Trees with AI Planning \u2013 Tic-tac-toe In order to show the expressive power of AI Planning in defining strategies for games, and the use of these plans to build Game Trees I implemented an algorithm that builds Game Trees for the Tic-Tac-Toe game. The game tree of Tic-Tac-Toe shows 255,168 possible games of which 131,184 are won by X (the first player), 77904 are won by O and the rest 46,080 are draw [13]. All these games can be derived from building a complete Game Tree.",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "34f6dc5b-3317-4e44-8a2e-34cfe27fc36e",
+        "metadata": {},
+        "text": "Figure 8: Tic-tac-toe opponent response to corner move",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "01e8a410-f56e-4828-aedb-b47af2ab19e0",
+        "metadata": {},
+        "text": "In cases one and two, we have a clear path to executing strategy 3 so we need to capture the diagonally opposite field. And as for the third case the best way to go is to capture the center and go for strategy 1 or 2 depending of the opponent\u2019s next move.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "21bdd4f8-1bf7-4e14-a06b-5f18a33b81a5",
+        "metadata": {},
+        "text": "Even though it is possible to build a complete game tree of Tic-tac-toe it is definitely not an optimal solution. Many of the moves in this tree would be symmetrical and also there are a many moves that would be illogical or at least a bad strategy to even consider.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a827bc92-2de5-4e3c-9c90-f19737e4d6cf",
+        "metadata": {},
+        "text": "So what strategy should X (the first player) choose in order",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "66677bef-5705-402a-87eb-473c1ced7a44",
+        "metadata": {},
+        "text": "Figure 9: Tic-tac-toe move 2 after corner opening",
+        "type": "Title"
+    },
+    {
+        "element_id": "7dbac863-ef14-4e8f-9a29-8a0d73c4512f",
+        "metadata": {},
+        "text": "to win the game?",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "33140b98-a1da-421b-bbbc-10fda6d984ec",
+        "metadata": {},
+        "text": "There are few positions that lead to certain victory. These positions involve simultaneous attack on two positions so the other player could not defend, basically the only trick in Tic-Tac- Toe.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "30ff6e95-3220-48c9-9d27-2c63bb3b4d1b",
+        "metadata": {},
+        "text": "The first move leads to certain victory, O will have to go to the center and X will achieve strategy 3 [Figure 9]. The second move is a possible way to strategy 3 if O makes a mistake in the next loop, so X goes to the opposite corner. For the third case since O is playing a valid strategy the only move that leaves a possible mistake from O would be to take the center and wait for O to go to the middle and then achieve strategy 1 or 3 which will be a symmetric situation to the one that we will find if we branched with the center.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9eebc7d3-db90-4b70-98ab-8d053172db6b",
+        "metadata": {},
+        "text": "Figure 6: Tic-tac-toe winning strategy positions",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "02f0c420-e35e-4ad1-90e3-2549d5746416",
+        "metadata": {},
+        "text": "Position 1 leads to victory if the two of the three fields: top middle, bottom left corner and bottom right corner are free [Figure 6].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d6a622a8-6827-4e77-a954-8b0e5881e77d",
+        "metadata": {},
+        "text": "Position 2 lead to victory if two of the three fields: top right corner, bottom right corner and bottom middle are free [Figure ].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1e97cfe5-6c28-4bca-badd-114490d16057",
+        "metadata": {},
+        "text": "Figure 10: Tic-tac-toe opponent response to center move",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7b3f952a-6b27-40b5-819b-b3599411a05d",
+        "metadata": {},
+        "text": "If we go back to the second branch [Figure 10], a possible way for the second player to engage is corner or middle. The first",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5f548bf2-49ad-42d6-b811-50f2cf1acf0d",
+        "metadata": {},
+        "text": "3rd International Conference on Digital Interactive Media in Entertainment and Arts",
+        "type": "Title"
+    },
+    {
+        "element_id": "0c3c2a24-294f-422c-b32e-9a8f126e2871",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "60c7d167-a7c8-4c42-b6ff-a7c69e0a39b1",
+        "metadata": {},
+        "text": "Interactive and Adaptable Media",
+        "type": "Title"
+    },
+    {
+        "element_id": "e8b55e2c-ccac-46c4-b5e5-f544db70f1de",
+        "metadata": {},
+        "text": "move is a valid strategy for O and can be mee corner move from X to try a mistake from O in the same as in the third case above from the pre another move would be go to the middle wh achieves strategy 1 or 2.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7e1b27fd-7d64-4ffb-b0a8-19eb6c608f98",
+        "metadata": {},
+        "text": "et with a opposite the future exactly evious branch, and here X eventually",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "40c08308-9d43-4fe6-9fe3-05658ba13fe8",
+        "metadata": {},
+        "text": "This HTN when executed will re",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "170cde13-4e28-4d81-a67c-22da06d2806a",
+        "metadata": {},
+        "text": "game scenarios. By creating nodes from them with branches with the move of t tree for the Tic-tac-toe game over whi algorithm.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b5ec3a9f-6802-4c0d-b314-a1322bd8ffa5",
+        "metadata": {},
+        "text": "Figure 11: Tic-tac-toe Move 2 after cent The fist move will lead to win if O moves draw if it goes for the corners [Figure 11]. In t has to block the lower left corner which leave middle left or corner left which are strategy 1 and To sum the strategies for the planning, first corner strategy for the beginning. Then for the ce the corners with the particularly the one oppo holds. If the center is empty for the second strate we go for the opposite corner. After this point w opponent or try to implement strategies 1, 2 or victory. Plan 1: Take center Preconditions: Center empty Plan 2: Take corner Preconditions: All corners empty Plan 3: Take corner after center Preconditions: We have center take corner oppos opponent has Plan 4: Take diagonal corner Preconditions: We have a corner, the opponent ha the corner opposite to the one we have is free. Plan 5: Block Precondition: The opponent has tree tokens in a r agonal Plan 6: Win Preconditions: We have two tokens in a row, colu nd the third place is free Plan 7: Tie Preconditions: If all places are taken, it\u2019s a tie. 5.1 Hierarchical Task Network",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cf973e2c-b1cf-4220-b3cd-550f43438b73",
+        "metadata": {},
+        "text": "Top level task is Play [Figure 12]. This is a can be derived into: Win, Block, Tie or Sear Search for plan is derived to both Plan 1 and Pla Plan 4, which later leads to a call for the oppon recursive call to Play.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e750b7ab-d5e3-4d4c-b75d-3ecee19a18bd",
+        "metadata": {},
+        "text": "ter opening to the middle or a the second case O es X to go for the d 2. we have center or enter we try to get osite to the one O egy we go for it or we either block the r 3 which lead to",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "356159ca-46f5-4d7a-854b-1f60f472af69",
+        "metadata": {},
+        "text": "site to the one the",
+        "type": "Title"
+    },
+    {
+        "element_id": "a1a6e2af-e507-4c52-be01-3d21b578608f",
+        "metadata": {},
+        "text": "as the ce\u2212nter and",
+        "type": "Title"
+    },
+    {
+        "element_id": "2476d071-2dac-40ad-a5d6-f30187870fd6",
+        "metadata": {},
+        "text": "row, colu\u2212mn or di",
+        "type": "Title"
+    },
+    {
+        "element_id": "ab5f7ee2-3c87-4333-92ac-3d8434f21f0d",
+        "metadata": {},
+        "text": "mn or dia\u2212gonal a",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "11dcf355-da11-4a24-888f-bb908f8ec1e8",
+        "metadata": {},
+        "text": "a complex task and rch for Plan. The an 2 or Plan 3 and nent\u2019s move and a",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f6d6994f-13cf-40c6-90fb-f0b30d910fcc",
+        "metadata": {},
+        "text": "This set up with 7 plans with 3 ta for Tic-tac-toe which considers all pos player with only 457 games, 281 of w and 0 where the second opponent w reduction over the 255, 168 possible g tree. These reductions can be very use computing capabilities but also we pr that planning can be very efficient if d trees by applying reasoning very reasoning.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "21a44587-92e0-4a7e-8b11-b7f3f5551eb6",
+        "metadata": {},
+        "text": "Further improvements to the gam the opponents moves are also planned all the meaningless and symmetrical m 6. Game AI in Monopoly 6.1 Overview of the AI Imp The AI agent is responsible for players in the game. The core principle a Game Tree with all the sensible move make from the current point of time minimax algorithm the agent selects t would bring the computer player mo with the highest probability. Building that would be big enough to consider is obstructed by the vastness of poss with all the possible random landings nodes of the game tree exponentially tackle this problem the AI agents discussed technologies: Case Based Re The technologies are employed First the agent searches the CBR datab largest similarity with the current state associated with a playing strategy. Th that the planner needs to build plans f consecutive player moves that bring th way only moves that are part of that str being a small fraction of the overall po edges of the game tree at each level dec At each level of the game tree the of a single player. After the strateg considered the response to those strate by the opponent(s). The move of the probability distribution of the dice as player. A more general strategy needs opponent\u2019s (human player) moves sin the expertise of the opponent. This ge more plausible moves than the focused After covering all opponents t deducting a feature move of the com CBR selected plan strategy. After strategies and reaching a reasonable s into account the memory limits an probabilities that the move is possible the dice the building of the Game Tre algorithm searches the Game Tree favorable move for the AI player usi The process is repeated each time the A",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "55e9bb08-cf55-42c5-81ed-636c31a902b7",
+        "metadata": {},
+        "text": "Figure 12: Tic-tac-toe HT",
+        "type": "Title"
+    },
+    {
+        "element_id": "e53fe531-8be5-4812-9b1b-68c102580e5f",
+        "metadata": {},
+        "text": "TN",
+        "type": "Title"
+    },
+    {
+        "element_id": "cd899665-8fe9-4ffe-aad9-1686f1b928f6",
+        "metadata": {},
+        "text": "3rd International Conference on Digital Interactive Media in Entertainment and Arts",
+        "type": "Title"
+    },
+    {
+        "element_id": "650c6b3a-62a7-4f47-961a-68035e1f64af",
+        "metadata": {},
+        "text": "299",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ce3563f5-4a7a-4724-bf18-5f3533d74790",
+        "metadata": {},
+        "text": "esult with plans for possible m each position and linking the player we create a game ich we can run the minimax",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c27120f6-669e-4ca6-9545-f79b445d6918",
+        "metadata": {},
+        "text": "arget strategies creates a tree ssible moves for the second which X wins 176 are draw wins. This is a significant ames with a complete game eful for devices with limited rove a very important point designing meaningful game similar to human player",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "721a2f4c-1b2c-40c3-8ba8-e32b891765ec",
+        "metadata": {},
+        "text": "me tree are also possible if d, in other words if we drop moves of the opponent.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e619d4b7-57d8-48d7-a84b-8b62995b817e",
+        "metadata": {},
+        "text": "plementation the moves of the artificial e of the AI agent is building es that all the players would e forward. Then using the the move that in the future ost favorable game position a Game Tree in this game sufficient number of moves sible moves in combination of the dice. The number of y grows at each level. To incorporates two already",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7549d12b-0117-4163-a18b-6aab053f8f1c",
+        "metadata": {},
+        "text": "easoning and AI Planning.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4cdd46bc-4004-4621-8eb9-6ba45e3391e3",
+        "metadata": {},
+        "text": "in the following manner. base to find the case with the e of the board. This case is he strategy consists of goal for, and the plans consist of he player to that goal. This rategy are considered, those ossible moves the number of creases immensely. e model considers the moves gies of the AI player are egies needs to be considered opponent(s) depends of the well as the strategy of the s to be implemented for the nce we cannot be aware of eneral strategy would bring d strategy of the AI player. the agent comes back to mputer player by using the creating several loops of size of a Game Tree taking nd the rapidly decreasing e due to the distribution of ee stops. Then the minimax and decides on the most ing the minimax algorithm. AI player is up.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d25f5bc5-88c6-410f-a265-8caa6fc13fd7",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "b249b484-f2e3-4c99-a2dc-ef6122dafaa8",
+        "metadata": {},
+        "text": "300",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a0f9f299-dfe5-41c6-8696-1c3bb4a30ba8",
+        "metadata": {},
+        "text": "DIMEA 2008",
+        "type": "Title"
+    },
+    {
+        "element_id": "ed7ea9b4-da9e-43ef-8fa2-5d51c62b5c32",
+        "metadata": {},
+        "text": "Buying, auctioning and trading game moves are always accompanied by return of investment calculations in making the plans. These calculations represent adaptation of the more general planning associated with the cases in the CBR database. These adaptations are necessary due to the fact that the cases do not identically correspond to the situation on the table. In addition calculating the game position value of each node of the game tree is done by heuristic functions incorporate economic calculations of net present value, cash, and strategic layout and so on. For example railroads in monopoly are known to be strategically effective because they bring constant income even though the income can be smaller than building on other properties. 6.2 Details on the CBR Implementation",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9eecfc26-2a90-4dd6-a914-f53a8596d6e9",
+        "metadata": {},
+        "text": "that",
+        "type": "Title"
+    },
+    {
+        "element_id": "39a078f7-84cc-4b25-8299-ff13f8169488",
+        "metadata": {},
+        "text": "On the other hand the MonopolySolution class holds the three particular attributes that are needed for the planning, the planning Domain, State and TaskList.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "678a3173-0f38-4d95-9007-c8de090b7b31",
+        "metadata": {},
+        "text": "The game is implemented by using the Model-View- Controller software development pattern. The controller is responsible for implementing the game rules and handling all of the events in the game like roll of dice, input commands for trading, auctioning and etc from the players. The View layer is responsible for displaying the board and all of the input widgets on to the game screen, and the models are data structures representing the game state [Figure 14].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "63932944-236a-4255-95de-d7556ad3e190",
+        "metadata": {},
+        "text": "The implementation of the CBR is by using the JColibri2 platform. JColibri2 is an object-oriented framework in Java for building CBR systems that is an evolution of previous work on knowledge intensive CBR [14].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c085b8ed-39b9-4409-8a19-501eeedf5b02",
+        "metadata": {},
+        "text": "For this implementation we need to look into three particular classes of the JColibri2 platform. The StandardCBRApplication, Connector, CBRQuery. For a JColibri2 implementation the StandardCBRApplication interface needs to be implemented.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "31e5faec-3472-4400-a56c-25491fbe36eb",
+        "metadata": {},
+        "text": "The CBR cycle executed accepts an instance of CBRQuery. This class represents a CBR query to the CBR database. The description component (instance of CaseComponent) represents the description of the case that will be looked up in the database. All the solutions case CaseComponent interface.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4ea8091c-069d-4143-81a6-ce92b580654d",
+        "metadata": {},
+        "text": "cases",
+        "type": "Title"
+    },
+    {
+        "element_id": "bbdfb309-6850-435e-bbc2-786f598118f5",
+        "metadata": {},
+        "text": "and",
+        "type": "Title"
+    },
+    {
+        "element_id": "ed257448-a6a8-4fc0-a6eb-dc4ddfc812ab",
+        "metadata": {},
+        "text": "are",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "867f3ca8-66e6-463f-af1e-e19bebd1a2df",
+        "metadata": {},
+        "text": "implementing",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cfb43c47-1ffe-478b-9168-7bf53cd776e1",
+        "metadata": {},
+        "text": "The JColibri2 platform connects to the CBR database via a Connector class. Each connector implements all the necessary methods for accessing the database, retrieval of cases, storing and deletion of cases. This implementation uses a custom XML structure for holding the CBR cases. Since the game will not update the CBR database only read it, a XML solution satisfies the needs. The XML file to a certain extent is similar to the XML representation of the board. We are interested in finding one CBRCase that is the most similar case to the situation in the game at the time of the search. This procedure is done in the cycle method of the CBRApplication. The JColibri2 CBR comparison is done by Nearest Neighbor (NN) search method.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d8be4ded-4e96-4939-a1cb-fed598230c53",
+        "metadata": {},
+        "text": "JColibri2 offers implementations for NN search algorithms of simple attributes. These implementations are called local similarities. For complex attributes like in our case global customized similarity mechanisms need to be implemented.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "191db0eb-8cc3-46d6-940d-345faa83c05d",
+        "metadata": {},
+        "text": "The MonopolyDescription class [Figure 13] is basically a serialization of the GameState. It holds all the information about the state of the board, the players, their amount of cash etc.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b65ce5cd-ab1a-473c-b35d-ea8b68513ac8",
+        "metadata": {},
+        "text": "Figure 14: Class diagram of the Monopoly models",
+        "type": "Title"
+    },
+    {
+        "element_id": "141ecf79-4fdb-46e3-8b5e-de9fba85e92f",
+        "metadata": {},
+        "text": "6.2.1 Complex Similarity representation in CBR",
+        "type": "Title"
+    },
+    {
+        "element_id": "83ddfcb6-2282-4aec-9715-6619780e7d3c",
+        "metadata": {},
+        "text": "The similarity measurement part of the Nearest Neighbor implemented by the algorithm JColibri2 is LocalSimiralrityFunction the GlobalSimiralityFunction and interface. A local similarity function is applied to simple attributes by the NN algorithm, and a global similarity function is applied to compound attributes. In the case of our implementation the attributes of the MonopolyDescription are compound attributes describing the state of the board, number of players, amount of cash for every player and etc. Since MonopolyDescription is a custom CaseComponent a global similarity function needs to be implemented to accurately find the distance between different CBR cases.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c2534f02-f9ff-430c-b09c-723ae3ad615d",
+        "metadata": {},
+        "text": "implementing",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "73213169-81b6-44b5-997b-64198d57cfd4",
+        "metadata": {},
+        "text": "The similarity mechanism is inseparable core element of the CBR system. This mechanism represents how the CBR decides which strategy is best suited for the particular situation by",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1d338957-1626-440c-882c-84a46dfc31be",
+        "metadata": {},
+        "text": "Figure 13: Class diagram of the Monopoly Case component models",
+        "type": "Title"
+    },
+    {
+        "element_id": "3c82882b-7784-4e59-b309-76d22bd0c36e",
+        "metadata": {},
+        "text": "3rd International Conference on Digital Interactive Media in Entertainment and Arts",
+        "type": "Title"
+    },
+    {
+        "element_id": "d886804d-f2ac-480f-9a38-970dc114cc34",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "2881588f-730c-47a8-bb1a-87df1180872e",
+        "metadata": {},
+        "text": "Interactive and Adaptable Media",
+        "type": "Title"
+    },
+    {
+        "element_id": "cea983a1-008a-4a7e-b7b3-aaf3c36fee29",
+        "metadata": {},
+        "text": "calculating the distance or similarity to other cases in the database.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "741cc826-a8ef-4eb0-9eeb-22e5f448f15a",
+        "metadata": {},
+        "text": "For the monopoly implementation we need to consider several basic strategies. Monopoly is based on investing in properties and receiving revenues from those investments. One of the basic strategies of the game is to build a set of properties that will bring constant income larger than the one of the opponents. So in time the opponents will have to declare bankruptcy. But on the other hand over investment can lead to too stretched resources with low income that will eventually drove the player to bankruptcy. To decide on these two we need a clear separation into two groups of cases in the CBR database. The first group of cases will represent a situation on the board where the player has significant income per loop formed of one or more color group properties, maybe railroads, some buildings on them and so on. It is important to note that in this case the player is better situated than his opponents so he only needs to survive long enough to win the game. In the other group of cases either the opponent is not well positioned on the board or its opponents are better situated. In this case further investments are necessary to improve the situation so the player can have a chance of winning in the long run.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f8242b60-5357-4012-9912-ec636a7321bc",
+        "metadata": {},
+        "text": "These metrics can be owning color groups, valuing groups of railroads, evaluating the other opponents as well, and considering the amount of cash. As it is obvious in monopoly the number of streets is not as nearly as important as the combination of streets the player owns. It is also important to note that one CBR case does not hold only a single strategy in place, but its solution can have multiple different strategic goals. For example one CBR case might simultaneously say buy this land to form a color group but also trade some other unimportant property to increase cash amount.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "31036633-ec2c-4e58-81f3-b962eafaaeb7",
+        "metadata": {},
+        "text": "JSHOP2 uses ordered task decomposition in reducing the HTN to list of primitive tasks which form the plans. An ordered task decomposition planner is an HTN planner that plans for tasks in the same order that they will be executed. This reduces the complexity of reasoning by removing a great deal of uncertainty about the world, which makes it easy to incorporate substantial expressive power into the planning algorithm. In addition to the usual HTN methods and operators, the planners can make use of axioms, can do mixed symbolic/numeric conditions, and can do external function calls.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1d02ce9f-2a8d-44fe-8ca6-a651c0151be4",
+        "metadata": {},
+        "text": "In order for the JSHOP2 planer to generate plans it needs tree crucial components: Domain, State and Tasks. The Domain defines all the functionalities that the particular domain offers. These are simple and complex tasks. The complex tasks also called methods create the hierarchy with the fact that they can be evaluated by simple tasks of other complex tasks. This is how a hierarchical structure of tasks is formed. The problem reduction is done by reducing the high level complex tasks to simpler until all the tasks are primitive. The list of primitive tasks forms the plan.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a3a01493-3be6-4cdd-a1b3-c0c55f1a77a1",
+        "metadata": {},
+        "text": "The State represents the state of the system. It is a simple database of facts that represent the state of the system. The State is necessary to determine the way the problems or tasks are reduced to their primitive level. The reduction is done by satisfying different prerequisites set in the methods; these prerequisites are defined in the state. The Tasks are high level tasks or methods defined in the Domain. The planner based on the State and the goals selects one or more high level tasks that need to be reduced to plans [Figure 15].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d16421af-d03a-4a25-a66c-76c55eb50153",
+        "metadata": {},
+        "text": "Tasks",
+        "type": "Title"
+    },
+    {
+        "element_id": "5614074d-6a42-46c0-8816-f62a31f5e93d",
+        "metadata": {},
+        "text": "Core Planner",
+        "type": "Title"
+    },
+    {
+        "element_id": "725f48c5-3a5e-41ce-a602-5b20c6aea2f1",
+        "metadata": {},
+        "text": "The cases do not represent all possible combinations of board positions. They are only representation of typical game scenarios. The CBR Case solutions do not give exact instructions in general but rather strategic goals. For example one CBR Solution might say trade the streets that you only have one of each for the ones that you have two of that color already. Then the planner based on the situation on the board needs to decompose this high level task to a low level operations. Like offer \"Mediterranean Avenue\" for \"Reading Railroad\" and offer $50. The exact amounts and actual streets are left to the planer to evaluate.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3a4b1aa4-db60-49ec-9865-54e98e062628",
+        "metadata": {},
+        "text": "State",
+        "type": "Title"
+    },
+    {
+        "element_id": "7b9b9c7e-cf7e-4452-80fb-9365de5ce873",
+        "metadata": {},
+        "text": "Plan",
+        "type": "Title"
+    },
+    {
+        "element_id": "82982b42-1370-4c1a-a997-86b4a99d0da7",
+        "metadata": {},
+        "text": "Figure 15: Diagram of a Planner",
+        "type": "Title"
+    },
+    {
+        "element_id": "adb66f94-958a-4676-b8ce-1c5a0cb33c25",
+        "metadata": {},
+        "text": "The plans then generate the game moves. The number of moves generated by the plans is just a fraction of the possible moves at that point. This reduces the game tree providing the opportunity to generate smaller and deeper game trees and making more efficient decisions in general.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6337f28d-8552-40cf-bffa-453513a1910f",
+        "metadata": {},
+        "text": "The monopoly CBR database is currently in development on a monopoly clone game called Spaceopoly. The cases are architected based on human player experience and knowledge. There is a plan of making a number of slightly different strategies that differ on the style of playing and then running simulation tests that would determine the particular validity of each database as well as validity of certain segments of the strategy or even particular cases in the database.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4347cacf-dfdd-4256-8c07-8932f3b123fc",
+        "metadata": {},
+        "text": "7. Conclusion",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "07189463-e4ae-43f9-a3a3-191acb239efd",
+        "metadata": {},
+        "text": "Even though the results from the CBR database are not complete at this time partial strategies are implemented as cases and recognized during game play by the CBR system. These smaller local strategies coupled with more global higher level strategies that are particularly important at the beginning of the game would form a complete CBR database and represent a knowledge engineered style of playing of the AI player.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "36b29c0f-0a65-48f1-8d5e-33a13383cd32",
+        "metadata": {},
+        "text": "The actual execution of the strategies will not differ from strategy to strategy since the plan execution is more related to the structure and rules of the game than to the actual playing strategy.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2e71ec45-02ea-4691-9117-14150632379a",
+        "metadata": {},
+        "text": "The AI Planning approach is a proven method by the tic-tac- toe experiment and is suitable for implementing the strategies associated with the CBR cases.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "99e6d03a-e378-4731-a464-8991ab62c0e5",
+        "metadata": {},
+        "text": "6.3 Details on the Planning Implementation",
+        "type": "Title"
+    },
+    {
+        "element_id": "0f3f1a44-5156-4c5c-9cfd-56d5a5fbc0f9",
+        "metadata": {},
+        "text": "For the purpose of planning this implementation uses a the JSHOP2 planner. The Java Simple modification of Hierarchical Ordered Planner 2 is a domain independent HTN planning system [15].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7d06fed2-d47b-4d0a-9da9-cf2c8fd3249f",
+        "metadata": {},
+        "text": "This approach in general benefits from both technologies, CBR as well as AI Planning and comprises an elegant solution. Even though AI Planning can be enough as a single technology for some simpler problems like tic-tac-toe the complexity of Monopoly would mean that the Planner would have to incorporate",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "14c95f00-12c7-440b-8565-feb42c1fda2d",
+        "metadata": {},
+        "text": "3rd International Conference on Digital Interactive Media in Entertainment and Arts",
+        "type": "Title"
+    },
+    {
+        "element_id": "4e4e4d44-c0f9-44e9-96f6-4e4cbf53a2a7",
+        "metadata": {},
+        "text": "301",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "14e62101-0f20-42d2-8864-cc24b3181e4b",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "f19376e0-db28-4bd4-bac5-3b7b6ea69d32",
+        "metadata": {},
+        "text": "302",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3e5234ce-9487-4f26-b8df-1de388eb8aec",
+        "metadata": {},
+        "text": "DIMEA 2008",
+        "type": "Title"
+    },
+    {
+        "element_id": "e37386f8-8b43-47a5-8ba4-c57f0fba5e52",
+        "metadata": {},
+        "text": "large and complex domain and a very big state model. The CBR application helps reduce this complexity by focusing the planning on smaller domain of the game. Basically the CBR reduces the overall goal of the play (wining the game) to smaller more concrete goals suitable to the particular state of the game, thus reducing the need for global planning strategies and complex planning domain.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b3e83a3b-34c1-4eec-a4b7-9e2b8efb80b1",
+        "metadata": {},
+        "text": "Furthermore this symbiosis of technologies gives way for more precise and finely tuned strategies which can be difficult to include into global plan for the whole game. One simple example for the Monopoly game would be this: Sometimes it\u2019s better to stay in jail because rolling double increases the probability of landing on some field (two, four, six, eight, ten or twelve steps from the jail) that can be of great importance to the rest of the game. These and similar small local strategies can be easily recognized by similar cases in the CBR database.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c1e0dabe-ccf4-46d7-864c-9b6dbba8d2af",
+        "metadata": {},
+        "text": "reasoning. People in addition to logic of reasoning in situations with lack of information rely to planning strategies and prior experience, exactly the intuition behind CBR \u2013 AI Planning architecture.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b6f92644-81a8-414f-a444-14faebcebcf3",
+        "metadata": {},
+        "text": "9. ACKNOWLEDGMENTS",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "977fbdf8-5751-4c2f-801f-0e1c6d18be84",
+        "metadata": {},
+        "text": "We would like to thank Prof. Sofia Tsekeridou for her involvement in the valuable discussions we had on the topic of CBR.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "658b5abe-cba1-4133-9ba6-3e9cdf59deae",
+        "metadata": {},
+        "text": "10. REFERENCES [1] Minimax. Wikipedia. [Online] [Cited: April 23, 2008.] http://en.wikipedia.org/wiki/Minimax.",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "3040dd40-d845-4e62-9523-e23cb562bcc0",
+        "metadata": {},
+        "text": "[2] Von Neumann, J: Zur theorie der gesellschaftsspiele Math.",
+        "type": "Title"
+    },
+    {
+        "element_id": "742a00d0-bbea-42ac-af9f-5247600a6f87",
+        "metadata": {},
+        "text": "Annalen. 100 (1928) 295-320",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "25db562a-68fd-45cf-a72e-0d0289915e20",
+        "metadata": {},
+        "text": "[3] Automated Planning. Wikipedia. [Online] [Cited: April 23,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "70df9dfd-b5fd-4830-abb2-eed25087753d",
+        "metadata": {},
+        "text": "In other words the system is flexible enough so that new strategies can be incorporated easily missing strategies can be also recognized by the distance metrics as well as wrong assumptions in the strategies can be easily recognized.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4250597c-1fd4-4c18-8560-d8412e3716de",
+        "metadata": {},
+        "text": "2008.] http://en.wikipedia.org/wiki/Automated_planning.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "709f8e82-2082-4fa8-a3e4-c1f3e52c1b0f",
+        "metadata": {},
+        "text": "[4] Sanchez-Ruiz, Antonio, et al. Game AI for a Turn-based Strategy Game with Plan Adaptation and Ontology-based retrieval.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d7fe703c-84ae-4b6a-8a59-4ee3f2c8c529",
+        "metadata": {},
+        "text": "One other important property of the system is that is highly configurable. The game its self can be diversely different depending on the configuration of the board. Even though the platform is restricted to Monopoly type of games, changing the layout and values of the fields effectively brings completely different properties of the game. In addition the CBR database represents the entire experience of the AI Player. It can be filled with rich set of strategies or even configured with different flavors of difficulties of play, this of course coupled with the domain of the planner which can differ from a case to a case as well.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "75f88aa0-2d36-4dda-af19-67a6938640a6",
+        "metadata": {},
+        "text": "8. Future Work",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "b860edd0-e54f-4c8b-a136-e3923f8c0f36",
+        "metadata": {},
+        "text": "[5] K. Erol, J. Hendler, and D. Nau (1994). Semantics for",
+        "type": "Title"
+    },
+    {
+        "element_id": "510edcae-9fc7-4845-9c5c-2631011367eb",
+        "metadata": {},
+        "text": "hierarchical task-network planning. Technical Report TR-94- 31, UMIACS.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5969199e-2231-4b3e-9285-a93abcf76cfd",
+        "metadata": {},
+        "text": "[6] Smith, S. J. J. and Dana S. Nau, T. A. Throp. A Planning approach decrarer play in contract bridge. Computational Intelligence. 1996, Vol. 12, 1.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b4ceeba5-116c-4891-9ee3-9c5baac444f5",
+        "metadata": {},
+        "text": "[7] One Jump Ahead: Challenging Human Supremacy in",
+        "type": "Title"
+    },
+    {
+        "element_id": "28c1345b-a7e6-45df-82e0-aebea7bd5ce6",
+        "metadata": {},
+        "text": "Checkers. J.Schaeffer. s.l. : Springer-Verlag, 1997.",
+        "type": "Title"
+    },
+    {
+        "element_id": "09db4b72-7999-4b26-80e1-8d04b28292ab",
+        "metadata": {},
+        "text": "[8]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e9219b5e-68b2-4a27-92b5-cbf183d21c8f",
+        "metadata": {},
+        "text": "IBM. How Deep Blue works. [Online] 1997. [Cited: April 23, 2008.] http://www.research.ibm.com/deepblue/meet/html/d.3.2.html",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c62b9733-bda2-46ab-9a47-f05df25f09a4",
+        "metadata": {},
+        "text": "Further exploration of this technology would go towards complete implementation of an AI aware agent for monopoly. Initial results from the local cases with more specific strategies show CBR as a capable tool for representing expertise in playing the game. Completing the more general strategies and coupling them with the planning domain will give precise results on the benefits from this architecture.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d1c0cd93-4b52-4a0b-8924-aeb4937adc8b",
+        "metadata": {},
+        "text": "[9] Ghallab, Malik, Nau, Dana and Traverso, Paolo.",
+        "type": "Title"
+    },
+    {
+        "element_id": "69a919db-9b3b-4924-8727-8966a961dea4",
+        "metadata": {},
+        "text": "Automated Planning theory and practice. s.l. : Morgan Kaufmann Publishers, May 2004. ISBN 1-55860-856-7.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0abc4ada-5345-4325-8f5b-93760795df53",
+        "metadata": {},
+        "text": "[10] Case Based Reasoning. Experiences, Lessons and Future. Leake, David. s.l. : AAAI Press. MIT Press., 1997.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8f6a55e6-5c9d-410a-a17e-023cac750699",
+        "metadata": {},
+        "text": "[11] Applying case-based reasoning: techniques for enterprise",
+        "type": "Title"
+    },
+    {
+        "element_id": "da35ab8a-ee09-4c2b-afa2-28b2129ff95a",
+        "metadata": {},
+        "text": "There is also need for exploring the planning of strategies of opponents. This task is to some extent different because we cannot always expect the opponent to select the best move we think. In the Tic-tac-toe example all possible moves of the opponent were taken into consideration, if we used the same planner for the opponent only tie games would result from the game tree. In other words mistakes of the players also need to be considered.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "905f1e0c-446f-486c-8bce-b8004fb0989c",
+        "metadata": {},
+        "text": "systems. Watson, I. San Francisco, CA, USA : Morgan Kaufmann Publishers Inc., 1998.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6f78676c-1077-4dd7-872a-f99cec563e48",
+        "metadata": {},
+        "text": "[12] Plaza, A. Aamodt and E. Case-based reasoning:",
+        "type": "Title"
+    },
+    {
+        "element_id": "4461e3a6-3bc2-4ea4-ad1c-1ac6953f0911",
+        "metadata": {},
+        "text": "Foundational issues, methodological. AI Communications. 1994, 7(i).",
+        "type": "Title"
+    },
+    {
+        "element_id": "64be67fe-d71f-4749-80a5-fd681e888cc1",
+        "metadata": {},
+        "text": "[13] Tic-tac-toe. Wikipedia. [Online] [Cited: April 23, 2008.]",
+        "type": "Title"
+    },
+    {
+        "element_id": "ba054fde-8b46-42ea-9c47-38c16bcbe4dc",
+        "metadata": {},
+        "text": "http://en.wikipedia.org/wiki/Tic-tac-toe.",
+        "type": "Title"
+    },
+    {
+        "element_id": "597faf16-b1bb-4f73-aafb-42634a059077",
+        "metadata": {},
+        "text": "[14] D\u00edaz-Agudo, B. and Gonz\u00e1lez-Calero, P. A. An",
+        "type": "Title"
+    },
+    {
+        "element_id": "eef61bc3-297c-4fed-9e32-fd654e122f75",
+        "metadata": {},
+        "text": "The CBR Platform brings other functionalities well worth of exploring as well. The revision stage of the JColibri2 platform is basically capable of fine tuning strategies or even developing new strategies for the games. A well written underlying AI planning model with a capable feedback of the game tree evaluation back to the CBR revision capability can be an interesting concept in automatic experience acquisition for the AI model.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "104e713e-425c-4b3a-ab38-6c0821b58080",
+        "metadata": {},
+        "text": "architecture for knowledge intensive CBR systems. Advances in Case-Based Reasoning \u2013 (EWCBR\u201900). New York : Springer-Verlag, Berlin Heidelberg, 2000.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3a4fa7c1-3580-4a56-9634-7f9612cfbffd",
+        "metadata": {},
+        "text": "[15] Ilghami, Okhtay and Nau, Dana S. A General Approach to",
+        "type": "Title"
+    },
+    {
+        "element_id": "4a1ff319-738d-4d81-96aa-083ce5b1f0ab",
+        "metadata": {},
+        "text": "Synthesize Problem-Specific Planners. 2003.",
+        "type": "Title"
+    },
+    {
+        "element_id": "af43fea8-d9dd-45a2-80b2-066638117b1f",
+        "metadata": {},
+        "text": "There are also many other fields were combined CBR and planning approach can be incorporated into a problem solution. This combination is analogous in a big extent to a human way of",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e5fd4704-7ca2-4ad8-a125-a0cff6e92b8a",
+        "metadata": {},
+        "text": "3rd International Conference on Digital Interactive Media in Entertainment and Arts",
+        "type": "Title"
+    },
+    {
+        "element_id": "5d9bc38a-fe92-4af9-9711-ab664a2c3f85",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    }
+]

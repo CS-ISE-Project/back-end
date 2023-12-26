@@ -1,0 +1,710 @@
+[
+    {
+        "element_id": "aea8dd19-b724-41d0-a4b2-180ac7c8dad4",
+        "metadata": {},
+        "text": "Fuzzy logic based MPPT control for a PV system using SEPIC converter",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8344d6a2-b3a9-4a06-9351-8ae3a847da04",
+        "metadata": {},
+        "text": "Moulay Abdellah Alhachemi Laboratory of CAOSEE Universit\u00e9 Tahri Mohamed Bechar, Algeria alhachemi.abdellah @univ-bechar.dz",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d89f898a-cafc-42a5-9a68-d12f70733fe9",
+        "metadata": {},
+        "text": "Mansour Becahr Laboratory of CAOSEE Universit\u00e9 Tahri Mohamed Bechar, Algeria bechar.mensour @univ-bechar.dz",
+        "type": "Title"
+    },
+    {
+        "element_id": "cea20df8-7af6-4d0d-b39d-2a6f1f09930d",
+        "metadata": {},
+        "text": "Abstract\u2014In this study, a novel single-ended primary inductor (SEPIC) converter-based fuzzy logic controller for maximum power point tracking is presented. By adding rules to the perturb and observing search strategy, the new controller enhances it while fuzzifying and removing its flaws. When compared to traditional maximum power point tracking techniques, fuzzy logic trackers enable an accurate and quick convergence to maximum power point under both steady-state and variable weather situations. The performance of the proposed maximum power point tracker is demonstrated in simulation.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "29d1fcb2-7aba-45ef-a3bd-080d8ff52024",
+        "metadata": {},
+        "text": "Keywords: Fuzzy logic controller (FLC), Maximum power point tracker (MPPT), Photovoltaic (PV)",
+        "type": "Title"
+    },
+    {
+        "element_id": "f180b2f5-c3f9-4bdc-924f-f7e80942aa36",
+        "metadata": {},
+        "text": "I. INTRODUCTION",
+        "type": "Title"
+    },
+    {
+        "element_id": "52580e4a-8689-4f63-948e-7b8a1c8316b8",
+        "metadata": {},
+        "text": "The non-renewable energy sources are rapidly running out, while the electricity demand is increasing daily. To solve this problem, efficient and efficient electric power generation from renewable energy sources is required [1]. Renewable energy is one of the forms of energy that society can rely on because It is unpolluted, pure, and has no limits. One type of power generation that uses renewable energy is the photovoltaic (PV) system [2]. To utilize less conventional energy, the PV system must subsequently be linked to the grid, either directly or via a backup battery bank. Since the power produced by PV systems depends on radiation and temperature change, the PV framework has destitute productivity, [2].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "825a5ac1-b73b-4ea8-8b28-feb467008c76",
+        "metadata": {},
+        "text": "For the control of the PV systems, there are different sorts of DC-DC converters such as Buck converters, Boost converters, and Buck-Boost converters. Due to its output pick-up adaptability, a single-ended primary-inductor converter (SEPIC) acts as a buck-boost DC/DC converter, where it changes its output voltage agreeing to its duty cycle. Unlike the customary buck-boost converter, the SEPIC converter includes a non-inverted output and it uses an arrangement capacitor to separate input from output [3]. The buck and buck-boost converters lose half of their input control due to input current",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d589632c-63da-4596-a931-2e81166b5ea9",
+        "metadata": {},
+        "text": "Mohammed Habbab Laboratoire de CAOSEE Universit\u00e9 Tahri Mohamed Bechar, Algeria habbab.mohamed @univ-bechar.dz",
+        "type": "Title"
+    },
+    {
+        "element_id": "468b346e-cbb5-4985-a2a3-2063b62836d7",
+        "metadata": {},
+        "text": "Abdeldjebar Hazzab Ecole de Technologie Sup\u00e9rieure (ETS) 1100 Notre-dame Montr\u00e9al, Canada Hazzab.abdeldjebar @etsmtl.ca",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "eb0e152e-4d82-4aff-b36e-7de02e56646e",
+        "metadata": {},
+        "text": "Hicham Gouabi Ecole de Technologie Sup\u00e9rieure (ETS) 1100 Notre-dame Montr\u00e9al, Canada hicham.gouabi.1 @ens.etsmtl.ca",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c490a959-8532-4c21-8998-30c12aa615b2",
+        "metadata": {},
+        "text": "arrangement exchange; for that reason, the two types of converters should be excluded from maximum power applications. The boost converter has a nonstop input current, but the output voltage is always bigger than the input, which may not accomplish maximum power exchange operation in a few cases, such as when the maximum voltage is less than the input [3].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c03ac51f-e2e2-49d1-b8a6-d238a34b2212",
+        "metadata": {},
+        "text": "This paper presents a fuzzy-based P&O strategy for an MPPT standalone PV system. The proposed MPPT can abuse the preferences of the P&O strategy and eliminate its drawbacks. Output has been separated into five fuzzy subsets. As the proposed strategy continuously exchanges maximum power from PV arrays, it optimizes the number of PV modules.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "71da4cda-3784-4b38-8881-fc1113755188",
+        "metadata": {},
+        "text": "Il. MODELIGN OF PV SYSTEM",
+        "type": "Title"
+    },
+    {
+        "element_id": "8e313d51-534b-4a7b-a461-340877ac6920",
+        "metadata": {},
+        "text": "Photovoltaic is the technique and study connected to devices that directly convert sunlight into electricity utilizing photovoltaic semiconductors. Direct conversion of solar energy into DC electrical energy can be achieved by photovoltaic cells [4]. The photovoltaic panel is made up of numerous cells that are connected in series Ns or shunt Nsh. Where it may be mimicked by a current source coupled in parallel with a diode as described by and depicted in Figure 1 [5].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fb959a5d-d9cd-4a23-bc6d-9ca77355ad72",
+        "metadata": {},
+        "text": "Fig. 1. Circuit for a PV array.",
+        "type": "Title"
+    },
+    {
+        "element_id": "26b87623-0c18-49b5-8560-e458d8d42e7e",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "1315246a-daa3-472e-8170-6d5d88d35638",
+        "metadata": {},
+        "text": "The following equations provide the output current: 1= Ipn\u2014 Ip a)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7511fa6d-2a68-46da-bc76-65924b037863",
+        "metadata": {},
+        "text": "T= Ipn \u2014 Io [exp (\u201c=\u201d) 1] a 2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a877dbbf-e76f-4ea5-b6b7-8542d9c77f3a",
+        "metadata": {},
+        "text": "A: Ideality factor",
+        "type": "Title"
+    },
+    {
+        "element_id": "eecffaa4-aa86-4d00-9c24-5f05feff9863",
+        "metadata": {},
+        "text": "T : Cell temperature R, : Series resistance q: Electronic charge V : Cell voltage",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c9de8a82-9f2b-49de-8c0d-f57d2dae633b",
+        "metadata": {},
+        "text": "Ipn ? Photo \u2014 current",
+        "type": "Title"
+    },
+    {
+        "element_id": "b6c7f220-3ee9-47a8-95b8-d4fd7100480d",
+        "metadata": {},
+        "text": "Kg : Constant of Boltzmann Ip : Current via a diode",
+        "type": "Title"
+    },
+    {
+        "element_id": "c2b6012e-b3b4-4325-b956-b20adfa07311",
+        "metadata": {},
+        "text": "Ig : Current of Saturation Rg, : Shunt resistance",
+        "type": "Title"
+    },
+    {
+        "element_id": "c723054b-4bee-4daf-864c-52cf22573e3e",
+        "metadata": {},
+        "text": "1: Current of cell",
+        "type": "Title"
+    },
+    {
+        "element_id": "d7ab5d1c-b4af-4537-a3f5-b91801d6b390",
+        "metadata": {},
+        "text": "The shunt resistance (Rg) is typically orders of magnitude larger than the series resistance (R,) [6]. Therefore, it is common for the shunt and series resistances of a solar cell can be neglected to simplify the model. The resulting ideal voltage- current characteristic of the solar cell is given by equation (3).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4f578cb3-2d8f-4e5a-9608-9a0a3a40bcd4",
+        "metadata": {},
+        "text": "l= Iph \u2014Iy [ete a i| (3)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "61cfcb7c-8ed7-4310-9262-ee59b0e3cb4f",
+        "metadata": {},
+        "text": "Ill. SEPIC CONVERTER",
+        "type": "Title"
+    },
+    {
+        "element_id": "4a7f06f7-1c24-4530-bcc5-3a0eb22c0978",
+        "metadata": {},
+        "text": "Power electronics researchers are working hard to create DC- DC converters with simpler designs and greater efficiency [7]. To maintain a constant output voltage, the suggested DC-to-DC converter employs a single-ended primary-inductor converter (SEPIC) architecture. The SEPIC converter is made up of a duty cycle switch S, a diode, two inductors (L1 and L2), two capacitors (C1 and C2), and a load resistor. Figure 2 depicts the circuit diagram of a SEPIC converter. A SEPIC is a DC-DC converter [8]. SEPIC are DC-DC converters that can output voltages that are B, larger than, or equal to the input voltage. The duty cycle of the control transistor affects the SEPIC converter's output voltage. The SEPIC converter is two converters in one: a boost converter followed by a buck-boost converter. It has the advantages of having a non-inverted output (the output voltage has the same polarity as the input voltage) , using a series capacitor to couple energy from the input to the output (which makes it more responsive to short-circuits), and being able to shut down completely: when the switch \"S\" is turned off, the output voltage drops to 0 V, accompanied by a significant transient discharge of charge.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "81ea20b6-a2c6-4408-804f-dbbf0f0957b9",
+        "metadata": {},
+        "text": "Fig. 2. Simple circuit diagram of the SEPIC converter",
+        "type": "Title"
+    },
+    {
+        "element_id": "e4356a56-3315-47f4-a482-55a361fb2aba",
+        "metadata": {},
+        "text": "Figure 3 depicts the circuit when the power switch is switched on and off (in Figures a and b, respectively). Figure 3a When",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1fba6ea3-24a5-423a-872b-476974e6a51d",
+        "metadata": {},
+        "text": "the switch is on, the first inductor, L1 is charged from the input voltage source. The second inductor L2 absorbs energy from the first capacitor C1, leaving the output capacitor C2 to supply the load current.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9a3965a0-f46a-4287-838a-3ec612824bdd",
+        "metadata": {},
+        "text": "+ \u2018n ba Cy 3 Vo",
+        "type": "Title"
+    },
+    {
+        "element_id": "f530d6f7-5646-4465-af22-44bb69b605a2",
+        "metadata": {},
+        "text": "Fig. 3.b. The switch turned off. Fig. 3. Equivalent circuit diagram of the SEPIC converter when the switch is on and off.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a0550621-0b53-4bc3-a331-4cad26873ad3",
+        "metadata": {},
+        "text": "When the switch is turned on, the input inductor is charged from the source, and the second inductor is charged from the first capacitor. No energy is supplied to the load capacitor during this time. The inductor current and capacitor voltage polarities are marked in this Figure. When the power switch is turned off, the energy stored in the inductor is transferred. The energy stored is transferred through the diode and supplies the energy to the load [10], as shown in Figure 3. b. The second inductor is also connected to the load during this time. The output capacitor sees a pulse of current during the off time, making it inherently noisier than a buck converter. The amount that the SEPIC converters increase or decrease the voltage depends primarily on the duty cycle and the parasitic elements in the circuit. The output of an ideal SEPIC converter is:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "43872720-2d0d-420f-b0ac-c420cbdbffa5",
+        "metadata": {},
+        "text": "D To Vin (4)",
+        "type": "Title"
+    },
+    {
+        "element_id": "82ef7b1f-5f1e-4b24-bc7e-8b69ef6a5f02",
+        "metadata": {},
+        "text": "Vout =",
+        "type": "Title"
+    },
+    {
+        "element_id": "53368c90-6eb6-4dc4-a89f-2c3655b13788",
+        "metadata": {},
+        "text": "A SEPIC converter is to process the electricity from the PV system. This converter either increases or decreases the PV system voltage at the load. The proposed SEPIC converter operates in buck mode.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "93ef52d0-9013-4aa4-be76-8b683c3be90f",
+        "metadata": {},
+        "text": "IV. FUZZY LOGIC CONTROL",
+        "type": "Title"
+    },
+    {
+        "element_id": "0912d461-a9a3-444a-8e95-487ea34e595e",
+        "metadata": {},
+        "text": "In the fuzzy logic maximum power point tracking (MPPT) algorithm, the voltage and current at each instant k are measured to calculate the active power. The active power is then compared with the power at the previous instant (k-1) to obtain the change in power (AP(k)). Similarly, the voltage at instant k is compared with the voltage at instant k-1 to obtain",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "32a96508-066b-4cf0-8b2b-272c467a7b3d",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "bab5300d-a10d-4853-ab7a-221a54a5dd17",
+        "metadata": {},
+        "text": "the voltage error (AV(k)) [11]. The power error is then divided by the current error to obtain the error (E). The error is then compared with the previous error to calculate the change in error (AE(k)). The error (E(k)) and the change in error (AE(k)) are then used as the crisp inputs to the fuzzy logic controller. The flow chart for the fuzzy logic MPPT algorithm is shown in Figure 4. In this work, the Mamdani inference technique, A- type membership functions, and a 25-element rule base were used for the fuzzy logic control. The Mamdani inference technique is efficient and straightforward in defining the fuzzy output sets, and it is more popular among researchers than other techniques [12]. The A-type or triangular membership function is used because it is simpler to split into low and high membership functions (MFs) than other membership functions. Additionally, it has been observed that the triangular membership function has a faster response and less overshoot than other functions [13]. A 25-element rule base was used because it has been shown to perform well [14][15].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d3b0baa2-cf7c-4203-adc6-ccea997c6109",
+        "metadata": {},
+        "text": "inference",
+        "type": "Title"
+    },
+    {
+        "element_id": "02ff1cf3-7340-40c7-a690-9ce67c573160",
+        "metadata": {},
+        "text": "Start",
+        "type": "Title"
+    },
+    {
+        "element_id": "a2871966-eb7a-4851-bfc0-1df02bcb518c",
+        "metadata": {},
+        "text": "Set initial value for Duty cycel (D)",
+        "type": "Title"
+    },
+    {
+        "element_id": "4e945b87-dd9e-4df4-b12c-7d4607f6afca",
+        "metadata": {},
+        "text": "| D=D+AD k Calculate AE |<",
+        "type": "Title"
+    },
+    {
+        "element_id": "d2c914a3-c884-414e-9d4b-ddbd76d4b09f",
+        "metadata": {},
+        "text": "Calculate error (E) E =(Piq(K) Pig (K-1)) /(Vin( K) ~ Vig(K-1)) and change in error",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "43254492-9b65-42d1-a731-2c1978123ed6",
+        "metadata": {},
+        "text": "AE = E(K)-E(K-1)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "83e3e3d3-702f-40c3-88f7-8dfdd6f9f33f",
+        "metadata": {},
+        "text": "Fazzification",
+        "type": "Title"
+    },
+    {
+        "element_id": "5e75c419-8e03-49ed-aebd-fb0242d50c24",
+        "metadata": {},
+        "text": "Inference Engin",
+        "type": "Title"
+    },
+    {
+        "element_id": "511ed2b9-9219-41b7-b789-d9d64ef38d7b",
+        "metadata": {},
+        "text": "| Fuzzy Set",
+        "type": "Title"
+    },
+    {
+        "element_id": "5a9bd8df-45fe-48f0-9f29-fec552c17901",
+        "metadata": {},
+        "text": "|\u2014>DeFazzification",
+        "type": "Title"
+    },
+    {
+        "element_id": "f35b121c-ff4c-4864-aacd-2e39392757f3",
+        "metadata": {},
+        "text": "a",
+        "type": "Title"
+    },
+    {
+        "element_id": "c7d10a91-2308-4966-8a39-42a539c2dd8f",
+        "metadata": {},
+        "text": "Fig. 4. Fuzzy logic maximum power point tracking (MPPT) flow chart.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "82b35951-9787-4a33-a422-8c92a52a8866",
+        "metadata": {},
+        "text": "The following are the fuzzy rules in Table 1, which are used for the desired MPP of push-pull converter PWM. The membership for input variables (DP,,, DVpy) are shown in Figure 5, and the membership for output variable (DVpy=) is shown in Figure 6. All the functions are defined on a normalized interval [-1 1].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "650addea-87ac-4991-88bf-56e49e1c5d40",
+        "metadata": {},
+        "text": "Table. 1. Fuzzy logic rules for the push-pull converter. NB, negative big; NS, negative small; ZE, zero; PS, positive small; PB, positive big.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a728ae50-bba6-45ca-a0f4-32747e398250",
+        "metadata": {},
+        "text": "AVpv*[i/p]",
+        "type": "Title"
+    },
+    {
+        "element_id": "e754a978-48b8-4321-953d-f69c21d511a4",
+        "metadata": {},
+        "text": "AVpv*[o/p]",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "11cf0fd1-4fc4-4887-9e94-b14a486ff65c",
+        "metadata": {},
+        "text": "NB NS ZE PS PB",
+        "type": "Title"
+    },
+    {
+        "element_id": "554577b0-cb9e-49a2-8031-9c5677e92158",
+        "metadata": {},
+        "text": "NB PS NB NB | NB | NS",
+        "type": "Title"
+    },
+    {
+        "element_id": "62649b52-8e1c-4a60-a675-6a94dcf17fc8",
+        "metadata": {},
+        "text": "APpv*{i/p] | NS | PS | PS ] NS | NS | NS",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "81d81cf8-7b20-4529-9e9f-1589364fbfe4",
+        "metadata": {},
+        "text": "ZE ZE ZE ZE ZE ZE",
+        "type": "Title"
+    },
+    {
+        "element_id": "7d999ecc-b5fa-410a-9897-0aadf2351d0b",
+        "metadata": {},
+        "text": "PS NS NS PS PS PS",
+        "type": "Title"
+    },
+    {
+        "element_id": "c0935fae-04dc-4b07-8bd8-13a95fd306c8",
+        "metadata": {},
+        "text": "PB NS NB PB PB PS",
+        "type": "Title"
+    },
+    {
+        "element_id": "da336ac3-2a10-42f3-ab07-ecb418b4460b",
+        "metadata": {},
+        "text": "plot points: 181",
+        "type": "Title"
+    },
+    {
+        "element_id": "5a1f3850-f4f5-430b-919f-c671737dc0ff",
+        "metadata": {},
+        "text": "FiS Variables. Membership function plots",
+        "type": "Title"
+    },
+    {
+        "element_id": "75574d84-48f6-4cb1-ad9d-dd5174cb433e",
+        "metadata": {},
+        "text": "DPpv \u2014 DVpv*",
+        "type": "Title"
+    },
+    {
+        "element_id": "0372a6e9-cdbf-47d6-be4a-bf171d578b5e",
+        "metadata": {},
+        "text": "NB NS ze PS PB",
+        "type": "Title"
+    },
+    {
+        "element_id": "108a14d8-6a7a-4392-8385-1bfb9b3f140b",
+        "metadata": {},
+        "text": "Dvpyv input variable \u201cDPpv\" Current Variable Current Membership Function (click on MF to select) Name \u2018DPpv Name NB \u2018Type \u2018input Type trimf v ra an Perams [15-1-05] Display Range La) Help ory Membership function plots st FIS Variables",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c4dda2a3-8ecf-404f-acf0-db1c8746710f",
+        "metadata": {},
+        "text": "input variable \"DVpv\"",
+        "type": "Title"
+    },
+    {
+        "element_id": "82fc2279-083b-49d6-b9cb-9fcfe2faa59e",
+        "metadata": {},
+        "text": "Current Variable Current Membership Function (click on MF to select)",
+        "type": "Title"
+    },
+    {
+        "element_id": "3e88b24d-93ec-485d-812b-d123f317a3fc",
+        "metadata": {},
+        "text": "Name Dvpv Name NB",
+        "type": "Title"
+    },
+    {
+        "element_id": "bc456ed4-84fe-4b5c-b327-69ba60f8d13b",
+        "metadata": {},
+        "text": "_ = Type int iv",
+        "type": "Title"
+    },
+    {
+        "element_id": "7a5a889a-d4fe-4158-b474-9e9f2bffe879",
+        "metadata": {},
+        "text": "Range \u201can he \u00a31.5-1-0.5]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "2342a8f1-21d9-42bd-b4a8-bc106b61300b",
+        "metadata": {},
+        "text": "Peep M1) Help | Close Fig. 5. Membership for input variables.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ff5ddb43-d395-45f6-8e8e-52e9dbce585f",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "30e20d99-e88a-41b6-84d1-1c188502e587",
+        "metadata": {},
+        "text": "eee HS 181 The results are provided under standard test conditions; v_\u2014 se G=1000 W/m2; T=25\u00b0C and it is shown in figure 7. DPpy \u2014 DVpv* 7 | bad , DVpv 5 J <a 4 = \u2018output variable \"DVpv\u2122 g 3\u00b0 | \u2018Current Variable \u2018Current Membership Function (click on MF to select) 2 Name Dvpv* Nome NB 1 J Type output ue et ~ Range Porams E1505) o f14) Display Range Pr Hep cose 0 4 02 03 a ceconds) a7 08 rr) 1 Fig. 6. Membership for output variable. Fig. 7.a. Current. V. SIMULATION RESULTS 30 The characteristics of the photovoltaic array that we use in this paper are given in Table 2. 26 20) Table. 2. Electrical data of photovoltaic array. S Sis Variable Value 3 Maximum Power Prax = 200 W \u00b0 Open circuit voltage Voc = 36.1V 5 Short circuit current I, = 200A it) Voltage at maximum power Vinax = 29.3 V j = 0 O41 0.2 0.3 04 0.5 0.6 0.7 08 0.9 1 Current at maximum power Imax = 6.9A \u201cTime (seconds) Fig. 7.b. Voltage. Table 3 shows the SEPIC converter settings utilized in this 20 ] ] ] ] ] study. The SEPIC converter is linked to the PV panel in the full model, and the duty cycle is regulated by the Fuzzy Logic 200] Controller. Table. 3. The SEPIC converter parameters. =| Variable Value 5 Switching frequency 20 KHz 51 Load resistance Ryoaa= 4.29 Q 0 Inductance L; L, = 3.6 MH 0 Inductance L2 L2 = 0.9 MH 0 04 0.2 0.3 04 05 0.6 07 0.8 0.9 1 Capacitor C C; = 180 uF Time (seconds) Fig. 7.c. Power. Capacitor C2 Cy = 6000 uF Fig. 7. Voltage, current, and power output results; at G=1000",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "faa2b5ca-a0db-4701-8848-75eca62b9a39",
+        "metadata": {},
+        "text": "W/m2 and T=25\u00b0C.",
+        "type": "Title"
+    },
+    {
+        "element_id": "6307d2eb-9597-47dd-91bf-68e199d1a5d2",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "d49ae1cf-e17f-4e55-86f0-b8cde3e49b21",
+        "metadata": {},
+        "text": "Overall, using MPPT and fuzzy logic to a SEPIC converter for a PV system result in considerable performance gains. Increased power output, higher efficiency, decreased ripple, enhanced transient response, and resilience are examples of these enhancements.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8ac2998d-d242-4a17-b137-14e0fad470d9",
+        "metadata": {},
+        "text": "VI. CONCLUSIONS",
+        "type": "Title"
+    },
+    {
+        "element_id": "5fb8ab9f-ea3d-403b-943b-de6b9a9cb0b7",
+        "metadata": {},
+        "text": "This paper presents the design of an off-grid photovoltaic system with a fuzzy logic MPPT-controlled push-pull boost converter. The proposed system was MATLAB/Simulink and _ tested conditions. The results showed that the fuzzy logic algorithm outperformed the conventional algorithms in terms of MPPT accuracy and minimization of fluctuations, regardless of rapid changes in irradiance.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "822c4f69-9e15-4ff6-844c-2e2a8fc78cb5",
+        "metadata": {},
+        "text": "simulated in",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "22c59dcf-e93a-4fb8-a9b7-57f7702b5db5",
+        "metadata": {},
+        "text": "under various weather",
+        "type": "Title"
+    },
+    {
+        "element_id": "b81871bf-9870-48d0-bc78-1eb66d141e5f",
+        "metadata": {},
+        "text": "REFERENCES",
+        "type": "Title"
+    },
+    {
+        "element_id": "fd6eaaaa-ff8f-476d-b7d9-21928fa4a759",
+        "metadata": {},
+        "text": "{1] G. Mahendran, and KV. Kandaswamy. \u201cAnt Colony Optimized Tuned DC-DC converter.\u201d International Journal of Computer Applications (0975-8887) 108.11 (2013): 45-50.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3ff1dd27-9ebc-4b0c-a669-549e7545f1c0",
+        "metadata": {},
+        "text": "[2] J. Dunia, and BMM Mwinyiwiwa. \u201cPerformance Comparison between CUK and SEPIC Converters for Maximum Power Point Tracking Using Incremental Conductance Technique in Solar Power Applications.\u201d International Journal of Electrical, Computer, Energetic, Electronic and Communication Engineering 7.12 (2013): 2510-2517.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e319d83c-f0fb-4df4-b2b3-88617298e93c",
+        "metadata": {},
+        "text": "3] M. Cirrincione, M. Pucci, and G. Vitale, \u201cGrowing Neural Gas (GNG)-",
+        "type": "Title"
+    },
+    {
+        "element_id": "91ea057d-7619-4457-9a30-942e1e6109f1",
+        "metadata": {},
+        "text": "Based Maximum Power Point Tracking for High-Performance Wind",
+        "type": "Title"
+    },
+    {
+        "element_id": "c84415bd-311e-4b76-a054-f0ced1c60359",
+        "metadata": {},
+        "text": "Generator With an Induction Machine.\u201d IEEE Transactions on Industry",
+        "type": "Title"
+    },
+    {
+        "element_id": "2f4d7b26-780a-4643-a57a-144bd2403c08",
+        "metadata": {},
+        "text": "Applications 47.2 (2011): 861-872.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "cf979254-b615-4ef5-9b55-65f46a409cab",
+        "metadata": {},
+        "text": "4] M. Abdulkadir, AS. Samosir, S., and AHN. Yatim. \u201cModeling and",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f8c1874e-a082-41d5-9346-3d13753fa9c9",
+        "metadata": {},
+        "text": "Simulation of a Solar Photovoltaic System, Its Dynamics and Transient",
+        "type": "Title"
+    },
+    {
+        "element_id": "1c590eb5-3d03-4239-a69e-6a273c8471ec",
+        "metadata": {},
+        "text": "Characteristics in LAB VIEW.\" International Journal of Power Electronics",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c186ce7a-7e34-4c7b-a276-0bb801d8aca8",
+        "metadata": {},
+        "text": "and Drive System (IPEDS) 3.2 (2013): 185-192.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "8d5fbd33-3207-4710-9b92-a842a9d11c5c",
+        "metadata": {},
+        "text": "5] H. Bouzeria, C. Fetha, T. Bahi, I. Abadlia, Z. Layate, and S. Lekhchine.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "72c26002-3506-4f02-840a-b39840553839",
+        "metadata": {},
+        "text": "\u201cFuzzy Logic Space Vector Direct Torque Control of PMSM for Photovoltaic Water Pumping System.\u201d Energy Procedia 74 (2015): 760- 771.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "492a7483-1cc8-47de-8ea2-6a2b466114d5",
+        "metadata": {},
+        "text": "6] YM. Chen, YC. Liu, SC. Hung, and CS. Cheng. \u201cMulti-Input Inverter for Grid-Connected Hybrid PV/Wind Power System.\u201d IEEE Transactions on Power Electronics 22.3 (2007): 742-750.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bf1cc859-fec4-4abe-b852-2c4353c4a3e3",
+        "metadata": {},
+        "text": "7\\ +S. Ganesh, J. Janani, and GB. Angel. \u201c4 Maximum Power Point Tracker for PV Panels Using SEPIC Converter.\u201d\u2019International Journal of",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f9cdb735-b1e4-480f-ba59-925647290d7d",
+        "metadata": {},
+        "text": "Electrical, Computer, Energetic, Engineering 8.2 (2014): 637-642.",
+        "type": "Title"
+    },
+    {
+        "element_id": "cf3d0703-d662-41f0-a309-7620ecb5b4aa",
+        "metadata": {},
+        "text": "8] _R. Vijayabalan, and S. Ravivarman. \u201cZ Source Inverter for Photovoltaic",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4fd67387-199f-4d50-9a36-e95086b6de5f",
+        "metadata": {},
+        "text": "Electronic and Communication",
+        "type": "Title"
+    },
+    {
+        "element_id": "0aef10a5-fdfc-43f8-8d52-263c8621d9b2",
+        "metadata": {},
+        "text": "System with Fuzzy Logic Controller.\u201d International Journal of Power Electronics and Drive System (IJPEDS) 2.4 (2012): 371-379. 9] A. Ramkumar, and SVS. Florence. \"Analysis of Single Phase AC-DC",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d2f42d87-c51c-4471-96fd-bb2388a34749",
+        "metadata": {},
+        "text": "SEPIC Converter using Closed Loop Techniques.\u201d International Journal",
+        "type": "Title"
+    },
+    {
+        "element_id": "7e9aa330-9db7-4e97-acea-0a92b5f6ea67",
+        "metadata": {},
+        "text": "of Advanced Research in Electrical, Electronics and Instrumentation Engineering 4.2 (2015): 193-201.",
+        "type": "Title"
+    },
+    {
+        "element_id": "25978bf5-dbd7-43b1-8fbb-c948293c5cac",
+        "metadata": {},
+        "text": "10] G. Tadi, and P. Ramamurthyraju. \u201cAnalysis of SEPIC for PV- Applications using PI Controller Mode International Journal for Scientific Research & Development 1.9 (2013): 175-180.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bc329498-f25d-4fc4-8f74-7a33ca4be029",
+        "metadata": {},
+        "text": "and Current Control.\"",
+        "type": "Title"
+    },
+    {
+        "element_id": "28575e8a-988b-444f-a890-4d3d1a45a2ae",
+        "metadata": {},
+        "text": "11] J. Li, and H. Wang. \u201cA novel stand-alone PV generation system based on variable step size INC MPPT and SVPWM control.\" In Proceedings of",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8b8ca5da-14c3-4ce8-adef-40bfdec9bdab",
+        "metadata": {},
+        "text": "[12]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "2d4dbffb-f768-4b83-8f78-347c733afa60",
+        "metadata": {},
+        "text": "(13)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "36984c63-c5d8-4231-93ac-dbda3df6a39f",
+        "metadata": {},
+        "text": "[14]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "048def8c-63c8-422a-b19f-4bbd073844a7",
+        "metadata": {},
+        "text": "U5]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "41d47195-f30d-4e4a-a9ce-85ebcb413a98",
+        "metadata": {},
+        "text": "the 2009 IEEE 6th International Power Electronics and Motion Control Conference, Wuhan, China, 17-20 May 2009. pp. 2155-2160.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "31586de7-7056-4ca9-b508-8cafe52a2cdd",
+        "metadata": {},
+        "text": "C. Wang. \u201cA Study of Membership Functions on Mamdani-Type Fuzzy Inference System for Industrial Decision-Making.\u201d Master's thesis, Lehigh University, Bethlehem, PA, USA, 2015.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e52ed3c8-cd7c-4cd2-9b39-f77ffefad0c2",
+        "metadata": {},
+        "text": "MA. Usta, O. Akyazi, and iH. Altas. \u201cDesign and performance of solar tracking system with fuzzy logic controller used different membership functions.\u201d In Proceedings of the 2011 7th International Conference on Electrical and Electronics Engineering (ELECO), Bursa, Turkey, 1-4 December 2011. pp. I-381-II-385.Mudi, R.K.; Pal, N.R. A robust self- tuning scheme for PI-and PD-type fuzzy controllers. IEEE Trans. Fuzzy Syst. 1999, 7, 2-16.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9461d1fe-2d7b-4cf9-a210-c2610a7bc484",
+        "metadata": {},
+        "text": "RK. Mudi, and NR. Pal. \u201c\u2018A robust self-tuning scheme for PI- and PD- type fuzzy controllers.\u201d IEEE Transactions on Fuzzy Systems 7.1 (1999): 2-16.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dbe2e1c5-b873-4493-b0a3-f9e372d5c01d",
+        "metadata": {},
+        "text": "A. Shehata, H. Metered, and WAH. Oraby. \u201cVibration control of active vehicle suspension system using fuzzy logic controller.\u201d In Vibration Engineering and Technology of Machinery, edited by W. A. Oraby, 389- 399. Springer, Berlin, Heidelberg, 2015.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e22520c6-0e2d-4e1c-abcd-fd86fb76b3e2",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    }
+]

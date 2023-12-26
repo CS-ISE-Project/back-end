@@ -1,0 +1,2030 @@
+[
+    {
+        "element_id": "117bacb3-9ff4-4a43-a636-f3e00bdaafc7",
+        "metadata": {},
+        "text": "Check for updates.",
+        "type": "Title"
+    },
+    {
+        "element_id": "c6646c7e-7e42-4cd1-94d1-97a06894fafc",
+        "metadata": {},
+        "text": "Framing the News: From Human Perception to Large Language Model Inferences",
+        "type": "Title"
+    },
+    {
+        "element_id": "1e792179-3109-40ad-8c29-a63849bbe871",
+        "metadata": {},
+        "text": "David Alonso del Barrio ddbarrio@idiap.ch Idiap Research Institute Switzerland",
+        "type": "Title"
+    },
+    {
+        "element_id": "3042747d-df58-4cc8-8c54-f9e659239324",
+        "metadata": {},
+        "text": "ABSTRACT",
+        "type": "Title"
+    },
+    {
+        "element_id": "3a743b1c-547e-412b-8844-bf4e8703a10d",
+        "metadata": {},
+        "text": "Identifying the frames of news is important to understand the arti- cles\u2019 vision, intention, message to be conveyed, and which aspects of the news are emphasized. Framing is a widely studied concept in journalism, and has emerged as a new topic in computing, with the potential to automate processes and facilitate the work of jour- nalism professionals. In this paper, we study this issue with articles related to the Covid-19 anti-vaccine movement. First, to under- stand the perspectives used to treat this theme, we developed a protocol for human labeling of frames for 1786 headlines of No- Vax movement articles of European newspapers from 5 countries. Headlines are key units in the written press, and worth of analysis as many people only read headlines (or use them to guide their decision for further reading.) Second, considering advances in Nat- ural Language Processing (NLP) with large language models, we investigated two approaches for frame inference of news headlines: first with a GPT-3.5 fine-tuning approach, and second with GPT- 3.5 prompt-engineering. Our work contributes to the study and analysis of the performance that these models have to facilitate journalistic tasks like classification of frames, while understanding whether the models are able to replicate human perception in the identification of these frames.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "db5fe9ec-e666-44f2-ae9b-8c1ddb7ab1d2",
+        "metadata": {},
+        "text": "CCS CONCEPTS",
+        "type": "Title"
+    },
+    {
+        "element_id": "4e38f15d-343a-45c9-96b2-70da39f64314",
+        "metadata": {},
+        "text": "+ Computing methodologies \u2014 Information extraction; + Human-centered computing \u2014 Text input.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cda93f86-0a4f-4524-8bf1-34790b3d31eb",
+        "metadata": {},
+        "text": "KEYWORDS",
+        "type": "Title"
+    },
+    {
+        "element_id": "2d425248-ed89-4190-8b83-5b146a5b7905",
+        "metadata": {},
+        "text": "Covid-19 no-vax, news framing, GPT-3, prompt-engineering, trans- formers, large language models",
+        "type": "Title"
+    },
+    {
+        "element_id": "02f0bd94-4f9a-4507-9066-e9c51732d0c5",
+        "metadata": {},
+        "text": "ACM Reference Format:",
+        "type": "Title"
+    },
+    {
+        "element_id": "9ccef907-d2f1-460d-9e89-95700d1ee85a",
+        "metadata": {},
+        "text": "David Alonso del Barrio and Daniel Gatica-Perez. 2023. Framing the News: From Human Perception to Large Language Model Inferences . In Inter- national Conference on Multimedia Retrieval (ICMR \u00b023), June 12-15, 2023, Thessaloniki, Greece. ACM, New York, NY, USA, 9 pages. https://doi.org/10. 1145/3591106.3592278",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1e408756-b3ae-4e8d-9279-4fb304cc8784",
+        "metadata": {},
+        "text": "Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than the author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9383d9ce-d788-4baa-9c16-3e0ca796fbf0",
+        "metadata": {},
+        "text": "ICMR \u201923, June 12-15, 2023, Thessaloniki, Greece",
+        "type": "Title"
+    },
+    {
+        "element_id": "d367772b-a803-41d8-8ecc-b298be0aeb80",
+        "metadata": {},
+        "text": "\u00a9 2023 Copyright held by the owner/author(s). Publication rights licensed to ACM. ACM ISBN 979-8-4007-0178-8/23/06...$15.00 https://doi.org/10.1145/3591106.3592278",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "928dd6da-c1b6-4a5c-8b0b-2267c74afe42",
+        "metadata": {},
+        "text": "627",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "2fe6deb5-14b5-4251-a881-fca709d31de2",
+        "metadata": {},
+        "text": "Daniel Gatica-Perez gatica@idiap.ch Idiap Research Institute and EPFL Switzerland",
+        "type": "Title"
+    },
+    {
+        "element_id": "3a21433d-ea73-40b1-80a7-f8da2db15df8",
+        "metadata": {},
+        "text": "1 INTRODUCTION",
+        "type": "Title"
+    },
+    {
+        "element_id": "68ac29bf-cb6f-4e81-bd3b-c5f155722c68",
+        "metadata": {},
+        "text": "In recent years, there has been a proliferation in the use of concepts such as data journalism, computational journalism, and computer- assisted reporting [15] [29], which all share the vision of bridging journalism and technology. The progress made in NLP has been gradually integrated into the journalistic field [5][8][54]. More specifically, machine learning models based on transformers have been integrated in the media sector in different tasks [41] such as the creation of headlines with generative languages models [17], summarization of news articles [28][27], false news detection [49], and topic modeling and sentiment analysis [25]. The development of large language models such as GPT-3 [9], BLOOM [51] or ChatGPT show a clear trend towards human-machine interaction becoming easier and more intuitive, opening up a wide range of research possibilities. At the same time, the use of these models is also",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c5292e70-cbaf-4225-8e10-11e9d8814599",
+        "metadata": {},
+        "text": "associated with a lack of transparency regarding how these models work, but efforts are being made to bring some transparency to",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "241b7ca5-608c-490e-84cd-18d6952f7da3",
+        "metadata": {},
+        "text": "these models, and to analyze use cases where they can be useful and where they cannot [35]. Based on the premises that these models open up a wide range of research directions [7], and that at the same time (and needless to say) they are not the solution to all problems, we are interested in identifying use cases and tasks where they",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b34c2828-b1d6-4fab-85e2-689b355663ac",
+        "metadata": {},
+        "text": "can be potentially useful, while acknowledging and systematically documenting their limitations [56]. More specifically, the aim of this work is to analyze the performance of GPT-3.5 for a specific use case, namely the analysis of frames in news, from an empirical point of view, with the objective of shedding light on a potential use of generative models in journalistic tasks.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d5869fdc-e03d-42f4-98b4-981e61641cae",
+        "metadata": {},
+        "text": "Frame analysis is a concept from journalism, which consists of studying the way in which news stories are presented on an issue, and what aspects are emphasized: Is a merely informative vision given in an article? Or is it intended to leave a moral lesson? Is a news article being presented from an economic point of view? Or from a more human, emotional angle? The examples above correspond to different frames with which an article can be written.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "58dc7709-f565-4311-b379-0e01c69ad6f0",
+        "metadata": {},
+        "text": "The concept of news framing has been studied in computing as a step beyond topic modeling and sentiment analysis, and for this purpose, in recent years, pre-trained language models have been used for fine-tuning the classification process of these frames [60] [10], but the emergence of generative models opens the possibility of doing prompt-engineering of these classification tasks, instead of the fine-tuning approach investigated so far.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "002adaff-3a81-4060-9a23-449ea4b14b45",
+        "metadata": {},
+        "text": "Our work aims to address this research gap by posing the fol- lowing research questions:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "94ba538c-886b-4d80-9aad-a171e92563e4",
+        "metadata": {},
+        "text": "RQ1: What are the main frames in the news headlines about the anti-vaccine movement, as reported in newspapers across 5 European countries?",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7be18315-4385-4302-9a3c-f8fe4bb99330",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "a05ba44d-9476-44de-b887-7eedacf39d27",
+        "metadata": {},
+        "text": "ICMR 23, June 12-15, 2023, Thessaloniki, Greece",
+        "type": "Title"
+    },
+    {
+        "element_id": "c98cd83f-fe6e-45d7-9a19-e07f41ab3e93",
+        "metadata": {},
+        "text": "RQ2: Can prompt engineering be used for classification of head- lines according to frames?",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7395b2e5-cb4d-4515-8c60-fe208f4c27cb",
+        "metadata": {},
+        "text": "By addressing the above research questions, our work makes the following contributions:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "58aecfb3-f02e-4177-bb4e-3f45cff11af3",
+        "metadata": {},
+        "text": "Contribution 1. We implemented a process to do human an- notation of the main frame of 1786 headlines of articles about the Covid-19 no-vax movement, as reported in 19 newspapers from 5 European countries (France, Italy, Spain, Switzerland and United Kingdom.) At the headline level, we found that the predominant frame was human interest, where this frame corresponds to a per- sonification of an event, either through a statement by a person, or the explanation of a specific event that happened to a person. Furthermore, we found a large number of headlines annotated as containing no frame, as they simply present information without entering into evaluations. We also found that for all the countries involved, the distribution of frame types was very similar, i.e., hu- man interest and no frame are the two predominant frames. Finally, the generated annotations allowed to subsequently study the per- formance of a large language model.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "02aa598e-f452-42f9-9faf-adda572a8464",
+        "metadata": {},
+        "text": "Contribution 2. We studied the performance of GPT-3.5 on the task of frame classification of headlines. In addition to using the fine-tuning approach from previous literature, we propose an alternative approach for frame classification that requires no labeled data for training, namely prompt-engineering using GPT-3.5. The results show that fine-tuning with GPT-3.5 produces 72% accuracy (slightly higher than other smaller models), and that the prompt- engineering approach results in lower performance (49% accuracy.) Our analysis also shows that the subjectivity of the human labeling task has an effect on the obtained accufracy.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "deae69e5-87c0-46a5-8f65-acbba6663cf3",
+        "metadata": {},
+        "text": "The paper is organized as follows. In Section 2, we discuss related work. In Section 3, we describe the news dataset. In Section 4, we describe the methodology for both human labeling and machine classification of news frames. We present and discuss results for RQ1 and RQ2 in Sections 5 and 6, respectively. Finally, we provide conclusions in Section 7.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "88a4dc19-ab76-44b3-8115-038c89017f8f",
+        "metadata": {},
+        "text": "2 RELATED WORK",
+        "type": "Title"
+    },
+    {
+        "element_id": "1891de1b-03eb-4ccb-8de9-0b7b7dfecbd5",
+        "metadata": {},
+        "text": "Framing has been a concept widely studied in journalism, with a definition that is rooted in the study of this domain [23]: \u201cTo frame is to select some aspects of a perceived reality and make them more salient in a communicating text, in such a way as to promote a par- ticular problem definition, causal interpretation, moral evaluation, and/or treatment recommendation for the item described.\u201d",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fd14d9bb-e8c1-45bd-8c01-1be8e70f12b0",
+        "metadata": {},
+        "text": "For frame recognition, there are two main approaches: the induc- tive approach [16], where one can extract the frames after reading the article, and the deductive approach [38], where a predefined list of frames exists and the goal is to interpret if any of them ap- pears in the article. In the deductive case, there are generic frames and subject-specific frames, and the way to detect them typically involves reading and identifying one frame at a time, or through answers to yes/no questions that represent the frames. Semetko et al. [52] used 5 types of generic frames (attribution of responsibility, human interest, conflict, morality, and economic consequences) based on previous literature, and they defined a list of 20 yes/no questions to detect frames in articles. For instance, the questions about morality are the following: \"Does the story contain any moral",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fccfc60d-1c52-4252-9682-79a5837f98c2",
+        "metadata": {},
+        "text": "628",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "469eb3db-83e4-43ed-abb9-92bd60f10af6",
+        "metadata": {},
+        "text": "David Alonso del Barrio and Daniel Gatica-Perez",
+        "type": "Title"
+    },
+    {
+        "element_id": "35d52dbd-9576-456d-9dea-006c4e998fac",
+        "metadata": {},
+        "text": "message? Does the story make reference to morality, God, and other religious tenets? Does the story offer specific social prescriptions about how to behave?\", and so on for each of the frame types. This categorization of frames has been used in various topics such as climate change [18] [19], vaccine hesitance [13], or immigration [34].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a2991e8e-a8ee-438d-a40b-3634c003f6eb",
+        "metadata": {},
+        "text": "We now compare the two approaches on a common topic, such as Covid-19. Ebrahim et al. [21] followed an inductive approach in which the frames were not predefined but emerged from the text (e.g., deadly spread, stay home, what if, the cost of Covid-19) using headlines as the unit of analysis. In contrast, the deductive approach has studied very different labels. El-Behary et al. [22] followed the method of yes/no questions, but in addition to the 5 generic frames presented before, they also used blame frame and fear frame. Adiprasetio et al. [1] and Rodelo [50] used the 5 generic frames with yes/no questions, while Catalan-Matamoros et al. [14] used the 5 frames and read the headline and subheadline to decide the main frame. Table 1 summarizes some of the the existing approaches. This previous work showed how frame labels can be different, and also that frame analysis has been done at both headline and article levels. These two approaches (inductive and",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "718c8f3c-8958-4a47-86fa-dbb90045d43a",
+        "metadata": {},
+        "text": "deductive) that originated in journalism have since been replicated in the computing literature.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "39d15ccf-e00b-4923-98a0-e72e69f7aadf",
+        "metadata": {},
+        "text": "We decided to follow the deductive approach because a prede- fined list of frames allows to compare among topics, countries, previous literature, and also because they represent a fixed list of labels for machine classification models. Furthermore, the induc- tive approach tends to be more specific to a topic, and from the computing viewpoint, past work has tried to justify topic modeling as a technique to extract frames from articles.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5a866997-7863-4afc-b0e8-22a0e954c08a",
+        "metadata": {},
+        "text": "Yla-Antitila et al. [60] proposed topic modeling as a frame ex- traction technique. They argued that topics can be interpreted as frames if three requirements are met: frames are operationalized as connections between concepts; subject-specific data is selected; and topics are adequately validated as frames, for which they suggested a practical procedure. This approach was based on the choice of a specific topic (e.g., climate change) and the use of Latent Dirichlet Allocation (LDA) as a technique to extract a number of subtopics. In a second phase, a qualitative study of the top 10 words of each",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ef87f6d9-e9f4-423a-b7f7-43b30c21b3d4",
+        "metadata": {},
+        "text": "subtopic was performed, and the different subtopics were elimi- nated or grouped, reducing the number and establishing a tentative description. In a third phase, the top 10 articles belonging to that frame/topic were taken, and if the description of the topic fitted at least 8 of the 10 articles, that topic/frame remained. The frames found in this article were: green growth, emission cuts, negotiations and treaties, environmental risk, cost of carbon emissions, Chinese emissions, economics of energy production, climate change, en- vironmental activism, North-South burden sharing, state leaders negotiating, and citizen participation.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0484db91-00a0-47db-8b40-05c5ff7dc677",
+        "metadata": {},
+        "text": "From Entman\u2019s definition of frame [23], it seems that the deduc- tive approach is more refined than the inductive approach (which seems to resemble the detection of sub-themes.) For example, with regard to climate change, there are stories on how people have been affected by climate change from an emotional point of view, thus personalizing the problem. In this case, we could categorize the corresponding frame as human interest, as the writer of the article is selecting \"some aspects of a perceived reality and make them",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "debc21a6-1365-4b27-9e7f-f21d9638a06a",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "24063859-ec26-4ebd-a1dc-c23e07e8cefe",
+        "metadata": {},
+        "text": "Framing the News: From Human Perception to Large Language Model Inferences",
+        "type": "Title"
+    },
+    {
+        "element_id": "9379ad95-4401-4004-a9f4-606795ac7adf",
+        "metadata": {},
+        "text": "more salient\". The language subtleties with which news articles are presented cannot be captured with basic topic modeling.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0247c120-75a6-4260-907d-3bd01a9d270e",
+        "metadata": {},
+        "text": "Isoaho et al.[30] held the position that while the benefits of scale and scope in topic modeling were clear, there were also a number of problems, namely that topic outputs do not correspond to the methodological definition of frames, and thus topic modeling remained an incomplete method for frame analysis. Topic modeling, in the practice of journalistic research, is a useful technique to deal with the large datasets that are available, yet is often not enough to do more thorough analyses [31]. In our work, we clearly notice that frame analysis is not topic modeling. For example, two documents could be about the same topic, say Covid-19 vaccination, but one article could emphasize the number of deaths after vaccination, while the other emphasized the role of the vaccine as a solution to the epidemic.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4cca860f-ebfc-4a79-80e0-77c3a29cc9c5",
+        "metadata": {},
+        "text": "We also consider that the larger the number of possible frame types, the more likely it is to end up doing topic modeling instead of frame analysis. Using a deductive approach, Dallas et al. [12] created a dataset with articles about polemic topics such as immigration, same sex marriage, or smoking, and they defined 15 types of frames: \"economic, capacity and resources, morality, fairness and equality, legality, constitutionality and jurisprudence, policy prescription and evaluation, crime and punishment, security and defense, health and safety, quality of life, cultural identity, political, external regulation and reputation, other\". In this case, they authors did not use a list of questions. Instead, for each article, annotators were asked to identify any of the 15 framing dimensions present in the article and to label text blurbs that cued them (based on the definitions of each of the frame dimensions) and decide the main frame of each article. In our case, we followed the idea of detecting the main frame y reading the text instead of answering questions, but instead of using the 15 frames proposed in [12] , we used the 5 generic frames roposed in [52].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f659ffe2-8893-44d7-a10a-be5d266a3751",
+        "metadata": {},
+        "text": "A final decision in our work was the type of text to analyze, whether headlines or whole article. For this decision, the chosen classification method was also going to be important. For example, Khanehzar et al. [33] used traditional approaches such as SVMs as aseline, and demonstrated the improvement in frame classifica- tion with the use of pre-trained languages models such as BERT, RoBERTa and XLNet, following a fine-tuning approach, setting as input text a maximum of 256 tokens (although the maximum number of input tokens in these models is 512 tokens.) Liu et al. 37] classified news headlines about the gun problem in the United States, arguing for the choice of headlines as a unit of analysis ased on previous journalism literature [6], [44], that advocated for the importance and influence of headlines on readers and the subsequent perception of articles. From a computational viewpoint, using headlines is also an advantage, since you avoid the 512 token imitation in BERT-based models. Therefore, we decided to work with headlines about a controversial issue, namely the Covid-19 no-vax movement.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e764f00c-7852-44fe-b263-93a0c6f41a92",
+        "metadata": {},
+        "text": "Continuing with the question of the methods used for classi- fication, much work has been developed in prompt engineering, especially since the release of GPT-3. Liu et al.[36] presented a good overview of the work done on this new NLP paradigm, not only explaining the concept of prompt engineering, but also the differ- ent strategies that can be followed both in the design of prompts,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "78e4de1b-f63c-462a-ad66-b6d768005898",
+        "metadata": {},
+        "text": "629",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "aff3949e-5a5d-4699-a289-a576fc7668dd",
+        "metadata": {},
+        "text": "ICMR \u00b023, June 12-15, 2023, Thessaloniki, Greece",
+        "type": "Title"
+    },
+    {
+        "element_id": "8c514e5c-9f3d-4f94-8768-95402af9b5df",
+        "metadata": {},
+        "text": "Table 1: Summary of deductive approaches for frame analysis",
+        "type": "Title"
+    },
+    {
+        "element_id": "de64b238-faa0-4aaf-9001-1b9414fab4b7",
+        "metadata": {},
+        "text": "Number of samples",
+        "type": "Title"
+    },
+    {
+        "element_id": "e97b9f6c-95b0-4e6a-97ac-73f9deae8be6",
+        "metadata": {},
+        "text": "Reff Frames Goal Technique",
+        "type": "Title"
+    },
+    {
+        "element_id": "85197066-bbe3-4660-aab8-1b66f252b9d7",
+        "metadata": {},
+        "text": "[12] 15 generic frames: Economic\u2019, \"Capac- | To label frames of full | Reading the ity and resources\u2019, \"Morali articles full article ness and equality\u201d, \"Legality,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f227793e-1d6c-4acf-9165-2e24cdf33062",
+        "metadata": {},
+        "text": "20000 articles",
+        "type": "Title"
+    },
+    {
+        "element_id": "0de7214c-14b4-41c5-a86b-c76cccaabbd5",
+        "metadata": {},
+        "text": "the annotator",
+        "type": "Title"
+    },
+    {
+        "element_id": "c1df89b0-3349-40d1-9608-5b0ff3fc867b",
+        "metadata": {},
+        "text": "tionality and jurisprudence defines the",
+        "type": "Title"
+    },
+    {
+        "element_id": "f0176e0c-346b-48a6-9e29-fb164aaab3ee",
+        "metadata": {},
+        "text": "prescription and evaluation\u2019 main frame",
+        "type": "Title"
+    },
+    {
+        "element_id": "6fd62a3f-ec88-4652-acbd-b67298579e12",
+        "metadata": {},
+        "text": "xternal regulation",
+        "type": "Title"
+    },
+    {
+        "element_id": "3796b34f-b0f4-4a04-bb83-50e98f63cfff",
+        "metadata": {},
+        "text": "and reputation\u2019, \"Other\"",
+        "type": "Title"
+    },
+    {
+        "element_id": "9ee56e89-9c41-467c-bded-be2c22747298",
+        "metadata": {},
+        "text": "[33] _15 generic frames Classification BERT based ey 12000 articles",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d44cf4a8-0048-4d5c-89e3-cd228798c2d1",
+        "metadata": {},
+        "text": "[52] 5 generic frames: \u201chuman interest\u201d, | To label frames of full | Yes/No ques-",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0f6b60f5-3f85-4bc0-912c-53f83f2b373f",
+        "metadata": {},
+        "text": "\"conflict\", \"morality\u2019, \"attribution of | articles tions.",
+        "type": "Title"
+    },
+    {
+        "element_id": "64cb3d6c-ea26-4dcb-b7e5-31c53ebf570c",
+        "metadata": {},
+        "text": "news stories",
+        "type": "Title"
+    },
+    {
+        "element_id": "f1628e57-fd17-427a-9ee7-c3f25bb53ffc",
+        "metadata": {},
+        "text": "responsibility\u201d, and \u201ceconomic conse-",
+        "type": "Title"
+    },
+    {
+        "element_id": "18ef4018-af4f-4d22-a003-0b0abe034b66",
+        "metadata": {},
+        "text": "quences",
+        "type": "Title"
+    },
+    {
+        "element_id": "d6ff7e7d-9eda-4c9c-933d-7b52cc61f338",
+        "metadata": {},
+        "text": "Bi] 9 specific frames\" Politics\u2019,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "56b0a808-fcb2-44cf-8a6c-d78b0a4d465f",
+        "metadata": {},
+        "text": "opinion\u201d, \u201cSociety/Cultur",
+        "type": "Title"
+    },
+    {
+        "element_id": "b7852f0c-ecb6-497d-826c-feae2c6f52ed",
+        "metadata": {},
+        "text": "\u201cEconomic consequene:",
+        "type": "Title"
+    },
+    {
+        "element_id": "84ac7f3d-f8ef-4d85-a3e1-53edadf5b6c1",
+        "metadata": {},
+        "text": "Amendment\u201d (Gun Rights),",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c7bad2ad-91da-493e-8002-0253a35f8ea2",
+        "metadata": {},
+        "text": "control/regulation\u201d, \u201cM . main frame.",
+        "type": "Title"
+    },
+    {
+        "element_id": "2f57e8c2-0c3e-47d6-99da-92fb17078692",
+        "metadata": {},
+        "text": "\u201cSchool/Public space safety\u201d, and BERT based /Ethnicity\u201d. models",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0b85591e-f249-4a28-a0ad-5702ee6d12ec",
+        "metadata": {},
+        "text": "eric frames + Blame frame and | To Tabel frames of full | Yes/No ques- | 1170 articles",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b149dfe8-e821-4acc-90a2-43f3b94bda87",
+        "metadata": {},
+        "text": "To label frames of full | Reading the | 2990 headlines articles/ Classification | full article, the annotator defines the",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "770725e5-bc10-4a84-922b-469c8812e654",
+        "metadata": {},
+        "text": "fear frame articles tions. Til] 3 generic frames To label frames of full | Reading the | 6713 articles articles full article",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7650747e-859f-44fc-b550-d73dfaccaf5d",
+        "metadata": {},
+        "text": "the annotator",
+        "type": "Title"
+    },
+    {
+        "element_id": "bbc14608-3bbb-4645-bf65-053ee7cc6dd2",
+        "metadata": {},
+        "text": "defines the main frame. [50] 5 generic frames + pandemic frames | To label frames of full | Yes/No ques- | 2742 articles articles tions. [ia] 5 generic frames, journalistic role and | To label frames of full | Reading the | 131 headlines +",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7278805b-2afe-4f23-8c5e-af244b327d73",
+        "metadata": {},
+        "text": "pandemic frames articles e and | subheadlines",
+        "type": "Title"
+    },
+    {
+        "element_id": "fa83f15b-8a7c-46e1-8a0c-e991cf77a461",
+        "metadata": {},
+        "text": "defines main frame.",
+        "type": "Title"
+    },
+    {
+        "element_id": "cc049e17-c829-4bbd-9b6f-7029f116e9eb",
+        "metadata": {},
+        "text": "the potential applications, and the challenges to face when using this approach. Prompt engineering applications include knowledge probing [46], information extraction [53], NLP reasoning [57], ques- tion answering [32], text generation [20], multi-modal learning [58], and text classification [24], the latter being the prompt-engineering use case in our work. Puri et al.[45] presented a very interesting idea that we apply to our classification task. This consists of pro- viding the language model with natural language descriptions of classification tasks as input, and training it to generate the correct answer in natural language via a language modeling objective. It is a zero-shot learning approach, in which no examples are used to explain the task to the model. Radford et al. [48] demonstrated that language models can learn tasks without any explicit supervision. We have followed this approach to find an alternative way to do frame analysis.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "94cf14b3-910a-4e27-a35d-4aae21b6e5f3",
+        "metadata": {},
+        "text": "As mentioned before, the emergence of giant models like GPT-3, BLOOM, and ChatGPT are a very active research topic. To the best of our knowledge, on one hand our work extends the computational analysis of news related to the covid-19 no-vax movement, which illustrates the influence of the press on the ways societies think about relevant issues [40], [59], and on the other hand it adds to the literature of human-machine interaction, regarding the design of GPT-3 prompts for classification tasks [39], [2].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "090b9689-bab7-44d3-8f61-d2afc88f4e00",
+        "metadata": {},
+        "text": "3 DATA: EUROPEAN COVID-19 NEWS DATASET",
+        "type": "Title"
+    },
+    {
+        "element_id": "cc4b347c-45cf-4ed8-9b22-3891c9093c9f",
+        "metadata": {},
+        "text": "We used part of the European Covid-19 News dataset collected in",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5b7d9e6b-e771-4e2d-8167-8913e89b1e58",
+        "metadata": {},
+        "text": "our recent work [3]. This dataset contains 51320 articles on Covid-",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b667cd12-3712-4d86-8f95-2f9d5c700d90",
+        "metadata": {},
+        "text": "19 vaccination from 19 newspapers from 5 different countries: Italy,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "26466604-b9c4-454b-9bc4-b5804b361e6a",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "278f7c38-3382-428f-93fb-929350c2f5a7",
+        "metadata": {},
+        "text": "ICMR 23, June 12-15, 2023, Thessaloniki, Greece",
+        "type": "Title"
+    },
+    {
+        "element_id": "bc75e4f2-51a0-4b56-8279-367e9840fa94",
+        "metadata": {},
+        "text": "France, Spain, Switzerland and UK. The articles cover a time period of 22 months, from January 2020 to October 2021. All content was translated into English to be able to work in a common language. The dataset was used for various analyses, such as name entity recognition, sentiment analysis, and subtopic modeling, to under- stand how Covid-19 vaccination was reported in Europe through the print media (in digital format.) The subtopic modeling analysis revealed a subsample of articles on the no-vax movement, which is the one we have used in this paper. We took the headlines of the articles associated with the no-vax movement, selecting all articles containing any of the keywords in Table 2 in the headline or in the main text. This corresponds to a total of 1786 headlines.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b72d40a3-e348-4405-82a5-6b36ef79b965",
+        "metadata": {},
+        "text": "Table 2: Keywords used to identify no-vax articles",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "711ea36e-c071-4ec0-80b1-12d32d4c9ab0",
+        "metadata": {},
+        "text": "| Keywords |",
+        "type": "Title"
+    },
+    {
+        "element_id": "808744be-e926-48e0-ae4b-0d8f79bf579b",
+        "metadata": {},
+        "text": "| NO VAX TOPIC \u2014 \u201canti-vaxxers\", anti-vaccine\u2019, \u2018anti-vaxx\u2019, \u201canti-corona\u2019, \u2018no-vax\", \u201cno vax\"Tanti-vaccin\" |",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c900dcb6-e633-42b2-9de4-64a0f0afa050",
+        "metadata": {},
+        "text": "In Table 3, we show the number of headlines per country and newspaper. France is the country with the most no-vax articles in the corpus, with 523 articles, followed by Italy with 508. However, note that there are 6 newspapers from France, while only 2 from Italy. Corriere della Sera is the newspaper that dealt most frequently with the subject (429 articles), while The Telegraph is the second one (206 articles). The total number of articles normalized by the number of newspapers per country is also shown in the last column of the Table. Using these normalized values, the ranking is Italy, UK, France, Switzerland, and Spain.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "592d5c8a-8963-49db-922b-a76d010f8c72",
+        "metadata": {},
+        "text": "Table 3: Number of headlines by newspaper and country",
+        "type": "Title"
+    },
+    {
+        "element_id": "f9dbf9a9-3177-42a7-bb25-aabe063896d7",
+        "metadata": {},
+        "text": "COUNTRY NEWSPAPER HEADLINES | TOTAL (NORM. TOTAL)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c7969e45-4d76-4a18-959b-e33dc7e4d0d9",
+        "metadata": {},
+        "text": "523 (87.1)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "519ad995-0162-401c-b4ff-b50406b34d3a",
+        "metadata": {},
+        "text": "FRANCE La Croix Le Monde Les Echos Liberation",
+        "type": "Title"
+    },
+    {
+        "element_id": "648cccf6-cd79-4e7e-a157-8cc5c691bd5b",
+        "metadata": {},
+        "text": "Lyon Capitale 8",
+        "type": "Title"
+    },
+    {
+        "element_id": "aeacefa7-b33f-4c5e-b9a0-19c5c9037444",
+        "metadata": {},
+        "text": "Ouest France",
+        "type": "Title"
+    },
+    {
+        "element_id": "e30f51a8-d1d1-4ecf-b5ec-694a500d56ab",
+        "metadata": {},
+        "text": "TTALY Corriere della Sera Sole 24 Ore 20 minutos ABC El Diario El Mundo El Espafiol La Vanguardia 24 heures La Libert\u00e9 Le Temps The Irish News, 16 The Telegraph",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f1fcc44c-75ba-4fff-ae61-5531f5846079",
+        "metadata": {},
+        "text": "508 (254.0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b9ac9721-f04e-4ed6-af8f-1aa5913afd7b",
+        "metadata": {},
+        "text": "SPAIN 303 (50.5)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "cd8a4dcc-0486-432d-a9a2-78747d9e7036",
+        "metadata": {},
+        "text": "SWITZERLAND 230 (76.6)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "524ab899-52fa-46d7-90f7-f44146244cf0",
+        "metadata": {},
+        "text": "UNITED KINGDOM 222 (111.0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ea6552ff-411a-4df7-8af7-a852549e5c54",
+        "metadata": {},
+        "text": "1786",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "97031831-d9f8-4b2b-9620-3d265978bb17",
+        "metadata": {},
+        "text": "4 METHODOLOGY",
+        "type": "Title"
+    },
+    {
+        "element_id": "653b9c70-2395-4298-b0b9-7825dfa57df1",
+        "metadata": {},
+        "text": "4.1 Human labeling of news frames",
+        "type": "Title"
+    },
+    {
+        "element_id": "8f0b0f1d-d5dc-45fe-8d5c-f8d1632e44bd",
+        "metadata": {},
+        "text": "To carry out the labeling of the frames in our corpus of headlines, we first designed a codebook, which contained the definitions of each of the frame types and a couple of examples of each type, as well as a definition of the corpus subject matter and definitions of the concept of frame analysis, so that the annotators could understand the task to be performed. The codebook follows the proposed by",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c5b5510d-369e-450c-83d5-e1c6ffb45204",
+        "metadata": {},
+        "text": "630",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5bae1b5e-5ee7-462f-b49a-660fce21d6e8",
+        "metadata": {},
+        "text": "David Alonso del Barrio and Daniel Gatica-Perez",
+        "type": "Title"
+    },
+    {
+        "element_id": "43aba2ea-e77b-4d1b-abe9-c02e243ce0b1",
+        "metadata": {},
+        "text": "[52] with 5 generic frames (attribution of responsibility, human interest, conflict, morality, and economic consequences) plus one additional \u2019no-frame\u2019 category. Two researchers were engaged to annotate a sample of the collected newspaper articles following a three-phase training procedure.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "06e42471-c71c-4bde-9d06-0668031c632d",
+        "metadata": {},
+        "text": "In the first phase, annotators had to read the codebook and get familiar with the task. In the second phase, they were asked to identify the main frame in the same subset of 50 headlines. At the end of the second phase, the intercoder reliability (ICR) was 0.58 between the 2 annotators. We analyzed those cases where there were discrepancies, and observed that in some cases, there was not a unique main frame, because both annotators had valid arguments to select one of the frames. In other cases, the discrepancies were due to slight misunderstanding of the definitions. In the third phase, the annotators coded again 50 headlines, and the ICR increased to was 0.66. We realized that the possibility of having two frames remained. They discussed the cases in which they had disagreed, and if the other person\u2019s arguments were considered valid, it could be said that there were two frames. After this three-phase training procedure, annotators were ready to annotate the dataset independently. We divided the dataset into two equal parts, and each person annotated 893 headlines.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "047f9312-9b70-4cef-813d-f556d8f1a502",
+        "metadata": {},
+        "text": "4.2 Fine-tuning GPT-3.5 and BERT-based models",
+        "type": "Title"
+    },
+    {
+        "element_id": "68207015-44f3-45b4-9f02-b8ba56e60492",
+        "metadata": {},
+        "text": "With the annotated dataset, we investigated two NLP approaches: the first one involves fine-tuning a pre-trained model; the second one is prompt engineering. Pre-trained language models have been",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "afc9d4da-e034-4cde-a08b-247bff20a54b",
+        "metadata": {},
+        "text": "attresponsibil iconflict y",
+        "type": "Title"
+    },
+    {
+        "element_id": "3165721e-0e49-4583-8d77-d863b1ac643b",
+        "metadata": {},
+        "text": "pital",
+        "type": "Title"
+    },
+    {
+        "element_id": "73241d02-b732-4aff-855a-b7ac3454471c",
+        "metadata": {},
+        "text": "ity",
+        "type": "Title"
+    },
+    {
+        "element_id": "ed714512-fab0-4452-ae8f-b3fa99d1911f",
+        "metadata": {},
+        "text": "[wuead {BlSpeawy ces n Rone between poke antwncne ond nest ) Fine-Tuning [CLS] Madrid isthe (MASK] of Spain. a) Pretrain ttresponsibil Yeontlict.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "abbdd548-5d6c-43de-b77b-10d2265ec254",
+        "metadata": {},
+        "text": "[CLS] Given the definiton of different types of frames",
+        "type": "Title"
+    },
+    {
+        "element_id": "1602fa23-3419-4a8d-ac7f-7cb7e2adfa8a",
+        "metadata": {},
+        "text": "\u2018Defniions| Whats the ame of his heacine? headline [MASKIISEP]",
+        "type": "Title"
+    },
+    {
+        "element_id": "5af0a30e-b809-495b-976d-becfa1f37e5f",
+        "metadata": {},
+        "text": "\u00a2) Prompt engineering",
+        "type": "Title"
+    },
+    {
+        "element_id": "943b466d-bc9c-49db-a94f-2557a5412a78",
+        "metadata": {},
+        "text": "Figure 1: Pre-train, fine-tune, prompt",
+        "type": "Title"
+    },
+    {
+        "element_id": "6cd7c294-c2f6-47c2-a2b3-d3fb798d016d",
+        "metadata": {},
+        "text": "trained with large text strings based on two unsupervised tasks, next sentence prediction and masked language model. Figure 1 summarizes these techniques.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "152aa5ac-0ded-4adf-9731-393b22de560f",
+        "metadata": {},
+        "text": "In the first approach, a model with a fixed architecture is pre- trained as a language model (LM), predicting the likelihood of the observed textual data. This can be done due to the availability of large, raw text data needed to train LMs. This learning process can produce general purpose features of the modeled language. The learning process produces robust, general-purpose features of the language being modeled. The above pre-trained LM is then adapted to different downstream tasks, by introducing additional parameters and adjusting them using task-specific objective functions. In this approach, the focus was primarily on goal engineering, designing the training targets used in both the pre-training and the fine-tuning stages [36].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4f2a3e45-b861-447f-adc4-e1d109274cc1",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "789d44f9-d4f2-49a4-b908-474028d0ef34",
+        "metadata": {},
+        "text": "Framing the News: From Human Perception to Large Language Model Inferences",
+        "type": "Title"
+    },
+    {
+        "element_id": "28b5b00a-5b8e-4eb6-acaa-cbc52104d84b",
+        "metadata": {},
+        "text": "We present an example to illustrate the idea. Imagine that the task is sentiment analysis, and we have a dataset with sentences and their associated sentiment, and a pre-trained model, which is a saved neural network trained with a much larger dataset. For that pre-trained model to address the target task, we unfreeze a few of the top layers of the saved model base and jointly train both the newly-added classifier layers and the last layers of the base model. This allows to \"fine-tune\" the higher-order feature representations in the base model to make them more relevant for the sentiment analysis task. In this way, instead of having to obtain a very large dataset with target labels to train a model, we can reuse the pre- trained model and use a much smaller train dataset. We use a part of our dataset as examples for the model to learn the task, while the other part of the dataset is used to evaluate model performance.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0a8022a7-1ef6-4962-a9f6-9fca53e36791",
+        "metadata": {},
+        "text": "Previous works related to frame classification in the computing literature have used fine-tuning, BERT-based models. In our work, we have done the same as a baseline, but we aimed to go one step further and also produce results using fine-tuning of GPT-3.5.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "007260f7-9c08-418d-82e9-faa1c86fe1e2",
+        "metadata": {},
+        "text": "4.3 Prompt-engineering with GPT-3.5",
+        "type": "Title"
+    },
+    {
+        "element_id": "00c297c8-88eb-4db3-9100-34f7fded213a",
+        "metadata": {},
+        "text": "Model fine-tuning has been widely used, but with the emergence of generative models such as GPT-3, another way to approach classification tasks has appeared. The idea is to use the pre-trained model directly and convert the task to be performed into a format as close as possible to the tasks for which it has been pre-trained. That is, if the model has been pre-trained from next word prediction as in the case of GPT-3, classification can be done by defining a prompt, where the input to the model is an incomplete sentence, and the model must complete it with a word or several words, just as it has been trained. This avoids having to use part of the already labeled dataset to teach the task to be performed to the model, and a previous labeling is not needed [36].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "945b2cd4-127a-41b8-80ea-076f5b9656cf",
+        "metadata": {},
+        "text": "In this approach, instead of adapting pre-trained LMs to down- stream tasks via objective engineering, downstream tasks are re- formulated to look more like those solved during the original LM training with the help of a textual prompt. For example, when recog- nizing the emotion of a social media post, \u201cI missed the bus today.\u2019, we may continue with a prompt \u201cI felt so _\u201d, and ask the LM to fill the blank with an emotion-bearing word. Or if we choose the prompt \u201cEnglish: I missed the bus today. French: _\u201d), an LM may be able to fill in the blank with a French translation. In this way, by selecting the appropriate prompts, we can influence the model behavior so that the pre-trained LM itself can be used to predict the desired output, even without any additional task-specific training [36].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "40f7ed65-0efb-4f9d-b7ed-56846e93536b",
+        "metadata": {},
+        "text": "We use this emerging NLP approach to classify frames at headline level. We are not aware of previous uses of this strategy to classify frames as we propose here. The idea is the following. Prompt engi- neering consists of giving a prompt to the model, and understands that prompt as an incomplete sentence. To do prompt engineer- ing with our dataset, we needed to define an appropriate prompt that would produce the headline frames as output. We defined sev- eral experiments with the Playground of GPT-3, in order to find the best prompt for our task. In our initial experiments, we fol- lowed existing approaches in prompt engineering to do sentiment analysis, where the individual answer was an adjective, and this",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1c441d8b-3100-4a55-a0ef-cd32d447b233",
+        "metadata": {},
+        "text": "631",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0c3c5167-45be-479a-8306-c20b30df48dd",
+        "metadata": {},
+        "text": "ICMR \u00b023, June 12-15, 2023, Thessaloniki, Greece",
+        "type": "Title"
+    },
+    {
+        "element_id": "09c5856c-dd5d-4c64-9539-96621921139d",
+        "metadata": {},
+        "text": "adjective was matched with a sentiment. In a similar fashion, we decided to build a thesaurus of adjectives that define each of the frames. For instance, the human interest frame could be \u2019interest- ing\u2019, emotional\u2019, \u2018personal\u2019, *human\u2019. The conflict frame could be: *conflictive\u2019, \u2019bellicose\u2019, \u2018troublesome\u2019, \u2018rowdy\u2019, quarrelsome\u2019, \u2019trou- blemaker\u2019, agitator\u2019, etc. After the list of adjectives was defined, we needed to define the prompt in order to get, as an answer, one of the adjectives in our thesaurus to match them with the frame. We used the GPT-3 playground using the headline as input and asking for the frame as output, but the strategy did not work. In our final experiment, instead of giving the headline as input, we gave the definitions of each type of frame plus the headline, and we asked the model to choose between the different types of frames as output. In this way, the output of the model was directly one of the frames, and we avoided the step of matching adjectives with frames. An example is shown in Figure 2.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fccd68e6-1944-4f97-a843-c71fe6831a4a",
+        "metadata": {},
+        "text": "Decide the heaaline's frame between these options: 's an event, problem in @ neutral tone, without entering into evaluations, of",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fdaf6449-933e-4fef-9257-79a15769be5d",
+        "metadata": {},
+        "text": "iformaton,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "91bade26-3258-4f81-bc15-c60cc22eb1dd",
+        "metadata": {},
+        "text": "This frame presents an issue of problem in such a way as to attibute responsibility,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2abb1b24-656b-4d86-ae77-0d6bd8368b15",
+        "metadata": {},
+        "text": "interest. This tame brngs a numan face er an emotonal angle tothe presentation ofan event, ssue, oF",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "39dbc111-ceed-4dba-8131-045c223455e3",
+        "metadata": {},
+        "text": "GPT-SINFUT: probs Definitons + Conflict, This frame emphasizes confict between individuals, groups, or institutions as a means of capturing Neaatine \u2018audience interest.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ffc0ec2c-3d45-428d-947e-71d6214536e0",
+        "metadata": {},
+        "text": "\u2018moray This lame puts the event, problem, oF SUE Inthe context of religious tenets oF moral prescriptions. Economie. This fame reperts an event, problem, or issue in terms af the consequences it wll ave economically \u2018on an individual, group, institution, region, or county.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cb13229c-ca6d-4892-8014-f2260c46694c",
+        "metadata": {},
+        "text": "Headline: Four-year-old boy dies afte: her withurew his medication encouraged by antivaccine group,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1b694c8b-44f2-43bc-b47d-2f1111c13d75",
+        "metadata": {},
+        "text": "OUTPUT: Frame",
+        "type": "Title"
+    },
+    {
+        "element_id": "9d05d0b0-daf7-47a6-9c5e-67f170324217",
+        "metadata": {},
+        "text": "Figure 2: GPT-3.5 for frame inference: input and output",
+        "type": "Title"
+    },
+    {
+        "element_id": "7bceb3e4-2629-46b0-abbe-0782dd803b2e",
+        "metadata": {},
+        "text": "For the GPT-3 configuration !, there are 3 main concepts:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7ee227b0-9218-41cd-b7d6-5e8a14e9184b",
+        "metadata": {},
+        "text": "e TEMPERATURE [0-1]. This parameter controls randomness, lowering it results in less random completions.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "822743a5-251b-4d09-9125-ba3752f9f304",
+        "metadata": {},
+        "text": "e TOP_P [0-1]. This parameter controls diversity via nucleus sampling.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8983c981-fae4-48d9-a6d5-ce8fc601ace6",
+        "metadata": {},
+        "text": "e MAX_TOKENS[1-4000]. This parameter indicates the maxi- mum number of tokens to generate,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dc47d44b-5bdd-4e3a-b289-39cdbf48bdbf",
+        "metadata": {},
+        "text": "e MODEL. GPT-3 offer four main models with different levels of power, suitable for different tasks. Davinci is the most capable model, and Ada is the fastest.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bbe5b21d-3f9f-4779-a144-8c15e1cd2575",
+        "metadata": {},
+        "text": "After testing with the GPT-3 playground and varying different hyper-parameters to assess performance, we set the temperature to 0, since the higher the temperature the more random the response. Furthermore, the Top-p parameter was set to 1, as it would likely get a set of the most likely words for the model to choose from. The maximum number of tokens was set to 2; in this way, the model is asked to choose between one of the responses. As a model, we used the one with the best performance at the time of experimental design, which was TEXT-DAVINCI-003, recognized as GPT 3.5.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a16422cc-f2bd-47d9-96a9-0c37d13fe188",
+        "metadata": {},
+        "text": "5 RESULTS: HUMAN LABELING OF FRAMES IN NO-VAX NEWS HEADLINES (RQ1) In this section, we present and discuss the results of the analysis related to our first RQ. Figure 3 shows the distribution of frames per country at headline level, with human interest and no-frame being the predominant",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6a77ec8d-561c-4c0e-b804-bdc652a6fc90",
+        "metadata": {},
+        "text": "\u2018https://beta.openai.com/docs/introduction",
+        "type": "Title"
+    },
+    {
+        "element_id": "d85ce396-e501-4f5f-9825-c9b61a84aa50",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "14638a09-9784-4eed-befa-c45b458c0314",
+        "metadata": {},
+        "text": "ICMR \u00b023, June 12-15, 2023, Thessaloniki, Greece",
+        "type": "Title"
+    },
+    {
+        "element_id": "fc4e7007-dd70-4dc4-9692-4acb8b53c3e2",
+        "metadata": {},
+        "text": "ones. Attribution of responsibility is the third one except in Switzer- land, where the corresponding frame is conflict. Finally, morality and economic are the least represented in the dataset for every country.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e2001597-8bb5-4a60-bca2-7b4991496c29",
+        "metadata": {},
+        "text": "attribution of responsibility conflict",
+        "type": "Title"
+    },
+    {
+        "element_id": "7ea7d98f-c2e4-4664-b687-cfa76e536e4c",
+        "metadata": {},
+        "text": "economic",
+        "type": "Title"
+    },
+    {
+        "element_id": "e0674d52-6e36-409c-b1e7-efe3fcb9e0df",
+        "metadata": {},
+        "text": "human interest",
+        "type": "Title"
+    },
+    {
+        "element_id": "2cc65ac6-7b33-489b-ab84-628daad32f43",
+        "metadata": {},
+        "text": "morality",
+        "type": "Title"
+    },
+    {
+        "element_id": "310c715d-bf0b-44a6-87af-28132ce04c7c",
+        "metadata": {},
+        "text": "no frame",
+        "type": "Title"
+    },
+    {
+        "element_id": "85fe5a34-cd97-4003-885b-c95ff11552a7",
+        "metadata": {},
+        "text": "500",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6711c799-a3c5-4651-85f2-42c243f9f67d",
+        "metadata": {},
+        "text": "400",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "98af2fc4-7007-4c3e-af1d-3f0f98e45328",
+        "metadata": {},
+        "text": "300",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ebdc1ae0-fa99-44d7-8193-40cece4e9822",
+        "metadata": {},
+        "text": "100",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a8b5bd7f-59e5-440d-a314-90bfc6d93f81",
+        "metadata": {},
+        "text": "Number of Headlines N 3\u00b0 3\u00b0 France i Kely | ee",
+        "type": "Title"
+    },
+    {
+        "element_id": "915d8e92-3576-47c7-9bd5-8ea70d643cc2",
+        "metadata": {},
+        "text": "a",
+        "type": "Title"
+    },
+    {
+        "element_id": "77d81bff-9788-4899-bd6d-c705bf1875c2",
+        "metadata": {},
+        "text": "Switzerland hmm United Kingdom i || |",
+        "type": "Title"
+    },
+    {
+        "element_id": "a41284cc-14a9-4418-ac4a-0ad3d80eef65",
+        "metadata": {},
+        "text": "Country",
+        "type": "Title"
+    },
+    {
+        "element_id": "f8bcf138-1f00-4c5f-a710-2ec179f68280",
+        "metadata": {},
+        "text": "Figure 3: Non-normalized distribution of frames per country",
+        "type": "Title"
+    },
+    {
+        "element_id": "74f92618-4fd7-4a6b-8785-1dc835e6c4d9",
+        "metadata": {},
+        "text": "The monthly distribution of frames aggregated for all countries is shown in Fig. 4. We can see two big peaks, the first one in January 2021 and the second one in August 2021. In all countries, the vac- cination process started at the end of December 2020, so it makes sense that the no-vax movement started to be more predominant in the news in January 2021. Human interest is the most predominant frame. Manual inspection shows that this is because the headlines are about personal cases of people who are pro- or anti- vaccine. Attribution of responsibility is also present. Manual inspection in- dicates that local politicians and health authorities had to make decisions about who could be vaccinated at the beginning of the process. The second peak at the end of summer 2021 coincided with the health pass (also called Covid passport in some countries), and we can observe a peak in the curve corresponding to the con- flict frame, reflecting the demonstrations against the measure of mandatory health passes taken by country governments.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9ef255e6-23f8-41a5-ae54-086638c45b9f",
+        "metadata": {},
+        "text": "In Figure 5, we compare the sentiment per frame and per country, to understand if there were any major differences. The sentiment analysis labels were obtained using BERT-sent from the Hugging Face package [47], used in our previous work (please refer to our original analysis in [3] for details.) We normalized the results be- tween 0 and 1 to compare frames between countries. We see that the sentiment is predominantly neutral (in blue). Examining in more",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "99e0349e-c5c8-42c4-bdc2-2910e5d473de",
+        "metadata": {},
+        "text": "632",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "bb039825-35c2-4cda-a617-a774e8d3e66a",
+        "metadata": {},
+        "text": "David Alonso del Barrio and Daniel Gatica-Perez",
+        "type": "Title"
+    },
+    {
+        "element_id": "2025fdf5-7531-4e99-bd63-28deef8a7bec",
+        "metadata": {},
+        "text": "140 \u2014 conflict \u2014 human interest \u2014 no frame 120 \u2014\u2014 attribution of responsibility \u2014 morality \u2014 economic",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "2dc10f22-18d0-4a73-96e0-b1dcf44e9322",
+        "metadata": {},
+        "text": "100",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "146ae280-bfe8-4ed4-aaf3-572ae0cf43b0",
+        "metadata": {},
+        "text": "Number of articles",
+        "type": "Title"
+    },
+    {
+        "element_id": "9e1e7cdb-1105-4d11-8f6e-f867564ee60e",
+        "metadata": {},
+        "text": "20",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4996b9fe-59ce-4c74-b63c-b598363c30b0",
+        "metadata": {},
+        "text": "Cy)",
+        "type": "Title"
+    },
+    {
+        "element_id": "64e21d60-138f-43ae-b2db-cdf48f3c1da7",
+        "metadata": {},
+        "text": "2020-01 2020-04 2020-07 2020-10 2021-01 2021-04 2021-07 2021-10 Date",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c7fdc627-8073-4fc3-8f33-d0d7c9169263",
+        "metadata": {},
+        "text": "Figure 4: Non-normalized monthly distribution of frames.",
+        "type": "Title"
+    },
+    {
+        "element_id": "6b5b4129-86fa-40a7-a869-9442e3f6393a",
+        "metadata": {},
+        "text": "detail the negative and positive sentiment of each frame category, we observed a few trends:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bbd9fa32-9ca9-467a-8fce-65f0d5efcfe6",
+        "metadata": {},
+        "text": "e Attribution of responsibility: Negative sentiment represents 30-40% of the cases, while positive tone is only found in residual form in Italy, Switzerland, and the United Kingdom.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "88650e18-3a5a-4df1-bc95-94fe1f047713",
+        "metadata": {},
+        "text": "\u00a2 Conflict: Negative sentiment represents 20-35% of the cases.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ba9e11bd-1f90-4dbe-a188-fb6026225354",
+        "metadata": {},
+        "text": "e Economic: Predominantly neutral, with only negative tone in Italy and UK (in the latter case, all headlines with this frame were considered negative.)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e629624d-60ca-4e32-bc68-381f26225b14",
+        "metadata": {},
+        "text": "e Human interest: Negative sentiment represents 30-40% of the cases, while positive tone is only found in residual form in Italy, Spain, and Switzerland.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e148b969-8bc2-4271-b1c2-c5df4d99a635",
+        "metadata": {},
+        "text": "\u00a2 Morality: Predominantly neutral, with negative tone in Italy, Switzerland, and the United Kingdom,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c5f61886-594b-4419-8f02-43cd546e8e33",
+        "metadata": {},
+        "text": "\u00a2 No frame: 20-30% of negative content.",
+        "type": "Title"
+    },
+    {
+        "element_id": "590bb4d7-9426-42de-981e-671e41009e25",
+        "metadata": {},
+        "text": "Neutral Negative 1m Positive",
+        "type": "Title"
+    },
+    {
+        "element_id": "50a710bf-e611-40b6-a5d8-7653c4cb2e81",
+        "metadata": {},
+        "text": "Aypsour aurey ou aurey ou",
+        "type": "Title"
+    },
+    {
+        "element_id": "63a41cf6-8d1d-4f75-acf8-4be4b2245758",
+        "metadata": {},
+        "text": "omy en",
+        "type": "Title"
+    },
+    {
+        "element_id": "9e321bb8-d212-4df3-aaa2-9ea83c6e4cf2",
+        "metadata": {},
+        "text": "\u201cTIGISUOUSET Fo",
+        "type": "Title"
+    },
+    {
+        "element_id": "a8f8b81d-4edb-4122-a4a7-39d7f1c0c8fe",
+        "metadata": {},
+        "text": "Switzerland",
+        "type": "Title"
+    },
+    {
+        "element_id": "3f58036a-bc07-4b40-a241-744ab9473742",
+        "metadata": {},
+        "text": "France",
+        "type": "Title"
+    },
+    {
+        "element_id": "40dce7f3-ed7e-4a18-a87a-7d42c9e5b695",
+        "metadata": {},
+        "text": "United Kingdom",
+        "type": "Title"
+    },
+    {
+        "element_id": "f8b5e6f2-a370-4069-bd68-8559ae42c492",
+        "metadata": {},
+        "text": "Figure 5: Sentiment of headline by frame and by country",
+        "type": "Title"
+    },
+    {
+        "element_id": "4617208c-0052-4fd2-a5a1-a4c4dd646b14",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "4d880260-f38e-4732-b484-d30662475e57",
+        "metadata": {},
+        "text": "Framing the News: From Human Perception to Large Language Model Inferences",
+        "type": "Title"
+    },
+    {
+        "element_id": "c6fc7d9f-5072-4060-ad15-a91915677dd5",
+        "metadata": {},
+        "text": "Regarding the results of the annotation process, the fact that the distribution of the 6 frame types is relatively similar between coun- tries suggests that the anti-vaccine movement issue was treated in a similar way in these countries. The fact that human interest is the most dominant frame indicates that this issue was treated from a more human and emotional approach, with headlines about personal experiences, celebrities giving their opinion about vacci- nation, and politicians defending vaccine policies. Moreover, the reason for many headlines being classified as no-frame is partly due to how data was selected. We chose articles that contained words related to no-vax, either in the headline or in the article. This resulted in many headlines not containing anything specific related to no-vax, while the no-vax content was actually included in the main text of the corresponding articles.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a46767e7-f047-4f73-8f7a-c1adc030f4da",
+        "metadata": {},
+        "text": "It is worth mentioning that prior to obtaining the results, we had expected that attribution of responsibility would be among the most prominent frames, since governments took many measures such as mandatory health pass requirements to access certain sites; we had also expected that the conflict frame would be prominent, since there were many demonstrations in Europe. In reality, however, these frames categories were not reflected as frequently at the headline level.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ff9eb174-2e4d-4550-880e-465bbabcf07d",
+        "metadata": {},
+        "text": "Regarding the analysis at the temporal level, it is clear that certain events were captured by the press, such as the start of vaccination or the mandatory vaccination passport.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3340e2dd-9e03-4e39-aae9-3b78e91951fb",
+        "metadata": {},
+        "text": "Finally, the sentiment analysis of the different frames shows that the predominant tone in all of them is neutral or negative, with very similar trends between countries. This association between senti- ment analysis and frames has been discussed in previous literature",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "aea499d1-c96b-44fc-a728-b87b6382a88c",
+        "metadata": {},
+        "text": "[11] [43].",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d940616a-9764-4426-a825-bc95b65c6ab8",
+        "metadata": {},
+        "text": "6 RESULTS: GPT-3.5 FOR FRAME CLASSIFICATION OF HEADLINES (RQ2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "75c0db09-dff0-43a8-a9b1-0c114adc2cf9",
+        "metadata": {},
+        "text": "Here, we present and discuss the results related to our second RQ.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d94ef15c-ccd6-4e9e-a631-4b242fc976f2",
+        "metadata": {},
+        "text": "6.1 Fine-tuning GPT-3.5",
+        "type": "Title"
+    },
+    {
+        "element_id": "a681b855-02a3-4994-bab6-53de6b6b32e1",
+        "metadata": {},
+        "text": "Table 4 shows the results of the 6-class classification task using 5-cross validation. Three models were used: GPT-3.5 and two BERT- based models. We observe that, on average, GPT-3.5 performs better than the BERT-based models. This is somehow expected as GPT- 3.5 is a much larger model. Overall, in the case of fine-tuning, the best performance for the six-class frame classification task is 72% accuracy, which is promising, with an improvement over previous models based on BERT. Yet, it should be noted that the performance differences are modest (2% improvement between GPT-3.5 and RoBERTa).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9d72b80c-76f8-47f1-b8df-4ccff8539b2c",
+        "metadata": {},
+        "text": "Table 4: Classification results for six-class frame classifica- tion and 5-fold cross validation",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "97a4b492-d016-4e44-93db-1e15c04bd6e7",
+        "metadata": {},
+        "text": "| ACCURACY 0 1 2 3 4 AVERAGE | BERT 0.68 0.69 0.72 0.64 0.70 0.67 RoBERTa 0.70 0.72 0.72 0.67 0.71 0.70 GPT3 0.75 0.70 0.72 0.71 0.71 0.72",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3fe732a1-8348-48d6-a6cd-9288aef8dfb1",
+        "metadata": {},
+        "text": "633",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "46599e69-3529-4d69-b56b-a004eeeca1eb",
+        "metadata": {},
+        "text": "ICMR \u00b023, June 12-15, 2023, Thessaloniki, Greece",
+        "type": "Title"
+    },
+    {
+        "element_id": "368eae71-41ca-4ade-8089-5b7e64674dbf",
+        "metadata": {},
+        "text": "On the other hand, BERT is open-source, while GPT-3 has an economic cost as the use of the model is not free, which monetarily limits the number of experiments that can be performed with it, as well as the different configurations one can explore to improve performance. This is important because much of the improvement in performance requires empirical explorations of model parameters More specifically, the cost of an experiment for each of the folds has a cost of 4 dollars (at the time of writing this paper.) This represents a limitation in practice.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b215a985-bb4a-4567-8ee9-7413eeedb002",
+        "metadata": {},
+        "text": "Furthermore, GPT-3 has a significant carbon footprint. Similarly, for prompt engineering (discussed in the next subsection), choosing the right prompt (i.e., the words that best define the task so that the model is able to perform adequately) is also based on trial and error. This also has an impact on carbon footprint. In connection with this topic, Strubell et al.[55] argue that improvements in the accu- racy of models depend on the availability of large computational resources, which involve large economic and environmental costs. A criticism has been made as \u2019the rich get richer\u2019, in the sense that not all research groups have sufficient infrastructure resources and access to funding needed to use these models and improve their performance. Also in relation to this analysis, the work of Bender et al. [4] evaluates the costs and risks of the use of large language models, stating that researchers should be aware of the impact that these models have on the environment, and assess whether the benefits outweigh the risks. The work in [4] provides a very telling example, where people living in the Maldives or Sudan are affected by floods and pay the environmental price of training English LLMs, when similar models have not been produced for languages like Dhivehi or Sudanese Arab. In short, there is a need to establish ways to use this technological development responsibly, and it all",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fc9847ef-5a83-47b8-826b-86a6fbe82e54",
+        "metadata": {},
+        "text": "starts with being aware of the risks it presents.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cca1f9f6-47fc-4868-ad8c-26092c79ef40",
+        "metadata": {},
+        "text": "6.2 Prompt-engineering with GPT-3.5",
+        "type": "Title"
+    },
+    {
+        "element_id": "c3c5791d-546c-4e76-8305-d9a270fa5fd6",
+        "metadata": {},
+        "text": "For each headline, we got the frame that the model considered the most likely, and we compared these GPT-3.5 inferences with the frames labeled by the annotators. The agreement between model and annotator was of 49%. Analyzing the results, and specifically looking at the cases where the annotator and GPT-3.5 disagreed, we discovered that according to the frame definitions, the model in some cases proposed a frame that indeed made sense. This ob- servation, together with our previous experience in the annotation process, where headlines could have more than one valid frame, led us to design a second post-hoc experiment. We took all the headlines where each of the two annotators had disagreed with GPT-3.5, and we asked the annotators to state whether they would agree (or not) with each GPT-inferred label for a given headline. It is important to emphasize that the annotators did not know the origin of that label, i.e., they did not know if it was the label they had originally assigned, or if it was a random one. In this way, we could quantify how GPT-3.5 worked according to valid arguments provided by the annotators. In this post-hoc experiment, the model agreed in 76% of cases with the annotators.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "57cae12f-2d29-469d-aed7-bc7355b6636d",
+        "metadata": {},
+        "text": "Looking at the results of the classification models, the 49% accu- racy of the prompt-engineering approach can be considered low,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "440f3797-1bf4-4081-827e-48d04971389a",
+        "metadata": {},
+        "text": "yet we consider that it is a valid avenue for further investigation, as in the second post-hoc analysis, we found that the model agrees",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "74f2b563-1311-49c1-8d6b-e19da4c4a6e9",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "55cef4d3-f8e5-4de4-a2fd-434db1a5361f",
+        "metadata": {},
+        "text": "ICMR 23, June 12-15, 2023, Thessaloniki, Greece",
+        "type": "Title"
+    },
+    {
+        "element_id": "1eed9cf8-97d2-4de0-bc71-7e5b10e67592",
+        "metadata": {},
+        "text": "with human annotators in 76% of the cases. Clearly, framing in- volves aspects of subjectivity [42]. Much of what we do as people has a subjective component, influenced by how we feel or how we express opinions.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b1ecb894-39c0-4b36-9cbb-9608ec775c62",
+        "metadata": {},
+        "text": "News reading is never fully objective, and the annotators en- gaged in the frame classification task, influenced by their personal state of mind, experience, and culture, may perceive information differently. Monarch affirms that \"for simple tasks, like binary labels on objective tasks, the statistics are fairly straightforward to decide which is the \u2018correct\u2019 label when different annotators disagree. But for subjective tasks, or even objective tasks with continuous data, there are no simple heuristics for deciding what the correct label should be\" [42].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f0f627af-ac68-4e2d-8582-95f67c4a56ae",
+        "metadata": {},
+        "text": "Subjectivity is involved in both the generation and perception of information: the assumption that there is only one frame is com- plicated by the point of view of the reader. In the case of news, the information sender (the journalist) has an intention, but the receiver (the reader) plays a role and is influenced by it. In psychology, this is known as the lens model of interpersonal communication, where the sender has certain objectives, but the receiver can interpret or re-interpret what the sender wants to say, with more or less accuracy [26].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9e257440-e797-45ec-a487-7cb861789a0f",
+        "metadata": {},
+        "text": "Following this discussion on subjectivity, the question arose as to what would happen if, instead of headlines, we used the complete article as a source of analysis. We wondered if longer text could make the frame labeling task clearer than when using headlines. Yet another possible hypothesis is that having to read longer texts could lead to the same subject being presented from different angles. Please recall that in the existing literature discussed in Section 2, both headlines and full articles have been used from frame analysis (see Table 1.) This remains as an issue for future work.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4023dc48-83f4-4686-8bcf-951c20086dc1",
+        "metadata": {},
+        "text": "7 CONCLUSIONS",
+        "type": "Title"
+    },
+    {
+        "element_id": "dfef3c9b-50b6-4eee-803a-f5241e52c80b",
+        "metadata": {},
+        "text": "In this paper, we first presented an analysis of human-generated news frames on the covid-19 no-vax movement in Europe, and then studied different approaches using large language models for automatic inference of frames. We conclude by answering the two research questions we posed:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "82c8cf54-ca6c-4b5d-bac9-86c84484e407",
+        "metadata": {},
+        "text": "RQ1: What are the main frames in the news headlines about the covid-19 anti-vaccine movement in 5 European countries? After annotating the headlines, we found that of the 1786 headlines, the predominant frame is human interest (45.3% of cases), which presents a news item with an emotional angle, putting a face to a problem or situation. We also found that a substantial proportion of headlines were annotated as not presenting any frame (40.2% of cases). Finally, the other frame types are found more infrequently.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bbae4232-1352-403e-ba8f-7d586cec70bb",
+        "metadata": {},
+        "text": "RQ2: Can prompt engineering be used for classification of head- lines according to frames? We first used fine-tuning of a number of language models, and found that GPT-3.5 produced classification ac- curacy of 72% on a six-frame classification task. This represented a modest 2% improvement over BERT-based models, at a significantly larger environmental cost. We then presented a new way of classi- fying frames using prompts. At the headline level, inferences made with GPT-3.5 reached 49% of agreement with human-generated frame labels. In many cases, the GPT-3.5 model inferred frame types that were considered as valid choices by human annotators,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "17302819-b603-4965-b7bf-8b6f7449e0f4",
+        "metadata": {},
+        "text": "634",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "900879d1-ad87-4537-ae54-e4485a626ac2",
+        "metadata": {},
+        "text": "David Alonso del Barrio and Daniel Gatica-Perez",
+        "type": "Title"
+    },
+    {
+        "element_id": "46d5dc57-78e3-4a4b-8f5d-2be2dfc4d65c",
+        "metadata": {},
+        "text": "and in an post-doc experiment, the human-machine agreement reached 76%. These results have opened several new directions for future work.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "11084834-4181-4232-b0d9-0d401fa3475e",
+        "metadata": {},
+        "text": "ACKNOWLEDGMENTS",
+        "type": "Title"
+    },
+    {
+        "element_id": "6a47391d-af26-435b-9e7b-0239b392e966",
+        "metadata": {},
+        "text": "This work was supported by the Al4Media project, funded by the European Commission (Grant 951911) under the H2020 Programme ICT-48-2020. We also thank the newspapers for sharing their online articles. Finally, we thank our colleagues Haeeun Kim and Emma Bouton-Bessac for their support with annotations, and Victor Bros and Oleksii Polegkyi for discussions.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "68d5b645-b4ca-43fb-8cb3-30e22aba08b7",
+        "metadata": {},
+        "text": "REFERENCES",
+        "type": "Title"
+    },
+    {
+        "element_id": "573cace4-3106-4d2b-9553-479a127ef009",
+        "metadata": {},
+        "text": "1] Justito Adiprasetio and Annissa Winda Larasati. 2020. Pandemic crisis in online media: Quantitative framing analysis on Detik. com\u2019s coverage of Covid-19. Jurnal Ilmu Sosial Dan Ilmu Politik 24, 2 (2020), 153-170.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "11a3c3dc-5acb-4cdb-a9de-f12ef3a8a007",
+        "metadata": {},
+        "text": "2] Neel Alex, Eli Lifland, Lewis Tunstall, Abhishek Thakur, Pegah Maham, C Jess Riedel, Emmie Hine, Carolyn Ashurst, Paul Sedille, Alexis Carlier, et al. 2021. RAFT: A real-world few-shot text classification benchmark. arXiv preprint arXiv:2109, 14076 (2021).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "001b4865-dae7-4a10-b432-9ce5939bf9ea",
+        "metadata": {},
+        "text": "3] David Alonso del Barrio and Daniel Gatica-Perez. 2022. How Did Europe\u2019s Press Cover Covid-19 Vaccination News? A Five-Country Analysis. (2022), 35-43. https://doi.org/10.1145/3512732.3533588",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5319678c-25eb-41cc-9912-0fa1faaf27c3",
+        "metadata": {},
+        "text": "4] Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? (2021), 610-623.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c9eb464f-ff35-40f3-bf76-03562c823c7a",
+        "metadata": {},
+        "text": "5] Santosh Kumar Biswal and Nikhil Kumar Gouda. 2020. Artificial intelligence in journalism: A boon or bane? In Optimization in machine learning and applications. Springer, 155-167.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "71099aee-240e-4e67-b18c-11d15e8aac91",
+        "metadata": {},
+        "text": "6] Erik Bleich, Hannah Stonebraker, Hasher Nisar, and Rana Abdelhamid. 2015. Media portrayals of minorities: Muslims in British newspaper headlines, 2001- 2012. Journal of Ethnic and Migration Studies 41, 6 (2015), 942-962.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e7b87243-369b-4496-87ee-eb388e8e831a",
+        "metadata": {},
+        "text": "7] Michael Bommarito and Daniel Martin Katz. 2022. GPT Takes the Bar Exam. https://doi.org/10.48550/ARXIV.2212.14402",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c5c56778-d71a-4d7e-a072-11f4476585e4",
+        "metadata": {},
+        "text": "8] Meredith Broussard, Nicholas Diakopoulos, Andrea L Guzman, Rediet Abebe, Michel Dupagne, and Ching-Hua Chuan. 2019. Artificial intelligence and jour- nalism. Journalism & Mass Communication Quarterly 96, 3 (2019), 673-695.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9a4d0baf-dd6c-4ecc-9951-57a9c18921ea",
+        "metadata": {},
+        "text": "9] Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. Advances in neural information processing systems 33 (2020), 1877-1901.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d6d0482c-6843-4076-a400-d5f9b93f5b01",
+        "metadata": {},
+        "text": "10] Bj\u00e9rn Burscher, Daan Odijk, Rens Vliegenthart, Maarten De Rijke, and Claes H De Vreese. 2014. Teaching the computer to code frames in news: Comparing two supervised machine learning approaches to frame analysis. Communication Methods and Measures 8, 3 (2014), 190-206.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dc9fe8ed-226f-41ee-bc71-dc6805bae597",
+        "metadata": {},
+        "text": "11] Bjorn Burscher, Rens Vliegenthart, and Claes H de Vreese. 2016. Frames beyond words: Applying cluster and sentiment analysis to news coverage of the nuclear power issue. Social Science Computer Review 34, 5 (2016), 530-545.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2be3d038-e92a-441e-9ee4-5b45fd1b6b1a",
+        "metadata": {},
+        "text": "12] Dallas Card, Amber Boydstun, Justin Gross, Philip Resnik, and Noah Smith. 2015. The Media Frames Corpus: Annotations of Frames Across Issues. 2 (01 2015), 438-444. https://doi.org/10.3115/v1/P15- 2072",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c892abe1-8ecd-4f57-a985-a74f61bfcc70",
+        "metadata": {},
+        "text": "13] Daniel Catalan-Matamoros and Carlos Elias. 2020. Vaccine hesitancy in the age of coronavirus and fake news: analysis of journalistic sources in the Spanish quality press. International Journal of Environmental Research and Public Health 17, 21 (2020), 8136.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0fc1f256-4556-476a-bea1-393547ccf38f",
+        "metadata": {},
+        "text": "14] Daniel Catalan-Matamoros and Carmen Pefiafiel-Saiz. 2019. Media and mistrust of vaccines: a content analysis of press headlines. Revista latina de comunicaci\u00e9n social 74 (2019), 786-802.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ef74f431-d07f-4198-98f8-4c3a58563f89",
+        "metadata": {},
+        "text": "15] Mark Coddington. 2015. Clarifying journalism\u2019s quantitative turn: A typology for evaluating data journalism, computational journalism, and computer-assisted reporting. Digital journalism 3, 3 (2015), 331-348.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3e158ccf-b0d5-4d57-ae4a-a08d827cc877",
+        "metadata": {},
+        "text": "16] Stephen D Cooper. 2010. The oppositional framing of bloggers. In Doing News Framing Analysis. Routledge, 151-172.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d184a516-9a3d-4d4d-8abe-5e5371be2c50",
+        "metadata": {},
+        "text": "17] Robert Dale. 2021. GPT-3: What's it good for? Natural Language Engineering 27, 1 (2021), 113-118.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d0948d92-23d0-427d-a215-144adb44520d",
+        "metadata": {},
+        "text": "18] Astrid Dirikx and Dave Gelders. 2010. To frame is to explain: A de- ductive frame-analysis of Dutch and French climate change coverage dur- ing the annual UN Conferences of the Parties. Public Understanding of Science 19, 6 (2010), 732-742. _ https://doi.org/10.1177/0963662509352044 arXiv:https://doi.org/10.1177/0963662509352044 PMID: 21560546.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a1db28d9-e9be-42c2-ab54-6dd3a378a5d7",
+        "metadata": {},
+        "text": "19] Astrid Dirikx and Dave Gelders. 2010. To frame is to explain: A deductive frame- analysis of Dutch and French climate change coverage during the annual UN Conferences of the Parties. Public understanding of science 19, 6 (2010), 732-742.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "95ca8171-806d-4967-9ad8-c53026598611",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "b5c2ed7d-2bd3-4139-b897-5e551cad929d",
+        "metadata": {},
+        "text": "Framing the News: From Human Perception to Large Language Model Inferences",
+        "type": "Title"
+    },
+    {
+        "element_id": "950631f0-b10e-4917-9596-4f7a79d88b39",
+        "metadata": {},
+        "text": "20.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "8291cf35-9cb8-498d-9969-8638b18f9bb8",
+        "metadata": {},
+        "text": "21",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "85d1e491-39c8-448d-9d0a-16da622c9170",
+        "metadata": {},
+        "text": "22.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "395e1c5f-7eac-4e6c-8fa6-1d05f1caa1f3",
+        "metadata": {},
+        "text": "23,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "edb7642b-219d-4ac6-abaf-41f6975f0f99",
+        "metadata": {},
+        "text": "24",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ae7a5a73-0075-43bd-b588-0ee1bed060bb",
+        "metadata": {},
+        "text": "25,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b2d922df-1cc7-415c-bccf-b77a24d3c97e",
+        "metadata": {},
+        "text": "26",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c414fd82-b814-4bd7-a737-6838ef2802a3",
+        "metadata": {},
+        "text": "27",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3b439a61-2d66-4f0e-b78b-56c4e65bc880",
+        "metadata": {},
+        "text": "28",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "16b8a7a6-516d-4e67-a416-3f919c640814",
+        "metadata": {},
+        "text": "29",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0bd976a0-7524-46cd-9ed4-b7a2e695714a",
+        "metadata": {},
+        "text": "30.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a3fc414b-cd88-4356-b2fd-9362fc395ad9",
+        "metadata": {},
+        "text": "31",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b35f8dff-09ae-4bba-ae2f-3469d55cf11b",
+        "metadata": {},
+        "text": "32.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "77464303-a977-43f6-b8cd-eb85fb52d61d",
+        "metadata": {},
+        "text": "33,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "044e4e89-42a4-4703-9c7e-a416d1680a4d",
+        "metadata": {},
+        "text": "34",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f4138ac0-7922-47e3-aba6-9720a0ac73a9",
+        "metadata": {},
+        "text": "35,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "aae9d993-ebfd-4b0f-be3e-733e99b56dfe",
+        "metadata": {},
+        "text": "36",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b9de21e8-dfe3-4b56-8668-7b7cc47ef02e",
+        "metadata": {},
+        "text": "37",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "67ce7b7b-34cc-485c-a19c-b00270d87d9d",
+        "metadata": {},
+        "text": "38",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "40e25ab8-17fc-4d87-8aa1-e9f07ac623fa",
+        "metadata": {},
+        "text": "39",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "944e4574-0e72-4b2c-881c-2cc3dfdb0bab",
+        "metadata": {},
+        "text": "40.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "01960092-c8be-4bb1-9b98-9110a61b24cb",
+        "metadata": {},
+        "text": "41",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "09f9da1b-018a-4f93-9832-6f6dd64b2336",
+        "metadata": {},
+        "text": "42",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e695c54f-55d1-424e-a021-5c8ca27c16fa",
+        "metadata": {},
+        "text": "43",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4d55b95b-7b4d-4cda-bb68-97fec788fbae",
+        "metadata": {},
+        "text": "44",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0e477ac6-f58d-4439-b769-1e2332307805",
+        "metadata": {},
+        "text": "45",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0c3261cd-c19f-4125-9c88-21ab05a68a1f",
+        "metadata": {},
+        "text": "Zi-Yi Dou, Pengfei Liu, Hiroaki Hayashi, Zhengbao Jiang, and Graham Neubig. 2020. Gsum: A general framework for guided neural abstractive summarization. arXiv preprint arXiv:2010.08014 (2020).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d7174626-6a40-4cc4-b00d-122b6cdf0eca",
+        "metadata": {},
+        "text": "Sumayya Ebrahim. 2022. The corona chronicles: Framing analysis of online news headlines of the COVID-19 pandemic in Italy, USA and South Africa. Health SA Gesondheid (Online) 27 (2022), 1-8.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c71f2538-62eb-40f8-9fba-f442579f1889",
+        "metadata": {},
+        "text": "Hend Abdelgaber Ahmed El-Behary. 2021. A Feverish Spring: A Comparative Analysis of COVID-19 News Framing in Sweden, the UK, and Egypt. (2021). Robert M Entman. 1993. Framing: Towards clarification of a fractured paradigm. McQuail\u2019s reader in mass communication theory 390 (1993), 397.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bf391d3e-637c-4b3f-a1c2-4b6c962c11d1",
+        "metadata": {},
+        "text": "Tianyu Gao, Adam Fisch, and Danqi Chen. 2020. Making pre-trained language models better few-shot learners. arXiv preprint arXiv:2012.15723 (2020).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c0d804a9-653b-4f80-8fe5-a6ff5dc41749",
+        "metadata": {},
+        "text": "Piyush Ghasiya and Koji Okamura. 2021. Investigating COVID-19 news across four nations: a topic modeling and sentiment analysis approach. Ieee Access 9 (2021), 36645-36656.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7942b8fa-1359-4b29-a611-79b3c91e6cee",
+        "metadata": {},
+        "text": "Robert Gifford. 1994. A Lens-Mapping Framework for Understanding the En- coding and Decoding of Interpersonal Dispositions in Nonverbal Behavior. Journal of Personality and Social Psychology 66 (02 1994), 398-412. _ https: //doi.org/10.1037//0022-3514.66.2.398",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7c3ec742-ea11-48a1-b915-361a0bad5a72",
+        "metadata": {},
+        "text": "Quentin Grail, Julien Perez, and Eric Gaussier. 2021. Globalizing BERT-based transformer architectures for long document summarization. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume. 1792-1810.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "155b3844-b658-4def-8258-799972d9061a",
+        "metadata": {},
+        "text": "Anushka Gupta, Diksha Chugh, Rahul Katarya, et al. 2022. Automated news summarization using transformers. In Sustainable Advanced Computing. Springer, 249-259.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "99ca2eb5-2515-4e84-8156-49d55d557072",
+        "metadata": {},
+        "text": "Alfred Hermida and Mary Lynn Young. 2017. Finding the data unicorn: A hierar- chy of hybridity in data and computational journalism. Digital Journalism 5, 2 (2017), 159-176.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c1153ea4-2e36-460e-bd41-fcb0aa750427",
+        "metadata": {},
+        "text": "Karoliina Isoaho, Daria Gritsenko, and Eetu Makela. 2021. Topic modeling and text analysis for qualitative policy research. Policy Studies Journal 49, 1 (2021), 300-324.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "708368f7-3e55-4a02-83a2-d1cfa3a673c8",
+        "metadata": {},
+        "text": "Carina Jacobi, Wouter Van Atteveldt, and Kasper Welbers. 2016. Quantitative analysis of large amounts of journalistic texts using topic modelling. Digital journalism 4, 1 (2016), 89-106.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bb908bfd-7892-41da-879f-246d046326da",
+        "metadata": {},
+        "text": "Zhengbao Jiang, Frank F Xu, Jun Araki, and Graham Neubig. 2020. How can we know what language models know? Transactions of the Association for Computa- tional Linguistics 8 (2020), 423-438.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d9a37646-5a29-4d1a-8296-aac366287cd3",
+        "metadata": {},
+        "text": "Shima Khanehzar, Andrew Turpin, and Gosia Mikolajczak. 2019. Modeling Political Framing Across Policy Issues and Contexts. In ALTA.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8f39deed-60dd-4216-bf84-4dc7d4dbea28",
+        "metadata": {},
+        "text": "Jeesun Kim and Wayne Wanta. 2018. News framing of the US immigration debate during election years: Focus on generic frames. The Communication Review 21, 2 (2018), 89-115.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6934803e-e7f9-491a-bb78-b3b5043fb996",
+        "metadata": {},
+        "text": "Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michi- hiro Yasunaga, Yian Zhang, Deepak Narayanan, Yuhuai Wu, Ananya Kumar, et al. 2022. Holistic evaluation of language models. arXiv preprint arXiv:2211.09110 (2022).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ee44f65b-1787-4572-9126-d1c24ec358ff",
+        "metadata": {},
+        "text": "Pengfei Liu, Weizhe Yuan, Jinlan Fu, Zhengbao Jiang, Hiroaki Hayashi, and Graham Neubig. 2021. Pre-train, prompt, and predict: A systematic survey of prompting methods in natural language processing. (2021). https://doi.org/10. 48550/ARXIV.2107.13586",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c568c438-6566-4264-a013-b251c850096d",
+        "metadata": {},
+        "text": "Siyi Liu, Lei Guo, Kate Mays, Margrit Betke, and Derry Tanti Wijaya. 2019. Detecting frames in news headlines and its application to analyzing news framing trends surrounding US gun violence. In Proceedings of the 23rd conference on computational natural language learning (CoNLL).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9f77c8ff-63f1-46ef-9999-a33ee7012cbf",
+        "metadata": {},
+        "text": "J\u00e9rg Matthes and Matthias Kohring. 2008. The Content Analysis of Media Frames: Toward Improving Reliability and Validity. Journal of Communication 58 (06 2008). https://doi.org/10.1111/}.1460-2466.2008.00384.x",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4cd31581-880f-42b8-af98-2c1d083e7b08",
+        "metadata": {},
+        "text": "Selina Meyer, David Elsweiler, Bernd Ludwig, Marcos Fernandez-Pichel, and David E Losada. 2022. Do We Still Need Human Assessors? Prompt-Based GPT-3 User Simulation in Conversational AI. In Proceedings of the 4th Conference on Conversational User Interfaces. 1-6.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5b056c15-9ed9-409b-b9ce-969f1e48b056",
+        "metadata": {},
+        "text": "Stuart E Middleton, Symeon Papadopoulos, and Yiannis Kompatsiaris. 2018. Social computing for verifying social media content in breaking news. IEEE Internet Computing 22, 2 (2018), 83-89.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "58626340-4ee8-48b0-8cfe-c5db683aeda0",
+        "metadata": {},
+        "text": "Marko Milosavljevi\u00e9 and Igor Vobi\u00e9. 2021. \u2018Our task is to demystify fears\u2019: Analysing newsroom management of automation in journalism. Journalism 22, 9 (2021), 2203-2221.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "30ee641b-5d51-4827-baf5-b5b7780d938d",
+        "metadata": {},
+        "text": "R. Monarch. 2021. Human-in-the-Loop Machine Learning: Active Learning and Annotation for Human-centered Al. Manning. https://books.google.ch/books? id=LCh0zQEACAAJ",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "539cf57d-e85b-447e-8ceb-89355ff1de58",
+        "metadata": {},
+        "text": "Tom Nicholls and Pepper D Culpepper. 2021. Computational identification of media frames: Strengths, weaknesses, and opportunities. Political Communication 38, 1-2 (2021), 159-181.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3ee3fab4-fb52-4e57-aed0-fc32be6fbca9",
+        "metadata": {},
+        "text": "Zhongdang Pan and Gerald M Kosicki. 1993. Framing analysis: An approach to news discourse. Political communication 10, 1 (1993), 55-75.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "29f24466-a165-46a1-9acd-0d34172a138c",
+        "metadata": {},
+        "text": "Raul Puri and Bryan Catanzaro. 2019. Zero-shot text classification with generative language models. arXiv preprint arXiv:1912.10165 (2019).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e19930a4-9566-4918-af53-517397295e6e",
+        "metadata": {},
+        "text": "635",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "8782c9b5-a20f-483b-9727-ebb957686ab3",
+        "metadata": {},
+        "text": "46",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9ca58697-2606-4766-a65a-171d4e989b93",
+        "metadata": {},
+        "text": "47",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a9c6345b-fce6-4359-b236-0b5229dd95d8",
+        "metadata": {},
+        "text": "48",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "21d562d7-1f05-46e9-8693-1959400bffe0",
+        "metadata": {},
+        "text": "49",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a4c12f91-d237-499b-b125-83bbdf4f24b5",
+        "metadata": {},
+        "text": "50.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "64fb6e53-9151-4444-8a16-94374341fb56",
+        "metadata": {},
+        "text": "51",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a0871587-3cbc-49e7-bcd4-4051f3373388",
+        "metadata": {},
+        "text": "52)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "adba497c-99d7-4d15-a210-0696646dfc7b",
+        "metadata": {},
+        "text": "53,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7ef315c6-0d3c-425c-9132-a71a97c8aac4",
+        "metadata": {},
+        "text": "54",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0cfe1f42-8f08-4c23-bd19-b61953c89eb2",
+        "metadata": {},
+        "text": "55,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "72f14b0f-8327-47a6-bbb9-ddb040acbe42",
+        "metadata": {},
+        "text": "56",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0d1ae770-3314-4d3a-a04c-4773e2b55dbb",
+        "metadata": {},
+        "text": "57",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b6161239-4fe3-47f4-bd1f-3a7c3929871a",
+        "metadata": {},
+        "text": "58.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4620db6d-84fb-478c-a815-459140eb7e6d",
+        "metadata": {},
+        "text": "59",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "66dcf65d-6165-4705-bcb5-eb2eb658e126",
+        "metadata": {},
+        "text": "60.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e7b3e9fd-be59-437c-bcc8-06e2023131cb",
+        "metadata": {},
+        "text": "ICMR \u00b023, June 12-15, 2023, Thessaloniki, Greece",
+        "type": "Title"
+    },
+    {
+        "element_id": "dbea3b35-8f9e-4d01-9694-948f4cf4e5ae",
+        "metadata": {},
+        "text": "Guanghui Qin and Jason Eisner. 2021. Learning how to ask: Querying lms with mixtures of soft prompts. arXiv preprint arXiv:2104.06599 (2021).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5d1e6b9c-6168-438a-9a8c-80b3bad2d51b",
+        "metadata": {},
+        "text": "Rabindra Lamsal. 2021. Sentiment Analysis of English Tweets with BERTsent. https://huggingface.co/rabindralamsal/finetuned-bertweet-sentiment-analysis. Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. 2019. Language models are unsupervised multitask learners. OpenAI blog 1, 8 (2019), 9.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "26820027-621c-4d0b-9f04-9df335a5f8de",
+        "metadata": {},
+        "text": "Nishant Rai, Deepika Kumar, Naman Kaushik, Chandan Raj, and Ahad Ali. 2022. Fake News Classification using transformer based enhanced LSTM and BERT. International Journal of Cognitive Computing in Engineering 3 (2022), 98-105. https://doi.org/10.1016/j.ijece.2022.03.003",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f8b51e8d-b56b-433d-8b24-9d834531d3ee",
+        "metadata": {},
+        "text": "Frida V Rodelo. 2021. Framing of the Covid-19 pandemic and its organizational predictors. Cuadernos. info 50 (2021), 91-112.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5f8e4802-ee73-41da-a01f-6822304d6fda",
+        "metadata": {},
+        "text": "Teven Le Scao, Angela Fan, Christopher Akiki, Ellie Pavlick, Suzana Ili\u00e9, Daniel Hesslow, Roman Castagn\u00e9, Alexandra Sasha Luccioni, Frangois Yvon, Matthias Gall\u00e9, et al. 2022. Bloom: A 176b-parameter open-access multilingual language model. arXiv preprint arXiv:2211.05100 (2022).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d8519163-7a14-4b22-a66f-f46a3dcb4af2",
+        "metadata": {},
+        "text": "Holli Semetko and Patti Valkenburg. 2000. Framing European Politics: A Content Analysis of Press and Television News. Journal of Communication 50 (06 2000), 93 - 109. https://doi.org/10.1111/j.1460-2466.2000.tb02843.x",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bfb8ea29-ce57-40bd-8b5a-ea5e4ae96348",
+        "metadata": {},
+        "text": "Richard Shin, Christopher H Lin, Sam Thomson, Charles Chen, Subhro Roy, Em- manouil Antonios Platanios, Adam Pauls, Dan Klein, Jason Eisner, and Benjamin Van Durme. 2021. Constrained language models yield few-shot semantic parsers. arXiv preprint arXiv:2104.08768 (2021).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f37c505c-a9e8-4340-b430-6c68b40f6611",
+        "metadata": {},
+        "text": "Efstathios Sidiropoulos and Andreas Veglis. 2017. Computer Supported Collab- orative Work trends on Media Organizations: Mixing Qualitative and Quan- titative Approaches. Studies in Media and Communication 5 (04 2017), 63. https://doi.org/10.11114/sme.v5i1.2279",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ee8b4281-fbf1-49ad-baec-3cd52697c3de",
+        "metadata": {},
+        "text": "Emma Strubell, Ananya Ganesh, and Andrew McCallum. 2019. Energy and policy considerations for deep learning in NLP. arXiv preprint arXiv:1906.02243 (2019). Alex Tamkin, Miles Brundage, Jack Clark, and Deep Ganguli. 2021. Understanding the capabilities, limitations, and societal impact of large language models. arXiv preprint arXiv:2102.02503 (2021).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e3197603-4ccf-4ff2-a66d-5f461b6f59c4",
+        "metadata": {},
+        "text": "Trieu H Trinh and Quoc V Le. 2018. A simple method for commonsense reasoning. arXiv preprint arXiv:1806.02847 (2018).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c71fc758-648d-477d-aee2-8e540703dfcf",
+        "metadata": {},
+        "text": "Maria Tsimpoukelli, Jacob L Menick, Serkan Cabi, SM Eslami, Oriol Vinyals, and Felix Hill. 2021. Multimodal few-shot learning with frozen language models. Advances in Neural Information Processing Systems 34 (2021), 200-212.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ce1a3d6b-7501-49a8-bd70-7408a2dd99bb",
+        "metadata": {},
+        "text": "Sandra A Vannoy and Prashant Palvia. 2010. The social influence model of technology adoption. Commun. ACM 53, 6 (2010), 149-153.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fd34b21c-f6fa-434f-999f-99d8c35ae3e3",
+        "metadata": {},
+        "text": "Tuukka Yl\u00e9-Anttila, Veikko Eranti, and Anna Kukkonen. 2022. Topic modeling for frame analysis: A study of media debates on climate change in India and USA. Global Media and Communication 18, 1 (2022), 91-112.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "07358e1a-6f32-4c55-827b-7f2db77fd722",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    }
+]

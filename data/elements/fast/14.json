@@ -1,0 +1,3674 @@
+[
+    {
+        "element_id": "f95e85a1-2270-4bc2-a0ce-a2477cb03be3",
+        "metadata": {},
+        "text": "Availableonline12December20230965-9978/\u00a92023PublishedbyElsevierLtd.",
+        "type": "Title"
+    },
+    {
+        "element_id": "c0700895-f43c-449e-88f8-45119dd720ab",
+        "metadata": {},
+        "text": "AdvancesinEngineeringSoftware188(2024)103568",
+        "type": "Title"
+    },
+    {
+        "element_id": "e81913ce-cb5a-4873-b19a-609e23de3b71",
+        "metadata": {},
+        "text": "Contents lists available at ScienceDirect",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4446a84b-012f-4552-9fd9-7264f4cc8b50",
+        "metadata": {},
+        "text": "Advances in Engineering Software",
+        "type": "Title"
+    },
+    {
+        "element_id": "7db7c120-8f17-47a3-bce5-71299413a344",
+        "metadata": {},
+        "text": "journal homepage: www.elsevier.com/locate/advengsoft",
+        "type": "Title"
+    },
+    {
+        "element_id": "41d77590-7ab3-49d3-a9c8-94e960ea4090",
+        "metadata": {},
+        "text": "Improved stochastic subset optimization method for structural design optimization",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "90a47c19-9bd7-403d-90d8-b25f00b755e4",
+        "metadata": {},
+        "text": "Mohd Aman Khalid , Sahil Bansal *",
+        "type": "Title"
+    },
+    {
+        "element_id": "f23f5289-b7cb-4e30-8acb-76483a54c6bc",
+        "metadata": {},
+        "text": "Department of Civil Engineering, Indian Institute of Technology Delhi, New Delhi 110016, India",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "052df6cf-79db-4e49-aedd-0fcbdaa699e5",
+        "metadata": {},
+        "text": "A R T I C L E I N F O",
+        "type": "Title"
+    },
+    {
+        "element_id": "18565841-b047-4a05-9c00-bcee935ca9a8",
+        "metadata": {},
+        "text": "A B S T R A C T",
+        "type": "Title"
+    },
+    {
+        "element_id": "fca1cfe9-22ef-4a1c-91c4-72b07b397c9a",
+        "metadata": {},
+        "text": "Keywords: Stochastic subset optimization Voronoi tessellation Stochastic simulation Stochastic optimization Optimization under uncertainty",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4b3bcc27-0f67-484a-a0f5-ac5f933b22e7",
+        "metadata": {},
+        "text": "The Stochastic Subset Optimization (SSO) algorithm was proposed for optimal reliability problems that mini- mizes the probability of system failure over the admissible space for the design parameters. It is based on the simulation of samples of the design parameters from an auxiliary Probability Density Function (PDF) and exploiting the information contained in these samples to identify subregions for the optimal design parameters within the original design space. This paper presents an improved version of SSO, named iSSO to overcome the shortcomings in the SSO. In the improved version, the Voronoi tessellation is implemented to partition the design space into non-overlapping subregions using the pool of samples distributed according to the auxiliary PDF. A double-sort approach is then used to identify the subregions for the optimal design. The iSSO is presented as a generalized design optimization approach primarily tailored for the stochastic structural systems but also adaptable to deterministic systems. Several optimization problems are considered to illustrate the effectiveness and efficiency of the proposed iSSO.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "10f4d944-62de-45be-afa0-901fd171a972",
+        "metadata": {},
+        "text": "approaches available in the literature, however, but it\u2019s worth noting that no one-size-fits-all optimization approach is ideal for all sorts of problems [4\u20137]. The choice of optimization method is often determined by the specific characteristics of the problem, such as its complexity, dimensionality, constraints, and the nature of the objective function. As a result, there is always a scope for new approaches to be developed or the adaptation of existing methods to better suit specific problem clas- ses. A detailed discussion of deterministic optimization approaches can be found in the literature [8,9].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "777ca618-4d44-4197-959b-05476a3edd30",
+        "metadata": {},
+        "text": "1. Introduction",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "99f2bb39-0968-4fae-ab0b-5d12ba7cf4f8",
+        "metadata": {},
+        "text": "Structural optimization may be defined as the rational establishment of an economical structural design with the available resources while satisfying specific performance criteria. In general terms, the economy may be characterized by minimum weight, minimum cost, maximum utility, or even minimum probability of failure. Broadly, structural optimization can be categorized into deterministic and stochastic opti- mization [1,2]. The classical statement of unconstraint deterministic optimization is mathematically expressed as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ad067071-6580-452d-90ed-7b645e1b2d70",
+        "metadata": {},
+        "text": "In any practical situation, several parameters, such as loadings, structural parameters, geometric parameters, operation conditions, etc., are either not known at the design stage or are subjected to random fluctuations that give rise to performance variability and affect the performance of a system [10]. These parameters are characterized as uncertain parameters. Deterministic structural optimization discards the impact of uncertainty and can result in improper design. Therefore, it is desirable to account for the uncertainty in the parameters during opti- mization by using the rational methods of probabilistic structural analysis [11]. Such structural optimization that accounts for un- certainties is called stochastic optimization [12]. Although stochastic optimization refers to any method that employs randomness within some communities, in this paper, we will only consider settings where",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3b826d1b-6712-4e14-b288-f97171129cbb",
+        "metadata": {},
+        "text": "minimize : \u03c6\u2208\u03a6",
+        "type": "Title"
+    },
+    {
+        "element_id": "2b0d3fa4-e7c9-48c6-bbff-612ee0a30e7b",
+        "metadata": {},
+        "text": "g(\u03c6)",
+        "type": "Title"
+    },
+    {
+        "element_id": "039bca3c-7c62-4b27-ad28-b946b6b7fc59",
+        "metadata": {},
+        "text": "(1)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "395d439b-50c2-40f0-9b1e-c3dcb60cc0b1",
+        "metadata": {},
+        "text": "]T \u2208 \u03a6\u2282Rn\u03c6 is a set of deterministic adjustable pa- where, \u03c6 = [\u03c61\u22ef\u03c6n\u03c6 rameters that define the structural design, referred to herein as design parameters, g(\u03c6) : Rn\u03c6 \u2192R is the objective function to be minimized, and \u03a6 denotes the bounded admissible design space. The deterministic constraints can be considered by the appropriate definition of the ad- missible design space \u03a6 for deterministic design parameters \u03c6, as mentioned in [3]. In the deterministic structural optimization problem, the uncertainties in parameters are ignored, and fixed values are assumed for all the parameters. There are numerous optimizations",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9b548846-d344-4f31-8373-1727ef8e8da4",
+        "metadata": {},
+        "text": "Corresponding author.",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "facea38b-ceab-4a12-be95-fcd944352774",
+        "metadata": {},
+        "text": "E-mail addresses: mohdamankhalid@gmail.com (M.A. Khalid), sahil@iitd.ac.in (S. Bansal).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "09a470b4-d9c2-4861-a9ae-4390bfd877ee",
+        "metadata": {},
+        "text": "https://doi.org/10.1016/j.advengsoft.2023.103568 Received 5 June 2023; Received in revised form 2 October 2023; Accepted 24 November 2023",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "67845af0-e49f-400d-ac7e-2a26075b4f19",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "be111c49-feea-43cd-a566-5c94c597752d",
+        "metadata": {},
+        "text": "AdvancesinEngineeringSoftware188(2024)1035682",
+        "type": "Title"
+    },
+    {
+        "element_id": "19d4b71a-f036-454e-b2b1-e4b0860fe417",
+        "metadata": {},
+        "text": "M.A. Khalid and S. Bansal",
+        "type": "Title"
+    },
+    {
+        "element_id": "09c01392-fad0-4549-878b-73b4e3f0875e",
+        "metadata": {},
+        "text": "the objective function is random. Stochastic optimization or optimal design under uncertainty has been widely applied in many practical engineering fields, including civil engineering structures [13\u201315], composite structures [16,17], and vehicles [18,19].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6ba78a70-4407-49d6-8949-4c2d62281250",
+        "metadata": {},
+        "text": "various challenging optimization problems, it has two shortcomings. First, the effectiveness of SSO is dependent on the correct selection of the geometrical shape of the admissible subsets. Here, it is pertinent to mention that choosing a geometrical shape that effectively investigates the sensitivity of the objective function to each design variable is essential. The shapes, such as hyper-rectangle and hyper-ellipse are suggested in the literature for the admissible subsets. However, as shown later via the illustrative example, these shapes fail to include the optimal solution in cases with complex design spaces or problems with multiple optimal solutions. And second, identifying the optimal subset that con- tains the smallest volume density involves a non-smooth optimization problem which is quite challenging.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ef3cec5b-bb37-4df2-9425-1ccf10604dc0",
+        "metadata": {},
+        "text": "Consider an engineering system that involves deterministic design parameters \u03c6, and uncertain variables \u03b8 = [\u03b81\u22ef\u03b8n\u03b8 ]T \u2208 \u0398\u2282Rn\u03b8 following a joint PDF p(\u03b8|\u03c6), where \u0398 denotes the parameter space of the uncer- tain variables. The classical statement of stochastic optimization is mathematically expressed as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "393ccf64-6073-48aa-a71d-6fcb97e21366",
+        "metadata": {},
+        "text": "minimize : \u03c6\u2208\u03a6",
+        "type": "Title"
+    },
+    {
+        "element_id": "5cfb464d-caff-458b-9610-4c60cc945218",
+        "metadata": {},
+        "text": "E\u03b8[h(\u03c6, \u03b8)]",
+        "type": "Title"
+    },
+    {
+        "element_id": "b5ae3a81-63b3-49fc-b876-b725ee427327",
+        "metadata": {},
+        "text": "(2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "00cd8499-076e-4f77-8778-e67b34213c73",
+        "metadata": {},
+        "text": "where, h(\u03c6, \u03b8) : Rn\u03b8 +n\u03c6 \u2192R is the structural performance function, and E\u03b8[ \u22c5 ] denotes expectation with respect to the PDF for \u03b8. Note that the objective function in the optimization problem in (2) is the expectation E\u03b8[h(\u03c6, \u03b8)] which is a deterministic function. It\u2019s worth mentioning that stochastic optimization may also involve other stochastic measures such as variance or quantile values. However, these stochastic measures can rarely be evaluated analytically; therefore, several methods have been proposed for solving stochastic optimization problems. These special- ized methods include, for example, sample average approximation, stochastic approximation, stochastic subset optimization, and ap- proaches based on the use of Taylor series expansion [15,20,21], response surface, and metamodels [22\u201325]. Specific to structural engi- neering, there are two broad categories of problems involving design optimization under uncertainty [26\u201335]: Reliability-Based Design Optimization (RBDO) and Robust Design Optimization (RDO). The objective of RBDO is to find an optimal solution that minimizes some deterministic, objective function under observance of probabilistic constraints instead of conventional deterministic constraints [36,37]. On the other hand, RDO aims to find an optimal solution that is insen- sitive (or less sensitive) to input variations. It improves the design quality by minimizing performance variation without eliminating un- certainty [29,38].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "44bd58a0-27a9-454c-a440-f4baf7979a4c",
+        "metadata": {},
+        "text": "In this paper, an improved version of SSO is developed to overcome the shortcomings of the original SSO. This new version of the algorithm, as mentioned earlier, is named iSSO (improved SSO). Voronoi tessella- tion is implemented to partition the design space into non-overlapping subregions (a set of Voronoi cells) using the pool of samples distrib- uted according to the auxiliary PDF. The admissible set (a set of all admissible subregions) is then defined as a set containing all subsets of the set of Voronoi cells. This approach is able to capture the regions with lower objective function values even if they are disjointed or when the design space is complex. The details of the Voronoi tessellation are presented in Appendix A. A double-sort algorithm is then implemented to identify the optimal subset containing the smallest volume density.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c459edac-a13c-420f-a26c-37738bebca1c",
+        "metadata": {},
+        "text": "In the next section, the original SSO is reviewed. Section 3 presents the general theoretical and computational framework for the iSSO al- gorithm. Section 4 considers several optimization problems to illustrate the effectiveness and efficiency of the proposed iSSO algorithm.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0a3d0fa1-417d-4d16-9956-117f0a145eda",
+        "metadata": {},
+        "text": "2. Original stochastic subset optimization",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "b274e2fc-36e1-48a5-b00c-066cef933a0c",
+        "metadata": {},
+        "text": "In SSO, say at the i + 1th iteration, the design space is represented by a subset I(i), where I(i) \u2208 I(i (cid:0) 1)\u22c5\u22c5\u22c5 \u2208 I(0) \u2208 \u03a6. Following the augmented formulation concept initially discussed in [44] for RBDO, the design parameters \u03c6, are artificially considered uncertain variables with a prescribed PDF p(\u03c6|I(i)) over the design space I(i) [45]. For convenience, p(\u03c6|I(i)) = 1/V(i) is considered, where V(i) is the volume of I(i). In this setting of the augmented stochastic design problem, the auxiliary PDF is defined as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2131d858-4833-417e-b3df-7bbcd0052f9e",
+        "metadata": {},
+        "text": "Taflanidis and Beck [39] introduced a novel algorithm for optimal reliability problem, the so-called SSO. SSO involves formulating an augmented problem where the design parameters are artificially considered uncertain and defining an auxiliary PDF that includes the structural performance function and the PDF of the uncertain variables. Next, SSO involves generating a pool of samples distributed according to this auxiliary PDF and identifying a subregion in the original design space, which, on average, improves the value of the objective function. By repeating this procedure several times, it is possible to determine at each step a smaller subregion in the design space, which in turn im- proves the value of the objective function. Ultimately, this subregion will be sufficiently small to directly identify the optimal solution or provide sufficient information to launch another optimization algo- rithm, such as the sample average approximation or stochastic approx- imation. The implementation of the SSO method closely resembles the Subset Simulation (SS) algorithm [40] for reliability analysis. Since SSO is based on simulation, it can deal with linear or nonlinear problems and, at least theoretically, an unbounded number of design parameters. The numerical effort for solving a given optimization problem is indepen- dent of the number of uncertain variables, and it grows linearly with the number of design parameters.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dd60f9d8-e29e-470e-b5a5-2d5b3dd43c89",
+        "metadata": {},
+        "text": "\u20d2 \u20d2I(i) E\u03c6,\u03b8[hs(\u03c6, \u03b8)]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1accfe5f-1e29-40bd-8ce1-9dab61a5a7a3",
+        "metadata": {},
+        "text": ")",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "868a6397-8cf9-41d6-829b-b64e74b328b3",
+        "metadata": {},
+        "text": "(cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c4e233b2-a372-445f-b1f3-23efcc9947f5",
+        "metadata": {},
+        "text": "\u20d2 \u20d2I(i) \u03c6, \u03b8",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "8c72b252-2206-4318-8b64-b4bdf99400c2",
+        "metadata": {},
+        "text": "\u20d2 \u20d2I(i)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "668ec631-b2d3-4584-aa73-19edd8cdefe9",
+        "metadata": {},
+        "text": "(cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "31b816a8-1b44-4f1a-acfa-c8906883fd9c",
+        "metadata": {},
+        "text": ")",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "904a126e-58b4-46c5-89e3-094a468d7a22",
+        "metadata": {},
+        "text": ")",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4c32865f-d8bc-4bbc-be22-49e0b478aa1f",
+        "metadata": {},
+        "text": "(cid:0) \u221dh(\u03c6, \u03b8)p",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c1142280-9061-4a13-928d-d2e0cc9263d8",
+        "metadata": {},
+        "text": "h(\u03c6, \u03b8)p",
+        "type": "Title"
+    },
+    {
+        "element_id": "5ae656e4-5c15-426d-b34b-65cf8c995747",
+        "metadata": {},
+        "text": "\u03c6, \u03b8",
+        "type": "Title"
+    },
+    {
+        "element_id": "c2af61c4-d188-456f-9a84-c9d3f793a8a0",
+        "metadata": {},
+        "text": "\u03c6, \u03b8",
+        "type": "Title"
+    },
+    {
+        "element_id": "34427638-f14a-4486-ad2e-9ae06976b971",
+        "metadata": {},
+        "text": "=",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f4b97994-e7cb-40ba-9394-f0b969546e0b",
+        "metadata": {},
+        "text": "\u03c0",
+        "type": "Title"
+    },
+    {
+        "element_id": "6a77ba3b-8fe5-49da-9352-6da58947a089",
+        "metadata": {},
+        "text": "(3)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a8089540-3bbd-4d34-b213-6feab8d2ebe6",
+        "metadata": {},
+        "text": "where, p(\u03c6, \u03b8|I(i)) = p(\u03b8|\u03c6)p(\u03c6|I(i)). Note that if h(\u03c6, \u03b8)\u2264 0, it must be suitably transformed to ensure that \u03c0(\u03c6, \u03b8|I(i)) \u2265 0. One way to do this is to define hs(\u03c6,\u03b8) = h(\u03c6, \u03b8) (cid:0) s, that is, the two expected values differ only by a constant, and the optimization of the expected value of h( \u22c5 ) is equivalent, in terms of the optimal design choice, to optimization for the expected value for hs( \u22c5 ). In the above equation, the denominator is a normalizing constant given by: \u20d2 \u20d2I(i)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "22bc5d67-90a6-429a-b391-18bdc727a46f",
+        "metadata": {},
+        "text": "s, since E\u03b8[hs(\u03c6,\u03b8)] = E\u03b8[h(\u03c6,\u03b8)] (cid:0)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "20bf7f92-6dc6-4bce-a516-7ce9c550ae72",
+        "metadata": {},
+        "text": "\u222b",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e11c67d6-47e3-415f-8bbe-14c7c9800e9a",
+        "metadata": {},
+        "text": "\u222b",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a68eac99-deea-43b7-a024-64842df8ee70",
+        "metadata": {},
+        "text": ") d\u03b8d\u03c6.",
+        "type": "Title"
+    },
+    {
+        "element_id": "95cc63ef-a287-46d8-9820-970cf90b63f6",
+        "metadata": {},
+        "text": "(cid:0) h(\u03c6, \u03b8)p",
+        "type": "Title"
+    },
+    {
+        "element_id": "10454342-0430-4a88-8aa2-cc74c98857e3",
+        "metadata": {},
+        "text": "\u03c6, \u03b8",
+        "type": "Title"
+    },
+    {
+        "element_id": "92d27509-cf7b-40c5-820a-da56eeb9d98c",
+        "metadata": {},
+        "text": "E\u03c6,\u03b8[h(\u03c6, \u03b8)] =",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "12a7f1ff-da54-45b8-ace4-cd8783729a23",
+        "metadata": {},
+        "text": "(4)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "584a6ff4-7e64-4033-bd72-899c874624e6",
+        "metadata": {},
+        "text": "\u03a6",
+        "type": "Title"
+    },
+    {
+        "element_id": "7cfa8a48-ccfc-4c82-8666-4dfa1cd367e7",
+        "metadata": {},
+        "text": "\u0398",
+        "type": "Title"
+    },
+    {
+        "element_id": "a37a77b9-6021-4c95-8487-9343b9c2242f",
+        "metadata": {},
+        "text": "Although this expected value is not explicitly needed, it can be determined using any state-of-the-art stochastic simulation method. The objective function E\u03b8[hs(\u03c6, \u03b8)] in this context of the auxiliary PDF is expressed as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9cf74fa0-cf4a-461e-8792-47bcf4ac11aa",
+        "metadata": {},
+        "text": "Since the introduction of SSO, several extensions of SSO have been proposed. An extension of SSO termed Non-Parametric SSO, which adopts kernel density estimation to approximate the objective function, is presented in [41]. In [42], efficient integration of the Moving Least Squares approximation within SSO is introduced to reduce the compu- tational effort in SSO. In [3], an augmented formulation is presented for the RDO of structures using SSO. SSO or its variants have also been applied to solve structural optimization problems. SSO has been used for reliability optimization and sensitivity analysis in system design in [39]. A framework for RDO of Tuned Mass Dampers (TMD) by SSO is dis- cussed in [43]. Even though SSO has proved to be efficient for meeting",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e5e553ee-8425-4fb7-aab1-afbfc0b26449",
+        "metadata": {},
+        "text": "\u20d2 \u20d2I(i) \u03c6 \u20d2 \u20d2I(i) \u03c6",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "05585b02-8b5a-4739-9665-4f28f0741da0",
+        "metadata": {},
+        "text": "(cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "abf57000-da2c-47c2-97da-4774acc2b643",
+        "metadata": {},
+        "text": ") )E\u03c6,\u03b8[h(\u03c6, \u03b8)],",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9fe042d0-65a3-4556-8619-c8827008d193",
+        "metadata": {},
+        "text": "\u03c0 (cid:0) p",
+        "type": "Title"
+    },
+    {
+        "element_id": "05c8835f-93e0-4946-be64-becfa995fb89",
+        "metadata": {},
+        "text": "E\u03b8[h(\u03c6, \u03b8)] =",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3268d9f2-2c42-40a3-8fee-71fe7a31f381",
+        "metadata": {},
+        "text": "(5)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "cabb51ce-37b6-485b-bfd3-f0db7f82ff8d",
+        "metadata": {},
+        "text": "where, the marginal \u03c0(\u03c6|I(i)) is given by: (cid:0)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fdb232f0-52f6-4984-9036-7e8d4e484a57",
+        "metadata": {},
+        "text": "\u222b",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "cb119de6-0f84-451a-b80e-4b9ff60cc731",
+        "metadata": {},
+        "text": "\u20d2 \u20d2I(i) \u03c6",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c4341bf6-cfb4-489a-bf85-ec4b3ab4193e",
+        "metadata": {},
+        "text": ")",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9e04e82a-9212-466f-801c-50df4230082f",
+        "metadata": {},
+        "text": "=",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1303b230-dbb9-4989-95df-2f6b2adf28c3",
+        "metadata": {},
+        "text": "\u03c0(\u03c6, \u03b8)d\u03b8.",
+        "type": "Title"
+    },
+    {
+        "element_id": "87b1ff38-dea2-43f6-b667-154babc4b30d",
+        "metadata": {},
+        "text": "\u03c0",
+        "type": "Title"
+    },
+    {
+        "element_id": "ab3ea085-84b9-4914-9c36-e7d6001b5ce1",
+        "metadata": {},
+        "text": "(6)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ecacff33-a8bf-49db-b450-fc55e938109e",
+        "metadata": {},
+        "text": "I(i)",
+        "type": "Title"
+    },
+    {
+        "element_id": "eebe54fd-8ab7-48a5-ad5d-77b32b35aca9",
+        "metadata": {},
+        "text": "In (5), since E\u03c6,\u03b8[h(\u03c6, \u03b8)] is a normalizing constant, minimization of",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a91ae0de-c0e7-4396-8e74-ff9f66956c0a",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "ada3fd55-db4a-419b-826d-70141c362599",
+        "metadata": {},
+        "text": "AdvancesinEngineeringSoftware188(2024)1035683",
+        "type": "Title"
+    },
+    {
+        "element_id": "df958ba4-3e16-446e-90f4-694c4c95016e",
+        "metadata": {},
+        "text": "M.A. Khalid and S. Bansal",
+        "type": "Title"
+    },
+    {
+        "element_id": "2db98cc0-371d-4d02-8e27-300b936eedec",
+        "metadata": {},
+        "text": "E\u03b8[h(\u03c6, \u03b8)] is equivalent to minimization of J(\u03c6), which is equal to: ) ).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f262e0fd-011a-4092-97d7-f0e6439b548c",
+        "metadata": {},
+        "text": "/",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "bf1045be-86ad-4a9a-ae63-7a9b56d04deb",
+        "metadata": {},
+        "text": "\u20d2 \u20d2I(i) \u03c6 \u20d2 \u20d2I(i) \u03c6",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0054730d-5066-404a-8dfe-08aa13ebde8e",
+        "metadata": {},
+        "text": "(cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "fa2f2bc9-6129-4d13-8b80-3889787d79a2",
+        "metadata": {},
+        "text": "I(i+1) = argmin I\u2208A\u03c1",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bf21eb56-542d-4b7b-b475-ef6410530482",
+        "metadata": {},
+        "text": "H(I) = arg min",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "60126552-9658-4766-9a27-3766d482e999",
+        "metadata": {},
+        "text": "VI",
+        "type": "Title"
+    },
+    {
+        "element_id": "4eb461b6-4a89-4bba-831d-81e1b18cd7c4",
+        "metadata": {},
+        "text": "NI",
+        "type": "Title"
+    },
+    {
+        "element_id": "e4ec3694-a24e-450a-9fc9-a55f5fd979c4",
+        "metadata": {},
+        "text": "\u20d2 \u20d2I(i) \u03c6",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c3264816-bc61-4672-b92f-9aeb476b022a",
+        "metadata": {},
+        "text": "(cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "eebfaa34-50d0-4d4c-9186-63f409b9e1f4",
+        "metadata": {},
+        "text": ")",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "98e65436-398c-46cf-b1b2-7da7f1a6e7e7",
+        "metadata": {},
+        "text": "\u03c0 p",
+        "type": "Title"
+    },
+    {
+        "element_id": "43f520bb-fadb-4388-b08d-e901664b9a9e",
+        "metadata": {},
+        "text": "E\u03b8[hs(\u03c6, \u03b8)] E\u03c6,\u03b8[hs(\u03c6, \u03b8)]",
+        "type": "Title"
+    },
+    {
+        "element_id": "f6bb54f6-a927-47b3-97dd-e89c441146d3",
+        "metadata": {},
+        "text": ".",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f24ffb99-8237-4a56-8dcd-0d9575f7f847",
+        "metadata": {},
+        "text": "(i+1) I\u2208A \u03c1 } / N(i)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "39e3ea6f-7d01-4e42-b8c1-981ebe26300e",
+        "metadata": {},
+        "text": "(cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "503205a3-570d-49c3-966d-add757d209fe",
+        "metadata": {},
+        "text": "=",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "87950c4b-47dd-4585-9cfb-0a4ee81400d6",
+        "metadata": {},
+        "text": "=",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7d3b2fae-e734-4842-a9a2-fe1fadf295c7",
+        "metadata": {},
+        "text": "(10)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e2563372-0b29-4499-b9b5-7fef2f706ee4",
+        "metadata": {},
+        "text": "J",
+        "type": "Title"
+    },
+    {
+        "element_id": "8b9b68a0-678c-4906-9c4f-d9af9c36b800",
+        "metadata": {},
+        "text": "(7)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d4d6e736-da76-4f0a-ab41-c0fb469939b7",
+        "metadata": {},
+        "text": "{",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "adb49a7e-6975-4155-a097-c43bef8bb025",
+        "metadata": {},
+        "text": "A(i+1) \u03c1 =",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "caa7c52d-3903-4282-a19f-594739ce304b",
+        "metadata": {},
+        "text": "I\u2282I(i) : \u03c1 = NI",
+        "type": "Title"
+    },
+    {
+        "element_id": "542b293e-4410-4657-ac92-bff6407115de",
+        "metadata": {},
+        "text": "The estimation of the marginal \u03c0(\u03c6|I(i)) in (7) is necessary to mini- mize J(\u03c6|I(i)). Analytical approximations of \u03c0(\u03c6|I(i)) based on kernel density approaches or the maximum entropy method might be arduous in case of complex problems, such as when design parameters n\u03c6 are large, or the sensitivity for some design parameters is complex [44]. In the SSO framework, such approximation of \u03c0(\u03c6|I(i)) is avoided. In SSO, samples distributed as \u03c0(\u03c6|I(i)) are obtained, and the information in these samples is exploited to identify a smaller subset of the design space with a high likelihood of containing the optimal design parameters. Samples distributed as \u03c0(\u03c6, \u03b8|I(i)) are obtained using any appropriate stochastic sampling algorithm, such as Markov Chain Monte Carlo (MCMC) sampling [46]. The \u03c6 component of these samples then cor- responds to samples from the marginal distribution \u03c0(\u03c6|I(i)).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "01d88f92-489a-45b6-879b-5ae41e0d59e4",
+        "metadata": {},
+        "text": "The effectiveness of SSO is dependent on the correct selection of the geometrical shape and size of the admissible subsets. Choosing a geometrical shape that effectively investigates the sensitivity of the objective function to each design variable is essential. The optimization in (10) determines the subset with the smallest average value of J(\u03c6|I(i)) . I(i + 1) is a (or equivalently E\u03b8[hs(\u03c6, \u03b8)]) within the admissible set A subset of the design space I(i) with a high likelihood of containing the optimal design parameters. The above steps are repeated until the stopping criterion is met. This way, SSO adaptively converges to a relatively small subregion within the original design space. The imple- mentation of SSO is demonstrated in Fig. 1. The reader may refer to the original publication for a detailed explanation of SSO [39].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6cbbc993-dbed-4570-98b7-3766c64f23fb",
+        "metadata": {},
+        "text": "(i+1) \u03c1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "dd126dbf-cde2-4290-bea2-6468ba6cde3e",
+        "metadata": {},
+        "text": "(i)) expresses the average relative sensitivity of E\u03b8[h(\u03c6,\u03b8)] to \u03c6. A (i)) indicates that E\u03b8[h(\u03c6,\u03b8)] is more sensitive to \u03c6, and low value of H(I (i)), close to 1 corresponds to a sample vice versa. A high value of H(I density in design space I(i) that approximates a uniform distribution and suggests that the identified subset I(i) has a low likelihood of containing (i)) exceeds a threshold \u03c6* [39]. Therefore, the SSO is stopped when H(I value. A threshold value of 0.75\u20130.80 has been found to give satisfactory results [39].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8b09238b-ffbc-47de-a89c-f80c34585ab2",
+        "metadata": {},
+        "text": "H(I",
+        "type": "Title"
+    },
+    {
+        "element_id": "1166a187-323f-45de-9805-5926579968ec",
+        "metadata": {},
+        "text": "The sensitivity of objective function E\u03b8[hs(\u03c6, \u03b8)] to \u03c6 is determined by evaluating the average value (or equivalently volume density) of J(\u03c6| I(i)) over any subset I in I(i), which is denoted by H(I) and defined as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1c7062de-cb67-4e9e-bda9-cec5b45fbc27",
+        "metadata": {},
+        "text": "(cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "dc80bbaa-a2ff-4429-af54-f6c09cf29397",
+        "metadata": {},
+        "text": ") ) d\u03c6 =",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "47f064c7-50c5-41ee-a4c3-a880e54a0d99",
+        "metadata": {},
+        "text": "\u222b",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "24c36b3f-4044-430d-b701-73bb6d3a4cdd",
+        "metadata": {},
+        "text": "\u222b",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3b7c6848-dc34-475c-bb97-fc4f646d4fcd",
+        "metadata": {},
+        "text": "\u222b",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a7db3987-22e0-4165-8cd2-5d6387c3410c",
+        "metadata": {},
+        "text": ")",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "27cbfb8d-59e9-4481-b030-c86168c92c5f",
+        "metadata": {},
+        "text": "(cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "578bd2f6-a279-466a-ab83-0b150234a659",
+        "metadata": {},
+        "text": ") d\u03c6",
+        "type": "Title"
+    },
+    {
+        "element_id": "8cdf78bc-c556-42e2-adf6-b849066473cd",
+        "metadata": {},
+        "text": "(cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a724184e-9c8c-4217-90db-aaa0fe4831e5",
+        "metadata": {},
+        "text": "\u03c6|I(i) \u03c6|I(i)",
+        "type": "Title"
+    },
+    {
+        "element_id": "f2440612-4fa5-485b-b889-91a2b18f2f22",
+        "metadata": {},
+        "text": "\u03c0 p",
+        "type": "Title"
+    },
+    {
+        "element_id": "17c2381c-215e-42e6-bddc-246db943e049",
+        "metadata": {},
+        "text": "1 VI",
+        "type": "Title"
+    },
+    {
+        "element_id": "af73f42f-7cfb-4c05-987d-d87676d81265",
+        "metadata": {},
+        "text": "1 VI",
+        "type": "Title"
+    },
+    {
+        "element_id": "dc6cf34a-9d81-497e-9d81-94c0c7bd004f",
+        "metadata": {},
+        "text": "VI(i) VI",
+        "type": "Title"
+    },
+    {
+        "element_id": "2c1ef5e6-501b-4648-b0e8-bd8581956b92",
+        "metadata": {},
+        "text": "\u03c6|I(i)",
+        "type": "Title"
+    },
+    {
+        "element_id": "6de83e2f-63de-4a33-9683-e24fbde41c2b",
+        "metadata": {},
+        "text": "\u03c6|I(i)",
+        "type": "Title"
+    },
+    {
+        "element_id": "11edd3cf-2278-4a2e-aba4-36b3d65a9f2a",
+        "metadata": {},
+        "text": "(cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "65ca4fb6-c960-4204-93a9-10625852fcc4",
+        "metadata": {},
+        "text": "H(I) =",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7d96870b-3ad7-45ff-81a7-cd2393743002",
+        "metadata": {},
+        "text": "d\u03c6 =",
+        "type": "Title"
+    },
+    {
+        "element_id": "e9f6a20f-0cf5-4d6a-b080-fcbe0f359f7a",
+        "metadata": {},
+        "text": "\u03c0",
+        "type": "Title"
+    },
+    {
+        "element_id": "94553e00-3076-4ecd-ab9b-0483833d3f4e",
+        "metadata": {},
+        "text": "J",
+        "type": "Title"
+    },
+    {
+        "element_id": "23db2fd7-68b4-443f-998e-6c9c3aa9ba27",
+        "metadata": {},
+        "text": "(8)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "19eb1ca6-2b72-43fd-a7e5-b0027cb02614",
+        "metadata": {},
+        "text": "I",
+        "type": "Title"
+    },
+    {
+        "element_id": "646404b4-1e97-49fe-9345-0397b23bdd1c",
+        "metadata": {},
+        "text": "I",
+        "type": "Title"
+    },
+    {
+        "element_id": "cea00bc6-0a3b-47f4-97fc-6e0bb0c1fd83",
+        "metadata": {},
+        "text": "I",
+        "type": "Title"
+    },
+    {
+        "element_id": "df6b694c-5bb1-4097-8224-a46aa3d97469",
+        "metadata": {},
+        "text": "where, VI is the volume of subset I. Based on the samples distributed according to \u03c0(\u03c6|I(i)) belonging to I(i), an estimate of H(I) is provided by:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e54c144e-9ed3-41b6-80c6-2497aed159e1",
+        "metadata": {},
+        "text": "NI/VI NI(i) /VI(i)",
+        "type": "Title"
+    },
+    {
+        "element_id": "9c09b79e-8bc6-46fd-a2a6-154207b34b5e",
+        "metadata": {},
+        "text": "3. Proposed approach",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "6badfbc9-fa34-4383-a36c-22bb427291de",
+        "metadata": {},
+        "text": "H(I) =",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "eaa9b3c7-45a5-479f-bbe6-5c591e5f14aa",
+        "metadata": {},
+        "text": ",",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9d98f6e1-6cfd-466c-81a9-e86267d0d3df",
+        "metadata": {},
+        "text": "(9)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7b70ceaa-09d7-4ba5-b3d8-b922b48a4896",
+        "metadata": {},
+        "text": "In the proposed approach, the Voronoi tessellation is implemented to partition the design space into non-overlapping subregions (a set of Voronoi cells) using the pool of samples distributed according to this auxiliary PDF. Conceptually, Voronoi tessellation involves partitioning a space into convex polygons, called Voronoi cells, such that each cell contains exactly one sample, called a cell-generating sample. Every sample in a given polygon is closer to its generating sample compared to any other. In the proposed approach, the admissible set (a set of all admissible subspaces) is defined as a set containing all subsets of the set of Voronoi cells. An alternative approach to identify the optimal subset without performing any non-smooth deterministic optimization is also presented. The general theoretical and computational framework for the iSSO algorithm is presented in the following subsections, and the",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6931281a-8690-4733-ac8e-4fb9e7747d3e",
+        "metadata": {},
+        "text": "where, NI(i) is the number of samples distributed as \u03c0(\u03c6|I(i)) belonging to I(i), and NI denotes the number of samples from \u03c0(\u03c6|I(i)) belonging to the I (NI < NI(i(cid:0) 1) since I\u2282I(k (cid:0) 1)). Say NI = p0NI(i(cid:0) 1) . A smaller value of \u03c1 re- sults in a faster decrease in the size of the identified subsets but with poorer accuracy. The use of \u03c1 equal to 0.1 - 0.2 is suggested in the literature [39].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "da507ed1-6e18-4fc9-b7b1-3688b0ed7166",
+        "metadata": {},
+        "text": "A deterministic optimization, based on the estimate H(I) of H(I), is (i+1) next performed to identify the subset I \u2208 A is a set of \u03c1 admissible subsets in I(i), that contains the smallest volume density NI/ VI, that is,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e335dcd2-d08b-4d53-bb39-68573bd989d7",
+        "metadata": {},
+        "text": "(i+1) \u03c1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d3c32d53-cbe4-41ce-ba7e-8d49c84bd7d6",
+        "metadata": {},
+        "text": ", where A",
+        "type": "Title"
+    },
+    {
+        "element_id": "b52c20e4-82f7-4986-a634-6ae943b0aaa6",
+        "metadata": {},
+        "text": "Fig. 1. Illustration of the original SSO algorithm.",
+        "type": "Title"
+    },
+    {
+        "element_id": "15ab11e5-8a89-4e5a-aaec-7eb805e05f32",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "330575d2-1e60-49a9-9422-39d1cd83a853",
+        "metadata": {},
+        "text": "AdvancesinEngineeringSoftware188(2024)1035684",
+        "type": "Title"
+    },
+    {
+        "element_id": "9e04818f-99bd-461e-82d6-5c47649dc4c6",
+        "metadata": {},
+        "text": "M.A. Khalid and S. Bansal",
+        "type": "Title"
+    },
+    {
+        "element_id": "ed7db5fa-829b-4701-9a0f-0bb632bd4446",
+        "metadata": {},
+        "text": "algorithm is demonstrated in Fig. 2.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "84baef90-0c59-4c11-9e37-f2cda975856f",
+        "metadata": {},
+        "text": "3.2. Identification of an optimal subset",
+        "type": "Title"
+    },
+    {
+        "element_id": "21e26051-f4f2-4e93-bc75-1a42017b63b2",
+        "metadata": {},
+        "text": "3.1. Partitioning of design space",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "89a545dd-023b-4f91-9eae-e4cd4cc1d066",
+        "metadata": {},
+        "text": "A deterministic optimization needs to be performed to identify a subset I that contains the smallest volume density NI/VI. In the case of unique samples, since \u03b7(i) (\u22c5) = 1, the solution to the minimization problem in (10) is a set of \u03c1N(i) Voronoi cells with the largest volume. For the case with repeated samples, the optimization can be performed using methods appropriate for non-smooth optimization problems, such as sub-gradient methods, bundle methods, gradient sampling methods, etc. In this study, we propose an alternative approach to identify the optimal subset without performing any non-smooth deterministic opti- mization. A double-sort algorithm is proposed, which involves sorting the Voronoi cells in ascending order of the sample counts and then in groups of cells with the same sample count in descending order of cell volume. Finally, the top cells containing \u03c1N(i)samples are selected as an approximate optimal solution from the sorted list.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "38786473-c531-4f9a-b215-8fc1d8f1a796",
+        "metadata": {},
+        "text": "In the proposed approach, at the i + 1th iteration, say N(i) is the number of samples distributed as \u03c0(\u03c6|I(i)) belonging to the design space (i) /(1 + \u03b3), \u03b3 \u2265 0 be the number of unique samples. If I(i). Let nv = N sampling techniques such as accept rejection, importance sampling, etc., are used, then \u03b3 = 0, and each sample in the design space will be unique. However, if MCMC sampling techniques are used, the resulting samples will be correlated, that is \u03b3 > 0, and we will have repeated samples. (i) Assume that the design space I(i) is divided into v k , k = 1\u22c5\u22c5\u22c5nv, Voronoi k contains \u03b7(i) (i)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "26978062-c33b-4bdf-959d-f58ab1e319d4",
+        "metadata": {},
+        "text": "cells using nv unique samples, and say the Voronoi cell v repeated samples, then, an estimate of \u03c0(\u03c6|I(i)) is provided by:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5e15ba3c-4f93-4668-b152-1af6bf2672fd",
+        "metadata": {},
+        "text": "k",
+        "type": "Title"
+    },
+    {
+        "element_id": "7b76d079-cf30-47a5-8869-52372041a09f",
+        "metadata": {},
+        "text": "\u03b7(i) k N(i)V (i) k",
+        "type": "Title"
+    },
+    {
+        "element_id": "caa74051-db76-4dbd-ae08-041ec66adbd7",
+        "metadata": {},
+        "text": "(cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a0e64d1a-e46b-4cf7-9094-83282dc6d0c5",
+        "metadata": {},
+        "text": ")",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "09bf2742-548c-4328-b799-4ebfab66ab8e",
+        "metadata": {},
+        "text": "\u2200 \u03c6 \u2208 v(i) k ,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4020882d-e80b-433b-ab88-7a31759e977e",
+        "metadata": {},
+        "text": "\u03c6|I(i)",
+        "type": "Title"
+    },
+    {
+        "element_id": "95bf6e7e-cafc-46f4-9fe4-4813c824cbad",
+        "metadata": {},
+        "text": "=",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "881cdfe0-c181-47a9-bfc8-981f078f60a1",
+        "metadata": {},
+        "text": "\u2265 0,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "248eddf5-04a1-4ac1-9a2e-a4a5ddc62f4b",
+        "metadata": {},
+        "text": "\u03c0",
+        "type": "Title"
+    },
+    {
+        "element_id": "11d484a8-2882-4042-947e-493bf5866ceb",
+        "metadata": {},
+        "text": "(11)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "dfa2832a-939d-4b89-8238-8649e992f2de",
+        "metadata": {},
+        "text": "One may argue that the optimal subset can be obtained by first sorting the Voronoi cells in ascending order of the cell density, defined as \u03b7(i) (i) k , and then by selecting the top cells containing \u03c1N(i) samples from the sorted list. However, this argument is erroneous because the \u2211 (i) S (s)). The s=1V effectiveness of the proposed double-sort algorithm is demonstrated in Section 4 with the help of examples.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a7e34bf6-cdbd-48fd-aa38-c21930adae18",
+        "metadata": {},
+        "text": "\u222b",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "748944ae-759e-45c2-87dc-72d6c34c7a69",
+        "metadata": {},
+        "text": "(i) k is the volume of the kth Voronoi cell. Obviously,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "07225fbd-a951-4d6f-bb05-d27c37f1e3e5",
+        "metadata": {},
+        "text": "(i))",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "10e83c15-9482-459d-af0d-5c4aafef1621",
+        "metadata": {},
+        "text": "I(i) \u03c0(\u03c6|I",
+        "type": "Title"
+    },
+    {
+        "element_id": "05062d70-3cd3-4bdc-8f29-98535c158c23",
+        "metadata": {},
+        "text": "where, V d\u03c6 = 1.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e2b2b933-2d0c-477b-b353-2206731af42a",
+        "metadata": {},
+        "text": "/V",
+        "type": "Title"
+    },
+    {
+        "element_id": "0dead72e-efa8-47a2-973c-a0c9772fc825",
+        "metadata": {},
+        "text": "k",
+        "type": "Title"
+    },
+    {
+        "element_id": "04a994dd-1fca-40ce-9553-915861cdeb46",
+        "metadata": {},
+        "text": "Similar to the original SSO, the sensitivity of the objective function J (\u03c6|I(i)) to \u03c6 is determined by evaluating the average value of J(\u03c6|I(i)) over any subspace I of the design space I(i). Subset I is any subset of nvVoronoi cells (these cells may be disjointed). Since the design space is partitioned into nv subspaces or Voronoi cells, the number of admissible subsets (proper subsets) is given by 2n\u03bd (cid:0) 1. Based on the estimate \u03c0(\u03c6|I",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e4d068fb-3426-4b05-ba1f-74539990326d",
+        "metadata": {},
+        "text": "\u2211",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "455bf606-0e5a-4ce6-9f40-ca8542cb7290",
+        "metadata": {},
+        "text": "\u2211",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "505e8727-9930-47c8-bfe7-8eeba75c6718",
+        "metadata": {},
+        "text": "s=1\u03b7(i) (s)/",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "899bf0ec-7209-4b3f-9ae7-b5adf400f92b",
+        "metadata": {},
+        "text": "(i) (s) and not",
+        "type": "Title"
+    },
+    {
+        "element_id": "81330608-4c9c-45ee-8012-e58dba03d854",
+        "metadata": {},
+        "text": "(\u03b7(i)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e5bd40da-7e3a-4f7a-9c20-796854e9b5ca",
+        "metadata": {},
+        "text": "S",
+        "type": "Title"
+    },
+    {
+        "element_id": "97d5623f-0d46-4912-9ab8-c58bcf345fe6",
+        "metadata": {},
+        "text": "S s=1",
+        "type": "Title"
+    },
+    {
+        "element_id": "59babb2f-9f1a-4076-ada7-eb381235d169",
+        "metadata": {},
+        "text": "(s) /V",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "04b5b126-0080-4e15-bb89-84a921896b8e",
+        "metadata": {},
+        "text": "objective is to minimize",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9c7be2fa-097d-48b2-82f3-9b55ae3b0b0b",
+        "metadata": {},
+        "text": "3.3. Simulation of conditional samples",
+        "type": "Title"
+    },
+    {
+        "element_id": "07440433-86c2-4448-a972-97024ea78001",
+        "metadata": {},
+        "text": "(i)) provided in (11), an estimate of H(I) is provided as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "770a2a94-705a-40ed-9e4b-6d8d00e47561",
+        "metadata": {},
+        "text": "At the i + 1th iteration, \u03c1N(i) samples distributed as \u03c0(\u03c6|I(i + 1)) are available from the previous iteration. Using these samples as seeds, \u03c1)N(i + 1) are simulated. The proposed method to additional (1 (cid:0) simulate additional samples involves two steps: (a) randomly selecting a Voronoi cell within the subset I(i + 1) based on the estimate \u03c0(\u03c6|I (i)) and (b) applying the Metropolis-Hastings algorithm within the selected Voronoi cell.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6090e08a-99b7-438d-9f9b-4b458631291b",
+        "metadata": {},
+        "text": "\u2211",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "bb184e79-e310-4252-86c3-56289d1e3d87",
+        "metadata": {},
+        "text": "\u222b",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "40fca9ef-3f14-48f5-af77-110c5331938c",
+        "metadata": {},
+        "text": "I\u03b7(i) i N(i)",
+        "type": "Title"
+    },
+    {
+        "element_id": "3ded8bf7-d45d-401b-87a5-3295de673ad7",
+        "metadata": {},
+        "text": "(cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "8b6de5e3-cd71-44ca-bc8e-f02b169378ef",
+        "metadata": {},
+        "text": ") d\u03c6 =",
+        "type": "Title"
+    },
+    {
+        "element_id": "09f01031-25a5-42ab-a0e8-ed0d28840679",
+        "metadata": {},
+        "text": "V (i) VI",
+        "type": "Title"
+    },
+    {
+        "element_id": "8ebc441b-c47d-407d-a304-54189afec15f",
+        "metadata": {},
+        "text": "V (i) VI",
+        "type": "Title"
+    },
+    {
+        "element_id": "beebe981-9e94-4bd3-b101-a1fdf2f868d6",
+        "metadata": {},
+        "text": "V (i) VI",
+        "type": "Title"
+    },
+    {
+        "element_id": "70bde5c1-585f-4f90-8f19-e5a011a675dd",
+        "metadata": {},
+        "text": "NI N(i)",
+        "type": "Title"
+    },
+    {
+        "element_id": "7727f337-2d2f-46a8-a698-fbdab4ac8425",
+        "metadata": {},
+        "text": "\u03c6|I(i)",
+        "type": "Title"
+    },
+    {
+        "element_id": "3ad11b63-a478-4ff0-8838-be4fc62bfad8",
+        "metadata": {},
+        "text": "H(I) =",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f254ba1f-58ea-4fbc-8cc0-a7a693416813",
+        "metadata": {},
+        "text": "=",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "62761f63-7feb-441b-89e7-5a909512d625",
+        "metadata": {},
+        "text": "\u03c0",
+        "type": "Title"
+    },
+    {
+        "element_id": "af37e9f8-d2b6-4b4c-9786-4e1ac49b7808",
+        "metadata": {},
+        "text": "(12)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ea8d238d-4b7c-429f-af07-b3f89c2b3b84",
+        "metadata": {},
+        "text": "I",
+        "type": "Title"
+    },
+    {
+        "element_id": "ebdc0fb8-4640-4de4-a1aa-3bc59425cb1c",
+        "metadata": {},
+        "text": "where, VI is the volume of the subset I and NI is the number of samples (i) belonging to it. Let I = {v (S)}, where S is the number of Vor- onoi cells defining the subset I. Note that the parentheses are used in the subscript to differentiate between the Voronoi cell number defined in the previous section from the Voronoi cell index describing the subset I. An estimate of H(I) is then provided as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7d66415e-3cd7-4f69-8b9b-2c068fb17774",
+        "metadata": {},
+        "text": "(i) (1), v",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "897e95c5-81d2-4886-ab42-78151e9a5c3d",
+        "metadata": {},
+        "text": "(i) (2)\u22efv",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c5fa7138-35f4-46e7-b306-c341f05608bb",
+        "metadata": {},
+        "text": "A Voronoi cell is selected according to the following weights in the",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3981ef48-f3a3-497b-8997-94ac6f8dced5",
+        "metadata": {},
+        "text": "first step:",
+        "type": "Title"
+    },
+    {
+        "element_id": "6b81ca5f-f118-4374-ad3b-fd70c5790f1b",
+        "metadata": {},
+        "text": "/",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "17fa7cca-26ea-49a0-b274-881080a4e8cf",
+        "metadata": {},
+        "text": "\u03b7(i) k \u2211 \u03b7(i) k",
+        "type": "Title"
+    },
+    {
+        "element_id": "595f1876-22ae-4761-b42d-1d29f00b13b3",
+        "metadata": {},
+        "text": "V (i) k / V (i) k",
+        "type": "Title"
+    },
+    {
+        "element_id": "d31c3b26-58b6-415d-8550-fd58e7d45965",
+        "metadata": {},
+        "text": "[",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c0b0e341-854d-4e24-a9d0-a0c0aa13ccb3",
+        "metadata": {},
+        "text": "]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d2e84ef1-1005-4372-a62a-667356451c9c",
+        "metadata": {},
+        "text": "w(i)",
+        "type": "Title"
+    },
+    {
+        "element_id": "59e29b14-7c7a-4da5-8532-4661451b3f32",
+        "metadata": {},
+        "text": "\u03b7(i) (1) + \u03b7(i) (1) + V (i) V (i)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "49c98ebd-3957-4c0a-85bd-561cb411376e",
+        "metadata": {},
+        "text": "(2) + \u22ef + \u03b7(i) (2) + \u22ef + V (i)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "eee2ea16-b388-40a2-8910-9098a3329013",
+        "metadata": {},
+        "text": "k =",
+        "type": "Title"
+    },
+    {
+        "element_id": "cc9be606-6b6d-4880-9ad1-3f34d214544d",
+        "metadata": {},
+        "text": ".",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5c792194-f3f1-49b4-8aae-b7366203c97e",
+        "metadata": {},
+        "text": "V (i) N(i)",
+        "type": "Title"
+    },
+    {
+        "element_id": "3640086c-e002-4cae-912f-768a22d82ded",
+        "metadata": {},
+        "text": "(14)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6cb61356-d2b8-4412-a202-ced752ee31e4",
+        "metadata": {},
+        "text": "(S)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b6fbf8ad-679c-4091-9a53-322702e0c9ba",
+        "metadata": {},
+        "text": ".",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4d508942-6b46-43c6-bcbb-658f8e973654",
+        "metadata": {},
+        "text": "H(I) =",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ba162fc2-1a67-4646-ab95-fb78b140ae0c",
+        "metadata": {},
+        "text": "(13)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c06607ec-43cf-49fe-b694-dcb391d8c862",
+        "metadata": {},
+        "text": "k",
+        "type": "Title"
+    },
+    {
+        "element_id": "8178de83-e9fa-4cff-888c-06a9850f2f74",
+        "metadata": {},
+        "text": "(S)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e0f55246-b934-4386-afa2-ac4d8af1a2fc",
+        "metadata": {},
+        "text": "Fig. 2. Illustration of the proposed iSSO algorithm.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a33245f4-1273-40b3-86f5-a5515f571d82",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "c4a60415-e0a9-4c31-b2aa-4f90ee9c0c28",
+        "metadata": {},
+        "text": "AdvancesinEngineeringSoftware188(2024)1035685",
+        "type": "Title"
+    },
+    {
+        "element_id": "ce392c74-1d71-4667-9dca-c38eab35c5af",
+        "metadata": {},
+        "text": "M.A. Khalid and S. Bansal",
+        "type": "Title"
+    },
+    {
+        "element_id": "cfd99b72-3de2-43f7-a45c-b508da18a90b",
+        "metadata": {},
+        "text": "To simulate a new sample within a selected Voronoi cell, the sample that generated the selected Voronoi cell or the last simulated sample in the selected Voronoi cell is used as the seed sample, and the Metropolis- Hastings algorithm is implemented. A candidate sample [\u03c6c,\u03b8c] is simulated using the proposal q(\u03c6c,\u03b8c|\u03c6,\u03b8) and is accepted with the probability min(1, a0), where, a0 is given as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cdcb1b6f-9e54-442c-a638-aa20df3c93fa",
+        "metadata": {},
+        "text": "3.5. Implementation issues",
+        "type": "Title"
+    },
+    {
+        "element_id": "42c876ab-def4-451d-8612-922bf37145d7",
+        "metadata": {},
+        "text": "An important issue for the effective implementation of the iSSO is the creation of the Voronoi cells at the current iteration bounded within the Voronoi cell created at the previous iterations. Although it is possible to create such bounded Voronoi cells, due to the geometrical complexities, it is usually unfeasible for the higher dimensional problems (n\u03c6>2). An alternative approach is proposed in the present study for creating the Voronoi cells at any iteration of the iSSO. The proposed approach in- volves creating Voronoi cells using the samples generated at the current and all previous iterations and then by considering Voronoi cells cor- responding to the samples from the current iteration. This is shown in Fig. 3, where Fig. 3(a) shows the N samples at the first iteration and the corresponding Voronoi cells. Fig. 3(b) shows the \u03c1N selected Voronoi cells leading to the smallest volume density and the additional (1 (cid:0) \u03c1)N samples being generated using these \u03c1N samples as seeds. Fig. 3(c) shows that the Voronoi cells are generated using all N + (1 (cid:0) \u03c1)N samples that are generated in the two iterations. The Voronoi cells corresponding to the N samples for consideration at the second iteration are also highlighted in Fig. 3(c). Fig. 3(d) shows a zoomed-in version of Fig. 3(c) where it can be observed that the area covered by the N Voronoi cells considered in the second iteration is not the same as the area covered by the \u03c1N Voronoi cells selected in the first iteration. On the contrary, the area covered by the Voronoi cells in the second iteration is more than the area covered by the Voronoi cells corresponding to the seed samples from the first iteration. This is because a new sample within the Voronoi cell between an existing sample and the existing Voronoi cell edge results in the relocation of the Voronoi cell edge in a",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4e44f06b-2dbb-4c58-89e7-320567dfd4f6",
+        "metadata": {},
+        "text": "h(\u03c6c, \u03b8c)p(\u03c6c, \u03b8c)q(\u03c6, \u03b8|\u03c6c, \u03b8c) . h(\u03c6, \u03b8)p(\u03c6, \u03b8)q(\u03c6c, \u03b8c|\u03c6, \u03b8)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e1f47197-450b-467b-96e0-a3b3797ee4ea",
+        "metadata": {},
+        "text": "a0 =",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7cbf93ea-1487-4c4b-9563-2475b204d562",
+        "metadata": {},
+        "text": "(15)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1d68baa3-2d0f-41c7-9cf1-861d8325c07c",
+        "metadata": {},
+        "text": "In the present study, the proposed PDF is equal to the uniform PDF for design parameters and the initial PDF for uncertain variables, i.e., q (\u03c6, \u03b8|\u03c6c,\u03b8c) = p(\u03c6, \u03b8). Therefore, on simplifying (15), a0 is given as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "32518114-0496-45d6-a2b3-e77596b807c7",
+        "metadata": {},
+        "text": "h(\u03c6c, \u03b8c) . h(\u03c6, \u03b8)",
+        "type": "Title"
+    },
+    {
+        "element_id": "38fb9c88-fcde-420d-b2ee-6a95a65758c9",
+        "metadata": {},
+        "text": "a0 =",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "62b9e28d-988f-4ed5-9ae0-c46b5f15a315",
+        "metadata": {},
+        "text": "(16)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "294c2144-b0ab-4f28-9038-a1147edbf6e3",
+        "metadata": {},
+        "text": "3.4. Stopping criteria",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "df31e90f-98a9-4da1-985d-020f91d9680f",
+        "metadata": {},
+        "text": "A new stopping criterion is proposed in this study. The convergence of the expected value of the performance measure h(\u03c6, \u03b8) with respect to the PDF for \u03c6 and \u03b8 in consecutive iterations is used as the stopping criterion. Mathematically the proposed stopping criterion is represented by: \u20d2 \u20d2E\u03c6,\u03b8[h(\u03c6, \u03b8)]i (cid:0) E\u03c6,\u03b8[h(\u03c6, \u03b8)]i(cid:0) 1",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "716995cb-f254-433a-95fe-48be0f1e0ecf",
+        "metadata": {},
+        "text": "\u20d2 \u20d2 \u2264 \u03b5",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1d9d3d84-8cf0-4a36-a89f-474196249026",
+        "metadata": {},
+        "text": "(17)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e6fe3a2f-6378-4365-b5f7-e48d61c0c120",
+        "metadata": {},
+        "text": "where, \u03b5 is a user-specified tolerance limit. Other stopping criteria, as indicated in [39,47], can also be chosen.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0c53aa66-f982-483c-99de-3cfb4796a392",
+        "metadata": {},
+        "text": "Fig. 3. Implementation of Voronoi tessellation in iSSO.",
+        "type": "Title"
+    },
+    {
+        "element_id": "e74907dd-4320-48bb-a53f-485af3b261df",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "ded5bf4d-70e7-4dd9-954d-82b06214daa2",
+        "metadata": {},
+        "text": "AdvancesinEngineeringSoftware188(2024)1035686",
+        "type": "Title"
+    },
+    {
+        "element_id": "47a656f5-84d7-446a-89cb-43a619fb34c0",
+        "metadata": {},
+        "text": "M.A. Khalid and S. Bansal",
+        "type": "Title"
+    },
+    {
+        "element_id": "37bea034-4f18-429c-9a2f-671c369dc433",
+        "metadata": {},
+        "text": "direction away from the new sample. The increase at each iteration in- troduces a bias in the estimate of \u03c0(\u03c6|I(i)) in (11). However, this does not affect the performance of the proposed approach as the objective is not to simulate the samples distributed as \u03c0(\u03c6|I(i)) but to identify the subsets for an optimal solution. In addition, the increase is not substantial, as seen later in the illustrative examples in Section 4.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "072ab0c5-c697-4c49-8da2-acdad605475c",
+        "metadata": {},
+        "text": "performed. In the third example, the mean minimization of 120 bars truss problems is explored to demonstrate the applicability of the pro- posed approach to a high-dimensional stochastic design problem. Finally, the fourth example investigates the reliability-based optimiza- tion of a base isolation system for a 10-story building.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4500d03a-dbe2-45e2-b793-a2aff08cb5b6",
+        "metadata": {},
+        "text": "In this study, after implementing iSSO, the optimal design solution is identified as follows. Let \u03b8j, j = 1\u22c5\u22c5\u22c5n be a set of independent, identically distributed realizations of \u03b8, and let h(\u03c6, \u03b8j) be the structural perfor- mance function realization for \u03b8j. The expected structural performance function is approximated by the average of the realizations as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8e39e563-cf25-4c1c-afc4-1207b827092b",
+        "metadata": {},
+        "text": "3.6. Special case: deterministic optimization",
+        "type": "Title"
+    },
+    {
+        "element_id": "b7be4d40-b50c-4ec2-83b5-4be62dc4c362",
+        "metadata": {},
+        "text": "In the iSSO framework, a deterministic optimization problems can also be handled with the vector of uncertain variables \u03b8 set equal to a null vector (n\u03b8 = 0). Since the determination of the subset at each iSSO iteration is solely dependent on the samples distributed as \u03c0(\u03c6), no modification to the iSSO algorithm is required to solve a deterministic optimization problem, and the entire formulation remains valid.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "23e55c9a-d2a0-490b-b553-0c9aa489a5e8",
+        "metadata": {},
+        "text": "\u2211n",
+        "type": "Title"
+    },
+    {
+        "element_id": "30b91b94-fa89-48ed-a0ec-5adc0200ef4b",
+        "metadata": {},
+        "text": ") .",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c63e327d-6a28-4fd7-90ac-e54f4358f0af",
+        "metadata": {},
+        "text": "(cid:0) h",
+        "type": "Title"
+    },
+    {
+        "element_id": "6209d53c-694e-4845-8eaa-074e5737f5d3",
+        "metadata": {},
+        "text": "1 n",
+        "type": "Title"
+    },
+    {
+        "element_id": "09e722bb-1ad3-49e5-b194-d03b0289a912",
+        "metadata": {},
+        "text": "E\u03b8[h(\u03c6, \u03b8)] \u2248",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a556ad00-0119-4374-92e0-73deb032e048",
+        "metadata": {},
+        "text": "\u03c6, \u03b8j",
+        "type": "Title"
+    },
+    {
+        "element_id": "23b54622-9cc9-48e5-9019-fbb7bca26a94",
+        "metadata": {},
+        "text": "(18)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d42ffbf1-698c-4140-823d-27ed3fa411a4",
+        "metadata": {},
+        "text": "j=1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "bb17bdb0-492a-4723-b08b-f59264c1696a",
+        "metadata": {},
+        "text": "E\u03b8[h(\u03c6, \u03b8)] is evaluated for all unique \u03c6 samples obtained at the last iteration of the iSSO, and the \u03c6 sample resulting in the smallest value of E\u03b8[h(\u03c6, \u03b8)] is taken as the optimal solution. Alternatively, as the right- hand side of (18) is deterministic, any deterministic optimization method can also be used to solve the optimization problem with the approximate expectation.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fd6f64e5-0ddc-4ae5-8c3b-98a496f73209",
+        "metadata": {},
+        "text": "4. Illustrative examples",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "8e14a928-a732-4014-9d8a-7ede317af297",
+        "metadata": {},
+        "text": "In this section, typical optimization problems are considered to demonstrate the effectiveness and efficiency of the proposed approach. First, deterministic optimization problems are considered. These prob- lems include several local and global minima. Next, stochastic optimi- zation problems are illustrated. The second example presents an RDO problem of the TMD. In this example, the variance minimization of the protected structure\u2019s displacement (TMD attached to the structure) is",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e9feefb8-bc51-4e3c-bf89-f22c0ede3f7c",
+        "metadata": {},
+        "text": "In the following examples, both iSSO and SSO are implemented with N = 1000n\u03c6, \u03c1 = 0.20 and the stopping criteria as stated in (17). Here, a value of \u03b5 = 10",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2d6a97be-4e74-464b-a559-a60469394a44",
+        "metadata": {},
+        "text": "(cid:0) 3 is adopted.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "84005762-1f97-4231-b490-cf1a74b208dc",
+        "metadata": {},
+        "text": "Fig. 4. Results for the Griewank function.",
+        "type": "Title"
+    },
+    {
+        "element_id": "8b6edc80-a274-4654-9939-8279bdfef328",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "80ef7871-9fd0-420d-8114-48175d9e6178",
+        "metadata": {},
+        "text": "AdvancesinEngineeringSoftware188(2024)1035687",
+        "type": "Title"
+    },
+    {
+        "element_id": "5f643d00-83f9-44cd-b85c-18a94d567102",
+        "metadata": {},
+        "text": "M.A. Khalid and S. Bansal",
+        "type": "Title"
+    },
+    {
+        "element_id": "1084b007-7484-4ab4-b5d2-6b56152cc4ee",
+        "metadata": {},
+        "text": "Fig. 5. Results for the Cross-in-Tray function.",
+        "type": "Title"
+    },
+    {
+        "element_id": "e31f4b3b-8091-4ca1-8762-448b87056630",
+        "metadata": {},
+        "text": "\u221a",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3911d9fd-98e6-4b37-9866-b37c8a268b46",
+        "metadata": {},
+        "text": "\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305 \u20d2 \u20d2 1 + \u03c62 \u03c62 \u20d2 \u20d2 \u20d2 \u03c0",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "20c90db5-faf9-458c-8422-92062f6c9bec",
+        "metadata": {},
+        "text": "4.1. Multimodal deterministic optimization problems",
+        "type": "Title"
+    },
+    {
+        "element_id": "69e40899-e1e4-4407-b080-5a7611054f27",
+        "metadata": {},
+        "text": ")\u20d2 \u20d2 \u20d2 \u20d2 \u20d2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "043405d2-a8ad-407a-97b4-defe99c05f25",
+        "metadata": {},
+        "text": "(\u20d2 \u20d2 \u20d2 \u20d2 \u20d2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9aa8283a-67db-402c-9d09-cf512ef3c41e",
+        "metadata": {},
+        "text": "\u20d2 \u20d2 \u20d2 \u20d2 \u20d2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "44914792-0404-4d9a-8eda-6fbdc43ddb39",
+        "metadata": {},
+        "text": "2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e79ba5e2-4ad7-452f-9993-e60f11b7b0f4",
+        "metadata": {},
+        "text": ",",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "22b1d326-bbb8-4476-9d3e-60bf982feec8",
+        "metadata": {},
+        "text": "1 (cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6d2b24de-fa4c-45fc-b8a7-58d4f368d79a",
+        "metadata": {},
+        "text": "minh(\u03c6) = (cid:0)",
+        "type": "Title"
+    },
+    {
+        "element_id": "5a6e127e-d0fe-4b42-a849-bd1e3cb0f5d4",
+        "metadata": {},
+        "text": "sin(\u03c61)cos(\u03c62)exp",
+        "type": "Title"
+    },
+    {
+        "element_id": "745761cd-3c1c-4327-8d87-1c20de618a20",
+        "metadata": {},
+        "text": "In this section, three two-dimensional benchmark deterministic optimization problems are considered. Results are also compared with the SSO. The test functions are:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1bec6244-217a-4aa0-b038-b87a213d082c",
+        "metadata": {},
+        "text": "(21))",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d2eb567e-db10-486c-a3d6-f70a02a1c6a1",
+        "metadata": {},
+        "text": "s.t.\u03c6 = [ (cid:0) 10, 10]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3ab5ece8-5cfd-48b8-82f0-5e59c9f45c71",
+        "metadata": {},
+        "text": "a) Griewank function:",
+        "type": "Title"
+    },
+    {
+        "element_id": "d3276b14-2d7b-4cf7-921d-414e2aa52057",
+        "metadata": {},
+        "text": "(",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "56fbe6fa-8501-4d0e-8663-58b7d2423698",
+        "metadata": {},
+        "text": ")",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "869a9627-9a7a-41b1-99d2-7dae4c446035",
+        "metadata": {},
+        "text": "\u2211d",
+        "type": "Title"
+    },
+    {
+        "element_id": "c57dd4ca-1c76-4b3f-9c3d-c34257c2bd82",
+        "metadata": {},
+        "text": "\u220fd",
+        "type": "Title"
+    },
+    {
+        "element_id": "2be1b386-75d3-4f7a-97a5-f52dfdcd5584",
+        "metadata": {},
+        "text": "\u03c62 i 4000",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "347c05ff-e8bf-4b89-b557-532ed6ff0971",
+        "metadata": {},
+        "text": "\u03c6i\u0305\u0305 \u221a i",
+        "type": "Title"
+    },
+    {
+        "element_id": "b41be0db-dac3-4ab2-a95e-121d16e57dc7",
+        "metadata": {},
+        "text": "The results for the Griewank function are presented in Fig. 4. Fig. 4(a, b) shows that the function has multiple closely spaced local minima with a single global minimum. Fig. 4(c, d) shows the SSO optimization using hyper-rectangle and hyper-ellipse as shapes of admissible subsets. It is seen that these shapes fail to capture the region containing the optimal design due to the presence of multiple local minima. Next, the iSSO is implemented, where the Voronoi cells selected at the first and last iteration are shown in Fig. 4(e, f). It is observed that at the first iteration, the selected Voronoi cells effectively capture both the local and global minima and in the subsequent iterations, the selected cells are more concentrated near the global minimum. The region selected at the last iteration captures the optimal global solution.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8f60ce73-0a52-4cd1-9c38-8b784667771a",
+        "metadata": {},
+        "text": "minh(\u03c6) =",
+        "type": "Title"
+    },
+    {
+        "element_id": "9d2bac66-5b1c-48e4-8baf-848a80f50270",
+        "metadata": {},
+        "text": "+ 1,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9bf5feef-fc27-4675-94ad-d78bb9eed4df",
+        "metadata": {},
+        "text": "(cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5c7770e9-62b7-4ab3-b9d1-47c6a71ae135",
+        "metadata": {},
+        "text": "cos",
+        "type": "Title"
+    },
+    {
+        "element_id": "0affd636-dda9-4011-a3e3-a9973d737b2e",
+        "metadata": {},
+        "text": "(19)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "021ef7a5-03c6-4aa7-9b1c-98b4b51c2f24",
+        "metadata": {},
+        "text": "i=1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "dccea30f-144c-45bf-ad74-aec468f89356",
+        "metadata": {},
+        "text": "i=1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5ee45f23-2e10-476e-906d-11efa0d64449",
+        "metadata": {},
+        "text": "s.t.\u03c6 = [ (cid:0) 10, 10]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "281fff99-4fd9-4c8d-923b-c3e1238ec5a6",
+        "metadata": {},
+        "text": "b) Cross-in-Tray function:",
+        "type": "Title"
+    },
+    {
+        "element_id": "b6e1b774-568c-4fbf-a9cc-6128956f19e3",
+        "metadata": {},
+        "text": "(\u20d2 \u20d2 \u20d2 \u20d2 \u20d2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "23daba27-4f02-4002-93ae-985cdf68fbb1",
+        "metadata": {},
+        "text": "\u20d2 \u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305 \u20d2 1 + \u03c62 \u03c62 \u20d2 2 \u20d2 \u20d2 \u03c0",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1636797f-bbdd-44bd-8cd4-c8f79ecdab93",
+        "metadata": {},
+        "text": ")\u20d2 \u20d2 \u20d2 \u20d2 \u20d2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "fbd75411-fdd4-402b-9623-7b8591e4b41a",
+        "metadata": {},
+        "text": "(\u20d2 \u20d2 \u20d2 100 (cid:0) \u20d2 \u20d2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "83c49b04-61f4-4047-9a82-c46bcd073c3c",
+        "metadata": {},
+        "text": ")0.1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1232913b-e279-48b4-aab8-c598cf515131",
+        "metadata": {},
+        "text": "\u221a",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0fa80887-981c-4682-8513-b068d4c07489",
+        "metadata": {},
+        "text": "minh(\u03c6) = (cid:0) 0.0001",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "221371eb-2223-4207-bc58-51c489a25972",
+        "metadata": {},
+        "text": "sin(\u03c61)sin(\u03c62)exp",
+        "type": "Title"
+    },
+    {
+        "element_id": "e961e8a7-808f-48a9-98ca-0bc030fc04d5",
+        "metadata": {},
+        "text": "+ 1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e446261d-63b5-442e-a4ab-04d65a0f3ea1",
+        "metadata": {},
+        "text": ",",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "03d8c293-e731-41d3-b02a-78e9cb28a79d",
+        "metadata": {},
+        "text": "s.t.\u03c6 = [ (cid:0) 10, 10]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1a4faa50-c52c-4353-9112-29b16739c800",
+        "metadata": {},
+        "text": "(20)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "018296c6-b049-4238-9ae4-a7f928926526",
+        "metadata": {},
+        "text": "The Cross-in-Tray function has a relatively complex design space compared to the Griewank function. Fig. 5(a, b) shows multiple local and global minima. Minimization by using SSO is demonstrated in Fig. 5 (c, d). It is found that both the hyper-rectangle and hyper-ellipse are trapped around any one of the global minima. At the same time, the iSSO is able to capture the regions that include all of the global minima, as",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bb590e83-d39f-413e-b082-4c33fc15262f",
+        "metadata": {},
+        "text": "c) Holder Table function:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "594c8991-720c-4934-a040-22122a8b2a1a",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "dd1e1936-4217-4e21-afda-1e2f536cd6e4",
+        "metadata": {},
+        "text": "AdvancesinEngineeringSoftware188(2024)1035688",
+        "type": "Title"
+    },
+    {
+        "element_id": "ad67ad49-92a5-418d-8faf-59bb7863162e",
+        "metadata": {},
+        "text": "M.A. Khalid and S. Bansal",
+        "type": "Title"
+    },
+    {
+        "element_id": "1f611288-7d90-402c-a135-1fdf8784f77f",
+        "metadata": {},
+        "text": "Fig. 6. Results for the Holder Table function.",
+        "type": "Title"
+    },
+    {
+        "element_id": "fed07165-0c29-4679-8098-7e25f56e3d44",
+        "metadata": {},
+        "text": "(1)) for the 50 indepen- three functions. Fig. 7 shows the value of H(I dent simulation runs, which is estimated by implementing the proposed double sort algorithm and by using the Genetic algorithm. It can be (1)) values obtained using the proposed noted that for each run, the H(I double sort algorithm and Genetic algorithm are well matched, thereby confirming the adequacy of the proposed double sort algorithm.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b1ae31c0-16f8-4d22-ac24-23ab09803562",
+        "metadata": {},
+        "text": "seen in Fig. 5(e, f).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bd8591c9-565e-4bfe-8655-a74d67dd189d",
+        "metadata": {},
+        "text": "The Holder Table function has multiple local and global minima; the global minima are placed at the boundary of the design space, as shown in Fig. 6(a, b). Once again, it is seen that both the hyper-rectangle and hyper-ellipse are trapped around any of one of the global minima, and on the other hand, the iSSO is able to capture the regions that include all of the global minima, as seen in Fig. 6(e, f).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d5b0b985-a2d8-4068-b8ba-2dfa24729b4f",
+        "metadata": {},
+        "text": "At any iteration of iSSO, new samples are simulated using the seed samples. In the proposed approach, the volume of the Voronoi cells corresponding to the seed and new samples is greater than the volume of the Voronoi cells corresponding only to the seed samples. Fig. 8 shows this change in volume V due to the creation of Voronoi cells at any generation of iSSO using the procedure mentioned in Section 3.4. The increase is observed to be small which further reduces with an in- crease in the iteration number. It is also observed that the increase in volume decreases with an increase in sample size at each iteration and increases with an increase in the dimension of the problem.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5b4f566f-82dc-45fa-a917-cee9f51e0f8a",
+        "metadata": {},
+        "text": "The results from the three examples demonstrate that the proposed iSSO is able to capture the regions containing the optimal solution effectively.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "72ad7a6a-4e9f-4ea1-bcbe-dea51535982f",
+        "metadata": {},
+        "text": "Next, the statistics of the results of 50 independent runs, both for SSO and iSSO are presented in Table 1. It also includes the results obtained by using state-of-the-art approaches, such as the Genetic algorithm, particle swarm optimization, and the gradient based optimization approach (interior-point algorithm). The proposed iSSO outperforms all other approaches as more successes in determining the optimal solution are observed in all three optimization problems. It is also seen that both SSO and iSSO result in a similar value of volume reduction for the same stopping criterion; however, with SSO, the number of iterations required to achieve this volume reduction are relatively higher. The proposed approach outperformed the state-of-the-art approaches, as indicated by the number of successes. These examples demonstrate that the main advantage of implementing Voronoi tessellation is an effective explo- ration of the design space.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4781484b-26a6-4c6c-8b84-85aafa0df968",
+        "metadata": {},
+        "text": "(seeds+new)(cid:0) V V(seeds)",
+        "type": "Title"
+    },
+    {
+        "element_id": "2b351354-e557-45a2-9db1-7f1ccdc3dea4",
+        "metadata": {},
+        "text": "(seeds)",
+        "type": "Title"
+    },
+    {
+        "element_id": "959d47b0-1f50-48cd-a9e3-6ba103644c83",
+        "metadata": {},
+        "text": "4.2. Robust design optimization of the tuned mass damper",
+        "type": "Title"
+    },
+    {
+        "element_id": "e122a676-8826-40e4-9d6f-95d8226918cc",
+        "metadata": {},
+        "text": "This example considers a stochastic design problem involving a Tuned Mass Damper (TMD) attached to a Single Degree of Freedom (SDOF) system. The problem is taken from [48] and is shown in Fig. 9. In this problem, the system is excited by a white noise signal with a mean zero and unit variance. The performance measure is the variance of the displacement of the system \u03c32 xs . The mass mS, stiffness kS, and",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "161f233c-e3c4-4064-bb1b-bf419f0bc355",
+        "metadata": {},
+        "text": "Next, the performance of the proposed \"double sort algorithm\" for selecting the optimal subset is studied by using the above-mentioned",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4db026b4-0de5-4204-8e51-e69e1615ee9c",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "90824d78-749a-4084-b725-04728a54f4ab",
+        "metadata": {},
+        "text": "AdvancesinEngineeringSoftware188(2024)1035689",
+        "type": "Title"
+    },
+    {
+        "element_id": "a121df38-abb0-46a7-a2a6-562680ec426c",
+        "metadata": {},
+        "text": "M.A. Khalid and S. Bansal",
+        "type": "Title"
+    },
+    {
+        "element_id": "9eb5df8b-9b97-4897-9450-5f01bb1502e6",
+        "metadata": {},
+        "text": "Table 1 Statistics of optimization results for multimodal deterministic optimization problems.",
+        "type": "Title"
+    },
+    {
+        "element_id": "17bdf948-04d5-49d8-a534-c2adae74189b",
+        "metadata": {},
+        "text": "Example",
+        "type": "Title"
+    },
+    {
+        "element_id": "f8a86d2f-f825-4d86-89b7-663f998b1ef4",
+        "metadata": {},
+        "text": "SSO",
+        "type": "Title"
+    },
+    {
+        "element_id": "0a35d0dc-440e-474b-b8b3-a68a42e8eeb9",
+        "metadata": {},
+        "text": "iSSO",
+        "type": "Title"
+    },
+    {
+        "element_id": "d3e25405-598b-49d1-8d72-f618048c35ef",
+        "metadata": {},
+        "text": "GA*",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6adebe3b-d0bb-4e38-907f-dfa73f4666ec",
+        "metadata": {},
+        "text": "PSO*",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "da7c90b1-fb8b-447d-8656-5ee9abb062cc",
+        "metadata": {},
+        "text": "GBA*",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ef1fd184-556c-4e29-8d66-f99905de9006",
+        "metadata": {},
+        "text": "Hyper-Rectangle",
+        "type": "Title"
+    },
+    {
+        "element_id": "b1632d74-81d5-4084-9419-7fa234aba20a",
+        "metadata": {},
+        "text": "Hyper-Ellipse",
+        "type": "Title"
+    },
+    {
+        "element_id": "547feb62-7d27-4425-aa69-7b8f699db1bc",
+        "metadata": {},
+        "text": "Griewank",
+        "type": "Title"
+    },
+    {
+        "element_id": "2f223e00-0518-45f4-9351-c42b42222fe6",
+        "metadata": {},
+        "text": "NF NS BV WV AV c.o.v FE Gen VR NF NS BV WV AV c.o.v FE Gen VR NF NS BV WV AV c.o.v FE Gen VR",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c1647b6c-7b27-422c-a252-48c3c8ed1f99",
+        "metadata": {},
+        "text": "30 20 0 0.1028 0.0190 1.1663 22,702 7 94.025 50 0 (cid:0) 2.0576 (cid:0) 2.0472 (cid:0) 2.0527 0.0133 27,563 9 99.89 50 0 (cid:0) 19.2085 (cid:0) 18.8916 (cid:0) 19.0916 0.0025 40,700 13 99.59",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "02968ffd-8c4d-4a45-b96f-86b6ec121afa",
+        "metadata": {},
+        "text": "32 18 0 0.1161 0.0292 1.0168 15,223 5 84.79 50 0 (cid:0) 2.0626 (cid:0) 2.0481 (cid:0) 2.0621 0.001 21,595 7 98.95 50 0 (cid:0) 17.5025 (cid:0) 1.1419 (cid:0) 8.432 0.3898 24,684 8 99.42",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0196632a-637b-4cea-96e7-0d93f636a253",
+        "metadata": {},
+        "text": "5 45 0 0.0270 0.0110 0.5137 12,426 4 93.56 1 49 (cid:0) 2.0624 (cid:0) 2.0260 (cid:0) 2.0522 0.0042 9982 3 88.71 3 47 (cid:0) 19.2085 (cid:0) 17.3030 (cid:0) 18.8798 0.0182 18,142 6 94.37",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1cd4a3ef-a595-400e-b34c-ed5d1d7a6680",
+        "metadata": {},
+        "text": "38 12 0 0.0296 0.0094 0.9603 3385",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3c65b873-04ec-4b9a-9609-10b956ef998d",
+        "metadata": {},
+        "text": "35 15 0 0.0232 0.0057 0.8763 1432",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "22b8e765-5ba5-4fd1-a99d-94b18366399a",
+        "metadata": {},
+        "text": "47 3 0 0.0296 0.0173 0.05971 33",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0fe265bf-edb6-4739-ba9a-911037faa5b5",
+        "metadata": {},
+        "text": "N/A",
+        "type": "Title"
+    },
+    {
+        "element_id": "532edf8b-bf02-4738-b5fb-156b477c7d6a",
+        "metadata": {},
+        "text": "Cross-In-Tray",
+        "type": "Title"
+    },
+    {
+        "element_id": "1d481dbc-55a5-4974-88a5-c60986baed57",
+        "metadata": {},
+        "text": "50 0 (cid:0) 2.0626 (cid:0) 2.0626 (cid:0) 2.0626 0 3178",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ebcf5eb5-c586-49d8-b3dc-afcda9458077",
+        "metadata": {},
+        "text": "50 0 (cid:0) 2.0626 (cid:0) 2.0626 (cid:0) 2.0626 0 933",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f76de21c-cf3b-407e-937a-14671c5d94e6",
+        "metadata": {},
+        "text": "50 0 (cid:0) 2.0626 (cid:0) 1.3853 (cid:0) 1.7360 0.0977 32",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "8b7bd3b5-cd19-4961-9a6e-79ca625efde3",
+        "metadata": {},
+        "text": "N/A",
+        "type": "Title"
+    },
+    {
+        "element_id": "2bc56049-3c9a-47b0-877e-8459e7cb1c2d",
+        "metadata": {},
+        "text": "Holder-Table",
+        "type": "Title"
+    },
+    {
+        "element_id": "29e38828-d475-4616-8b1f-a08a04ad71a3",
+        "metadata": {},
+        "text": "50 0 (cid:0) 19.2085 (cid:0) 9.5047 (cid:0) 19.0144 0.0722 3413 N/A",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d330863c-323a-4249-806a-f040a7230c9c",
+        "metadata": {},
+        "text": "50 0 (cid:0) 19.2085 (cid:0) 15.1402 (cid:0) 18.9745 0.0443 988",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "caa78476-a0ee-41ee-a864-451361866db0",
+        "metadata": {},
+        "text": "50 0 (cid:0) 19.2085 (cid:0) 1.1831 (cid:0) 6.5493 0.8358 30",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f1ba06dd-3ee4-4239-a5ce-944d8fbe3682",
+        "metadata": {},
+        "text": "GA = genetic algorithm, PSO = particle swarm optimization, GBA = gradient-based optimization approach, NF = no. of. failure, NS = no. of. success, BV = best value, WV = worst value, AV = average value, c.o.v = coefficient of variation, FE = no. of. function evaluations, Gen = generations, VR = volume reduction percentage, * = efficiently applicable only for deterministic problems.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b69ce1ad-ffa1-4d7b-9a24-dce4302dcd35",
+        "metadata": {},
+        "text": "Fig. 7. Comparison of double sort algorithm and Genetic algorithm results.",
+        "type": "Title"
+    },
+    {
+        "element_id": "f67954e9-37a5-4c26-b0d3-5e9fdcf4236d",
+        "metadata": {},
+        "text": "Fig. 8. Percentage change in volume at each iSSO iteration.",
+        "type": "Title"
+    },
+    {
+        "element_id": "c94eefe4-af2b-4c92-91f5-989d81906b94",
+        "metadata": {},
+        "text": "parameters mT,\u03c9T,and\u03c9S are, in order, the mass of the TMD, the natural ), and the natural frequency of the frequency of the TMD ( \u221a",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cf5cc1c0-3bdf-4455-85bd-7bffa7eb3408",
+        "metadata": {},
+        "text": "damping cS of the system are taken as uncertain parameters, following independent Gaussian distribution. The mean value of these variables is taken to be 105 kg, 107 N/m, and 4 \u00d7 104 Ns/m respectively. To account for uncertainty, the c.o.v value for each variable taken is 0.05. The frequency ratio \u03b2 = \u03c9T /\u03c9S and damping \u03beT of the TMD are considered design parameters. The TMD has a mass ratio, mT/ms, of 0.10. The",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4eeba8b9-1a58-43de-b465-af05bc1976c3",
+        "metadata": {},
+        "text": "\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305 kT/mT",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4b95324c-23b3-42c5-8ab7-f64574cd3008",
+        "metadata": {},
+        "text": "\u221a",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "fd4fd2a7-507b-41a3-ab33-47f63b551b4a",
+        "metadata": {},
+        "text": "\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305\u0305 ks/ms",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5a0e0eec-3e5d-4bd4-a469-f385895b50f5",
+        "metadata": {},
+        "text": "). The optimization problem is written as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "62be21d1-f619-46dd-b0fa-44e6805ea40d",
+        "metadata": {},
+        "text": "structure (",
+        "type": "Title"
+    },
+    {
+        "element_id": "3b57d8a2-3953-4847-8c8c-67d3177c92da",
+        "metadata": {},
+        "text": "[(",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9f96c6e8-5f2e-4a8f-84ec-df3eb60feb4d",
+        "metadata": {},
+        "text": ")]2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4e66950b-fdb2-432f-92c6-3ecde0bf00c6",
+        "metadata": {},
+        "text": "\u03c32 xs",
+        "type": "Title"
+    },
+    {
+        "element_id": "2f1d43cf-df56-4ba0-b0f9-973e0b56223a",
+        "metadata": {},
+        "text": "minimize : \u03c6\u2208\u03a6,\u03c6\u2208\u03a6",
+        "type": "Title"
+    },
+    {
+        "element_id": "78959712-697f-4af1-a601-97839c66eb45",
+        "metadata": {},
+        "text": "E\u03b8[h(\u03b8, \u03c6, \u03c6)] = E\u03b8",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "70be1576-4782-4aea-81c1-ac84a762a5f0",
+        "metadata": {},
+        "text": ",",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1d6c053c-6d22-462c-8bba-322d54d4a758",
+        "metadata": {},
+        "text": "(\u03b8, \u03c6) (cid:0) \u03c6",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "18125738-c00e-4118-a569-08e6130be1e5",
+        "metadata": {},
+        "text": "(22)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c3fb8f55-964e-4ce2-8273-f53495e04e29",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "f0f389f8-dc66-433a-ba41-b7754ea9bf87",
+        "metadata": {},
+        "text": "AdvancesinEngineeringSoftware188(2024)10356810",
+        "type": "Title"
+    },
+    {
+        "element_id": "83e8ecab-cb97-4b2f-bdf0-b478068ccd0b",
+        "metadata": {},
+        "text": "M.A. Khalid and S. Bansal",
+        "type": "Title"
+    },
+    {
+        "element_id": "c2a56ac6-aa74-4d71-802f-802cec8256eb",
+        "metadata": {},
+        "text": "iSSO are shown. SAA is applied with a sample size of 103, as mentioned in [43]. The results demonstrate that iSSO is effective in locating the optimal solution. SSO implemented with hyper-ellipse gives an optimal solution but has a higher computational cost.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7151de82-f174-4e24-a084-ae54e4dccf94",
+        "metadata": {},
+        "text": "4.3. 120-bars truss structure",
+        "type": "Title"
+    },
+    {
+        "element_id": "ce716235-05e7-4d58-a81d-834119158f23",
+        "metadata": {},
+        "text": "The third example involves minimizing the mean of the compliance of a 120-bar linear elastic truss structure shown in Fig. 10 under the weight constraint W \u2264 15, 000kg. Because of structural symmetry, design parameters corresponding to the cross-sectional areas of elements (cid:0) 4 m2. are divided into seven groups, each with a minimum area of 10 The Young\u2019s modulus for the bar groups are assumed as uncorrelated normal random variables with mean values equal to 210 GPa and the c. o.v equal to 0.10 respectively. The density of the material is 7971.89 kg/ m3. The dome is subjected to concentrated vertical loads acting down- ward at the top node, normally distributed with a mean equal to 60 kN and c.o.v equal to 0.20. In addition, the mass of bars is concentrated at the nodes. The problem is taken from [48].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "04f439af-efc5-49ec-9116-17f9b6c0367a",
+        "metadata": {},
+        "text": "Table 3 presents the best of 10 independent run results obtained with SSO and iSSO. Once again, the SSO and iSSO solutions agree well, thereby demonstrating the effectiveness of the proposed approach. At the same time, the number of function evaluations is substantially less in the case of iSSO, indicating the efficiency of the proposed approach.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "25dd9fe8-eb17-4bc1-867a-13c119194da7",
+        "metadata": {},
+        "text": "Fig. 9. TMD attached to a SDOF system [48].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "41275e72-a3b7-4c52-8661-f0e1ef3cd19f",
+        "metadata": {},
+        "text": "where,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f2636aaa-ad2e-4e71-b100-5b2070734760",
+        "metadata": {},
+        "text": "0.01 \u2264 \u03b2 \u2264 1.5, 0.01 \u2264 \u03beT \u2264 1.0, 0 \u2264 \u03c6 \u2264 1000.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b1a0f659-6568-479d-9fb6-cd6156e92beb",
+        "metadata": {},
+        "text": "(23)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "576fd016-30b6-4904-9cce-36eac8d7a809",
+        "metadata": {},
+        "text": "Table 2 presents the optimal design parameter values as well as the objective function value that solve the optimization problem in (22). Results obtained using SSO, Sample Average Approximation (SAA), and",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7fe58aaa-fca9-428b-b4e2-a45927e368dd",
+        "metadata": {},
+        "text": "4.4. Reliability-based design of a base isolated structure",
+        "type": "Title"
+    },
+    {
+        "element_id": "de1b4052-2137-41f1-930f-932a0f09126e",
+        "metadata": {},
+        "text": "This example, adapted from [49], involves the reliability-based",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6e918a52-99f4-4529-bbf2-d88c57bc0146",
+        "metadata": {},
+        "text": "Table 2 Variance minimization of TMD-structure.",
+        "type": "Title"
+    },
+    {
+        "element_id": "9496ffa5-ad42-4bdd-90da-3338f3bd5a85",
+        "metadata": {},
+        "text": "E\u03b8[h(\u03b8, \u03c6, \u03c6)] (\u00d7 10",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "38db1523-cbbe-48fb-8b78-a7d6eed74ffc",
+        "metadata": {},
+        "text": "Method",
+        "type": "Title"
+    },
+    {
+        "element_id": "afe4d84b-4d6c-4f08-b3a8-8e8c44adc223",
+        "metadata": {},
+        "text": "Admissible Subset shape",
+        "type": "Title"
+    },
+    {
+        "element_id": "0cbbe317-d353-4534-b246-6b40e5a4581f",
+        "metadata": {},
+        "text": "Design parameters \u03b2",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bd19bf7f-42f9-4021-8d4c-fec9a4ecbc40",
+        "metadata": {},
+        "text": "FE",
+        "type": "Title"
+    },
+    {
+        "element_id": "4ece87a2-9ba7-423c-8873-199d442d0b7a",
+        "metadata": {},
+        "text": "NS",
+        "type": "Title"
+    },
+    {
+        "element_id": "c57a4e07-44f4-4eab-87a2-fc91c3e7d0fa",
+        "metadata": {},
+        "text": "NF",
+        "type": "Title"
+    },
+    {
+        "element_id": "5845e229-36ac-4415-9f1f-b14ce9b528f7",
+        "metadata": {},
+        "text": "(cid:0) 16 mm4)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7c9bb72c-dc13-4470-9e75-7e269a807e15",
+        "metadata": {},
+        "text": "\u03beT",
+        "type": "Title"
+    },
+    {
+        "element_id": "b0d83f61-eba7-4a85-a287-9e5b25f38ca4",
+        "metadata": {},
+        "text": "SSO [48]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c112307e-4c78-451e-a630-61cfbaf8b701",
+        "metadata": {},
+        "text": "Hyper-Rectangle Hyper-Ellipse N/A Voronoi tessellation",
+        "type": "Title"
+    },
+    {
+        "element_id": "03660914-04f6-4ebe-abea-dcf963d66dc5",
+        "metadata": {},
+        "text": "0.551 0.749 0.749 0.749",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "05af6e09-b6ef-4a2b-bbd9-da7232f7845a",
+        "metadata": {},
+        "text": "0.623 0.221 0.221 0.221",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ea4ddb09-8378-498c-a3d0-7cd29b9a43af",
+        "metadata": {},
+        "text": "41.324 1.7586 1.7587 1.7586",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "cad349e4-6589-4076-8d53-1909b9f6259c",
+        "metadata": {},
+        "text": "7433 8245 3 \u00d7 106 6198",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6be8d8d4-4590-4cb6-a7e1-1c5ca7581754",
+        "metadata": {},
+        "text": "0 34 4 50",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "810e40dd-552d-4735-94d1-06b84c9afb03",
+        "metadata": {},
+        "text": "50 16 46 0",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "bf561b73-e8cb-468b-a7b2-89ef03295e1a",
+        "metadata": {},
+        "text": "SAA iSSO",
+        "type": "Title"
+    },
+    {
+        "element_id": "da329e93-7057-4a0f-bd5e-283eea3d585a",
+        "metadata": {},
+        "text": "Fig. 10. 120-bar dome truss structure [48].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "287d31bb-ee46-4457-9340-0fb21321bf1f",
+        "metadata": {},
+        "text": "Table 3 Results for the 120 bars truss structure.",
+        "type": "Title"
+    },
+    {
+        "element_id": "28332e09-a155-4907-8a22-49e3241a0996",
+        "metadata": {},
+        "text": "\u03bcg(\u0303\u03c6\u2217) (Nm)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5f5845e8-9f4f-4c77-bdc5-c3de7e9636a5",
+        "metadata": {},
+        "text": "(\u0303\u03c6\u2217) \u03c32 g (Nm)2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "66688fa9-c06f-4238-8725-21e7d9b8a155",
+        "metadata": {},
+        "text": "Method",
+        "type": "Title"
+    },
+    {
+        "element_id": "4a26f395-453e-41be-8fe7-8235f518e691",
+        "metadata": {},
+        "text": "Design parameters A1 A2 (cm2) (cm2)",
+        "type": "Title"
+    },
+    {
+        "element_id": "3dd221f3-c834-4ff1-a895-80e4a303c5f6",
+        "metadata": {},
+        "text": "FE",
+        "type": "Title"
+    },
+    {
+        "element_id": "81cb935f-3f3c-4ee5-9b56-b614f7467634",
+        "metadata": {},
+        "text": "A3 (cm2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6855e493-2e4e-4916-80bd-2f4c5aae9a63",
+        "metadata": {},
+        "text": "A4 (cm2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0be43f24-e5d9-4f60-a2cb-f0704d15b450",
+        "metadata": {},
+        "text": "A5 (cm2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "224f679f-d20c-4817-a7e1-17b2d38e2da0",
+        "metadata": {},
+        "text": "A6 (cm2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6cdd60bb-82de-41ea-96af-7c5275ef7984",
+        "metadata": {},
+        "text": "A7 (cm2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1a334e0e-b0e5-4767-b808-ef6068b9bc12",
+        "metadata": {},
+        "text": "SSO [48] SAA iSSO",
+        "type": "Title"
+    },
+    {
+        "element_id": "fa6336c7-3f28-48de-8c3a-be13382ed86d",
+        "metadata": {},
+        "text": "47.2 47.3 48.1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "252120a1-decf-432d-aa91-92027899a01d",
+        "metadata": {},
+        "text": "67.5 68.3 66.4",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a7259a0a-b9a5-4e71-b6e0-00c3c300eec9",
+        "metadata": {},
+        "text": "42.7 40.7 42.6",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "bdef5bf6-1cbd-4394-9b94-7648883578ea",
+        "metadata": {},
+        "text": "9.4 10.5 8.5",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "05f1e2aa-5904-4790-8063-edf74c348a04",
+        "metadata": {},
+        "text": "30.1 30.3 31.4",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "05edde72-0dc2-4787-9707-cc87f761504d",
+        "metadata": {},
+        "text": "55.6 49.5 56.5",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "51238794-efc6-456e-8565-93a29500b133",
+        "metadata": {},
+        "text": "13.1 14.8 12.5",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c232dee9-0cf6-43e3-84ac-84257a216e87",
+        "metadata": {},
+        "text": "242.3 243.5 242.8",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "02526f8d-21bb-4201-a54f-835b24cad5f0",
+        "metadata": {},
+        "text": "5294.2 5407.4 5317.2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7110fcb2-1ac9-46b2-a3e3-f4f61da25814",
+        "metadata": {},
+        "text": "54,700 3 \u00d7 106 14,937",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "2fe27b05-17e9-4204-b1d7-f67309e40f2b",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "9d6cde62-9fe7-492f-87ca-02ce02585ea1",
+        "metadata": {},
+        "text": "AdvancesinEngineeringSoftware188(2024)10356811",
+        "type": "Title"
+    },
+    {
+        "element_id": "3c447dd4-a1fa-4335-9580-cd52a72e2d8f",
+        "metadata": {},
+        "text": "M.A. Khalid and S. Bansal",
+        "type": "Title"
+    },
+    {
+        "element_id": "dd4d4b75-82c3-4f60-9fd4-855dedf83bee",
+        "metadata": {},
+        "text": "Fig. 11. (left) 10-story base isolated shear model, and (right) force-deformation of bilinear isolator [49].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1fc54b60-578f-4433-ab63-0823ab5e04c6",
+        "metadata": {},
+        "text": "/",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "bf3a165f-89f1-4b24-8eb1-bb6643567473",
+        "metadata": {},
+        "text": "2\u03b6g 4\u03b62",
+        "type": "Title"
+    },
+    {
+        "element_id": "fac1dc60-551a-45af-9c38-177c4ce3c3ab",
+        "metadata": {},
+        "text": "Table 4 Base isolation structure system optimization results (best of 10 independent runs).",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "08c77d78-a07c-46a4-949c-36742e6ccd8d",
+        "metadata": {},
+        "text": "S0 = \u03c32 \u03c9",
+        "type": "Title"
+    },
+    {
+        "element_id": "ce7259d4-1bc8-42d0-8e83-703fe240bdf4",
+        "metadata": {},
+        "text": ")m2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "18a7721d-2e20-473e-8cb2-e081b067cc3c",
+        "metadata": {},
+        "text": "s3,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "afe5935b-1fb2-46fe-af9f-a47fadbf43ab",
+        "metadata": {},
+        "text": "(",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6b2ff0d0-c320-4d7c-90f5-037328273e3f",
+        "metadata": {},
+        "text": "(27)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "95136880-6cbb-4998-aae5-73e9c929f6a4",
+        "metadata": {},
+        "text": "g + 1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0bf9e81d-0c52-4229-ae2f-8cab7ff43416",
+        "metadata": {},
+        "text": "\u03c0\u03c9g",
+        "type": "Title"
+    },
+    {
+        "element_id": "d6c96a38-aaa8-4dd0-8afa-9598d1a38312",
+        "metadata": {},
+        "text": "Design parameters (\u03c6*) Kpr (MN/ m)",
+        "type": "Title"
+    },
+    {
+        "element_id": "dc3f53d6-b02f-466a-89df-de2ca3d5b8d9",
+        "metadata": {},
+        "text": "Method",
+        "type": "Title"
+    },
+    {
+        "element_id": "0714fcce-fffe-4a11-898d-defd77f8a2b2",
+        "metadata": {},
+        "text": "Failure probability PF(\u03c6*)",
+        "type": "Title"
+    },
+    {
+        "element_id": "6f50e93f-4fdc-4c48-9cdf-2d00307bfaf3",
+        "metadata": {},
+        "text": "where, \u03c9g, \u03b6gand \u03c3\u03c9 are the resonant frequency, damping, and RMS of the acceleration input of the filter, respectively. These are also considered uncertain variables with mean values of [2\u03c0rad/s, 0.5, 0.2g] and a c.o.v equal to 0.20. The non-stationarity of the excitation is modeled by multiplying the filter output with the envelope function as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fa94f09e-30e5-4ef1-9ca0-0154ec5e5cfb",
+        "metadata": {},
+        "text": "Kp (MN/ m)",
+        "type": "Title"
+    },
+    {
+        "element_id": "bc4f6bab-6bf8-4e3e-bd9a-c405a4cedbc3",
+        "metadata": {},
+        "text": "Fy (MN)",
+        "type": "Title"
+    },
+    {
+        "element_id": "ae930972-7ebf-453b-a4d7-39396c8138f1",
+        "metadata": {},
+        "text": "cd (MNs/ m)",
+        "type": "Title"
+    },
+    {
+        "element_id": "37b2fa00-bc23-4a26-ac68-66f4e2e59667",
+        "metadata": {},
+        "text": "SSO",
+        "type": "Title"
+    },
+    {
+        "element_id": "ebe8af0a-9ae4-461a-8f38-c6a484bc56b2",
+        "metadata": {},
+        "text": "425.33",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "49f21d1f-13f3-48d2-a9a5-0518917b682e",
+        "metadata": {},
+        "text": "1.20",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "bfa629bf-0518-4dd1-b493-91975707ae8a",
+        "metadata": {},
+        "text": "15.52",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5641eaea-47c6-4c6c-ad69-8f2feddef3c3",
+        "metadata": {},
+        "text": "6.54",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "170e5fbe-25a7-4fce-9318-644445a65aed",
+        "metadata": {},
+        "text": "0.0340",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "cb4d6657-add1-423b-9826-8439f1859c43",
+        "metadata": {},
+        "text": "[39]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0a24efcf-7641-480a-b192-8eaa9333ffc4",
+        "metadata": {},
+        "text": "SAA iSSO",
+        "type": "Title"
+    },
+    {
+        "element_id": "2ec28fd1-314a-49dc-83c9-e43974c8a0cf",
+        "metadata": {},
+        "text": "414.68 418.34",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e0455d15-dca1-4f08-a649-1355015e3fa4",
+        "metadata": {},
+        "text": "1.16 1.11",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "2b9a12fc-eb60-42c1-b01f-e5106c362e7b",
+        "metadata": {},
+        "text": "16.15 15.88",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "53c62c8c-c077-4888-b402-30ba72884fc4",
+        "metadata": {},
+        "text": "6.26 7.08",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7249dc6d-53ff-4a4b-afe3-e754ad97c781",
+        "metadata": {},
+        "text": "0.0324 0.0366",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "62a43fd5-ddaf-48e8-ae0d-df9ef583b0f4",
+        "metadata": {},
+        "text": "e(t) = \u03bb3t\u03bb1 exp( (cid:0) \u03bb2t),",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b4b32925-b0c8-435e-9ead-f76e5203b7d2",
+        "metadata": {},
+        "text": "(28)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b0f98c8a-39a7-446a-8a72-b588a09ca92e",
+        "metadata": {},
+        "text": "with parameters \u03bb1 = 1.25, \u03bb2 = 0.2 and \u03bb3 = 0.353 chosen to simulate strong earthquake excitation for a duration of 40 s with a sampling time of 0.02 s. The base-isolation system considered is a lead\u2013rubber bilinear isolator with an additional viscous damper. The base has a 247-ton mass. The design parameters \u03c6 for the base isolation structure system are the stiffness before yielding Kprand after yielding Kp, the yield force is Fy, and the damping coefficient cd. The reader may refer to [39,50] for additional details regarding the base isolation structure system adopted in this study.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1b1c62dd-9cd8-41d1-8600-5fbfec5d1d77",
+        "metadata": {},
+        "text": "optimization of a base-isolation system attached to a 10-story building as shown in Fig. 11. This optimization problem includes maximizing the reliability of the base-isolated structure which is performed by the minimization of its failure probability and mathematically expressed as: \u222b",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dc08170c-a9b7-410d-ab46-29f05ef14440",
+        "metadata": {},
+        "text": "minimize : \u03c6\u2208\u03a6",
+        "type": "Title"
+    },
+    {
+        "element_id": "714ee17a-ad45-4248-88a3-d588eacb7a5f",
+        "metadata": {},
+        "text": "P(F|\u03c6) = E\u03b8[IF(\u03c6, \u03b8)] =",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d38e3e75-a09e-4e94-bb0f-5a61642c3fda",
+        "metadata": {},
+        "text": "IF(\u03c6, \u03b8)p(\u03c6, \u03b8)d\u03b8,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1b5568a8-6c29-4d91-a062-31cda32b2b7b",
+        "metadata": {},
+        "text": "(24)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4a1e1443-6ce2-463c-bba8-c4df7dff1f4b",
+        "metadata": {},
+        "text": "\u0398",
+        "type": "Title"
+    },
+    {
+        "element_id": "dd9379bd-03e8-429b-99c7-4642039d36fe",
+        "metadata": {},
+        "text": "where, IF(\u03c6,\u03b8) is the function that indicates failure, and it equals 1 when the system fails, i.e., when unacceptable performance occurs. Notably, in this problem h(\u03c6, \u03b8) = IF(\u03c6,\u03b8).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c8d5ba1e-b321-4662-8cc8-946869c46945",
+        "metadata": {},
+        "text": "Failure is indicated when any of the normalized base displacements or inter-story drifts exceeds unity. The normalization constants are 0.5 m and 0.033 m respectively. The design interval for each variable is specified as Kpr = [50, 600] MN/m, Fy = [1, 8] MN, Kp = [5, 60] MN/m, and cd = [0.1, 10]MNs/m. In this example, iSSO and SSO are imple- mented with six number of iterations.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3914d824-79e7-4b84-9cd8-57de16ab1f48",
+        "metadata": {},
+        "text": "The 10-story building is considered as a shear structure with un- certain inter-story stiffness and damping. Each story has a total mass of 207 ton. The inter-story stiffness ki of all stories are parameterized by ki = \u0302 ki\u03b8i, i = 1, \u2026, 10 where the most probable values of the inter-story stiffness are [\u0302 ki] = [687.1, 613.1, 540.1, 481.1, 421.7, 353.7, 286.6, 225.6, 184.5, 104.5] MN/m. The entity \u03b8i is a set of non-dimensional uncertain variables that are considered to be correlated Gaussian vari- \u0302\u03b8i = 1, \u2200i and a covariance matrix defined",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8dfd129a-4b6d-467c-a9fa-9aea0ee48139",
+        "metadata": {},
+        "text": "Table 4 shows the optimization results for the best 10 independent simulation runs. The comparison of the results obtained using SSO, SAA (with a sample size of 103), and iSSO shows that the optimal design obtained using the proposed approach iSSO is in good agreement. The failure probability of the structure is reduced from 0.95 (without the base isolation system) to 0.0326 after installing the optimally designed base isolation system.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2553a5dc-b7ab-4901-8c5f-6835b283c1fb",
+        "metadata": {},
+        "text": "ables with a unit mean value as: [",
+        "type": "Title"
+    },
+    {
+        "element_id": "1ff28dcd-999c-4ffb-a731-fc1022f25be7",
+        "metadata": {},
+        "text": ")]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "40f7a3b7-e448-4dcd-ad9d-f93c96a2153b",
+        "metadata": {},
+        "text": "i)2 /",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b977dd5c-d9aa-4ebb-a27c-cbfd431b99ed",
+        "metadata": {},
+        "text": "] .",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ccff7b46-042b-4439-9eae-e55bffca527c",
+        "metadata": {},
+        "text": "(cid:0) (\u03b8i (cid:0) \u0302\u03b8i)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "61479446-6bd1-4162-8764-eaa4ea161c37",
+        "metadata": {},
+        "text": "[ = (0.2)2exp",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "80517b76-3779-481b-a7f7-88f9f3919cd6",
+        "metadata": {},
+        "text": "\u03b8j (cid:0) \u0302\u03b8j",
+        "type": "Title"
+    },
+    {
+        "element_id": "14b746d5-26f7-4917-a4bb-3d7f0fb83dde",
+        "metadata": {},
+        "text": "22",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "392d7a70-09fe-4639-b4a9-9277dfcacb51",
+        "metadata": {},
+        "text": "(cid:0) (j (cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b2668877-c90c-456f-98d8-9653976ddc04",
+        "metadata": {},
+        "text": "E",
+        "type": "Title"
+    },
+    {
+        "element_id": "5aa94286-eb88-4938-a06e-e6d401a210c5",
+        "metadata": {},
+        "text": "(25)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "eb59fed1-7c37-4940-a7f3-de2a456bba29",
+        "metadata": {},
+        "text": "The damping ratios are considered independent Gaussian variables with mean values of 0.025 and c.o.v of 0.10 for all modes. The Kanai- Tajimi model is used to simulate the ground excitation modelled as a filtered white noise process, with the power spectral density function given as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c4d7a6d8-4cba-48ca-96f4-5d9162af6804",
+        "metadata": {},
+        "text": "5. Conclusion",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "c2d9f263-7ac9-436c-a1a2-1bfe2f36998e",
+        "metadata": {},
+        "text": "This study attempts to provide an optimization approach called \"iSSO\", which is an improved version of SSO, primarily for stochastic optimization problems while it retains utility for deterministic optimi- zation problems as well. Two novel ideas are introduced in this study: first, a better characterization of the design space is offered by parti- tioning the design space into non-overlapping subregions using Voronoi",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e5b2e986-c2ed-4488-93e8-aa45de4b2074",
+        "metadata": {},
+        "text": "g + 4\u03b62 )2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "81ccae92-2c87-451f-8457-751461be58a9",
+        "metadata": {},
+        "text": "\u03c94",
+        "type": "Title"
+    },
+    {
+        "element_id": "dae194c3-87f1-4e6c-8241-c6223bfa36a0",
+        "metadata": {},
+        "text": "g\u03c92",
+        "type": "Title"
+    },
+    {
+        "element_id": "1aff727c-b8e4-4925-8544-e18d87f2474e",
+        "metadata": {},
+        "text": "g\u03c92",
+        "type": "Title"
+    },
+    {
+        "element_id": "943e6ca3-4178-4008-8510-3ad1c64f63f2",
+        "metadata": {},
+        "text": "S(\u03c9) = S0",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f055c1d8-67a4-4f68-8455-7b8dd1ddaae9",
+        "metadata": {},
+        "text": ",",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "29bc5147-84b5-411b-b7d0-d412ba6c1b4b",
+        "metadata": {},
+        "text": "(",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5dda1490-50ff-4099-88db-7a03c1cff8aa",
+        "metadata": {},
+        "text": "(26)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9fa4307a-a691-4f97-a8cb-75e09e0652b1",
+        "metadata": {},
+        "text": "+ 4\u03b62",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "8976ff39-a3f0-442d-9365-0a37f39da34d",
+        "metadata": {},
+        "text": "g (cid:0) \u03c92",
+        "type": "Title"
+    },
+    {
+        "element_id": "74b713f2-c602-4ca5-a4ab-c18b2cfaf10c",
+        "metadata": {},
+        "text": "\u03c92",
+        "type": "Title"
+    },
+    {
+        "element_id": "b71cc98f-9187-4309-8890-5caab5f9eb68",
+        "metadata": {},
+        "text": "g\u03c92",
+        "type": "Title"
+    },
+    {
+        "element_id": "3ba124c9-a7bc-4897-a5da-73ce9074ee1a",
+        "metadata": {},
+        "text": "g\u03c92",
+        "type": "Title"
+    },
+    {
+        "element_id": "bcbb4c57-72b4-4498-8e0b-89171695a04b",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "95f61a2e-671c-40c7-a9c6-104003a4ba57",
+        "metadata": {},
+        "text": "AdvancesinEngineeringSoftware188(2024)10356812",
+        "type": "Title"
+    },
+    {
+        "element_id": "399fa945-0949-4efb-be7d-deab9a44152f",
+        "metadata": {},
+        "text": "M.A. Khalid and S. Bansal",
+        "type": "Title"
+    },
+    {
+        "element_id": "ddf82fe2-ab2f-4dc0-8a9a-7b58a9f2090e",
+        "metadata": {},
+        "text": "tessellation which improves the effectiveness and efficiency of the pro- posed iSSO considerably in comparison to SSO. Second, a novel \"double sort\" approach is proposed, eliminating the need for optimization to identify the subregions for the optimal design at each iSSO iteration. Several mathematical and engineering design examples, including TMD, 120 bars truss structure, and base-isolated structure, are included in this study to demonstrate the efficacy of the proposed iSSO. The results show that the proposed iSSO effectively identifies the reduced design space for complex design problems with multiple global and local minima. This is attributable to the Voronoi tessellation, which eliminates the require- ment of the presumed admissible design space form to resemble the contour of the original design. Voronoi tessellation enabled better design space exploration, allowing multiple global minima scattered throughout the design pace to be effectively identified. Due to the dis- cretization of the design space via Voronoi tessellation, computation demand is significantly reduced as the number of function evaluations for all examples is lower vis-a-vis the original SSO. Moreover, the novel idea of the double sort approach achieves the requisite precision in identifying the subregions for optimal solutions and makes iSSO implementation simple and effective.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dcbad1de-2533-4012-a6f1-184238319040",
+        "metadata": {},
+        "text": "Voronoi cells. At present the methods available in the literation for creating the Voronoi tessellation are computationally demanding when considering problems of very high dimension. Future work will focus on developing a method for creating the Voronoi tessellation in higher di- mensions, particularly those greater than ten.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8c26a494-62ed-4020-9db2-7fda03c97e97",
+        "metadata": {},
+        "text": "CRediT authorship contribution statement",
+        "type": "Title"
+    },
+    {
+        "element_id": "999e169c-0966-4678-8729-c25f5f5978e2",
+        "metadata": {},
+        "text": "Mohd Aman Khalid: Investigation, Methodology, Formal analysis, Software, Visualization, Writing \u2013 original draft. Sahil Bansal: Conceptualization, Methodology, Supervision.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9481d034-0338-4f6f-bc51-29d6dc5bf3f9",
+        "metadata": {},
+        "text": "Declaration of Competing Interest",
+        "type": "Title"
+    },
+    {
+        "element_id": "e706bcd1-407c-421f-b4b2-c008efa8630a",
+        "metadata": {},
+        "text": "The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "13eefbf6-c4ad-43b8-8c7d-eebeea78f3ce",
+        "metadata": {},
+        "text": "Data availability",
+        "type": "Title"
+    },
+    {
+        "element_id": "07b572dd-33da-4f61-903f-90372532e788",
+        "metadata": {},
+        "text": "The applicability of the approach is dependent on the creation of the",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3cc5d742-17b4-45c8-862f-de4c5826dc3b",
+        "metadata": {},
+        "text": "No data was used for the research described in the article.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9c1919cd-b83d-42ea-97c9-29cce67c2a71",
+        "metadata": {},
+        "text": "Appendix-A: Voronoi Tessellation",
+        "type": "Title"
+    },
+    {
+        "element_id": "74693dc6-82c0-4808-964e-b3d4495af83b",
+        "metadata": {},
+        "text": "Voronoi tessellation is a mathematical concept named after the Russian mathematician Georgy Voronoi. It is also known as the Voronoi diagram or Dirichlet tessellation. A Voronoi tessellation of a set of points P in a plane is a partition of the plane into a set of non-overlapping convex polygons, with each polygon including precisely one point of P and each point in a polygon being closer to its associated point in P than to any other point in P. Each polygon is referred to as a Voronoi cell or a Dirichlet region. The boundary of each cell is constituted of points that are equidistant to two or more points in P. Fig. 12 shows the Voronoi diagram in a two-dimensional design space.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "aca00bb6-5af8-4a05-8fb7-baddb704a838",
+        "metadata": {},
+        "text": "Fig. 12. Voronoi diagram in 2-dimensional space.",
+        "type": "Title"
+    },
+    {
+        "element_id": "f5b73b03-951a-4df8-9e03-c8c5a78e9e0b",
+        "metadata": {},
+        "text": "There are several efficient algorithms for creating Voronoi diagrams. One such basic algorithm is to start with a set of points and then compute the Voronoi cells by dividing the space into regions based on the distance to the nearest point. The Bowyer-Watson algorithm [51], which generates a Delaunay triangulation in any number of dimensions, can be applied while creating a Voronoi diagram. The Delaunay triangulation is a triangulation of the point in which no point falls within the circumcircle of any triangle. The polygon generated by the intersection of the half-planes defined by the edges of the Delaunay triangles enclosing the point is therefore obtained as the Voronoi cell of a point.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d5d13f8f-8be1-4c12-b308-eb656b3db31b",
+        "metadata": {},
+        "text": "It can be summarized that Voronoi tessellation is a powerful mathematical concept that aids in dividing space into regions based on the distance to a set of points. Voronoi tessellation finds widespread applications in areas such as image processing [52], spatial topology analysis [53], and microstructure study [52]. The MATLAB command \"Voronoin\" from the \"Parallel Computing Toolbox\" [54] has been used in this study to create the Voronoi cells.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2b58d977-a6e2-4995-a61a-dc1dca0caca0",
+        "metadata": {},
+        "text": "[4] Meng Z, Li G, Wang X, Sait SM, R\u0131za A. A comparative study of metaheuristic algorithms for reliability \u2011 based design optimization problems. Arch Comput Methods Eng 2021;28:1853\u201369. https://doi.org/10.1007/s11831-020-09443-z.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "83d51c0d-8c74-4f7e-8db7-eb49c14ec253",
+        "metadata": {},
+        "text": "References",
+        "type": "Title"
+    },
+    {
+        "element_id": "54835f7c-7c56-4f26-bab6-4027aa836019",
+        "metadata": {},
+        "text": "[1] Marti K. Stochastic optimization methods. Berlin: Springer; 2008. [2] Tsompanakis Y, Lagaros ND, Papadrakakis M. Structural design optimization",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f259353e-dc77-4503-8b70-46da317bdcaf",
+        "metadata": {},
+        "text": "[5] Abualigah L, Elaziz MA, Khasawneh AM, Alshinwan M. Meta-heuristic",
+        "type": "Title"
+    },
+    {
+        "element_id": "77dc35c8-55e5-4a69-ac0b-1cd273a5bba0",
+        "metadata": {},
+        "text": "optimization algorithms for solving real-world mechanical engineering design problems : a comprehensive survey, applications, comparative analysis, and results. Neural Comput Appl 2022;34:4081\u2013110. https://doi.org/10.1007/s00521- 021-06747-4.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6ff84db9-fbb6-44b6-8aac-5b877fc2ac54",
+        "metadata": {},
+        "text": "considering uncertainties. CRC Press; 2008.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "96e157ed-1361-4abc-a852-3f054c60c9d3",
+        "metadata": {},
+        "text": "[3] Khalid MA, Bansal S, Ramamohan V. An augmented formulation for robust design optimization of structures using stochastic simulation method. Res Eng Des 2023; 34:179\u2013200. https://doi.org/10.1007/s00163-022-00405-z.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "623dc751-feb8-462c-bc91-aa3bc85a5dda",
+        "metadata": {},
+        "text": "[6] Katebi J, Shoaei M, Nguyen S, Trung T, Khorami M. Developed comparative",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "81afc374-b68e-429d-b728-4d01970ae751",
+        "metadata": {},
+        "text": "analysis of metaheuristic optimization algorithms for optimal active control of",
+        "type": "Title"
+    },
+    {
+        "element_id": "d3602c6f-90db-4a33-85a8-dd2964a5c594",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "4ebfd2e3-5358-4f45-9c9e-8983750c24df",
+        "metadata": {},
+        "text": "AdvancesinEngineeringSoftware188(2024)10356813",
+        "type": "Title"
+    },
+    {
+        "element_id": "d5d1df0b-f314-4bbc-9781-d372fbaf1720",
+        "metadata": {},
+        "text": "M.A. Khalid and S. Bansal",
+        "type": "Title"
+    },
+    {
+        "element_id": "3a937d24-23e1-4c72-bfb2-025a626c0216",
+        "metadata": {},
+        "text": "structures. Eng Comput 2020;36:1539\u201358. https://doi.org/10.1007/s00366-019- 00780-7.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "67f7ad80-d189-4b51-b192-a723369b8d32",
+        "metadata": {},
+        "text": "[31] Yildiz AR. Comparison of evolutionary-based optimization algorithms for",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "585614d7-9f33-402a-80f8-28a7667616d3",
+        "metadata": {},
+        "text": "structural design optimization. Eng Appl Artif Intell 2013;26:327\u201333. https://doi. org/10.1016/j.engappai.2012.05.014.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ed4e6af2-afb5-4d37-9aaa-381f356e7a7d",
+        "metadata": {},
+        "text": "[7] Alorf A. Engineering applications of artificial intelligence a survey of recently developed metaheuristics and their comparative analysis. Eng Appl Artif Intell 2023;117:105622. https://doi.org/10.1016/j.engappai.2022.105622.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e2b0ec5c-1b31-4b07-b3e2-3c3d8d89247e",
+        "metadata": {},
+        "text": "[32] Beck AT, Gomes WJDS. A comparison of deterministic, reliability-based and risk- based structural optimization under uncertainty. Probab Eng Mech 2012;28:18\u201329. https://doi.org/10.1016/j.probengmech.2011.08.007.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "475e8a39-7018-435f-8032-fb4c8b2f22bb",
+        "metadata": {},
+        "text": "[8] Kirsch U. Structural optimization: fundamentals and applications. Springer-Verlag;",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b5583c43-5669-425f-abd9-819e863485ee",
+        "metadata": {},
+        "text": "2012.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e8430e73-a3fa-4320-9b8d-950c02e84c36",
+        "metadata": {},
+        "text": "[33] Acar, E., Bayrak, G., Jung, Y., Lee, I., Ramu, P., Ravichandran, S.S.: Modeling,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "86cb8833-0997-46cd-b432-bc74ab9d97c6",
+        "metadata": {},
+        "text": "[9] Floudas CA, Pardalos PA. Encyclopedia of optimization. Springer; 2008.",
+        "type": "Title"
+    },
+    {
+        "element_id": "27d1a312-c207-476b-b043-1ed91d9864fc",
+        "metadata": {},
+        "text": "analysis, and optimization under uncertainties: a review, (2021). 10.1007/s001 58-021-03026-7.",
+        "type": "Title"
+    },
+    {
+        "element_id": "d05f436e-46fc-4e59-b1a1-43be23631191",
+        "metadata": {},
+        "text": "[10] Kiureghian AD, Ditlevsen O. Aleatory or epistemic? Does it matter? Struct Saf",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d9a4bd24-0b1b-468c-809c-7a83c4570501",
+        "metadata": {},
+        "text": "2009;31:105\u201312. https://doi.org/10.1016/j.strusafe.2008.06.020.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4eb27da1-7ec5-4165-b398-fc35231622b4",
+        "metadata": {},
+        "text": "[34] Georghiou A, Kuhn D, Wiesemann W. The decision rule approach to optimization under uncertainty: methodology and applications. Comput Manag Sci 2019. https://doi.org/10.1007/s10287-018-0338-5.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b2ec95c8-1687-40fe-8a9f-0a355a8057d7",
+        "metadata": {},
+        "text": "[11] Schu\u00a8eller GI, Jensen HA. Computational methods in optimization considering uncertainties - an overview. Comput Methods Appl Mech Eng 2008;198:2\u201313. https://doi.org/10.1016/j.cma.2008.05.004.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6e60970d-ff23-4fdb-9c25-c328d7ea94fb",
+        "metadata": {},
+        "text": "[35] Braydi O, Lafon P, Younes R. Study of uncertainties and objective function",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c5c46d75-2199-42a3-9c09-297127dd792d",
+        "metadata": {},
+        "text": "[12] Schneider J, Kirkpatrick S. Stochastic optimization. Springer; 2007. [13] Do B, Ohsaki M. A random search for discrete robust design optimization of linear-",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d1216050-44ed-400e-9749-710b72e5ef37",
+        "metadata": {},
+        "text": "modeling effects on probabilistic optimization results. ASCE ASME J Risk Uncertain Eng Syst Part B Mech Eng 2019. https://doi.org/10.1115/1.4044152.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f9b5dff8-fbe8-4799-9e02-de0759f40a9c",
+        "metadata": {},
+        "text": "elastic steel frames under interval parametric uncertainty. Comput Struct 2021; 249:106506. https://doi.org/10.1016/j.compstruc.2021.106506.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "83088687-2875-4369-933b-48c2492255fc",
+        "metadata": {},
+        "text": "[36] Liu WS, Cheung SH. Reliability based design optimization with approximate failure",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1e052441-a870-48e5-8a06-e3d7701a642a",
+        "metadata": {},
+        "text": "probability function in partitioned design space. Reliab Eng Syst Saf 2017;167: 602\u201311. https://doi.org/10.1016/j.ress.2017.07.007.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "357499cd-0e38-4514-8c3d-c960d5f09f3e",
+        "metadata": {},
+        "text": "[14] Asadpoure A, Tootkaboni M, Guest JK. Robust topology optimization of structures with uncertainties in stiffness - application to truss structures. Comput Struct 2011. https://doi.org/10.1016/j.compstruc.2010.11.004.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "29423e81-f265-4c4d-8e9c-ee614c6b04c9",
+        "metadata": {},
+        "text": "[37] Chiralaksanakul A, Mahadevan S. First-order approximation methods in reliability- based design optimization. J Mech Des Trans ASME 2005. https://doi.org/ 10.1115/1.1899691.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b39b5dc3-8cf1-4070-97e9-9310e5635692",
+        "metadata": {},
+        "text": "[15] Doltsinis I, Kang Z. Robust design of structures using optimization methods.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b1423448-65f4-4fab-9c03-637adcd12853",
+        "metadata": {},
+        "text": "Comput Methods Appl Mech Eng 2004;193:2221\u201337. https://doi.org/10.1016/j. cma.2003.12.055.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6cea94d8-a961-4bde-99d1-442e9ba0a5ab",
+        "metadata": {},
+        "text": "[38] Doltsinis I, Kang Z, Cheng G. Robust design of non-linear structures using",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "cee25aad-0614-4712-a9c5-1f947ade13f9",
+        "metadata": {},
+        "text": "optimization methods. Comput Methods Appl Mech Eng 2005;194:1779\u201395. https://doi.org/10.1016/j.cma.2004.02.027.",
+        "type": "Title"
+    },
+    {
+        "element_id": "587eee0e-ddd8-462c-9266-be61459665dd",
+        "metadata": {},
+        "text": "[16] Carneiro G, das N, Ant\u00b4onio CC. Dimensional reduction applied to the reliability- based robust design optimization of composite structures. Compos Struct 2021; 255. https://doi.org/10.1016/j.compstruct.2020.112937.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "80db7494-3f67-45fe-9f3f-a662b45cb30c",
+        "metadata": {},
+        "text": "[39] Taflanidis AA, Beck JL. Stochastic Subset Optimization for optimal reliability",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5e82c8b0-392e-4705-b517-8c232e5df5de",
+        "metadata": {},
+        "text": "problems. Probab Eng Mech 2008. https://doi.org/10.1016/j. probengmech.2007.12.011.",
+        "type": "Title"
+    },
+    {
+        "element_id": "5e913732-70a9-4b41-89b5-386eb6de2cad",
+        "metadata": {},
+        "text": "[17] An H, Youn BD, Kim HS. Reliability-based design optimization of laminated",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ae3ae21c-5e29-42d6-a57f-67fd2c6444d3",
+        "metadata": {},
+        "text": "composite structures under delamination and material property uncertainties. Int J Mech Sci 2021. https://doi.org/10.1016/j.ijmecsci.2021.106561.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0d1773d8-7d73-4718-89b8-4f1046cefca5",
+        "metadata": {},
+        "text": "[40] Au SK, Beck JL. Estimation of small failure probabilities in high dimensions by subset simulation. Probab Eng Mech 2001;16:263\u201377. https://doi.org/10.1016/ S0266-8920(01)00019-4.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d6303c01-6b37-4b36-8f80-a0fc44f5e01d",
+        "metadata": {},
+        "text": "[18] Li Z, Duan LB, Cheng AG, Yao ZP, Chen T, Yao W. Lightweight and crashworthiness design of an electric vehicle using a six-sigma robust design optimization method. Eng Optim 2019. https://doi.org/10.1080/0305215X.2018.1521396.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e7743fbe-4f94-4132-b1dc-2603df35c463",
+        "metadata": {},
+        "text": "[41] Jia GF, Taflanidis AA. Non-parametric stochastic subset optimization for optimal- reliability design problems. Comput Struct 2013;126:86\u201399. https://doi.org/ 10.1016/j.compstruc.2012.12.009.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "75125b28-7ec5-4522-91d2-0b6550f134d9",
+        "metadata": {},
+        "text": "[19] Gholinezhad H, Torabi SH. Reliability-based multidisciplinary design optimization of an underwater vehicle including cost analysis. J Mar Sci Technol 2021. https:// doi.org/10.1007/s00773-021-00804-2.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "15d7984b-3b1c-48d1-afa8-57aa51dd97e3",
+        "metadata": {},
+        "text": "[42] Taflanidis AA. Stochastic subset optimization incorporating moving least squares response surface methodologies for stochastic sampling. Adv Eng Softw 2012;44: 3\u201314. https://doi.org/10.1016/j.advengsoft.2011.07.009.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ec7c841c-9c02-4b0a-a4c0-7030da078ac7",
+        "metadata": {},
+        "text": "[20] Lee KH, Park GJ. Robust optimization considering tolerances of design variables. Comput Struct 2001;79:77\u201386. https://doi.org/10.1016/S0045-7949(00)00117-6. [21] Anderson TV, Mattson CA. Propagating skewness and kurtosis through engineering models for low-cost, meaningful, nondeterministic design. J Mech Des Trans ASME. 2012. https://doi.org/10.1115/1.4007389.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f6f4492b-35bc-403c-9de0-cbc960c820ba",
+        "metadata": {},
+        "text": "[43] Khalid MA, Bansal S. Framework for robust design optimization of tuned mass",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "8df2dc18-887e-4c6b-b3ca-683782884a11",
+        "metadata": {},
+        "text": "dampers by stochastic subset optimization. Int J Struct Stab Dyn 2023;23. https:// doi.org/10.1142/S0219455423501559.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6042229b-68d1-47b4-83ed-35355f0a477e",
+        "metadata": {},
+        "text": "[44] Au SK. Reliability-based design sensitivity by efficient simulation. Comput Struct",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1064f011-07ff-4532-8546-c4c998146f25",
+        "metadata": {},
+        "text": "2005;83:1048\u201361.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "bf984f41-a21b-477d-ac84-385ca67cbeb7",
+        "metadata": {},
+        "text": "[22] Zhou Q, Wang Y, Choi SK, Jiang P, Shao X, Hu J, Shu L. A robust optimization",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b875679b-b937-4c9f-9201-5f86337a6f99",
+        "metadata": {},
+        "text": "approach based on multi-fidelity metamodel. Struct Multidiscip Optim 2018. https://doi.org/10.1007/s00158-017-1783-4.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a17c8c0b-9bc4-42b6-8fc7-69f628b82834",
+        "metadata": {},
+        "text": "[45] Taflanidis AA, Beck JL. An efficient framework for optimal robust stochastic system design using stochastic simulation. Comput Methods Appl Mech Eng 2008. https:// doi.org/10.1016/j.cma.2008.03.029.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "eff97a61-d16e-4f43-9343-a22c71c19669",
+        "metadata": {},
+        "text": "[23] Wang GG, Shan S. Review of metamodeling techniques in support of engineering design optimization. J Mech Des Trans ASME. 2007;129:370\u201380. https://doi.org/ 10.1115/1.2429697.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "612fab4c-ad73-4add-9ddd-d8ee38bb8d01",
+        "metadata": {},
+        "text": "[46] Robert CP, Casella G. Monte carlo statistical methods. New York, NY: Springer;",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0e2ad9ed-dae8-46e0-8ea5-91d4b5c02bbc",
+        "metadata": {},
+        "text": "2004.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "48a8d184-4be5-43c9-abf9-15fc09f9cce1",
+        "metadata": {},
+        "text": "[24] Chatterjee T, Chakraborty S, Chowdhury R. A critical review of surrogate assisted robust design optimization. Arch Comput Methods Eng 2019;26:245\u201374. https:// doi.org/10.1007/s11831-017-9240-5.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "df2d330f-cafa-4cf4-9ecb-da8c3499f249",
+        "metadata": {},
+        "text": "[47] Li HS. Subset simulation for unconstrained global optimization. Appl Math Model",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "063203df-83dc-4ebd-9f87-e6dfe76c8d8d",
+        "metadata": {},
+        "text": "2011;35:5108\u201320. https://doi.org/10.1016/j.apm.2011.04.023.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "81412e71-a045-40f8-b930-92a470fa00cc",
+        "metadata": {},
+        "text": "[48] Khalid MA, Bansal S, Ramamohan V. An augmented formulation for robust design optimization of structures using stochastic simulation method. Res Eng Des 2022. https://doi.org/10.1007/s00163-022-00405-z.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3de87d95-c50c-44ee-a6b0-0d714a3e76c6",
+        "metadata": {},
+        "text": "[25] Chatterjee T, Friswell MI, Adhikari S, Chowdhury R. A global two-layer meta-",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f1703db7-e0a6-4f7a-a6bd-757c88216f8c",
+        "metadata": {},
+        "text": "model for response statistics in robust design optimization. Eng Optim 2021. https://doi.org/10.1080/0305215X.2020.1861262.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8955be33-b542-4fa4-a8c8-7e508dbc8d5d",
+        "metadata": {},
+        "text": "[49] Taflanidis AA, Beck JL. An efficient framework for optimal robust stochastic system",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9a084334-4af5-4598-a4a4-9a2ebfeb1898",
+        "metadata": {},
+        "text": "[26] Guo X, Zhao X, Zhang W, Yan J, Sun G. Multi-scale robust design and optimization considering load uncertainties. Comput Methods Appl Mech Eng 2015;283: 994\u20131009. https://doi.org/10.1016/j.cma.2014.10.014.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "13a7bc77-f8de-4956-a2cb-c67b371800cd",
+        "metadata": {},
+        "text": "design using stochastic simulation. Comput Methods Appl Mech Eng 2008;198: 88\u2013101. https://doi.org/10.1016/j.cma.2008.03.029.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dc2f437c-0a93-485a-a862-37965f88bea2",
+        "metadata": {},
+        "text": "[50] Kandemir EC, Mortazavi A. Optimization of seismic base isolation system using a fuzzy reinforced swarm intelligence. Adv Eng Softw 2022;174:103323. https://doi. org/10.1016/j.advengsoft.2022.103323.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c8bafb7f-3306-4861-8d5e-d211eff6a27a",
+        "metadata": {},
+        "text": "[27] Jerez DJ, Jensen HA, Beer M. Reliability-based design optimization of structural systems under stochastic excitation: an overview. Mech Syst Signal Process 2022. https://doi.org/10.1016/j.ymssp.2021.108397.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ac07494d-8698-4a5c-8bef-cb190cd22006",
+        "metadata": {},
+        "text": "[51] Rebay S. Efficient unstructured mesh generation by means of delaunay",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "40435928-0f94-4146-b0df-3766e9b1403d",
+        "metadata": {},
+        "text": "triangulation and Bowyer-Watson algorithm. J Comput Phys 1993;106:125\u201338. [52] Wade N, Graham-Brady L. Estimating microstructural feature distributions from image data using a Bayesian framework. J Microsc 2023:1\u201316. https://doi.org/ 10.1111/jmi.13184.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a374b79f-fb14-4f7e-a678-c6ee897a5334",
+        "metadata": {},
+        "text": "[28] Li W, Gao L, Xiao M. Multidisciplinary robust design optimization under parameter",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c480727e-a3a0-4242-8dc4-e7bd879609c3",
+        "metadata": {},
+        "text": "and model uncertainties. Eng Optim 2020;52:426\u201345. https://doi.org/10.1080/ 0305215X.2019.1590564.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3207d758-2940-48a5-95fd-7c6e89e52251",
+        "metadata": {},
+        "text": "[29] Beyer HG, Sendhoff B. Robust optimization - a comprehensive survey. Comput Methods Appl Mech Eng 2007;196:3190\u2013218. https://doi.org/10.1016/j. cma.2007.03.003.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d325d6af-158e-4b17-9543-93bbc604342e",
+        "metadata": {},
+        "text": "[53] Duan X, Li L, Ge Y, Liu B. Exact Voronoi diagram for topographic spatial analysis.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2440f098-ea07-4c7d-9658-d23950e73a58",
+        "metadata": {},
+        "text": "GIScience Remote Sens 2023;60. https://doi.org/10.1080/ 15481603.2023.2171703.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "49c51b00-e818-4c87-aed1-e7a583b7875a",
+        "metadata": {},
+        "text": "[30] Motta R, de S, Afonso SMB. An efficient procedure for structural reliability-based robust design optimization. Struct Multidiscip Optim 2016;54:511\u201330. https://doi. org/10.1007/s00158-016-1418-1.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "be77a4bc-7441-4aa1-b9f7-cb944f9c8d5e",
+        "metadata": {},
+        "text": "[54] MATLAB and parallel computing toolbox release. Natick, Massachusetts, United",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "57dd03e3-a628-4fb4-8ce8-f85976730e09",
+        "metadata": {},
+        "text": "States: The Mathworks, Inc.; 2021.",
+        "type": "Title"
+    },
+    {
+        "element_id": "3d42975c-72e2-4716-84a9-91e9c7f0756b",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    }
+]

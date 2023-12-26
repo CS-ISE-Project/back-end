@@ -1,0 +1,3326 @@
+[
+    {
+        "element_id": "c8d024d6-cb9b-4cec-9eb7-c84d908d153c",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "3fe8f8f0-cd94-4a34-a187-16d20fb96593",
+        "metadata": {},
+        "text": "LSEVI",
+        "type": "Title"
+    },
+    {
+        "element_id": "2c15a266-74c5-4b88-8255-2ea4865283de",
+        "metadata": {},
+        "text": "Contents lists available at ScienceDirect",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4e8b882a-0174-4af1-9efa-ef5bafb7df1e",
+        "metadata": {},
+        "text": "Advances in Engineering Software",
+        "type": "Title"
+    },
+    {
+        "element_id": "b8df912c-1e18-47d1-9b50-4a878181ae73",
+        "metadata": {},
+        "text": "ER journal homepage: www.elsevier.com/locate/advengsoft",
+        "type": "Title"
+    },
+    {
+        "element_id": "7ee45835-4e9c-4d1e-8ae7-3b72483d82c7",
+        "metadata": {},
+        "text": "Research paper",
+        "type": "Title"
+    },
+    {
+        "element_id": "773897c1-937e-47ba-b5c1-7b185a6f55f4",
+        "metadata": {},
+        "text": "Check for",
+        "type": "Title"
+    },
+    {
+        "element_id": "56bb2c51-4cf4-4cba-a3dc-f0e921fef77c",
+        "metadata": {},
+        "text": "SMT 2. 0: A Surrogate Modeling Toolbox with a focus on hierarchical and (losis",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f555109b-bbe0-4b03-8ff5-07b56a29a29e",
+        "metadata": {},
+        "text": "mixed variables Gaussian processes",
+        "type": "Title"
+    },
+    {
+        "element_id": "e8d57352-5483-4f60-bc6e-6bac7d18bf04",
+        "metadata": {},
+        "text": "Paul Saves*-\"!, R\u00e9mi Lafage*', Nathalie Bartoli*!, Youssef Diouane\u201c'!, Jasper Bussemaker \u201c', Thierry Lefebvre*', John T. Hwang \u201c', Joseph Morlier \u2018', Joaquim R.R.A. Martins \u00ae*",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "da512baf-7db2-4795-8433-a943ed72f8e3",
+        "metadata": {},
+        "text": "ONERA/DTIS, Universit\u00e9 de Toulouse, Toulouse, France > ISAE-SUPAERO, Universit\u00e9 de Toulouse, Toulouse, France \u00a9 Polytechnique Montr\u00e9al, Montreal, QC, Canada",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "8fe19da4-6ae9-4cdb-a693-9d3d95a44f89",
+        "metadata": {},
+        "text": "4 German Aerospace Center (DLR), Institute of System Architectures in Aeronautics, Hamburg, Germany \u00a9 University of California San Diego, Department of Mechanical and Aerospace Engineering, La Jolla, CA, USA \u2018ICA, Universit\u00e9 de Toulouse, ISAE-SUPAERO, INSA, CNRS, MINES ALBI, UPS, Toulouse, France",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "afa7215d-8845-43b5-b056-1de92b4658d2",
+        "metadata": {},
+        "text": "8 University of Michigan, Department of Aerospace Engineering, Ann Arbor, MI, USA",
+        "type": "Title"
+    },
+    {
+        "element_id": "df7db1e0-a602-4e8e-ac92-ff02fcda3dc1",
+        "metadata": {},
+        "text": "ARTICLE INFO ABSTRACT",
+        "type": "Title"
+    },
+    {
+        "element_id": "d2ea4d98-03f3-46cf-8688-eb89bc32fa84",
+        "metadata": {},
+        "text": "Dataset link: https://colab.research. google.com /github/SMTorg/smt/blob/master/tutorial/No tebookRunTestCases Paper SMT_v2.ipynb",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "67434590-634e-4134-af4e-1653308eba51",
+        "metadata": {},
+        "text": "Keywords: Surrogate modeling",
+        "type": "Title"
+    },
+    {
+        "element_id": "c47ab50a-812b-4562-9c9f-646017c1b0e0",
+        "metadata": {},
+        "text": "Gaussian process",
+        "type": "Title"
+    },
+    {
+        "element_id": "dea6ff09-cd57-4507-acb5-dce46070bbfd",
+        "metadata": {},
+        "text": "Kriging",
+        "type": "Title"
+    },
+    {
+        "element_id": "d8b91fe2-d3fe-48e3-9c6c-3eada3650452",
+        "metadata": {},
+        "text": "Hierarchical problems",
+        "type": "Title"
+    },
+    {
+        "element_id": "e503b74a-2479-4063-b73b-01a738811ac7",
+        "metadata": {},
+        "text": "Hierarchical and mixed-categorical inputs Meta variables",
+        "type": "Title"
+    },
+    {
+        "element_id": "e92dda26-88ec-494e-b4fd-d2bdb9c2c442",
+        "metadata": {},
+        "text": "The Surrogate Modeling Toolbox (SMT) is an open-source Python package that offers a collection of surrogate modeling methods, sampling techniques, and a set of sample problems. This paper presents SMT 2.0, a major new release of SMT that introduces significant upgrades and new features to the toolbox. This release adds the capability to handle mixed-variable surrogate models and hierarchical variables. These types of variables are becoming increasingly important in several surrogate modeling applications. SMT 2.0 also improves SMT by extending sampling methods, adding new surrogate models, and computing variance and kernel derivatives for Kriging. This release also includes new functions to handle noisy and use multi-fidelity data. To the best of our knowledge, SMT 2.0 is the first open-source surrogate library to propose surrogate models for hierarchical and mixed inputs. This open-source software is distributed under the New BSD license.\u201d",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "02805827-b072-4eba-9d33-2de733bbdce5",
+        "metadata": {},
+        "text": "1. Motivation and significance",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "864b1b56-52f6-4be0-8ae7-ee882990be6a",
+        "metadata": {},
+        "text": "With the increasing complexity and accuracy of numerical models, it has become more challenging to run complex simulations and computer codes [1,2]. As a consequence, surrogate models have been recognized as a key tool for engineering tasks such as design space exploration, uncertainty quantification, and optimization [3]. In practice, surrogate models are used to reduce the computational effort of these tasks by replacing expensive numerical simulations with closed-form approxi- mations [4, Ch. 10]. To build such a model, we start by evaluating the original expensive simulation at a set of points through a Design of Experiments (DoE). Then, the corresponding evaluations are used to build the surrogate model according to the chosen approximation, such as Kriging, quadratic interpolation, or least squares regression.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9279af20-9515-42d4-902e-6be7ea16b397",
+        "metadata": {},
+        "text": "The Surrogate Modeling Toolbox (SMT) is an open-source frame- work that provides functions to efficiently build surrogate models [5].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0e8c810f-5712-4972-ad4f-8932932fdf37",
+        "metadata": {},
+        "text": "Kriging models (also known as Gaussian processes) that take advantage of derivative information are one of SMT\u2019s key features [6]. Numerical experiments have shown that SMT achieved lower prediction error and computational cost than Scikit-learn [7] and UQLab [8] for a fixed number of points [9]. SMT has been applied to rocket engine coaxial-injector optimization [10], aircraft engine consumption mod- eling [11], numerical integration [12], multi-fidelity sensitivity analy- sis [13], high-order robust finite elements methods [14,15], planning for photovoltaic solar energy [16], wind turbines design optimiza- tion [17], porous material optimization for a high pressure turbine vane [18], chemical process design [19] and many other applications.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fb4b36b8-c238-446e-ab53-90cd10eb9f7b",
+        "metadata": {},
+        "text": "In systems engineering, architecture-level choices significantly in- fluence the final system performance, and therefore, it is desirable to consider such choices in the early design phases [20]. Architectural choices are parameterized with discrete design variables; examples in- clude the selection of technologies, materials, component connections,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ffd1ccf3-4fe5-43f0-ab04-65123d642e55",
+        "metadata": {},
+        "text": "Corresponding author at: ONERA/DTIS, Universit\u00e9 de Toulouse, Toulouse, France. E-mail addresses: paul.saves@onera.fr (P. Saves), remi.lafage@onera.fr (R. Lafage), nathalie.bartoli@onera.fr (N. Bartoli), youssef.diouane@polymtl.ca (\u00a5. Diouane), jasper.bussemaker@dlr.de (J. Bussemaker), thierry.lefebvre@onera.fr (T. Lefebvre), jhwang@eng.ucsd.edu (J.T. Hwang),",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "2a9d483f-3a7e-4afc-a287-22fe20330df8",
+        "metadata": {},
+        "text": "joseph.morlier@isae-supaero.fr (J. Morlier), jrram@umich.edu (J.R.R.A. Martins).",
+        "type": "EmailAddress"
+    },
+    {
+        "element_id": "516b1332-f822-41fa-b75d-a6788b1f7b89",
+        "metadata": {},
+        "text": "1 All authors contributed to this work, research and manuscript. 2 https://github.com/SMTorg/SMT",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3b4897d9-9494-4740-ba40-1912a66fb195",
+        "metadata": {},
+        "text": "https: //doi.org/10.1016/j.advengsoft.2023.103571",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1df71008-64d6-484b-8a92-8e917a46778d",
+        "metadata": {},
+        "text": "Received 22 August 2023; Received in revised form 23 October 2023; Accepted 26 November 2023",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5221b928-b4c2-4ee1-80b7-1af2a5edc573",
+        "metadata": {},
+        "text": "Available online 7 December 2023 0965-9978/\u00a9 2023 Elsevier Ltd. All rights reserved.",
+        "type": "Title"
+    },
+    {
+        "element_id": "f844c221-b15c-4756-9c4f-e8e37f54cf2c",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "566ec9dd-aa10-48f3-871d-fa7e51bb19b7",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "3834874e-4902-4b89-a6ed-90337f4f5871",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "37679d9a-c675-4ae8-9ac2-570df5fd6704",
+        "metadata": {},
+        "text": "Table 1 Comparison of software packages for hierarchical and mixed Kriging models. Y= implemented. * = user-defined. Package BOTorch Dakota DiceKriging KerGP LVGP Parmoo Spearmint SMT 2.0 Reference [25] [26] (27] (32] [28] [29] [30] This paper License MIT EPL GPL GPL GPL BSD GNU BSD Language Python c R R R Python Python Python Mixed var. v v v v v v v v GD kernel v v v * v CR kernel v v v v HH kernel v v EHH kernel * v Hierarchical var. v",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a1ba0406-1216-462e-8522-e4bc0b7211d0",
+        "metadata": {},
+        "text": "and number of instantiated elements. When design problems include both discrete variables and continuous variables, they are said to have mixed variables.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "97710adb-55f8-4647-97f7-4d8681958aac",
+        "metadata": {},
+        "text": "When architectural choices lead to different sets of design variables, we have hierarchical variables [21,22]. For example, consider differ- ent aircraft propulsion architectures [23]. A conventional gas turbine would not require a variable to represent a choice in the electrical power source, while hybrid or pure electric propulsion would require such a variable. The relationship between the choices and the sets of variables can be represented by a hierarchy.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3321bc50-74ff-4aba-a13f-47154f6d3682",
+        "metadata": {},
+        "text": "Handling hierarchical and mixed variables requires specialized sur- rogate modeling techniques [24]. To address these needs, SMT 2.0 is offering researchers and practitioners a collection of cutting-edge tools to build surrogate models with continuous, mixed and hierarchical variables. The main objective of this paper is to detail the new enhance- ments that have been added in this release compared to the original SMT 0.2 release [5].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7eedf411-2333-4f75-bb23-1c7e637b8c4b",
+        "metadata": {},
+        "text": "There are two new major capabilities in SMT 2.0: the ability to build surrogate models involving mixed variables and the support for hierarchical variables within Kriging models. To handle mixed variables in Kriging models, existing libraries such as BoTorch [25], Dakota [26], DiceKriging [27], LVGP [28], Parmoo [29], and Spearmint [30] implement simple mixed models by using either continuous relax- ation (CR), also known as one-hot encoding [30], or a Gower distance (GD) based correlation kernel [31]. KerGP [32] (developed in R) imple- ments more general kernels but there is no Python open-source toolbox that implements more general kernels to deal with mixed variables, such as the homoscedastic hypersphere (HH) [33] and exponential homoscedastic hypersphere (EHH) [34] kernels. Such kernels require the tuning of a large number of hyperparameters but lead to more accurate Kriging surrogates than simpler mixed kernels [34,35]. SMT 2.0 implements all these kernels (CR, GD, HH, and EHH) through a unified framework and implementation. To handle hierarchical vari- ables, no library in the literature can build peculiar surrogate models except SMT 2.0, which implements two Kriging methods for these variables. Notwithstanding, most softwares are compatible with a naive strategy called the imputation method [24] but this method lacks depth and depends on arbitrary choices. This is why Hutter and Osborne [21] proposed a first kernel, called Arc-Kernel which in turn was generalized by Horn et al. [36] with a new kernel called the Wedge- Kernel [37]. of these kernels are available in any open-source modeling software. Furthermore, thanks to the framework introduced in Audet et al. [38], our proposed kernels are sufficiently general so that all existing hierarchical kernels are included within it. Section 4 describes the two kernels implemented in SMT 2.0 that are referred as SMT Arc-Kernel and SMT Alg-Kernel. In particular, Alg- Kernel] is a novel hierarchical kernel introduced in this paper. Table 1 outlines the main features of the state-of-the-art modeling software that can handle hierarchical and mixed variables.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8e366b24-0a1e-4d14-ba27-94847b547f05",
+        "metadata": {},
+        "text": "SMT 2.0 introduces other enhancements, such as additional sam- pling procedures, new surrogate models, new Kriging kernels (and their derivatives), Kriging variance derivatives, and an adaptive criterion for high-dimensional problems. SMT 2.0 adds applications of Bayesian",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fbb170c9-95a1-43a5-b1ed-e518d502bdb8",
+        "metadata": {},
+        "text": "optimization (BO) with hierarchical and mixed variables or noisy co- Kriging that have been successfully applied to aircraft design [39], data fusion [40], and structural design [41]. The SMT 2.0 interface is more user-friendly and offers an improved and more detailed documentation for users and developers.? SMT 2.0 is hosted publicly\u2019 and can be directly imported within Python scripts. It is released under the New BSD License and runs on Linux, MacOS, and Windows operating sys- tems. Regression tests are run automatically for each operating system whenever a change is committed to the repository. In short, SMT 2.0 builds on the strengths of the original SMT package while adding new features. On one hand, the emphasis on derivatives (including predic- tion, training and output derivatives) is maintained and improved in SMT 2.0. On the other hand, this new release includes support for hierarchical and mixed variables Kriging based models. For the sake of reproducibility, an open-source notebook is available that gathers all the methods and results presented on this paper.\u00b0",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8295a699-45ba-44a4-8b46-da5cfc5d1aec",
+        "metadata": {},
+        "text": "The remainder of the paper is organized as follows. First, we in- troduce the organization and the main implemented features of the release in Section 2. Then, we describe the mixed-variable Kriging model with an example in Section 3. Similarly, we describe and provide an example for a hierarchical-variable Kriging model in Section 4. The Bayesian optimization models and applications are described in Section 5. Finally, we describe the other relevant contributions in Section 6 and conclude in Section 7.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bf18484a-5df5-4647-a417-14c6a2bf14d8",
+        "metadata": {},
+        "text": "2. SMT 2.0: an improved surrogate modeling toolbox",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "3c6ede53-22f2-464e-8f26-f01edbb63438",
+        "metadata": {},
+        "text": "From a software point of view, SMT 2.0 maintains and improves the modularity and generality of the original SMT version [5]. In this section, we describe the software as follows. Section 2.1 describes the legacy of SMT 0.2. Then, Section 2.2 describes the organization of the repository. Finally, Section 2.3 shows the new capabilities implemented in the SMT 2.0 update.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0b0914bb-561a-415d-af26-5c02462db061",
+        "metadata": {},
+        "text": "2.1. Background on SMT former version: SMT 0.2",
+        "type": "Title"
+    },
+    {
+        "element_id": "7e01d225-7e6c-4b36-8dff-7e6a5d28940c",
+        "metadata": {},
+        "text": "SMT [5] is an open-source collaborative work originally developed by ONERA, NASA Glenn, ISAE-SUPAERO/ICA and the University of Michigan. Now, both Polytechnique Montr\u00e9al and the University of California San Diego are also contributors. SMT 2.0 updates and ex- tends the original SMT repository capabilities among which the original publication [5] focuses on different types of derivatives for surrogate models detailed hereafter.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8bdd40a6-0de9-40c6-b857-4531c0b45cf7",
+        "metadata": {},
+        "text": "3 http://smt.readthedocs.io/en/latest",
+        "type": "Title"
+    },
+    {
+        "element_id": "7cca787b-4436-4406-86e6-3a73c95b0e58",
+        "metadata": {},
+        "text": "4 https://github.com/SMTorg/smt",
+        "type": "Title"
+    },
+    {
+        "element_id": "e53d77ed-d47d-4d67-af82-791f7ed11d73",
+        "metadata": {},
+        "text": "5 https://github.com/SMTorg/smt/tree/master/tutorial/ NotebookRunTestCases Paper SMT_v2.ipynb",
+        "type": "Title"
+    },
+    {
+        "element_id": "621eb0f3-d268-4bf3-9861-81718d05f22d",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "02cb4d4b-12c8-488f-9af1-4a0e2a48e78f",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "437f1bfd-f18b-41e6-abb7-f52379808037",
+        "metadata": {},
+        "text": "Table 2 Impact of using Numba on training time of the hierarchical Goldstein problem. Speedup is calculated excluding the JIT compilation table, as this step is only needed once after SMT installation.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9ddb0046-680f-4524-ab87-5d1f69f496f1",
+        "metadata": {},
+        "text": "Training set Without numba Numba Speedup JIT overhead 15 points 1.3 s lis 15% 24s 150 points 38s 748 80% 23s",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d52c197d-3ccd-422a-8f28-bab04fab6bd8",
+        "metadata": {},
+        "text": "A Python surrogate modeling framework with derivatives. One of the original main motivations for SMT was derivative support. In fact, none of the existing packages for surrogate modeling such as Scikit-learn in Python [7], SUMO in Matlab [42] or GPML in Matlab and Octave [43] focuses on derivatives. Three types of derivatives are distinguished: prediction derivatives, training derivatives, and output derivatives. SMT also includes new models with derivatives such as Kriging with Partial Least Squares (KPLS) [44] and Regularized Minimal-energy Tensor-product Spline (RMTS) [3]. These developed derivatives were even used in a novel algorithm called Gradient-Enhanced Kriging with Partial Least Squares (GEKPLS) [6] to use with adjoint methods, for example [45].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c7c9dc6d-bf92-477c-814e-716e7c3ea884",
+        "metadata": {},
+        "text": "Software architecture, documentation, and automatic testing. SMT is orga- nized along three main sub-modules that implement a set of sampling techniques (sampling_ methods), benchmarking functions (problems), and surrogate modeling techniques (surrogate_models). The toolbox documentation\u00ae is created using reStructuredText and Sphinx, a doc- umentation generation package for Python, with custom extensions. Code snippets in the documentation pages are taken directly from actual tests in the source code and are automatically updated. The output from these code snippets and tables of options are generated dynamically by custom Sphinx extensions. This leads to high-quality documentation with minimal effort. Along with user documentation, developer documentation is also provided to explain how to contribute to SMT. This includes a list of API methods for the SurrogateModel, SamplingMethod, and Problem classes, that must be implemented to create a new surrogate modeling method, sampling technique, or benchmarking problem. When a developer submits a pull request, it is merged only after passing the automated tests and receiving approval from at least one reviewer. The repository on GitHub\u2019 is linked to continuous integration tests (GitHub Actions) for Windows, Linux and MacOS, to a coverage test on coveralls.io and to a dependency version check for Python with DependaBot. Various parts of the source code have been accelerated using Numba [46], an LLVM-based just-in-time (JIT) compiler for numpy-heavy Python code. Numba is applied to con- ventional Python code using function decorators, thereby minimizing its impact on the development process and not requiring an additional build step. For a mixed Kriging surrogate with 150 training points, a speedup of up to 80% is observed, see Table 2. The JIT compilation step only needs to be done once when installing or upgrading SMT and adds an overhead of approximately 24 s on a typical workstation In this paper, all results are obtained using an Intel\u00ae Xeon\u00ae CPU E5-2650 v4 @ 2.20 GHz core and 128 GB of memory with a Broadwell- generation processor front-end and a compute node of a peak power of 844 GFlops.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "73869b45-b767-4d7d-bf98-08f99eb86648",
+        "metadata": {},
+        "text": "2.2. Organization of SMT 2.0",
+        "type": "Title"
+    },
+    {
+        "element_id": "e3691578-0ccd-4712-907a-170a3530c7a9",
+        "metadata": {},
+        "text": "The main features of the open-source repository SMT 2.0 are described in Fig. 1. More precisely, Sampling Methods, Problems and Surrogate models are kept from SMT 0.2 and two new sections Models applications and Interactive notebooks have been added to the architecture of the code. These sections are",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bffc4dd2-e544-44e3-89bc-5b475d88a953",
+        "metadata": {},
+        "text": "\u00a9 https://smt.readthedocs.org 7 https://github.com/SMTorg/smt",
+        "type": "Title"
+    },
+    {
+        "element_id": "cd6c302d-8a87-45c4-9dfd-d555367fc33a",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "bff7d72e-f18b-4652-9172-8a47558a638a",
+        "metadata": {},
+        "text": "highlighted in blue and detailed on Fig. 1. The new major features implemented in SMT 2.0 are highlighted in lavender whereas the legacy features that were already in present in the original publication for SMT 0.2 [5] are in black.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4e927bb4-7cf9-4d31-a0b2-b96ba2e531b0",
+        "metadata": {},
+        "text": "2.3. New features within SMT 2.0",
+        "type": "Title"
+    },
+    {
+        "element_id": "ce70e97e-cbde-41c8-bc40-e09f4b3eb771",
+        "metadata": {},
+        "text": "The main objective of this new release is to enable Kriging surrogate models for use with both hierarchical and mixed variables. Moreover, for each of these five sub-modules described in Section 2.2, several improvements have been made between the original version and the SMT 2.0 release.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8a94fe0e-e17c-41d5-bb93-c6123221c75c",
+        "metadata": {},
+        "text": "Hierarchical and mixed design space. A new design space definition class DesignSpace has been added that implements hierarchical and mixed functionalities. Design variables can either be continu- ous (FloatVariable), ordered (OrdinalVariable) or categorical (CategoricalVariable). The integer type (IntegerVariable) rep- resents a special case of the ordered variable, specified by bounds (inclusive) rather than a list of possible values. The hierarchical struc- ture of the design space can be defined using declare_decreed_var: this function declares that a variable is a decreed variable that is activated when the associated meta variable takes one of a set of specified values, see Section 4 for background. The DesignSpace class also implements mechanisms for sampling valid design vectors (ie. design vectors that adhere to the hierarchical structure of the design space) using any of the below-mentioned samplers, for cor- recting and imputing design vectors, and for requesting which design variables are acting in a given design vector. Correction ensures that variables have valid values (e.g. integers for discrete variables) [24], and imputation replaces non-acting variables by some default value (0 for discrete variables, mid-way between the bounds for continuous variables in SMT 2.0) [47].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4104770f-3832-452d-be51-dc102781483e",
+        "metadata": {},
+        "text": "Sampling. SMT implements three methods for sampling. The first one is a naive approach, called Random that draws uniformly points along every dimension. The second sampling method is called Full Fac- torial and draws a point for every cross combination of variables, to have an \u201cexhaustive\u201d design of experiments. The last one is the Latin Hypercube Sampling (LHS) [48] that draws a point in every Latin square parameterized by a certain criterion. For LHS, a new criterion to manage the randomness has been implemented and the sampling method was adapted for multi-fidelity and mixed or hierarchical variables. More details about the new sampling techniques are given in Section 6.1.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6381c611-6789-4221-89b3-c6d5a204debc",
+        "metadata": {},
+        "text": "Problems. SMT implements two new engineering problems: a mixed variant of a cantilever beam described in Section 3 and a hierarchical neural network described in Section 4.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0c2ebf2f-0e77-4fea-bb5c-8e9c10da8ab9",
+        "metadata": {},
+        "text": "Surrogate models. In order to keep up with state-of-art, several re- leases done from the original version developed new options for the already existing surrogates. In particular, compared to the original publication [5], SMT 2. 0 adds gradient-enhanced neural networks [45] and marginal Gaussian process [49] models to the list of available surrogates. More details about the new models are given in Section 6.2.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8ca6763b-d26a-4130-9efc-2da34a809c10",
+        "metadata": {},
+        "text": "Applications. Several applications have been added to the toolbox to demonstrate the surrogate models capabilities. The most relevant ap- plication is efficient global optimization (EGO), a Bayesian optimiza- tion algorithm [50,51]. EGO optimizes expensive-to-evaluate black-box problems with a chosen surrogate model and a chosen optimization criterion [52]. The usage of EGO with hierarchical and mixed variables is described in Section 5.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "61009551-2a7e-4c45-89de-e7af50fab9fd",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "f8fbdf95-6912-4e4d-ab94-6720aca3eae7",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "94f82fd1-6e34-4f22-8e09-f3aadd5a927e",
+        "metadata": {},
+        "text": "SMT 2.0",
+        "type": "Title"
+    },
+    {
+        "element_id": "f97c3906-0e20-4ed6-8aea-7d5088dbd2f6",
+        "metadata": {},
+        "text": "+ Sampling methods",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e848d674-eff3-4b8e-a42c-900ee5c8e73c",
+        "metadata": {},
+        "text": "-- Random | Full Factorial",
+        "type": "Title"
+    },
+    {
+        "element_id": "644fba0f-b11d-4bd8-bf5f-baed689639fe",
+        "metadata": {},
+        "text": "-- ,Problems Aircraft wing weight -Robot arm position",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "923df750-7846-49f7-86af-86f43bc2f2f8",
+        "metadata": {},
+        "text": ";-Welded beam shear stress",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bb583a69-b634-4536-9b38-c4e26c28ccac",
+        "metadata": {},
+        "text": "t-Kriging based models",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "668fa121-e9cc-4252-8463-96bce222985e",
+        "metadata": {},
+        "text": "--Continuous kernels [-Hierarchical kernels Categorical kernels",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2fb13315-6528-41c2-a0ee-4e6c9a7de900",
+        "metadata": {},
+        "text": "\u2014 Applications [-Mixture of experts (MOE)",
+        "type": "Title"
+    },
+    {
+        "element_id": "4af223b1-debb-4958-940a-3bf934c24d46",
+        "metadata": {},
+        "text": "\u2014 , Interactive notebooks",
+        "type": "Title"
+    },
+    {
+        "element_id": "37de7b42-5f6f-40a7-ba84-0c777ccf07ff",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "7f10afec-67e5-4a90-85a8-51bdf05fac4a",
+        "metadata": {},
+        "text": "\u2018Latin Hypercube Sampling (Nested LHS and Extended LHS)",
+        "type": "Title"
+    },
+    {
+        "element_id": "1935d36d-ce09-42ef-82ee-91f73fdd3e67",
+        "metadata": {},
+        "text": "--Water flow through a borehole --Low frequency torsion vibration",
+        "type": "Title"
+    },
+    {
+        "element_id": "cfa8ee04-a087-472f-a050-403895221e17",
+        "metadata": {},
+        "text": "t-Mixed integer cantilever beam",
+        "type": "Title"
+    },
+    {
+        "element_id": "13b86788-dbc3-4e53-a8c8-31c42ebf1713",
+        "metadata": {},
+        "text": "\u2018\u2014Hierarchical neural network",
+        "type": "Title"
+    },
+    {
+        "element_id": "e4374e5e-d0a2-4624-a503-3f722dde8a6f",
+        "metadata": {},
+        "text": "[- ,Surrogate modeling methods",
+        "type": "Title"
+    },
+    {
+        "element_id": "fd57d0e9-670b-4276-a0f7-74a167dcab13",
+        "metadata": {},
+        "text": ";-RBF: Radial Basis Functions",
+        "type": "Title"
+    },
+    {
+        "element_id": "f67e1cf8-edf4-4466-b9f6-75474f4e9b6c",
+        "metadata": {},
+        "text": "+-IDW: Inverse-Distance Weighting",
+        "type": "Title"
+    },
+    {
+        "element_id": "14f72e02-f33a-4e3c-8c38-fac86375e72a",
+        "metadata": {},
+        "text": "t-RMTS: Regularized Minimal-energy Tensor-product Splines ;+-LS: Least-Squares approximation",
+        "type": "Title"
+    },
+    {
+        "element_id": "12bed1bd-2477-4a0e-9786-0e6a730608e1",
+        "metadata": {},
+        "text": "--QP: Quadratic Polynomial approximation",
+        "type": "Title"
+    },
+    {
+        "element_id": "c3c76a8e-8e7c-4ca2-aab1-e14bf2147c5a",
+        "metadata": {},
+        "text": "|-GENN: Gradient-Enhanced Neural Network L-MGP: Marginal Gaussian Process",
+        "type": "Title"
+    },
+    {
+        "element_id": "0e6bc9cf-5744-404b-bb62-7556dcdb2364",
+        "metadata": {},
+        "text": "+-Variable-fidelity modeling (VFM) t-Multi-fidelity Kriging (MFK)",
+        "type": "Title"
+    },
+    {
+        "element_id": "5dd26642-05d1-4055-b92b-3566b013a54d",
+        "metadata": {},
+        "text": "[-Multi-fidelity KPLS (MFKPLS)",
+        "type": "Title"
+    },
+    {
+        "element_id": "8107689f-3009-4b80-acd2-d9c452685cb3",
+        "metadata": {},
+        "text": "|-Multi-fidelity KPLSK (MFKPLSK)",
+        "type": "Title"
+    },
+    {
+        "element_id": "1a514dc8-6b15-45d1-8a22-89f56e47d4f9",
+        "metadata": {},
+        "text": "[Efficient Global Optimization (EGO) \\-Mixed-Integer and hierarchical usage surrogates",
+        "type": "Title"
+    },
+    {
+        "element_id": "d5e38cae-43e4-44a6-97a8-dba940f40167",
+        "metadata": {},
+        "text": "--SMT tutorial for surrogate modeling",
+        "type": "Title"
+    },
+    {
+        "element_id": "8becce5e-d008-493c-953b-416a6e92819e",
+        "metadata": {},
+        "text": "t-Noisy Gaussian process (Kriging)",
+        "type": "Title"
+    },
+    {
+        "element_id": "28e6186e-55ce-4231-b4a2-4401b71c0f7f",
+        "metadata": {},
+        "text": "[-Multi-fidelity Gaussian process (with or without noise) t-Gaussian process trajectory Sampling",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "de969be3-8d29-4f5e-ae79-3711ae54b0e9",
+        "metadata": {},
+        "text": "t-Bayesian optimization to solve unconstrained problems t-Mixed & hierarchical Kriging and optimization",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d1730670-2d7b-4871-a114-0dcf368c2dde",
+        "metadata": {},
+        "text": "'-SMT 2.0 Advancements and hierarchical variables",
+        "type": "Title"
+    },
+    {
+        "element_id": "621fad43-c983-470f-9915-fefa2bd02a68",
+        "metadata": {},
+        "text": "Fig. 1. Functionalities of SMT 2.0. The new major features implemented in SMT 2.0 compared to SMT 0.2 are highlighted with the lavender color.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f4bded16-851a-427e-818a-0864d11bd8ff",
+        "metadata": {},
+        "text": "Interactive notebooks. These tutorials introduce and explain how to use the toolbox for different surrogate models and applications.\u2019 Every tutorial is available both as a .ipynb file and directly on Google colab.? In particular, a hierarchical and mixed variables dedicated notebook is available to reproduce the results presented on this paper.'\u00b0",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d2408511-83b5-48d7-ae5e-18bf68b8371a",
+        "metadata": {},
+        "text": "In the following, Section 3 details the Kriging based surrogate models for mixed variables, and Section 4 presents our new Kriging surrogate for hierarchical variables. Section 5 details the EGO applica- tion and the other new relevant features aforementioned are described succinctly in Section 6.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "553c6a19-c1fd-481d-b2dc-e881d506bb72",
+        "metadata": {},
+        "text": "8 https://github.com/SMTorg/smt/tree/master/tutorial \u00b0 https://colab.research.google.com/github/SMTorg/smt/ 10 https: //github.com/SMTorg/smt/tree/master/tutorial/ NotebookRunTestCases Paper SMT_v2.ipynb",
+        "type": "Title"
+    },
+    {
+        "element_id": "d4875b76-9407-4924-b36b-831b50e51bc3",
+        "metadata": {},
+        "text": "3. Surrogate models with mixed variables in SMT 2.0",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "9a8aba1e-7868-4f0e-83a6-019d4fe87d3c",
+        "metadata": {},
+        "text": "As mentioned in Section 1, design variables can be either of continu- ous or discrete type, and a problem with both types is a mixed-variable problem. Discrete variables can be ordinal or categorical. A discrete variable is ordinal if there is an order relation within the set of possible values. An example of an ordinal design variable is the number of engines in an aircraft. A possible set of values in this case could be 2,4,8. A discrete variable is categorical if no order relation is known between the possible choices the variable can take. One example of a categorical variable is the color of a surface. A possible example of a set of choices could be blue, red, green. The possible choices are called the levels of the variable.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9a86f0e4-1914-483c-93c8-2e75935988c4",
+        "metadata": {},
+        "text": "Several methods have been proposed to address the recent increase interest in mixed Kriging based models [30-33,35,39,53,54]. The main difference from a continuous Kriging model is in the estimation of",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9fa0791d-67a0-451b-902d-3759defc9bf3",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "c703e1a9-d7f2-465f-afd6-98d3509eebcf",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "1e46aedb-7d41-4b1b-a842-4792be32ad97",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "d22b00fe-27f8-4e03-80cd-ff31f9e765ad",
+        "metadata": {},
+        "text": "Table 3 Categorical kernels implemented in SMT 2.0. Name K(p) # of hyperparam. SMT GD exp(-d) + [(\u00a9O))]jzp = 0 1 SMT CR exp(-#) (PO), *= lO]; + POM zp := 0 hi SMT EHH exp(\u2014$) [G6], = 9s (POD) = (CC) }y \u2014 D SLL, -1) SMT HH 6 (PO), 2= 15 [Op = (COICO) }y FLL, - 1) the categorical correlation matrix, which is critical to determine the Table 4 mean and variance predictions. As mentioned in Section 1, approaches Results of the cantilever beam models [34, Table 4]. such as CR [30,39], continuous latent variables [54], and GD [31] Categorical Displacement Likelihood # of use a kernel-based method to estimate the correlation matrix. Other kernel error (em) hyperparam. methods estimate the correlation matrix by modeling the correlation SMT GD 1.3861 111.13 3 entries directly [32,35,53], such as HH [33] and EHH [34]. The HH SMT CR 1.1671 155.32 14 . . \u2018 A A . . SMT EHH 0.1613 236.25 68 correlation kernel is of particular interest because it generalizes simpler SMT HH 0.2033 235.66 68",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1ccb69c9-e8aa-4fec-a722-4f1ba913268b",
+        "metadata": {},
+        "text": "kernels such as CR and GD [34]. In SMT 2.0, the correlation kernel is an option that can be set to either CR (CONT_RELAX_KERNEL), GD (GOWER_KERNEL), HH (HOMO_HSPHERE_KERNEL) or EHH (EXP_HOMO_HSPHERE_KERNEL).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "398afa9d-a90a-487d-9cc4-24a892afdb31",
+        "metadata": {},
+        "text": "3.1. Mixed Gaussian processes",
+        "type": "Title"
+    },
+    {
+        "element_id": "50843f47-97d6-49d7-88a8-70c31c336cd4",
+        "metadata": {},
+        "text": "The continuous and ordinal variables are both treated similarly in SMT 2.0 with a continuous kernel, where the ordinal values are converted to continuous through relaxation. For categorical variables, four models (GD, CR, EHH and HH) can be used in SMT 2.0 if specified by the API. This is why we developed a unified mathematical formulation that allows a unique implementation for any model.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9df5e99f-172b-4dbb-8eaa-8251d164018d",
+        "metadata": {},
+        "text": "Denote / the number of categorical variables. For a given i \u20ac {1,...,/}, the ith categorical variable is denoted c; and its number of levels is denoted L;. The hyperparameter matrix peculiar to this variable c; is",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ba6edf58-6adf-4535-bd08-6d4462e0a455",
+        "metadata": {},
+        "text": "(O},1 Sym. 0,= (ihe (rh, ; . (6)]1.2, (6)r-12, (@ile,2;",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a8f1494f-5263-4863-911f-0f34822f1d30",
+        "metadata": {},
+        "text": "and the categorical parameters are defined as 6\u00b0 = {0,,...,0,}. For two given inputs in the DoE, for example, the rth and sth points, let cf and c? be the associated categorical variables taking respectively the 7 and the 7! level on the categorical variable c;. The categorical correlation kernel is defined by Kea Ce, eS, OEM) =",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "77f61c9a-1695-4608-9d02-23c6da666d0d",
+        "metadata": {},
+        "text": "! (63)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f0f3bbd0-7ab6-4c5f-b5d7-68d6018ca07d",
+        "metadata": {},
+        "text": "Il K(PO er cs) KCIPO Nes ce KUIPON rc KUPO)\u00a2s,\u00a28)",
+        "type": "Title"
+    },
+    {
+        "element_id": "93122a6f-fd4d-4a63-b408-d82a1b07121d",
+        "metadata": {},
+        "text": "isl where \u00abx is either a positive definite kernel or identity and #(.) is a symmetric positive definite (SPD) function such that the matrix &(0,) is SPD if 0, is SPD. For an exponential kernel, Table 3 gives the parameterizations of \u00ae and \u00ab that correspond to GD, CR, HH, and EHH kernels. The complexity of these different kernels depends on the number of hyperparameters that characterizes them. As defined by Saves et al. [34], for every categorical variable i \u20ac {1,...,/}, the matrix C(@,) \u20ac R4i*+i is lower triangular and built using a hypersphere decomposition [55,56] from the symmetric matrix 0, \u20ac Ri*4i of hyperparameters. The variable \u00a2 is a small positive constant and the variable 0, denotes the only positive hyperparameter that is used for the Gower distance kernel.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1131873b-c549-44e4-ab69-ea090e0168c3",
+        "metadata": {},
+        "text": "Another Kriging based model that can use mixed variables is Kriging with partial least squares (KPLS) [57]. KPLS adapts Kriging to high dimensional problems by using a reduced number of hyperparameters thanks to a projection into a smaller space. Also, for a general surrogate, not necessarily Kriging, SMT 2.0 uses continuous relaxation to allow whatever model to handle mixed variables. For example, we can use mixed variables with least squares (LS) or quadratic polynomial (QP) models. We now illustrate the abilities of the toolbox in terms of mixed modeling over an engineering test case.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0c0fe6ea-9c84-4ff0-965b-57cc788ae6cc",
+        "metadata": {},
+        "text": "3.2. An engineering design test-case",
+        "type": "Title"
+    },
+    {
+        "element_id": "1ada5645-c6b3-4e9b-bf5a-f61e1b213836",
+        "metadata": {},
+        "text": "A classic engineering problem commonly used for model validation is the beam bending problem [32,58]. This problem is illustrated on Fig. 2(a) and consists of a cantilever beam in its linear range loaded at its free end with a force F. As in Cheng et al. [58], the Young modulus is E = 200 GPa and the chosen load is F = 50 KN. Also, as in Roustant et al. [32], 12 possible cross-sections can be used. These 12 sections consist of 4 possible shapes that can be either hollow, thick or full as illustrated in Fig. 2(b).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b5dcc132-0774-45d9-a260-91044e0ea2eb",
+        "metadata": {},
+        "text": "To compare the mixed Kriging models of SMT 2.0, we draw a 98 point LHS as training set and the validation set is a grid of 12 x 30x",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cafe76d9-e29f-4d6a-b3e6-4ea658b11bd9",
+        "metadata": {},
+        "text": "0 = 10800 points. For the four implemented methods, displacement error (computed with a root-mean-square error criterion), likelihood, number of hyperparameters and computational time for every model are shown in Table 4. For the continuous variables, we use the square exponential kernel. More details are found in [34]. As expected, the complex EHH and HH models lead to a lower displacement error and a higher likelihood value, but use more hyperparameters and increase the computational cost compared to GD and CR. On this test case, the kernel EHH is easier to optimize than HH but in general, they are similar in terms of performance. Also, by default SMT 2.0 uses CR as it is known to be a good trade-off between complexity and performance [59].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3070e09e-ae01-4396-b33b-53d5480278d1",
+        "metadata": {},
+        "text": "4. Surrogate models with hierarchical variables in SMT 2.0",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "1bbafa24-707e-42e7-baf6-cf8c7bfdc449",
+        "metadata": {},
+        "text": "To introduce the newly developed Kriging model for hierarchical variables implemented in SMT 2.0, we present the general mathe- matical framework for hierarchical and mixed variables established by Audet et al. [38]. In SMT 2.0, two variants of our new method are implemented, namely SMT Alg-Kernel and SMT Arc-Kernel. In particular, the SMT Alg-Kernel is a novel correlation kernel introduced in this paper.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3adabb7d-2c30-4ee5-a95b-2a1ee01b5ac9",
+        "metadata": {},
+        "text": "4.1. The hierarchical variables framework",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "62bcce78-a54b-4e13-8e23-7520491916bc",
+        "metadata": {},
+        "text": "A problem structure is classified as hierarchical when the sets of active variables depend on architectural choices. This occurs frequently in industrial design problems. In hierarchical problems, we can classify variables as neutral, meta (also known as dimensional) or decreed (also known as conditionally active) as detailed in Audet et al. [38]. Neutral variables are the variables that are not affected by the hierarchy whereas the value assigned to meta variables determines which decreed variables are activated. For example, a meta variable could be the number of engines. If the number of engines changes, the number of decreed bypass ratios that every engine should specify also changes.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "565a9e79-a067-4298-9bf4-2f09a09725a0",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "f1542427-3ff8-4968-9655-7818aa681ace",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "c7629009-f192-4c17-9055-09c5f5e43f4e",
+        "metadata": {},
+        "text": "(a) Bending problem.",
+        "type": "Title"
+    },
+    {
+        "element_id": "4e2259e6-7d71-4244-b605-5af0a7bd7613",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "200cced2-f88a-4777-bfc8-7ad804d70de3",
+        "metadata": {},
+        "text": "(b) Possible cross-section shapes.",
+        "type": "Title"
+    },
+    {
+        "element_id": "5692f8aa-1fe1-4376-9639-1fbf7827c6df",
+        "metadata": {},
+        "text": "Fig. 2. Cantilever beam problem [34, Figure 6].",
+        "type": "Title"
+    },
+    {
+        "element_id": "a9cc49fc-f608-4d48-8e42-4899034bb88d",
+        "metadata": {},
+        "text": "Q Does the variable decree variables?",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "36e03392-bc47-4145-888c-af348a6cdb8a",
+        "metadata": {},
+        "text": "O Is the variable quantitative?",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "548e0bde-b345-49db-a174-f3ea556ebace",
+        "metadata": {},
+        "text": "I",
+        "type": "Title"
+    },
+    {
+        "element_id": "32c38c17-f925-4318-8aad-0049f2afb9de",
+        "metadata": {},
+        "text": "continuous?",
+        "type": "Title"
+    },
+    {
+        "element_id": "3e972139-cee5-48bf-8b7e-0f938f75aa93",
+        "metadata": {},
+        "text": "Q Is the variable",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "45081e0f-0e9c-468a-a422-9d4418c9cb61",
+        "metadata": {},
+        "text": "= QO Is the variable decreed? YES {",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b1d59825-5e82-4d7c-9eef-1218e65fbc85",
+        "metadata": {},
+        "text": "No",
+        "type": "Title"
+    },
+    {
+        "element_id": "14d7f703-80e3-4fa7-9a1f-3d6ffc508baf",
+        "metadata": {},
+        "text": "O Is the variable quantitative?",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "35d9447d-7c85-48a2-879c-d4a220230a3e",
+        "metadata": {},
+        "text": "YES No | Y ORDINAL CATEGORICAL O Is the variable | qin yea = | ---F-______% Quantitative \u201ccontinuous? CATEGORICAL Xmet met I ha a Continuous ORDINAL |; ' qtn qtn ; YES No I Xdec Xaec ! nn AnD, Quantitative i} '| Continuous | ORDINAL | ; qtn qtn 1 ' Xneu Xneu 1",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0c2ebb98-338f-4948-94ab-21e18bf8f6ef",
+        "metadata": {},
+        "text": "Fig. 3. Variables classification as used in SMT 2.0.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b6f41bdd-2747-4b53-bbce-cb6b9d8e5f5f",
+        "metadata": {},
+        "text": "However, the wing aspect ratio being neutral, it is not affected by this hierarchy.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "558e8bfe-8105-4add-a2a1-fe3176f7d597",
+        "metadata": {},
+        "text": "Problems involving hierarchical variables are generally dependant on discrete architectures and as such involve mixed variables. Hence, in addition to their role (neutral, meta or decreed), each variable also has a variable type amongst categorical, ordinal or continuous. For the sake of simplicity and because both continuous and ordinal variables are treated similarly [34], we chose to regroup them as quantitative variables. For instance, the neutral variables x,,,, may be partitioned into different variable types, such that x,.. = (xSt,, x90) where x\u2018#t, represents the categorical variables and x\u2018\"', are the quantitative ones. The variable classification scheme in SMT 2.0 is detailed in Fig. 3.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "53bb9007-eafd-4020-810f-c35e2e3ee925",
+        "metadata": {},
+        "text": "To explain the framework and the new Kriging model, we illustrate the inputs variables of the model using a classical machine learn- ing problem related to the hyperparameters optimization of a fully- connected Multi-Layer Perceptron (MLP) [38] on Fig. 4. In Table 5, we detail the input variables of the model related to the MLP problem (i.e., the hyperparameters of the neural network, together with their types and roles). To keep things clear and concise, the chosen problem is a simplification of the original problem developed by Audet et al. [38]. Regarding the MLP problem of Fig. 4 and following the classi- fication scheme of Fig. 3, we start by separating the input variables according to their role. In fact,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "086d8c4d-6838-49f1-a896-156f50296ce7",
+        "metadata": {},
+        "text": "1. changing the number of hidden layers modifies the number of inputs variables. Therefore, \u201c\u201c# of hidden layers\u201d is a meta variable.",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "7e279830-a0e2-4196-bb91-7596631087c4",
+        "metadata": {},
+        "text": "2. The number of neurons in the hidden layer number & is either included or excluded. For example, the \u201c# of neurons in the 3 layer\u201d would be excluded for an input that only has 2 hidden layers. Therefore, \u201c# of neurons hidden layer k\u201d are decreed variables.",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "d43ea75e-e564-4820-91ed-0a73814cce1e",
+        "metadata": {},
+        "text": ". The \u201cLearning rate\u201d, \u201cMomentum\u201d, \u201cActivation function\u201d and \u201cBatch size\u201d are not affected by the hierarchy choice. Therefore, they are neutral variables.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e45a9b52-2b9f-4792-b689-f020233b7810",
+        "metadata": {},
+        "text": "wo",
+        "type": "Title"
+    },
+    {
+        "element_id": "3085d29c-cb07-4653-bd48-0ccb56547bbf",
+        "metadata": {},
+        "text": "According to their types, the MLP input variables can be classified as follows:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3d2514a5-3d1b-4afb-b69b-438da414e136",
+        "metadata": {},
+        "text": "4. The meta variable \u201c# of hidden layers\u201d is an integer and, as such, is represented by the component x The decreed variables \u201c# of neurons hidden layer Re are integers",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "e78f5893-80fe-475b-baaa-10c4b9a68651",
+        "metadata": {},
+        "text": "and, as such, are represented by the component x*",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ef0041c6-ee1d-4d9d-a4cf-21c32f782dc5",
+        "metadata": {},
+        "text": "5.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9eee340a-cf93-4348-8113-5e9619f0fde5",
+        "metadata": {},
+        "text": "ee",
+        "type": "Title"
+    },
+    {
+        "element_id": "434a7367-ccdf-4826-a054-89162df31c27",
+        "metadata": {},
+        "text": "a",
+        "type": "Title"
+    },
+    {
+        "element_id": "67708e97-1022-4e66-a70a-999499e20d31",
+        "metadata": {},
+        "text": ". The \u201cLearning rate\u201d, \u201cMomentum\u201d, \u201cActivation function\u201d and \u201cBatch size\u201d are, respectively, continuous, for the first two (ev- ery value between two bounds), categorical (qualitative between three choices) and integer (quantitative between 6 choices). Therefore, the \u201cActivation function\u201d and the \u201cMomentum\u201d are represented by the component x\u2018. The \u201cLearning rate\u201d and the",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a6931584-ff8b-4add-8402-50247862f68d",
+        "metadata": {},
+        "text": "neu. \u201cBatch size\u201d are represented by the component x...",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "db784211-d6ca-48c7-a81e-c93b984dc333",
+        "metadata": {},
+        "text": "To model hierarchical variables, as proposed in [38], we separate the input space \u00a5 as (XpeuXmet\u00bbYdce) Where Xiec = LJ incl %mer)s",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d2f2e0a7-5872-4cd6-a34c-03b4e64341a0",
+        "metadata": {},
+        "text": "Xmet EXmet",
+        "type": "Title"
+    },
+    {
+        "element_id": "1e2abd97-da32-41e1-b756-fd47a73d491b",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "2084c45f-f5ac-42f7-b981-e8b514679eb9",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "1b280101-54f8-4549-9244-fe8a2b45f52e",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "2c664e58-60aa-4012-aa1b-be30a409edf5",
+        "metadata": {},
+        "text": "Activation function",
+        "type": "Title"
+    },
+    {
+        "element_id": "0686c173-cf9c-49d4-88ce-9ea644224f64",
+        "metadata": {},
+        "text": "Jar product",
+        "type": "Title"
+    },
+    {
+        "element_id": "a3d25b5d-39e8-4b9e-a85d-cac9671f0ffd",
+        "metadata": {},
+        "text": "= / wal) | (0 a - / Ne",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7445fe95-c54d-4862-ac0d-71d4588581c7",
+        "metadata": {},
+        "text": "Input layer",
+        "type": "Title"
+    },
+    {
+        "element_id": "c19638eb-0d68-458d-a4ab-cf764a18a167",
+        "metadata": {},
+        "text": "Fig. 4. The Multi-Layer Perceptron (MLP) problem. Source: Figure adapted from [38, Figure 1].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d672031b-a2ba-4260-8488-7ad596b12378",
+        "metadata": {},
+        "text": "Table 5",
+        "type": "Title"
+    },
+    {
+        "element_id": "68a5a293-9564-489b-b080-79cab2fa4251",
+        "metadata": {},
+        "text": "A detailed description of the variables in the MLP problem. MLP Variable \u2014 Domain Type Role Hyperparameters Learning rate r [10-5, 10-2] FLOAT NEUTRAL Momentum a (0,1) FLOAT NEUTRAL Activation a {ReLU, Sigmoid,Tanh} | ENUM NEUTRAL function Batch size b {8, 16, ..., 128,256} ORD NEUTRAL # of hidden I {1,2,3} ORD META layers # of neurons ny (50,51, ...,55} ORD DECREED hidden layer k",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d1ef61fb-d30b-402f-bb9a-2d05748cdd54",
+        "metadata": {},
+        "text": "Hence, for a given point x \u20ac 4, one has x = (Xyey.Xmet> Xneu \u00a9 Cnews Xmet \u00a9 Xmet ANA XincUmet) \u00a9 VincUmer) are defined as follows:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e4c1cc3f-6185-456e-8075-1c17ae91bc7b",
+        "metadata": {},
+        "text": "Xinc(Xmet)), Where",
+        "type": "Title"
+    },
+    {
+        "element_id": "aea7fb02-5463-4fa3-aebd-dc595a61e971",
+        "metadata": {},
+        "text": "+ The components x,.. \u00a9 %,, gather all neutral variables that are not impacted by the meta variables but needed. For ex- ample, in the MLP problem, %,,., gathers the possible learning rates, momentum, activation functions and batch sizes. Namely, from Table 5, Xpey = [10~5, 10-7] x [0, 1] x {ReLu, Sigmoid, Tanh} x {8, 16, ...,256}.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bb3a7e7c-e3a8-4744-86ff-ab93586ce3fd",
+        "metadata": {},
+        "text": "The components x, gather the meta (also known as dimen- sional) variables that determine the inclusion or exclusion of other variables. For example, in the MLP problem, 2. represents the possible numbers of layers in the MLP. Namely, from Table 5, Xwnet = (12,3).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b83e8b99-b0ff-49fe-a18e-ac2aa6d1d917",
+        "metadata": {},
+        "text": "The components x;,.(X;\u00a2,), contain the decreed variables whose inclusion (decreed-included) or exclusion (decreed-excluded) is determined by the values of the meta components x,,.,. For exam- ple, in the MLP problem, %,,, represents the number of neurons in the decreed layers. Namely, from Table 5, Yinc(Xmer = 3) = (50, 5513, Xinc(Xmet = 2) = [50,55]? and AXine(Xmer = 1) = [50,55].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cc4442f4-9f1a-4b86-b538-47bec863a870",
+        "metadata": {},
+        "text": "4.2. A Kriging model for hierarchical variables",
+        "type": "Title"
+    },
+    {
+        "element_id": "4cea18d6-ebd3-4d17-bd54-63ebfda65b54",
+        "metadata": {},
+        "text": "In this section, a new method to build a Kriging model with hierar- chical variables is introduced based on the framework aforementioned. The proposed methods are included in SMT 2.0.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "076896e7-def9-4c2a-8755-82d14f70ec7a",
+        "metadata": {},
+        "text": "4.2.1. Motivation and state-of-the-art",
+        "type": "Title"
+    },
+    {
+        "element_id": "765b0915-ce4d-4db5-96a5-c4b363242bb2",
+        "metadata": {},
+        "text": "Assuming that the decreed variables are quantitative, Hutter and Osborne [21] proposed several kernels for the hierarchical context. A classic approach, called the imputation method (Imp-Kerne1) leads to an efficient paradigm in practice that can be easily integrated into a more general framework as proposed by Bussemaker et al. [24]. However, this kernel lacks depth and depends on arbitrary choices. Therefore, Hutter and Osborne [21] also proposed a more general kernel, called Arc-Kernel and Horn et al. [36] generalized this kernel even more and proposed a new formulation called the Wedge- Kernel [37]. The drawbacks of these two methods are that they add some extra hyperparameters for every decreed dimension (respectively one extra hyperparameter for the Arc-Kerne1 and two hyperparam- eters for the Wedge-Kernel) and that they need a normalization according to the bounds. More recently, Pelamatti et al. [60] developed a hierarchical kernel for Bayesian optimization. However, our work is also more general thanks to the framework introduced earlier [38] that considers variable-wise formulation and is more flexible as we are allowing sub-problems to be intersecting.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "226c2eb1-5f01-4fa4-8e31-194d69e9d750",
+        "metadata": {},
+        "text": "In the following, we describe our new method to build a correlation kernel for hierarchical variables. In particular, we introduce a new alge- braic kernel called Alg-Kerne1 that behaves like the Arc-Kernel whilst correcting most of its drawbacks. In particular, our kernel does not add any hyperparameters, and the normalization is handled in a natural way.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7726a8d1-7cc2-451a-9186-1eb5fe5c3636",
+        "metadata": {},
+        "text": "4.2.2. A new hierarchical correlation kernel For modeling purposes, we assume that the decreed space is quan- titative, ie., Xaeco = xe Let u \u20ac & be an input point partitioned as",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a351aea7-02c6-4255-82c0-5afef0af74ac",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "385b122e-cf7e-4db7-b988-4d6c10377523",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "ae11dfcb-ebe8-40aa-a1da-37427eae8a5c",
+        "metadata": {},
+        "text": "U = (UpeusUmet>4inc(mer)) and, similarly, v \u20ac X is another input such that v = (UjeysUmet> YincUmet))- The new kernel k that we propose for hierarchical variables is given by",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e97ea132-a87e-400f-a311-6e1362afc07d",
+        "metadata": {},
+        "text": "K(u, 0) = KyeuMneur Unew) X Kmet mer\u00bb Umer) X Kmet.dec (met Minc Umer) ] Wmet> Yine Umer )])s (2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "606428a2-87d0-46a1-a746-518b201e31c2",
+        "metadata": {},
+        "text": "where k, 1 ANd Knot dec are as follows:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "638120f8-578e-4bd3-b43c-4b64695a472b",
+        "metadata": {},
+        "text": "neu? k \u2018met",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fde298ae-ce93-4cd3-bab4-1785aad3a549",
+        "metadata": {},
+        "text": "Kyeu represents the neutral kernel that encompasses both categor- ical and quantitative neutral variables, i.e., k,., can be decom-",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "f3f855c2-feec-4ea1-bdfe-021fca4e48cf",
+        "metadata": {},
+        "text": "posed into two parts kyoy(WneusUneu) = Ko (usat,, vet kant yan ant",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bfee859f-9932-47eb-8939-f6b7ad5e54e5",
+        "metadata": {},
+        "text": "neu? \u201cneu neu? Yneu)",
+        "type": "Title"
+    },
+    {
+        "element_id": "3002c132-1ac1-4d6f-8819-b638cbc3976d",
+        "metadata": {},
+        "text": "The categorical kernel, denoted k\u201c*, could be any Symmetric Positive Definite (SPD) [34] mixed kernel (see Section 3). For the quantitative (integer or continuous) variables, a distance- based kernel is used. The chosen quantitative kernel (Exponential, Mat\u00e9rn, ...), always depends on a given distance d. For example, the n-dimensional exponential kernel gives n Kant yant, yay = I exp(\u2014d (ui, 02\"). (3)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "be1aef9c-5254-4e2f-a6e8-fbb54e52429e",
+        "metadata": {},
+        "text": "i=l",
+        "type": "Title"
+    },
+    {
+        "element_id": "b781da7e-4134-4939-8f69-3d77bc50876d",
+        "metadata": {},
+        "text": "kmet is the meta variables related kernel. It is also separated into two parts: Kmet(Umet> Umer) = Kk (ust, vet AMY om) where the quantitative kernel is ordered and not continuous because meta variables take value in a finite set.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8f1affce-5426-406d-b361-c5d361694397",
+        "metadata": {},
+        "text": "Kmetdec 18 an SPD kernel that models the correlations between the meta levels (all the possible subspaces) and the decreed variables. In what comes next, we detailed this kernel.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cc40d5a1-3145-4452-bae5-82f9702e371f",
+        "metadata": {},
+        "text": "4.2.3. Towards an algebraic meta-decreed kernel",
+        "type": "Title"
+    },
+    {
+        "element_id": "580c989a-449d-4e1d-82d7-1e259188e654",
+        "metadata": {},
+        "text": "Meta-decreed kernels like the imputation kernel or the Arc-Kernel were first proposed in [21,47] and the distance-based kernels such as Arc-Kernel or Wedge-Kernel [37] were proven to be SPD. Nevertheless, to guarantee this SPD property, the same hyperparameters are used to model the correlations between the meta levels and between the decreed variables [47]. For this reason, the Arc-Kernel includes additional continuous hyperparameters which makes the training of the GP models more expensive and introduces more numerical stability issues. In this context, we are proposing a new algebraic meta-decreed kernel (denoted as Alg-Kernel) that enjoys similar properties as Arc-Kerne1 but without using additional continuous hyperparameters nor rescaling. In the SMT 2.0 release, we included Alg-Kerne] and a simpler version of Arc-Kerne] that do not relies on additional hyperparameters.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "96e498ff-937d-42c6-8f22-0ae37d940330",
+        "metadata": {},
+        "text": "Our proposed Alg-Kerne]l kernel is given by",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1c4d260d-66e8-4643-bec4-2ce84ece8769",
+        "metadata": {},
+        "text": "alg Kinet dec met Hine met )}+ [mets Vine (Umer )]) (4) _ ,alg , alg | = Kinet Mmet> Umer) X Kee Mine met > Vine Umer))- Mathematically, we could consider that there is only one meta variable whose levels correspond to every possible included subspace. Let I, denotes the components indices of possible subspaces, the subspaces parameterized by the meta component u,,., are defined as Vine(Umer = J, | \u20ac Isyp. It follows that the fully extended continuous decreed space writes as Y4,, = Uletgup XincUmer = !) and Iy,, is the set of the associated indices. Let //\"\u00a2r denotes the set of components related to the space \u00a5in.(UmetsUmet) Containing the variables decreed-included in both Aine Umer) AN Aine (Umet)\u00bb Since the decreed variables are quantitative, one has",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "303326a5-663c-4ffc-a178-503a5edf5fab",
+        "metadata": {},
+        "text": "KB (ting Umer)\u00bb Line Umet)) = 5 Winer)\u00bb Vine (Um) = TY Cerne ltme is ine meh) 6) ieriner",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3c30b16d-1632-4aa3-b49e-235440a4cb26",
+        "metadata": {},
+        "text": "The construction of the quantitative kernel k*\" depends on a given distance denoted d*'8. The kernel Kes is an induced meta kernel that",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a431cda2-636a-43c4-a4c6-137c5d1717ce",
+        "metadata": {},
+        "text": "depends on the same distance d#!8 to preserve the SPD property of",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3f5fb928-b381-4509-bd8c-a2bda8f25baa",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "ce5f8a25-b271-4cca-b5df-af4f1c684065",
+        "metadata": {},
+        "text": "alg i if i \u2018inter : + *",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c68be9d4-0b3f-4d37-8fac-ad9db18cc8c3",
+        "metadata": {},
+        "text": "metdect FOF every i \u00a9 Mec, if i \u00a9 1/\"*\", the new algebraic distance is given by",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8edc93a4-f334-406c-a5bd-57163a2fdc3f",
+        "metadata": {},
+        "text": "dag gg) [Og g))) =| eae = Cneme LY",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5eec5025-14cf-4c13-b51a-f4f2e868cc5c",
+        "metadata": {},
+        "text": "Vheine tined? + Ly leige(Ome I? +1",
+        "type": "Title"
+    },
+    {
+        "element_id": "ef5dd103-ffe4-4f08-9f50-69141bda7743",
+        "metadata": {},
+        "text": "(6)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9f138a54-4c4d-4af9-96c4-8e246e9f4488",
+        "metadata": {},
+        "text": "where 6; \u20ac Rt is a continuous hyperparameter. Otherwise, if i \u20ac I,,. but i \u00a2 rine, there should be a non-zero residual distance between the two different subspaces Xing(Ume,) ANA Vinc(Ume,) to ensure the kernel SPD property. To have a residual not depending on the decreed values, our model considers that there is a unit distance",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "745e669e-9b20-4552-b3f9-84f0dac453ac",
+        "metadata": {},
+        "text": "8 (ung Umer) [inemerI) = 1.0 6}, WEE Have \\ Hie",
+        "type": "Title"
+    },
+    {
+        "element_id": "0036367d-f649-4ffb-b43f-896cb6576ad1",
+        "metadata": {},
+        "text": "uv",
+        "type": "Title"
+    },
+    {
+        "element_id": "c947ae63-ec61-4a63-9c3a-aa0dec243f88",
+        "metadata": {},
+        "text": "The induced meta kernel K\"8 (users Umer) to preserve the SPD property of k!8 is defined as:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5fe96031-6fae-4bc6-81c8-53987132e7bb",
+        "metadata": {},
+        "text": "8 Wye. Ume) = [] kC.0 6). \u201d ile",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "25ded0d6-e5d2-4781-b3fa-966de4882964",
+        "metadata": {},
+        "text": "Not only our kernel of Eq. (2) uses less hyperparameters than the Arc- Kernel (as we cut off its extra parameters) but it is also a more flexible kernel as it allows different kernels for meta and decreed variables. Moreover, another advantage of our kernel is that it is numerically more stable thanks to the new non-stationary [61] algebraic distance defined in Eq. (7) [62]. Our proposed distance also does not need any rescaling by the bounds to have values between 0 and 1.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c16d766f-7e69-465b-acb5-b180e785ab70",
+        "metadata": {},
+        "text": "In what comes next, we will refer to the implementation of the kernels Arc-Kernel and Alg-Kernel by SMT Arc-Kernel and SMT Alg-Kernel. We note also that the implementation of SMT Arc-Kernel differs slightly from the original Arc-Kernel as we fixed some hyperparameters to 1 in order to avoid adding extra hy- perparameters and use the formulation of Eq. (2) and rescaling of the data.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5175bb4d-6c9f-4053-95fe-4536b401a6fb",
+        "metadata": {},
+        "text": "4.2.4. Illustration on the MLP problem",
+        "type": "Title"
+    },
+    {
+        "element_id": "27d0101f-7e1c-4210-9251-172f6987bc97",
+        "metadata": {},
+        "text": "In this section, we illustrate the hierarchical Arc-Kernel on the MLP example. For that sake, we consider two design variables u and v such that u = (2.107+,0.9,ReLU, 16,2,55,51) and v = (5.1073,0.8, Sigmoid, 64, 3,50,54,53). Since the value of u,,, (i.e., the number of hidden layers) differs from one point to another (namely, 2 for u and 3 for v), the associated variables u;,.(Ume,) have either 2 or 3 variables for the number of neurons in each layer (namely 55 and 51 for u, and 50, 54 and 53 for the point v). In our case, 8 hyperparame- ters ([Rj],2,9),---,97) will have to be optimized where k is given by Eq. (2). These 7 hyperparameters can be described using our proposed framework as follows:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0b2d0988-0ce7-46b7-b250-3b0981025a62",
+        "metadata": {},
+        "text": "+ For the neutral components, we have uj. = (2.10-4, 0.9, ReLU, 16) and vy, = (5.10-3, 0.8, Sigmoid, 64). Therefore, for a categorical matrix kernel R, and a square exponential quantitative kernel, Kyeulllneu Une) = KS Wpeys Cpe Ik teu Pe = [Ry ]i2 exp [-0, (2.1074 \u2014 5.1077} exp [-0>(0.9 \u2014 0.8)\"] exp [-0,(16 \u2014 64)?].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bb5549d1-50c5-4e69-9990-b2ea093bb9db",
+        "metadata": {},
+        "text": "The values [R,],>, 0;, 9; and 0; need to be optimized. Here, [Rj], is the correlation between \"ReLU\" and \"Sigmoid\".",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1311388b-d81d-4868-becf-2394e4d4a064",
+        "metadata": {},
+        "text": "For the meta components, we have u,,,, = 2 and v, Therefore, for a square exponential quantitative kernel,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6e945884-6f98-466f-966e-13ffd6bb5b56",
+        "metadata": {},
+        "text": "= 3.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a65b6ab2-9299-493f-89cb-58ea21baa922",
+        "metadata": {},
+        "text": "met",
+        "type": "Title"
+    },
+    {
+        "element_id": "868236ab-0496-436a-a5a6-4cefd3fa8546",
+        "metadata": {},
+        "text": "|) = peatyjeat peat pant amt at Keyee(tgets Pner) = EM (uSet, Ee RAUB ME )",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "29938708-2043-414a-8bde-1d580368336a",
+        "metadata": {},
+        "text": "= exp [\u201404(3 \u2014 2) ].",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9cd028f1-ff29-445e-92b5-0f8d450879b7",
+        "metadata": {},
+        "text": "The value 0, needs to be optimized.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7efda6b7-02ad-4129-a980-ef25d7425ad7",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "b991cf67-5c01-4605-9e0c-f479f25f5399",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "55ae3d2f-3b8b-47bd-8cfe-0c240f3f7d1c",
+        "metadata": {},
+        "text": "+ For the meta-decreed kernel, we have [uetsUinc(Umet)] = [2, (55, 51)] and [Umet+ Vinc(Umet)] = [3, (50, 54, 53)] which gives",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a48086fa-78b5-468e-9694-e9955cde9f1a",
+        "metadata": {},
+        "text": "alg k met,dec",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8425ec53-b723-4ce3-b5db-86c0cdc4aa0e",
+        "metadata": {},
+        "text": "= KE (2,3) KE (55, 51), (50, 54, 53)).",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d1e27daf-9e74-422a-a610-6964857daaad",
+        "metadata": {},
+        "text": "\u2018met",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5c3c8cef-e169-459b-9a67-e02e2dc21c99",
+        "metadata": {},
+        "text": "(mets Mine met) }+ mer Vine Umer )))",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "55c0da0a-26f8-477f-af83-dffe2407a5ae",
+        "metadata": {},
+        "text": "The distance d#8(51,54) = (2835) 05 = 2.178.1073 66. In 24 a+",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "31610990-f951-4129-b402-e7c9d99dc951",
+        "metadata": {},
+        "text": "general, for surrogate models, and in particular in SMT 2.0, the input data are normalized. With a unit normalization from [50, 55]",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8025d974-5087-4011-adc9-6ecdb48f641d",
+        "metadata": {},
+        "text": "to [0,1], we would have d#8(0.2,0.8) = ( 20.6",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1016903b-7620-4f07-9d08-61d906581c25",
+        "metadata": {},
+        "text": "0.919 0. Similarly, we have, between 55 and 50, d#!8(0,1) = 1.414 6;. Hence, for a square exponential quantitative kernel, one gets",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b0f24aee-fbb4-47c4-aa94-aaabd615dab1",
+        "metadata": {},
+        "text": "alg , , met dec Lmet \u00bb \u201cine (met) }> [met\u00bb Yinc Umer )1)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "81f3c229-a93e-4376-9544-5a86ceefe8a2",
+        "metadata": {},
+        "text": "= exp[\u20140,] x exp[\u20141.414 05] x exp [\u20140.919 6],",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "fbe59953-62a9-44e4-8d85-c29b71b5e4ae",
+        "metadata": {},
+        "text": "where the meta induced component is Ke (met Umet) = &XP [-97] because the decreed value 53 in v has nothing to be compared with in wu as in Eq. (7). The values 0;, 0, and 0, need to be opti- mized which complete the description of the hyperparameters. We note that for the MLP problem, Alg-Kernel models use 10 hyperparameters whereas the Arc-Kernel would require 12 hyperparameters without the meta kernel (0,4) but with 3 extra decreed hyperparameters and the Wedge-Kernel would require 15 hyperparameters. For deep learning applications, a more complex perceptron with up to 10 hidden layers would require 17 hyperparameters with SMT 2.0 models against 26 for Arc-Kernel and 36 for Wedge-Kernel. The next section illustrates the interest of our method to build a surrogate model for this neural network engineering problem.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "efbd3ae5-c217-43c8-8dde-4d66315d661b",
+        "metadata": {},
+        "text": "4.3. A neural network test-case using SMT 2.0",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "21894824-e1b2-40fe-88ad-1f279011586c",
+        "metadata": {},
+        "text": "In this section, we apply our models to the hyperparameters opti- mization of a MLP problem aforementioned of Fig. 4. Within SMT 2.0 an example illustrates this MLP problem. For the sake of showing the Kriging surrogate abilities, we implemented a dummy function with no significance to replace the real black-box that would require training a whole Neural Network (NN) with big data. This function requires a number of variables that depends on the value of the meta variable, ice the number of hidden layers. To simplify, we have chosen only 1, 2 or 3 hidden layers and therefore, we have 3 decreed variables but deep neural networks could also be investigated as our model can tackle a few dozen variables. A test case (test_hierarchical variables. NN) shows that our model SMT Alg-Kernel interpolates the data prop- erly, checks that the data dimension is correct and also asserts that the inactive decreed variables have no influence over the prediction. In Fig. 5 we illustrate the usage of Kriging surrogates with hierarchical and mixed variables based on the implementation of SMT 2.0 for test hierarchical _variables_NN.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "316cf86c-33d7-4935-9cac-d122d3eff0e4",
+        "metadata": {},
+        "text": "To compare the hierarchical models of SMT 2.0 (SMT Alg-Kernel and SMT Arc-Kerne1) with the state-of-the-art imputation method previously used on industrial application (Imp-Kernel) [24], we draw a 99 point LHS (33 points by meta level) as a training set and the validation set is a LHS of 3x 1000 = 3000 points. For the Imp-Kernel, the decreed-excluded values are replaced by 52 because the mean value 52.5 is not an integer (by default, SMT rounds to the floor value). For the three methods, the precision (computed with a root-mean- square error RMSE criterion), the likelihood and the computational time are shown in Table 6. For this problem, we can see that SMT Alg- kernel gives better performance than the imputation method or SMT Arc-kernel1. Also, as all methods use the same number of hyperpa- rameters, they have similar time performances. A direct application of",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fb9b166f-ecee-49b2-a073-09f37f232dde",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "e46f76e4-59cc-432c-b0e0-025788616f4d",
+        "metadata": {},
+        "text": "Table 6 Results on the neural network model. Hierarchical method Prediction Likelihood # of error (RMSE) hyperparam. SMT Alg-kernel 3.7610 176.11 10 SMT Arc-kernel 4.9208 162.01 10 Imp-Kernel 4.5455, 170.64 10",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "378efc90-b6b3-4679-9864-2c67f2305a0d",
+        "metadata": {},
+        "text": "our modeling method is Bayesian optimization to perform quickly the hyperparameter optimization of a neural network [63].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4dff1bd0-b885-42fc-af14-9a743184305d",
+        "metadata": {},
+        "text": "5. Bayesian optimization within SMT 2.0",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "79d086e8-626f-4b4b-b8be-35a00f9ed9ac",
+        "metadata": {},
+        "text": "Efficient global optimization (EGO) is a sequential Bayesian op- timization algorithm designed to find the optimum of a black-box function that may be expensive to evaluate [52]. EGO starts by fitting a Kriging model to an initial DoE, and then uses an acquisition function to select the next point to evaluate. The most used acquisition function is the expected improvement. Once a new point has been evaluated, the Kriging model is updated. Successive updates increase the model accu- racy over iterations. This enrichment process repeats until a stopping criterion is met.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f10f3563-43e4-431c-9891-3c11a057ae0c",
+        "metadata": {},
+        "text": "Because SMT 2.0 implements Kriging models that handle mixed and hierarchical variables, we can use EGO to solve problems in- volving such design variables. Other Bayesian optimization algorithms often adopt approaches based on solving subproblems with contin- uous or non-hierarchical Kriging. This subproblem approach is less efficient and scales poorly, but it can only solve simple problems. Several Bayesian optimization software packages can handle mixed or hierarchical variables with such a subproblem approach. The pack- ages include BoTorch [25], SMAC [65], Trieste [66], HEBO [67], OpenBox [68], and Dragonfly [69].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "35a5d154-fd77-42f4-b502-b80d02bccadf",
+        "metadata": {},
+        "text": "5.1. A mixed optimization problem",
+        "type": "Title"
+    },
+    {
+        "element_id": "4b336074-f317-492f-b35b-0fd99ebe56bd",
+        "metadata": {},
+        "text": "Fig. 6 compares the four EGO methods implemented in SMT 2.0: SMT GD, SMT CR, SMT EHH and SMT HH. The mixed test case that illustrates Bayesian optimization is a toy test case [64] detailed in Ap- pendix A. This test case has two variables, one continuous and one categorical with 10 levels. To assess the performance of our algorithm, we performed 20 runs with different initial DoE sampled by LHS. Every DoE consists of 5 points and we chose a budget of 55 infill points. Fig. 6(a) plots the convergence curves for the four methods. In particular, the median is the solid line, and the first and third quantiles are plotted in dotted lines. To visualize better the data dispersion, the boxplots of the 20 best solutions after 20 evaluations are plotted in Fig. 6(b). As expected, the more a method is complex, the better the optimization. Both SMT HH and SMT EHH converged in around 18 evaluations whereas SMT CR and SMT GD take around 26 iterations as shown on Fig. 6(a). Also, the more complex the model, the closer the optimum is to the real value as shown on Fig. 6(b).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "32b45f69-5f72-4f5f-a730-45e1786d7262",
+        "metadata": {},
+        "text": "In Fig. 7 we illustrate how to use EGO with mixed variables based on the implementation of SMT 2.0. The illustrated problem is a mixed variant of the Branin function [70].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "878df4da-e59c-41ed-818a-bb0849697e1b",
+        "metadata": {},
+        "text": "Note that a dedicated notebook is available to reproduce the results presented in this paper and the mixed integer notebook also includes an extra mechanical application with composite materials [41].'!",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8f061aea-6262-4fcb-a8ab-bf67430baabb",
+        "metadata": {},
+        "text": "11 https://colab.research.google.com/github/SMTorg/smt/blob/master/ tutorial/SMT_MixedInteger_application.ipynb",
+        "type": "Title"
+    },
+    {
+        "element_id": "c3749d8b-4389-4e85-bc09-3d17f452399a",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "7f152c27-2709-4154-9174-66a9ab4ff76b",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "8eb0ddea-ce5a-4018-977a-b2ac25341fa1",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "a31d7a1a-2fc6-4f3b-9c69-017bc83e49d8",
+        "metadata": {},
+        "text": "from smt.sampling_ methods import LHS from smt.surrogate_models import KRG,MixIntKernelType ,\\ MixHrcKernelType , DesignSpace , FloatVariable ,\\ IntegerVariable ,OrdinalVariable , CategoricalVariable from smt.applications.mixed_integer import \\ MixedIntegerSamplingMethod , MixedIntegerKrigingModel import fi_NN, f2_NN,f3_NN #dummy example def test_hierarchical_variables_NN(self): def dummy_f(x):",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "2a89ba09-c6c6-4c19-8b60-59407c7a4a75",
+        "metadata": {},
+        "text": "if x(0] == 1: y=(f1_NN(x[1] ,x[2] ,x[3] ,2**x[4],x[5]))",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "abc8bb05-df53-4b6c-adc2-25de0ded6482",
+        "metadata": {},
+        "text": "elif x[0] == 2: y=(f\u00a32_NN(x[1] ,x[2] ,x[3] ,2**x[4],x[6],x[6]))",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "cf318874-5e52-4be4-8206-f3c6cb5fe5eb",
+        "metadata": {},
+        "text": "elif x[0] == 3: y=(\u00a33_NN(x[4] ,x[2] ,x[3] ,2**x[4],x[5],x{6],x([7]))",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5c64dfc3-1eae-43aa-8f73-aa22f3f6e342",
+        "metadata": {},
+        "text": "return y",
+        "type": "Title"
+    },
+    {
+        "element_id": "07a75505-af30-4071-a318-e5b2d5364100",
+        "metadata": {},
+        "text": "# Define the mixed hierarchical design space ds = DesignSpace([ IntegerVariable(i, 3), FloatVariable(ie-5, 1ie-2), FloatVariable(0, 14), CategoricalVariable([\"ReLU\", \"Sigmoid\",\"Tanh\"]), IntegerVariable(3, 8), IntegerVariable(50, 55), IntegerVariable(50, 55), IntegerVariable(50, 55), ]) # activate x5 when x0 in [2, 3]; x6 when x0 == 3 ds .declare_decreed_var ( decreed_var=6, meta_var=0, meta_value=[2, 3]) ds.declare_decreed_var(7, meta_var=0, meta_value=3) #Perform the mixed integer sampling sampling = MixedIntegerSamplingMethod ( LHS, ds, criterion=\"ese\", random_state=42) Xt = sampling (100) Yt = dummy_f (Xt) #Build the surrogate sm = MixedIntegerKrigingModel ( surrogate=KRG(design_space=ds, corr=\"abs_exp\", categorical_kernel=MixIntKernelType .HOMO_HSPHERE , hierarchical_kernel=MixHrcKernelType.ALG_KERNEL) sm.set_training values(Xt, Yt) sm.train() # Check prediction accuracy y_s = sm.predict_values (Xt) pred_RMSE = np.linalg.norm(y_s - Yt) / len(Yt) y_sv = sm.predict_variances (Xt) var_RMSE = np.linalg.norm(y_sv) / len(Yt) assert pred_RMSE < 1e-7 assert var_RMSE < 1ie-7",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e022c82f-81c1-48b5-934d-4cddef415585",
+        "metadata": {},
+        "text": "Fig. 5. Example of usage of Hierarchical and Mixed Kriging surrogate.",
+        "type": "Title"
+    },
+    {
+        "element_id": "34bceeb5-acc4-443c-a6a7-10cd9aa7a33f",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "f0f03fd0-0b56-4dcb-8c89-6239ead8f870",
+        "metadata": {},
+        "text": "P. Saves et al. Advances in Engineering Software 188 (2024) 103571",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e84b37ca-1ddc-4374-aa81-88ce2ef64103",
+        "metadata": {},
+        "text": "50.0 7\u2014; -_ H \u2014 EGO (SMT HH) , 10.0 \u2014 EGO (SMT EHH) 0 0.0 \u2014 EGO (SMT CR) 0-14 o : \u2014 G0 (SMT GD) 3 2 a5 g gs = 716 g o s Evs B 222 < fe} ie) E 26 @ \u00ae 2.3295 MO 22 0 10 20 30 40 50 60 rceaeanereeeeeeeo_mmew _ Number of evaluations SMTHH = SMTEHH SMTCR = SMTGD (a) Convergence curves: medians of 20 runs. (b) Boxplots after 20 evaluations.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "91570408-fb0b-4056-a890-c8f2c47c3ea0",
+        "metadata": {},
+        "text": "Fig. 6. Optimization results for the Toy function [64].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f9bf0cd0-82b2-45e2-b30c-a2a98c16b009",
+        "metadata": {},
+        "text": "#Import the Mixed Integer API",
+        "type": "Title"
+    },
+    {
+        "element_id": "1db8c841-414b-42c3-88fb-417a563de20f",
+        "metadata": {},
+        "text": "from smt.surrogate_models import KRG,MixIntKernelType ,\\ DesignSpace ,FloatVariable , IntegerVariable",
+        "type": "Title"
+    },
+    {
+        "element_id": "9dc54203-0bf6-4c0a-bcc7-5c0a04eca313",
+        "metadata": {},
+        "text": "from smt.applications.mixed_integer import \\ MixedIntegerSamplingMethod as misamp",
+        "type": "Title"
+    },
+    {
+        "element_id": "66225bef-3e8a-4f65-8192-2925321b2e54",
+        "metadata": {},
+        "text": "#Define the function",
+        "type": "Title"
+    },
+    {
+        "element_id": "5c93b721-0bde-43c5-b971-eddd54197da5",
+        "metadata": {},
+        "text": "from smt.problems import Branin",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e6d99aaf-0672-447f-89aa-a03de24a2388",
+        "metadata": {},
+        "text": "fun = Branin(ndim=2)",
+        "type": "Title"
+    },
+    {
+        "element_id": "6efe5989-efd9-4eec-ae38-7bd6c99c59c0",
+        "metadata": {},
+        "text": "#Define the mixed design space",
+        "type": "Title"
+    },
+    {
+        "element_id": "26798859-1bf1-4061-b4cc-68673aab8068",
+        "metadata": {},
+        "text": "design_space = DesignSpace([ IntegerVariable(*fun.xlimits[0]), FloatVariable(*fun.xlimits[1]),",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "88d47fbe-312f-4625-94c7-fa7288cb87d6",
+        "metadata": {},
+        "text": "})",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "8dee81dc-6d18-4c78-82f7-0a1b5b14196b",
+        "metadata": {},
+        "text": "#Perform a mixed integer sampling with LHS",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0656875a-ba50-40dd-9b7e-d38d4b3137eb",
+        "metadata": {},
+        "text": "from smt.sampling_methods import LHS",
+        "type": "Title"
+    },
+    {
+        "element_id": "9af07d0c-f56b-4ba8-a2f4-823434595850",
+        "metadata": {},
+        "text": "smp = misamp(LHS,design_space ,random_state=42)",
+        "type": "Title"
+    },
+    {
+        "element_id": "dd1afebd-a517-4def-9be7-a6b38687037a",
+        "metadata": {},
+        "text": "xdoe = smp(10)",
+        "type": "Title"
+    },
+    {
+        "element_id": "715b056c-00c3-4df7-8a25-3022918dfd91",
+        "metadata": {},
+        "text": "# Call the Bayesian optimizer",
+        "type": "Title"
+    },
+    {
+        "element_id": "1c06cef6-07b1-4897-9ad8-207b53110249",
+        "metadata": {},
+        "text": "from smt.applications import EGO",
+        "type": "Title"
+    },
+    {
+        "element_id": "822d5427-ebb5-45a1-998d-08a9d76773fd",
+        "metadata": {},
+        "text": "criterion = \"EI\" #\u2019EI\u2019 or \u2019SBO\u2019 or \u2019?LCB\u2019",
+        "type": "Title"
+    },
+    {
+        "element_id": "a1fb8090-d8b9-4e76-a0fb-e7cc2a560c28",
+        "metadata": {},
+        "text": "ego = EGO(xdoe=xdoe, n_iter=20, criterion=\"EI\", random_state=42, surrogate=KRG(design_space=design_space,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "37c96b61-2d54-4528-ae17-356135041dbc",
+        "metadata": {},
+        "text": "categorical_kernel=MixIntKernelType. GOWER) )",
+        "type": "Title"
+    },
+    {
+        "element_id": "e3fd8339-47be-4a33-bbd6-b0df3dbb2fb5",
+        "metadata": {},
+        "text": "X_opt, y_opt, _, _, _ = ego.optimize(fun=fun)",
+        "type": "Title"
+    },
+    {
+        "element_id": "77bd620f-9feb-4a07-a3b7-1e6028df5996",
+        "metadata": {},
+        "text": "# Check if the result is correct",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fcc6d892-26b6-4534-af85-c9812b2ddde9",
+        "metadata": {},
+        "text": "self.assertAlmostEqual (0.494, float(y_opt), delta=1)",
+        "type": "Title"
+    },
+    {
+        "element_id": "2a2ed619-3fdc-4638-a3ce-5f09826355e6",
+        "metadata": {},
+        "text": "Fig. 7. Example of usage of mixed surrogates for Bayesian optimization.",
+        "type": "Title"
+    },
+    {
+        "element_id": "b063a8fb-aff0-4ad8-9703-8da7d01007f1",
+        "metadata": {},
+        "text": "11",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5c177cfa-e8ae-48d5-be9a-bd8430c4cbde",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "a50b98f9-b795-42e8-9e20-e2b2821d10c7",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "9f5660e5-2ec3-4252-ae32-790cf631462b",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "2590b948-446b-4598-adf7-4a2c990905b2",
+        "metadata": {},
+        "text": "60",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "eaa73cd9-cfb9-4ac2-84fb-5ac0d6ca750a",
+        "metadata": {},
+        "text": "EGO (SMT Alg-Kernel) EGO (SMT Arc-Kernel) EGO (Imp-Kerne!)",
+        "type": "Title"
+    },
+    {
+        "element_id": "cd3278a1-0f74-40e3-9702-95f87dee311c",
+        "metadata": {},
+        "text": "SMT Random Search",
+        "type": "Title"
+    },
+    {
+        "element_id": "a618943d-f343-4c17-ad87-ec954eb4db23",
+        "metadata": {},
+        "text": "50",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "cda5b58b-8ffc-4163-91e7-5fe1e8252703",
+        "metadata": {},
+        "text": "40",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0382147c-90dd-4efc-9c40-0acf4fec4d3e",
+        "metadata": {},
+        "text": "30",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "12e87df7-e151-45d2-acf1-86be1016afec",
+        "metadata": {},
+        "text": "Objective value",
+        "type": "Title"
+    },
+    {
+        "element_id": "d5dd9135-84cc-4334-ae92-7cd705707203",
+        "metadata": {},
+        "text": "Number of evaluations",
+        "type": "Title"
+    },
+    {
+        "element_id": "493371f4-2f89-4ff9-a3dd-14b378106173",
+        "metadata": {},
+        "text": "(a) Convergence curves: medians of 20 runs.",
+        "type": "Title"
+    },
+    {
+        "element_id": "dfa5efdc-5bf4-4633-96be-8e9123f7059b",
+        "metadata": {},
+        "text": "30",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "24237dba-78e8-4456-b74d-cd765ad08cbb",
+        "metadata": {},
+        "text": "2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e1347ed9-6e4c-4cf2-81ac-78997b3d6d44",
+        "metadata": {},
+        "text": "Best minimal values",
+        "type": "Title"
+    },
+    {
+        "element_id": "4b9216af-c10f-4e02-b899-8ac695a4623f",
+        "metadata": {},
+        "text": "10",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d8cf767d-eaa5-4f51-a605-2c3bd2cb7c6d",
+        "metadata": {},
+        "text": "SMT Alg-K SMT Arc-K __Imp-K Random",
+        "type": "Title"
+    },
+    {
+        "element_id": "8d88e5e0-8099-4af3-8595-1635c3c860bc",
+        "metadata": {},
+        "text": "(b) Boxplots after 67 iterations.",
+        "type": "Title"
+    },
+    {
+        "element_id": "39daac57-b023-40b7-b445-ae29585a9f9d",
+        "metadata": {},
+        "text": "Fig. 8. Optimization results for the hierarchical Goldstein function.",
+        "type": "Title"
+    },
+    {
+        "element_id": "a4402ca3-d3cc-4652-b6d6-b2d0a351eaf8",
+        "metadata": {},
+        "text": "5.2. A hierarchical optimization problem",
+        "type": "Title"
+    },
+    {
+        "element_id": "1303cb72-d29a-4fa8-af6a-d2d608ea9874",
+        "metadata": {},
+        "text": "The hierarchical test case considered in this paper to illustrate Bayesian optimization is a modified Goldstein function [60] detailed in Appendix B. The resulting optimization problem involves 11 vari- ables: 5 are continuous, 4 are integer (ordinal) and 2 are categorical. These variables consist in 6 neutral variables, 1 dimensional (or meta) variable and 4 decreed variables. Depending on the meta variable values, 4 different sub-problems can be identified. The optimization problem is given by:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2710d6a1-2553-4408-80ea-640c69d0df2d",
+        "metadata": {},
+        "text": "min f (xt $20 x) wirt. xt = wy, \u20ac {0,1} feu = (15X75 X55 23, 24) \u00a9 (0, 100}\u00b0 x (0, 1,2}? \u00ae",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "880e8f1f-3037-4761-8be3-3d6d419147e1",
+        "metadata": {},
+        "text": "xe = w, \u20ac (0,1,2,3)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ef65ef89-c9cb-48b2-941d-e024f2f0aadc",
+        "metadata": {},
+        "text": "xGh, = (3, 45 215 22) \u00a9 (0, 100}? x (0, 1,2}?",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "eec5921b-31d4-4292-8945-f0b7cc160db3",
+        "metadata": {},
+        "text": "Compared to the model choice of Pelamatti et al. [60], we chose to model x; and w, as neutral variables even if f does not depend on x; When w, = 0. Other modeling choices are kept; for example, w, is a so-called \u201cbinary variable\u201d and not a categorical one [71]. Similarly, we also keep the formulation of w, as a categorical variable but a better model would be to model it as a \u201ccyclic variable\u201d [72]. The resulting problem is described in Appendix B. To assess the performance of our algorithm, we performed 20 runs with different initial DoE sampled by LHS. Every DoE consists of n + 1 = 12 points and we chose a budget of 5n = 55 infill points. To compare our method with a baseline, we also tested the random search method thanks to the expand_lhs new method [40] described in Section 6.1 and we also optimized the Goldstein function using EGO with a classic Kriging model based on imputation method (Imp-Kerne1). This method replaces the decreed- excluded variables by their mean values: 50 or | respectively for (x3, x4) and (z;, Zz). Fig. 8(a) plots the convergence curves for the four methods. In particular, the median is the solid line and the first and third quantiles are plotted in dotted lines. To visualize better the correspond- ing data dispersion, the boxplots of the 20 best solutions are plotted in Fig. 8(b). The results in Fig. 8 show that the hierarchical Kriging models of SMT 2.0 lead to better results than the imputation method or the random search both in terms of final objective value and variance over the 20 runs and in term of convergence rate. More precisely, SMT Arc-Kernel and SMT Alg-Kernel Kriging model gave the best EGO results and managed to converge correctly as shown in Fig. 8(b). More precisely, the 20 sampled DoEs led to similar performance and from one DoE, the method SMT Alg-Kerne1 managed to find the true minimum. However, this result has not been reproduced in other runs and is therefore not statistically significant. The variance between the runs is of similar magnitude regardless of the considered methods.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b0ae0886-4ff9-4314-8b87-2e4ef63aa8b2",
+        "metadata": {},
+        "text": "12",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7058c743-8078-407b-a77f-30cb6f524f62",
+        "metadata": {},
+        "text": "6. Other relevant contributions in SMT 2.0",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "37a19904-b814-4d84-934e-d7bbc14cbb03",
+        "metadata": {},
+        "text": "The new release SMT 2.0 introduces several improvements be- sides Kriging for hierarchical and mixed variables. This section details the most important new contributions. Recall from Section 2.2 that five sub-modules are present in the code: Sampling, Problems, Surrogate Models, Applications and Notebooks.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ba8603d3-4899-45fd-b6d9-d662ee9da0c4",
+        "metadata": {},
+        "text": "6.1. Contributions to Sampling",
+        "type": "Title"
+    },
+    {
+        "element_id": "5adb19a1-3b71-4773-9020-7a35b9e3d366",
+        "metadata": {},
+        "text": "Pseudo-random sampling. The Latin Hypercube Sampling (LHS) is a stochastic sampling technique to generate quasi-random sampling dis- tributions. It is among the most popular sampling method in computer experiments thanks to its simplicity and projection properties with high-dimensional problems. The LHS method uses the pyDOE package (Design Of Experiments for Python). Five criteria for the construction of LHS are implemented in SMT. The first four criteria (center, maximin, centermaximin, correlation) are the same as in pyDOE.\"* The last criterion ese, is implemented by the authors of SMT [48]. In SMT 2.0 a new LHS method was developed for the Nested design of experiments (NestedLHS) [73] to use with multi- fidelity surrogates. A new mathematical method (expand_lhs) [40] was developed in SMT 2.0 to increase the size of a design of exper- iments while maintaining the ese property. Moreover, we proposed a sampling method for mixed variables, and the aforementioned LHS method was applied to hierarchical variables in Fig. 8.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "08f97e9c-c6a5-4e5c-a641-cfd37f071dc7",
+        "metadata": {},
+        "text": "6.2. Contributions to Surrogate models",
+        "type": "Title"
+    },
+    {
+        "element_id": "fec1dccc-5fb7-434b-b3b7-d65f5192c7de",
+        "metadata": {},
+        "text": "New kernels and their derivatives for Kriging. Kriging surrogates are based on hyperparameters and on a correlation kernel. Four correla- tion kernels are now implemented in SMT 2.0 [74]. In SMT, these correlation functions are absolute exponential (abs_exp), Gaussian (squar_exp), Matern 5/2 (matern52) and Matern 3/2 (matern32). In addition, the implementation of gradient and Hessian for each kernel makes it possible to calculate both the first and second derivatives of the GP likelihood with respect to the hyperparameters [5].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4e234417-bd2b-4673-9ad4-292a86febcb1",
+        "metadata": {},
+        "text": "Variance derivatives for Kriging. To perform uncertainty quantification for system analysis purposes, it could be interesting to know more about the variance derivatives of a model [75-77]. For that purpose and also to pursue the original publication about derivatives [5], SMT 2.0 extends the derivative support to Kriging variances and kernels.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "690b62c4-e10b-4386-b355-8629fb3369f6",
+        "metadata": {},
+        "text": "12. https://pythonhosted.org/pyDOE/index.html",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "db1a96b0-87be-44fe-bbd6-37d9f0e0b663",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "7f6ce793-05a6-44c6-8e07-cb2a44ed2fc2",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "e31a162a-e284-4421-a4bc-dde968fc4e68",
+        "metadata": {},
+        "text": "Noisy Kriging. In engineering and in big data contexts with real exper- iments, surrogate models for noisy data are of significant interest. In particular, there is a growing need for techniques like noisy Kriging and noisy Multi-Fidelity Kriging (MFK) for data fusion [78]. For that purpose, SMT 2.0 has been designed to accommodate Kriging and MFK to noisy data including the option to incorporate heteroscedastic noise (using the use_het_noise option) and to account for different noise levels for each data source [40].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8a35a984-eb03-4d9b-aa33-c7e3d00862b6",
+        "metadata": {},
+        "text": "Kriging with partial least squares. Beside MGP, for high-dimensional problems, the toolbox implements Kriging with partial least squares (KPLS) [57] and its extension KPLSK [44]. The PLS information is computed by projecting the data into a smaller space spanned by the principal components. By integrating this PLS information into the Kriging correlation matrix, the number of inputs can be scaled down, thereby reducing the number of hyperparameters required. The result- ing number of hyperparameters d, is indeed much smaller than the original problem dimension d. Recently, in SMT 2.0, we extended the KPLS method for multi-fidelity Kriging (MFKPLS and MFKPLSK) [73,79, 80]. We also proposed an automatic criterion to choose automatically the reduced dimension d, based on Wold\u2019s R criterion [81]. This criterion has been applied to aircraft optimization with EGO where the number d, (n_comp in the code) for the model is automatically selected at every iteration [39]. Special efforts have been made to accommodate KPLS for multi-fidelity and mixed integer data [79,80].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0374aa37-4df8-495c-a262-4a7b3b239511",
+        "metadata": {},
+        "text": "Marginal Gaussian process. SMT 2.0 implements Marginal Gaussian Process (MGP) surrogate models for high dimensional problems [82]. MGP are Gaussian processes taking into account hyperparameters un- certainty defined as a density probability function. Especially we sup- pose that the function to model f : Q ++ R, where Q c R\u00a2 and d is the number of design variables, lies in a linear embedding A such as A = {u = Ax,x \u20ac Q},A \u20ac Re and f(x) = f4(Ax) with f(x) = fy : Aw Rand d, \u00ab d. Then, we must use a kernel k(x, x\u2019) = k 4(Ax, Ax\u2019) whose each component of the transfer matrix A is an hyperparameter. Thus we have d, x d hyperparameters to find. Note that d, is defined as n_comp in the code [49].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6c915af5-226b-45b3-938e-192d6aa4e998",
+        "metadata": {},
+        "text": "Gradient-enhanced neural network. The new release SMT 2.0 imple- ments Gradient-Enhanced Neural Network (GENN) models [45]. Gradient-Enhanced Neural Networks (GENN) are fully connected multi- layer perceptrons whose training process was modified to account for gradient information. Specifically, the model is trained to minimize not only the prediction error of the response but also the prediction error of the partial derivatives: the chief benefit of gradient enhancement is better accuracy with fewer training points. Note that GENN applies to regression (single-output or multi-output), but not classification since there is no gradient in that case. The implementation is fully vectorized and uses ADAM optimization, mini-batch, and L2-norm regularization. For example, GENN can be used to learn airfoil geometries from a database. This usage is documented in SMT 2.0.'\u00b0",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5fbe5046-410c-4224-9624-e651dc2785c9",
+        "metadata": {},
+        "text": "6.3. Contributions to Applications",
+        "type": "Title"
+    },
+    {
+        "element_id": "7a036f47-291e-404e-a6f1-a0f587e7e7c6",
+        "metadata": {},
+        "text": "Kriging trajectory and sampling. Sampling a GP with high resolution is usually expensive due to the large dimension of the associated covariance matrix. Several methods are proposed to draw samples of a GP on a given set of points. To sample a conditioned GP, the classic method consists in using a Cholesky decomposition (or eigende- composition) of the conditioned covariance matrix of the process but some numerical computational errors can lead to non SPD matrix. A more recent approach based on Karhunen-Lo\u00e9ve decomposition of the covariance kernel with the Nystrom method has been proposed in [83]",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b6aace44-ad00-44ba-969e-195ba77e737b",
+        "metadata": {},
+        "text": "13 https://smt.readthedocs.io/en/latest/_src_docs/examples/airfoil_ parameters/learning airfoil_parameters.html",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "df161446-d71e-4aa1-8c6d-2337903f56a1",
+        "metadata": {},
+        "text": "13",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0dc63cec-b4aa-4211-8de7-6ddf7312631c",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "76b6cd72-d3fc-43ce-9f89-071b4843e2ba",
+        "metadata": {},
+        "text": "where the paths can be sampled by generating independent standard Normal distributed samples. The different methods are documented in the tutorial Gaussian Process Trajectory Sampling [84].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8d4eb396-099c-4645-8c6a-2d32d92f0bda",
+        "metadata": {},
+        "text": "Parallel Bayesian optimization. Due to the recent progress made in hardware configurations, it has been of high interest to perform parallel optimizations. A parallel criterion called qEI [85] was developed to perform Efficient Global Optimization (EGO): the goal is to be able to run batch optimization. At each iteration of the algorithm, multiple new sampling points are extracted from the known ones. These new sampling points are then evaluated using a parallel computing environ- ment. Five criteria are implemented in SMT 2. 0: Kriging Believer (KB), Kriging Believer Upper Bound (KBUB), Kriging Believer Lower Bound (KBLB), Kriging Believer Random Bound (KBRand) and Constant Liar (CLmin) [86].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e1cd32d2-1471-4a88-9c34-c5e87c9e7b11",
+        "metadata": {},
+        "text": "7. Conclusion",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "b05eff4e-065c-4d10-a1e2-4a0140b86114",
+        "metadata": {},
+        "text": "SMT 2.0 introduces significant upgrades to the Surrogate Modeling Toolbox. This new release adds support for hierarchical and mixed variables and improves the surrogate models with a particular focus on Kriging (Gaussian process) models. SMT 2.0 is distributed through an open-source license and is freely available online.\u2019\u2018 We provide documentation that caters to both users and potential developers.'\u00b0 SMT 2.0 enables users and developers collaborating on the same project to have a common surrogate modeling tool that facilitates the exchange of methods and reproducibility of results.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3bfdfdfc-e5b2-4120-b49a-8537f9d96aa2",
+        "metadata": {},
+        "text": "SMT has been widely used in aerospace and mechanical modeling applications. Moreover, the toolbox is general and can be useful for anyone who needs to use or develop surrogate modeling techniques, regardless of the targeted applications. SMT is currently the only open- source toolbox that can build hierarchical and mixed surrogate models.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4bbc199a-a03f-4177-b2c0-4b735c8a8598",
+        "metadata": {},
+        "text": "Declaration of competing interest",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d154f132-3870-4e4c-b455-4fa62e0661ea",
+        "metadata": {},
+        "text": "The authors declare that they have no known competing finan- cial interests or personal relationships that could have appeared to influence the work reported in this paper.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "aafe36a2-0314-486b-bc3a-d1dc0cbbb9a6",
+        "metadata": {},
+        "text": "Data availability",
+        "type": "Title"
+    },
+    {
+        "element_id": "23b7647e-43dc-4d15-b148-a636a14b25d9",
+        "metadata": {},
+        "text": "Data will be made available on request. Results can be reproduced freely online at https://colab.research.google.com/github/SMTorg/smt/ blob/master/tutorial/NotebookRunTestCases_Paper_SMT_v2.ipynb.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c294b3d4-87b0-4b96-baaf-befd8502aa09",
+        "metadata": {},
+        "text": "Acknowledgments",
+        "type": "Title"
+    },
+    {
+        "element_id": "d16f7b5b-b240-41e0-b2c1-8adb62cac53a",
+        "metadata": {},
+        "text": "We want to thank all those who contribute to this release. Namely, M. A. Bouhlel, I. Cardoso, R. Carreira Rufato, R. Charayron, R. Conde Arenzana, S. Dubreuil, A. F. Lopez-Lopera, M. Meliani, M. Menz, N. Mo\u00e9llo, A. Thouvenot, R. Priem, E. Roux and F. Vergnes. This work is part of the activities of ONERA - ISAE - ENAC joint research group. We also acknowledge the partners institutions: ONERA, NASA Glenn, ISAE- SUPAERO, Institut Cl\u00e9ment Ader (ICA), the University of Michigan, Polytechnique Montr\u00e9al and the University of California San Diego.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c1b15693-7475-4681-9470-66be7e4a74e7",
+        "metadata": {},
+        "text": "The research presented in this paper has been performed in the framework of the AGILE 4.0 project (Towards cyber-physical collabo- rative aircraft development), funded by the European Union Horizon 2020 research and innovation framework programme under grant agreement n\u00b0 815122 and in the COLOSSUS project (Collaborative System of Systems Exploration of Aviation Products, Services and",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b197441b-1079-4e8b-96ba-7bc3c7641615",
+        "metadata": {},
+        "text": "14 https://github.com/SMTorg/SMT 15 https://smt.readthedocs.io/en/latest/",
+        "type": "Title"
+    },
+    {
+        "element_id": "3bcdf31e-75b7-4bca-b004-8c0200a883f4",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "b06c84ac-d6b6-45f5-8730-e337ed1c68d5",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "956434e2-9ccd-464e-b7de-0d60b3404dbc",
+        "metadata": {},
+        "text": "Business Models) funded by the European Union Horizon Europe re- search and innovation framework programme under grant agreement n\u00b0 101097120.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7372cd4c-8846-44b6-a585-cf7583311147",
+        "metadata": {},
+        "text": "We also are grateful to E. Hall\u00e9-Hannan from Polytechnique Mon- tr\u00e9al for the hierarchical variables framework.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8d0de3a4-2451-4ffe-9fd7-4321e79e3f12",
+        "metadata": {},
+        "text": "Appendix A. Toy test function",
+        "type": "Title"
+    },
+    {
+        "element_id": "5843775c-7092-4e86-a28c-028dc316b275",
+        "metadata": {},
+        "text": "This Appendix gives the detail of the toy function of Section 5.1.1\u00b0 First, we recall the optimization problem:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9b0a31d3-3243-4d15-acbf-c4f8ef10bb16",
+        "metadata": {},
+        "text": "min f(x\", x\") wart. x = \u00a2, \u20ac {0,1,2,3,4,5,6,7,8, 9} xt = x, \u20ac [0,1]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "22f32458-6859-452b-86fc-a00be20ee1ac",
+        "metadata": {},
+        "text": "(A.1)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "08cb05f7-b45f-47a9-8bc7-deb356c38b08",
+        "metadata": {},
+        "text": "The toy function f is defined as",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7d1a6f07-ffac-44ca-bf3b-9a0f66fe46e3",
+        "metadata": {},
+        "text": "Sf (x, \u00a21) =1,, =0 cos(3.62(x \u20142))+x-1 +1,,<1 2cos(1.17 exp(x)) \u2014 5 +2 +1,,-9 cos(2zx) + 5x",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1db14330-ac68-4dd2-8114-7ee626d32033",
+        "metadata": {},
+        "text": "x",
+        "type": "Title"
+    },
+    {
+        "element_id": "2e920d87-a56b-4a13-a6df-38d5917562a4",
+        "metadata": {},
+        "text": "+1, =3 X(cos(3.4a(x \u2014 1)) \u2014",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "54816666-89c3-4cb9-b8c8-72bffc1a3348",
+        "metadata": {},
+        "text": "x2 Heat \u2014 5",
+        "type": "Title"
+    },
+    {
+        "element_id": "18953a36-5656-4691-b433-495524fdfd32",
+        "metadata": {},
+        "text": "+1, -5 2.c08(0.252 exp(\u2014x4))? \u2014 5 +1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "2dc9774f-a3b5-4c30-8ce7-aa1f28fad29e",
+        "metadata": {},
+        "text": "(A.2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "2864046b-abba-42b3-8d13-47bc8bd9f866",
+        "metadata": {},
+        "text": "+1, <6 x cos(3.42x) \u2014 $ +1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7b45987e-9251-4548-8492-74f70c953c8a",
+        "metadata": {},
+        "text": "+127 \u2014 x(cos(3.52x) + 9) +2 +1..3 \u2014-> +1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "14146982-7450-42dc-9957-8e26f2cc11f2",
+        "metadata": {},
+        "text": "+1, =9 \u2014 cos(2.52x)> Vx \u2014 0.5 In(x + 0.5) \u2014 1.3 Appendix B. Hierarchical Goldstein test function",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a6622af2-9088-4f25-9108-c8f044f7545f",
+        "metadata": {},
+        "text": "This Appendix gives the detail of the hierarchical Goldstein problem of Section 5.2.!\u201d First, we recall the optimization problem:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "151344e0-11ac-4592-9b8f-09275580b0e7",
+        "metadata": {},
+        "text": "cat ant cat ant",
+        "type": "Title"
+    },
+    {
+        "element_id": "13daa7f5-f862-4b9a-9c4b-0307318ce6ff",
+        "metadata": {},
+        "text": "min f peu Xneu %m* Xaee",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "76826d42-76f2-4396-8caa-c050f817c675",
+        "metadata": {},
+        "text": "wert. xl = wy \u20ac {0,1}",
+        "type": "Title"
+    },
+    {
+        "element_id": "0ac3f932-2e58-4a81-bdb9-8495521c52b6",
+        "metadata": {},
+        "text": "neu",
+        "type": "Title"
+    },
+    {
+        "element_id": "db745f4e-6576-49ef-93eb-bd58879b6960",
+        "metadata": {},
+        "text": "HAE = (215 X95%55 23524) \u00a9 (0, 100} x (0, 1,2}? (1) x\" = w, \u20ac {0,1,2,3} xgh, = (3, X45 215 22) \u00a9 (0, 100? x (0, 1,2)?",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5642f0c9-34ca-45a6-b69f-a22c2051c97a",
+        "metadata": {},
+        "text": "dec",
+        "type": "Title"
+    },
+    {
+        "element_id": "8ca37da7-d099-4fad-98d5-1f85d49a9b03",
+        "metadata": {},
+        "text": "The hierarchical and mixed function f is defined as a hierarchical function that depends on fo, f,, f. and Gold.oy, as describes in the following.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a28c16af-e98f-478d-8124-9c54a78e0d7a",
+        "metadata": {},
+        "text": "SF (%1,X2,X3X4s 21, 225 23, 24, X5,W,W2) = Dye, =o fo 1 Xa\u00bb 21+ 22\u00bb 23\u00bb 24> X5> W) H+ Dy a1 Fi 1 X2535 275 235 Za X5,W2) (B.2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "fb583668-85c1-4e5a-81b0-ba46acbd905f",
+        "metadata": {},
+        "text": "F Dy ao So (1X2) X45 215 23\u00bb 24s X5> W)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a30951c6-ead5-42ef-a469-28c5e51ab46b",
+        "metadata": {},
+        "text": "+ Dy, 23 Gold gone (% 1. X2+X3+X4s 23\u00bb Zs %5-W)-",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "17d65f5a-eb58-4796-ba0a-323e1cba169a",
+        "metadata": {},
+        "text": "16 https://github.com/jbussemaker/SBArchOpt 17 https://github.com/jbussemaker/SBArchOpt",
+        "type": "Title"
+    },
+    {
+        "element_id": "050abd18-9220-4286-959c-2b484a92cea0",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "ba8541d6-12c2-4902-bb44-e73627943570",
+        "metadata": {},
+        "text": "Then, the functions fy, f; and f, are defined as mixed variants of Goldeont aS such",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "10b5000a-8f02-4037-897e-e690a315d79c",
+        "metadata": {},
+        "text": "Fo(%1s X25 215 225 23, 245 X5,W2) = 1,20 ( 1, 0 Gold cont (%1 + X2, 20, 20, 23, Z4,X5,W)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b125288c-276c-4cf3-b166-55be5f744e75",
+        "metadata": {},
+        "text": "+ 1, <1 Goldcont(X1, X2, 50, 20, 23, 24, X5, W2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7d3dae4a-9d62-4e52-8ad6-ac8d79ed0ef8",
+        "metadata": {},
+        "text": "Gold ont (X1 + X2, 80, 20, 23, Z4,X5,W) )",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "61259547-c5a2-4052-bdc3-8b1ec3164af2",
+        "metadata": {},
+        "text": "d-1 ( L,, <9 Gold cone (X15 X25 20, 50, 23, 24,5, W) (B.3) + 1, <1 Goldcone(%1, X2, 50, 50, 23, 24, X5, W2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "15f2b54a-c5b6-4606-a098-e570237d9fa1",
+        "metadata": {},
+        "text": "+ Ly, 9 Goldggnt(X1. Xp, 80, 50, 23, 24X55) )",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "91c6ff44-bda7-45cb-ac2d-aa891e5645b5",
+        "metadata": {},
+        "text": "( LL, <9 Gold cone (X15 X25 20, 80, 23, 24,5, W)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c2db272a-bb0d-427d-9498-80e2480d5d22",
+        "metadata": {},
+        "text": "+ 1, <1 Goldcont(X1, X2, 50, 80, 23, Z4,X5, W2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "2f05d687-6db2-4861-b851-c435c66ff700",
+        "metadata": {},
+        "text": "+1, 5 Gold cont(X1, X2, 80, 80, 23, 24, X5,W2) )",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "87349057-bf1c-48e5-a428-aa71cc2bd441",
+        "metadata": {},
+        "text": "21> Fp X25. X3, 295 23s Zqs X55 Wy) = 1. ,,=0Goldeont(X1,X2, 3,20, 23, 24,5, W2) +1, 21 Gold cont(X 1\u00bb Xqs 3,50, 23, Z4s X55 W) + 22 Gold cont (X 1. X2,X3, 80, 23, 24,X5,W) La(X 15X25 X4o 211 235 242 X5>W2) = 21=0G Ol dcone(X 1\u00bb X2; 20, X4 23, 24X55 W)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "07d559b0-32db-4b94-9911-7a753fb009b4",
+        "metadata": {},
+        "text": "+1,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "22081385-f822-4bcf-b07d-e68f678969ad",
+        "metadata": {},
+        "text": "1Goldeont(X1, 50, X2, X45 235 Z45X5,W2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5c1883b4-17a7-4c6e-bb1b-a4f5948c743e",
+        "metadata": {},
+        "text": "+ 1, 9 Goldeont(X1,X2, 80, X4, 235 245 X5,W2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "2cb05c6c-920c-41a9-bf88-d136011789b2",
+        "metadata": {},
+        "text": "To finish with, the function Gold,,,, is given by",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "347cfdd2-fd31-49e5-ae05-1d5da805d82e",
+        "metadata": {},
+        "text": "Gold cont(X 1+ X25%3+X4s 23 24, X5,W) = 53.3108 + 0.184901 x,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "83b5209a-9fb4-4c80-b18b-ff3e61a19235",
+        "metadata": {},
+        "text": "= 5.02914x,3.1076 + 7.72522x, 7310-8 \u2014 0.0870775x> \u2014 0.106959x;",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "413ae723-9f12-47f0-8496-3c89a323adf7",
+        "metadata": {},
+        "text": "+ 7.98772x374.10~\u00b0 + 0.00242482x4 + 1.32851x,\u00b0.10~\u00b0 \u2014 0.00146393x)x> \u2014 0.00301588x) x3 \u2014 0.00272291x, x4 + 0.0017004x5x3 + 0.0038428x5x4 \u2014 0.000198969x3x4 + 1.86025x1x2x3.107> \u2014 1.88719x,x9x4.1076",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "52da13f4-9f5f-476f-b2f2-3dcfa18dc6a8",
+        "metadata": {},
+        "text": "+ 2.50923x 254.107 \u2014 5.62199x9x5x4.107 + wy (5 cos ( 2 xs) - 2) .",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "478d9afd-bf8f-477c-aa09-653129d232f4",
+        "metadata": {},
+        "text": "Appendix C. Supplementary data",
+        "type": "Title"
+    },
+    {
+        "element_id": "616b3d5e-7aac-4d54-8f13-3ae1236f1959",
+        "metadata": {},
+        "text": "More at https://colab.research.google.com/github/SMTorg/smt/blob/ master/tutorial/NotebookRunTestCases_Paper_SMT_v2.ipynb.",
+        "type": "Title"
+    },
+    {
+        "element_id": "c5ab8609-5174-4d10-a0cc-651376a0be2f",
+        "metadata": {},
+        "text": "Supplementary material related to this article can be found online at https://doi.org/10.1016/j.advengsoft.2023.103571.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bd77299b-6a15-4cd8-9703-d583eac8a492",
+        "metadata": {},
+        "text": "References",
+        "type": "Title"
+    },
+    {
+        "element_id": "b0ed6da4-77b1-43ce-9c06-429e648acdbd",
+        "metadata": {},
+        "text": "[1] Mader CA, Martins JRRA, Alonso JJ, van der Weide E. ADjoint: An approach for the rapid development of discrete adjoint solvers. AIAA J 2008;46:863-73.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "711879db-af7c-4d90-9929-6e0a9b7fdea0",
+        "metadata": {},
+        "text": "[2] Kennedy M, O'Hagan A. Bayesian calibration of computer models. J R Stat Soc Ser B Stat Methodol 2001;63:425-64.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ad90719b-1755-4634-8e11-438c8eaf099f",
+        "metadata": {},
+        "text": "[3] Hwang JT, Martins JRRA. A fast-prediction surrogate model for large datasets. Aerosp Sci Technol 2018;75:74-87.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d667dc2e-0e07-4caa-915c-4e5fe6c6789b",
+        "metadata": {},
+        "text": "[4] Martins JRRA, Ning A. Engineering design optimization. Cambridge University Press; 2021.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4985772b-0342-44b5-b366-22530ea081f1",
+        "metadata": {},
+        "text": "[5] Bouhlel MA, Hwang JT, Bartoli N, Lafage R, Morlier J, Martins JRA. A Python surrogate modeling framework with derivatives. Adv Eng Softw 2019;135:102662.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b84c32b0-f6a7-4042-b52f-fc56c569b0dd",
+        "metadata": {},
+        "text": "[6] Bouhlel MA, Martins J. Gradient-enhanced kriging for high-dimensional problems. Eng Comput 2019;35:157-73.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c9241216-de8e-411d-b8a7-d84e98a116b0",
+        "metadata": {},
+        "text": "[7] Pedregosa F, Varoquaux G, Gramfort A, Thirion VMB, Grisel O, et al. Scikit-learn: Machine learning in Python. J Mach Learn Res 2011;12:2825-30.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "103bc9c7-51e7-411e-a7d2-596b2dca4aac",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "c8b1be0d-1fa5-47d5-917a-e960a73c9d3f",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "8b946072-92a5-486b-a97f-e6bd37bda16e",
+        "metadata": {},
+        "text": "[8]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b2466237-772a-4ab8-a98b-50ab9eeeceac",
+        "metadata": {},
+        "text": "[9]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0a4060eb-c1eb-4ceb-b23e-479225e268cd",
+        "metadata": {},
+        "text": "[10]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a50352be-39e9-4ea0-81b0-378ce96e6293",
+        "metadata": {},
+        "text": "1]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "bbd3720e-b490-4de7-a735-696a502cdb52",
+        "metadata": {},
+        "text": "12]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "0bf73e4f-75a6-484b-8249-a41d06390062",
+        "metadata": {},
+        "text": "13]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1bc0ba1a-e58d-4051-94a2-857df2610ea5",
+        "metadata": {},
+        "text": "14] [15]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "25f90483-cfd7-4d7b-95af-6bfda60077cc",
+        "metadata": {},
+        "text": "[16]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6fd35b45-6b6d-49a3-9593-8ba2cec10301",
+        "metadata": {},
+        "text": "17]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "bc183b5f-2410-42d5-8c3c-5732d15be89b",
+        "metadata": {},
+        "text": "[18]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7cb34e1a-df97-4563-ae85-31ad2b8bd413",
+        "metadata": {},
+        "text": "19]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5bb22dfa-fa8f-415e-af75-77ed034ca10d",
+        "metadata": {},
+        "text": "[20]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "aaa0e611-2ad6-4b00-a363-4b2ad54985c0",
+        "metadata": {},
+        "text": "[21]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6245acc4-8dd6-4dba-bd0d-f108c132740f",
+        "metadata": {},
+        "text": "[22]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "fc70ffa2-cd95-47bc-8ba3-a5c7730779b8",
+        "metadata": {},
+        "text": "[23]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "63c3f75c-a44c-4793-92d6-1ba55e022ca2",
+        "metadata": {},
+        "text": "[24]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3a2eca85-f32c-45cf-ab42-b62c8760dced",
+        "metadata": {},
+        "text": "[25]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ebc37721-3eaa-44af-bd76-f031754acda5",
+        "metadata": {},
+        "text": "[26]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "25b3583e-0cf2-4967-9aea-3af66356e4dc",
+        "metadata": {},
+        "text": "[27]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6b62dd47-204d-4e4a-9cd6-1f7009830e11",
+        "metadata": {},
+        "text": "[28]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b4a5384e-bc1b-434a-bea0-681fc27b9895",
+        "metadata": {},
+        "text": "[29]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "78921212-5e1b-42aa-ba72-29271ad411f9",
+        "metadata": {},
+        "text": "[30]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "342ee404-3b49-4aba-a6f8-31b4d7b72243",
+        "metadata": {},
+        "text": "[31]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "053920aa-cfad-4d54-b3b7-9ca2daba4ab4",
+        "metadata": {},
+        "text": "[32]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3aac95c3-b8ea-4d68-81fc-83a781486eeb",
+        "metadata": {},
+        "text": "[33] [34]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b5c7e2bf-e38a-4670-8d89-36f2d7602314",
+        "metadata": {},
+        "text": "[35]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "096b7876-5a06-453f-8037-7a5fce9be807",
+        "metadata": {},
+        "text": "[36]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3692e5f5-9e90-470b-9033-5a0f382560ca",
+        "metadata": {},
+        "text": "[37]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "51972d23-d85e-4625-b02c-4f6ea895e544",
+        "metadata": {},
+        "text": "Lataniotis C, Marelli S, Sudret B. Uglab 2.0 and ugqcloud: open-source vs. cloud-based uncertainty quantification. In: SIAM conference on uncertainty quantification. 2022.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5a061edf-439f-4ec1-92cb-adde2bce9741",
+        "metadata": {},
+        "text": "Faraci A, Beaurepaire P, Gayton N. Review on Python toolboxes for Kriging surrogate modelling. In: ESREL. 2022.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1a0827ba-113a-43a0-a310-840209889472",
+        "metadata": {},
+        "text": "Kriigener M, Zapata Usandivaras J, Bauerheim M, Urbano A. Coaxial-injector surrogate modeling based on Reynolds-averaged Navier-Stokes simulations using deep learning. J Propuls Power 2022;38:783-98.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2ce6fcfa-0636-4062-bbcd-c69e2d723431",
+        "metadata": {},
+        "text": "Ming D, Williamson D, Guillas S. Deep Gaussian process emulation using stochastic imputation. Technometrics 2022;1-12.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a526b0e6-5e3d-4db4-993f-a1cba3931ce5",
+        "metadata": {},
+        "text": "EliaS J, Vorechovsky M, Sadflekv V. Periodic version of the minimax distance criterion for Monte Carlo integration. Adv Eng Softw 2020;149:102900.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e490143c-d683-4175-9860-c99b64a30428",
+        "metadata": {},
+        "text": "Drouet V, Balesdent M, Brevault L, Dubreuil S, Morio J. Multi-fidelity algo- rithm for the sensitivity analysis of multidisciplinary problems. J Mech Des 2023;145:1-22.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e8fe1f15-496b-4409-8407-5bb3d8b85994",
+        "metadata": {},
+        "text": "Karban P, Panek D, Orosz T, Petra\u00a5ova I, Dolezel I. FEM based robust design optimization with Agros and Artap. Comput Math Appl 2021;81:618-33. Kudela J, Matousek R. Recent advances and applications of surrogate models for finite element method computations: a review. Soft Comput 2022;26:13709-33. Chen Y, Dababneh F, Zhang B, Kassaee S, Smith BT, Liu K, et al. Surrogate mod- eling for capacity planning of charging station equipped with photovoltaic panel and hydropneumatic energy storage. J Energy Res Technol 2020;142:050907. Jasa J, Bortolotti P, Zalkind D, Barter G. Effectively using multifidelity optimization for wind turbine design. Wind Energy Sci 2022;7:991-1006. Wang W, Tao G, Ke D, Luo J, Cui J. Transpiration cooling of high pres- sure turbine vane with optimized porosity distribution. Appl Therm Eng 2023;223:119831.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "98434280-370a-4c90-9902-7ee862bd788d",
+        "metadata": {},
+        "text": "Savage T, Almeida-Trasvina HF, del Rfo-Chanona EA, Smith R, Zhang D. \u2018An adaptive data-driven modelling and optimization framework for complex chemical process design. Comput Aided Chem Eng 2020;48:73-8.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "08f3eec9-91e3-43ed-938c-919e061bbdc1",
+        "metadata": {},
+        "text": "Chan A, Pires AF, Polacsek T. Trying to elicit and assign goals to the right actors. In: Conceptual modeling: 41st international conference. 2022.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4cf134dd-adc3-4987-9bd4-990836dc463e",
+        "metadata": {},
+        "text": "Hutter F, Osborne MA. A kernel for hierarchical parameter spaces. 2013, arXiv. Bussemaker JH, Ciampa PD, Nagel B. System architecture design space explo- ration: An approach to modeling and optimization. In: AIAA aviation 2020 forum. 2020.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6f424295-c2ae-491a-ae73-03ac219fb473",
+        "metadata": {},
+        "text": "Fouda MEA, Adler EJ, Bussemaker J, Martins JRRA, Kurtulus DF, Boggero L, et al. Automated hybrid propulsion model construction for conceptual aircraft design and optimization. In: 33rd congress of the international council of the aeronautical sciences. 2022.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6b4b5ea4-35e9-4f60-8767-5e53c25c67f6",
+        "metadata": {},
+        "text": "Bussemaker JH, Bartoli N, Lefebvre T, Ciampa PD, Nagel B. Effectiveness of surrogate-based optimization algorithms for system architecture optimization. In: AIAA aviation 2021 forum. 2021.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "29c2f397-7aa4-4c55-be91-ecdfa18b482c",
+        "metadata": {},
+        "text": "Balandat M, Karrer B, Jiang D, Daulton 8, Letham B, Wilson A, et al. BoTorch: A framework for efficient Monte-Carlo Bayesian optimization. Adv Neural Inf Process Syst 2020;33:21524-38.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f3a59366-03a8-4a61-a2b0-e52470a2c3b4",
+        "metadata": {},
+        "text": "Adams B, Bohnhoff W, Dalbey K, Ebeida M, Eddy J, Eldred M, et al. Dakota, a multilevel parallel object-oriented framework for design optimization, pa- rameter estimation, uncertainty quantification, and sensitivity analysis: Version 6.13 user\u2019s manual. Technical report, Albuquerque, NM (United States: Sandia National Lab.(SNL-NM); 2020.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "908df790-0b6b-4fbf-ad5b-961ac0752291",
+        "metadata": {},
+        "text": "Roustant O, Ginsbourger D, Deville Y. DiceKriging, DiceOptim: Two R packages for the analysis of computer experiments by Kriging-based metamodeling and optimization. J Stat Softw 2012;51:1-55.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "66ff9f55-ee51-4af4-a6fa-c7bdfbd7e7c0",
+        "metadata": {},
+        "text": "Zhang Y, Tao S, Chen W, Apley D. A latent variable approach to Gaus- sian process modeling with qualitative and quantitative factors. Technometrics 2020;62:291-302.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "75853284-7b1e-4dcf-a5c9-2b34bf67a2de",
+        "metadata": {},
+        "text": "Chang TH, Wild SM. ParMOO: A Python library for parallel multiobjective simulation optimization. J Open Source Softw 2023;8:4468.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d9a6bbb5-ff04-47f8-87d0-682a3ad1e207",
+        "metadata": {},
+        "text": "Garrido-Merchin EC, Herndndez-Lobato D. Dealing with categorical and integer-valued variables in Bayesian optimization with Gaussian processes. Neurocomputing 2020;380:20-35.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "44231fcd-2913-492a-8e3b-425641794fb7",
+        "metadata": {},
+        "text": "Halstrup M. Black-box optimization of mixed discrete-continuous optimization problems (Ph.D. thesis), TU Dortmund; 2016.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d9ce5da7-6751-4b89-836e-b2911638e3ed",
+        "metadata": {},
+        "text": "Roustant O, Padonou E, Deville Y, Cl\u00e9ment A, Perrin G, Giorla J, et al. Group kernels for gaussian process metamodels with categorical inputs. SIAM J Uncertain Quant 2020;8:775-806.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5f03f731-e40e-4da5-b99f-8980d778577c",
+        "metadata": {},
+        "text": "Zhou Q, Qian PZG, Zhou S. A simple approach to emulation for computer models with qualitative and quantitative factors. Technometrics 2011;53:266-73.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d989611d-3b06-48b7-8f96-6472cb0ed47f",
+        "metadata": {},
+        "text": "Saves P, Diouane Y, Bartoli N, Lefebvre T, Morlier J. A mixed-categorical correlation kernel for Gaussian process. Neurocomputing 2023;550:126472 Pelamatti J, Brevault L, Balesdent M, Talbi E-G, Guerin Y. Efficient global optimization of constrained mixed variable problems. J Global Optim 2019;73:583-613.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7c0d0dcc-b335-4055-b258-72571fe85d7e",
+        "metadata": {},
+        "text": "Horn D, Stork J, ler N-JS, Zaefferer M. Surrogates for hierarchical search spaces: The Wedge-Kernel and an automated analysis. In: Proceedings of the genetic and evolutionary computation conference. 2019.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8a13c4b3-9825-4f8b-9554-8b95fd3b9a71",
+        "metadata": {},
+        "text": "Hung Y, Joseph VR, Melkote SN. Design and analysis of computer experiments with branching and nested factors. Technometrics 2009;51:354-65.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "85cbdad0-6bdc-4d42-b5ad-5c5d9016a5b3",
+        "metadata": {},
+        "text": "15",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "79a9940b-1e41-4136-aa6e-17f1ca84828c",
+        "metadata": {},
+        "text": "[38]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e121ccb9-c8fc-4a3a-935b-8ec10ef590e3",
+        "metadata": {},
+        "text": "[39]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4a3fe9a9-d10d-4aa1-a6bc-4cf2be2a4a8d",
+        "metadata": {},
+        "text": "[40]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "097b6989-6299-45cc-a8a6-204c13eee522",
+        "metadata": {},
+        "text": "[41]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4b84099b-2d40-431f-92fd-fed71c6813c0",
+        "metadata": {},
+        "text": "[42]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6ccf4f62-1a26-49cb-83e1-bc185c728f8a",
+        "metadata": {},
+        "text": "[43]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b7cc0ae0-e3cf-4739-95ea-ab8525470205",
+        "metadata": {},
+        "text": "[44]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c6ce98ac-2258-4b52-a053-adefc81222d7",
+        "metadata": {},
+        "text": "[45]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "65796fb5-f3b1-441e-809e-4cb3b880aa08",
+        "metadata": {},
+        "text": "[46]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "acb4454a-880e-485b-94c9-4c22e7c127a4",
+        "metadata": {},
+        "text": "[47] [48]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "8a6b9391-f556-4a22-9839-e26c5315d317",
+        "metadata": {},
+        "text": "[49]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d5e075e8-b078-417b-864d-4dd6e7d997dc",
+        "metadata": {},
+        "text": "[50] [51] [52] [53]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b6638e30-1308-4935-bebb-e52a9a9e325e",
+        "metadata": {},
+        "text": "[54]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e76a1a03-f6e5-47dc-9e1e-22f01eb7c58f",
+        "metadata": {},
+        "text": "[55]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4dbf043a-c60a-436f-9544-9bdc2390868f",
+        "metadata": {},
+        "text": "[56]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "dabf05b4-41e1-4547-8c76-7ccbe1b3eb57",
+        "metadata": {},
+        "text": "[57]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d0ce4e16-5b06-4111-8414-9c82dbe65f29",
+        "metadata": {},
+        "text": "[58]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f1852edb-975d-47fe-a985-fd72a4890f3b",
+        "metadata": {},
+        "text": "[59]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b57ec0de-edcb-43dc-8509-b4ee44d61ede",
+        "metadata": {},
+        "text": "[60]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ad9648e4-4767-43a3-8f68-f5af7cd4c74c",
+        "metadata": {},
+        "text": "[61]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6427bad7-a17a-489e-9b79-6ad81baea7b9",
+        "metadata": {},
+        "text": "[62] [63]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "921d87b1-bc82-4085-a39a-f961544aae83",
+        "metadata": {},
+        "text": "[64]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "381a8c4a-e28e-42d9-a3c0-8a1355cf57a8",
+        "metadata": {},
+        "text": "[65]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "47440b50-630b-499e-a674-cb74e35f0c65",
+        "metadata": {},
+        "text": "[66]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "3678196a-f076-4f7a-b98f-34869d844328",
+        "metadata": {},
+        "text": "[67]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "80436bee-e32c-4ff8-bb62-af312500c44a",
+        "metadata": {},
+        "text": "[68]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f6af0db9-4a82-4a80-abb8-a59e8af667a0",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "01b31653-e32a-4dbf-8c90-17f73e7d000f",
+        "metadata": {},
+        "text": "Audet C, Hall\u00e9-Hannan E, Le Digabel S. A general mathematical framework for constrained mixed-variable blackbox optimization problems with meta and categorical variables. Oper Res Forum 2023;4:1-37.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d4c751dc-7346-44a5-b43f-bb465ada9c1b",
+        "metadata": {},
+        "text": "Saves P, Nguyen Van E, Bartoli N, Diouane Y, Lefebvre T, David C, Defoort S, Morlier J. Bayesian optimization for mixed variables using an adaptive dimension reduction process: applications to aircraft design. In: ALAA scitech 2022. 2022. Conde Arenzana R, L\u00e9pez-Lopera A, Mouton S, Bartoli N, Lefebvre T. Multi- fidelity Gaussian process model for CFD and wind tunnel data fusion. In: ECCOMAS aerobest. 2021.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ad3012fa-3000-4a21-89ff-88468fc35ee0",
+        "metadata": {},
+        "text": "Rufato RC, Diouane Y, Henry J, Ahlfeld R, Morlier J. A mixed-categorical data-driven approach for prediction and optimization of hybrid discontinuous composites performance. In: AIAA aviation 2022 forum. 2022.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6825d7a6-7785-4448-848c-12af0a03a611",
+        "metadata": {},
+        "text": "Gorissen D, Crombecq K, Couckuyt I, Dhaene T, Demeester P. A surrogate modeling and adaptive sampling toolbox for computer based design. J Mach Learn Res 2010;11:2051-S.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "116f0dad-27e0-4115-82f1-6b827c2140e8",
+        "metadata": {},
+        "text": "Williams CK, Rasmussen CE. Gaussian processes for machine learning. MA: MIT press Cambridge; 2006.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0de9fd86-3fab-41bd-86b4-1f4a9d7d6b5b",
+        "metadata": {},
+        "text": "Bouhlel MA, Bartoli N, Regis R, Otsmane A, Morlier J. Efficient Global Opti- mization for high-dimensional constrained problems by using the Kriging models combined with the Partial Least Squares method. Eng Optim 2018;50:2038-53. Bouhlel MA, He S, Martins J. Scalable gradient-enhanced artificial neural networks for airfoil shape design in the subsonic and transonic regimes. Struct Multidiscip Optim 2020;61:1363-76.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5b52b2ee-4134-441d-85f6-0b375214dfa0",
+        "metadata": {},
+        "text": "Kwan LS, Pitrou A, Seibert S. Numba: A LLVM-based python JIT compiler. In: Proceedings of the second workshop on the LLVM compiler infrastructure in HPC. 2015.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6034798c-44f8-4c2e-8147-d426bb9f5db4",
+        "metadata": {},
+        "text": "Zaefferer M, Horn D. A first analysis of kernels for Kriging-based optimization in hierarchical search spaces. 2018, arXiv.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "06283101-c375-4ce3-9325-f6f4a8752ed7",
+        "metadata": {},
+        "text": "Jin R, Chen W, Sudjianto A. An efficient algorithm for constructing optimal design of computer experiments. J Statist Plann Inference 2005;2:545-54. Garnett R, Osborne M, Hennig P. Active learning of linear embeddings for Gaussian processes. In: Uncertainty in artificial intelligence - Proceedings of the 30th conference. 2013.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3665c0c6-ea2a-43e6-b896-8a75c08c55b4",
+        "metadata": {},
+        "text": "Jones D. A taxonomy of global optimization methods based on response surfaces. J Global Optim 2001;21:345-83.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "49a948ae-c6c9-4611-92e6-26e194d6dcb8",
+        "metadata": {},
+        "text": "Lafage R. egobox, a Rust toolbox for efficient global optimization. J Open Source Softw 2022;7:4737.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7c00fb98-3611-4757-8375-953d916f6e13",
+        "metadata": {},
+        "text": "Jones DR, Schonlau M, Welch WJ. Efficient global optimization of expensive black-box functions. J Global Optim 1998;13:455-92.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cd436697-d998-49bd-8929-81380124de9d",
+        "metadata": {},
+        "text": "Deng X, Lin CD, Liu K, Rowe RK. Additive Gaussian process for computer models with qualitative and quantitative factors. Technometrics 2017;59:283-92. Cuesta-Ramirez J, Le Riche R, Roustant O, Perrin G, Durantin C, Gliere A. A comparison of mixed-variables Bayesian optimization approaches. Adv Model Simul Eng Sci 2021;9:1-29.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0ae0e831-e283-4b20-b69f-363720383f23",
+        "metadata": {},
+        "text": "Rebonato R, Jaeckel P. The most general methodology to create a valid correlation matrix for risk management and option pricing purposes. J Risk 2001;2:17-27.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5b04ed01-3e01-47e7-88fc-58e6bec6c8db",
+        "metadata": {},
+        "text": "Rapisarda F, Brigo D, Mercurio F. Parameterizing correlations: a geometric interpretation. IMA J Manag Math 2007;18:55-73.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "20d5d597-ba8f-4a1c-88ed-2a7b9f5a2e48",
+        "metadata": {},
+        "text": "Bouhlel MA, Bartoli N, Regis R, Otsmane A, Morlier J. An improved approach for estimating the hyperparameters of the Kriging model for high- dimensional problems through the Partial Least Squares method. Math Probl Eng 2016;2016:6723410.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a5a285e0-de62-4e65-beee-796b91049c97",
+        "metadata": {},
+        "text": "Cheng GH, Younis A, Hajikolaei KH, Wang GG. Trust region based mode pursuing sampling method for global optimization of high dimensional design problems. J Mech Des 2015;137:021407.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e877229e-f56f-4b1f-9f6f-504c117780db",
+        "metadata": {},
+        "text": "Karlsson R, Bliek L, Verwer S, de Weerdt M. Continuous surrogate-based optimization algorithms are well-suited for expensive discrete problems. In: Artificial intelligence and machine learning. 2021.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d1218104-9248-40a7-bb71-8decca55f00c",
+        "metadata": {},
+        "text": "Pelamatti J, Brevault L, Balesdent M, Talbi E-G, Guerin Y. Bayesian optimization of variable-size design space problems. Opt Eng 2021;22:387-447.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "23715556-07b5-4c87-9d19-d58717017b2c",
+        "metadata": {},
+        "text": "Hebbal A, Brevault L, Balesdent M, Talbi E-G, Melab N. Bayesian optimization using deep Gaussian processes with applications to aerospace system design. Opt Eng 2021;22:321-61.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5a77b9dd-1711-4502-a20a-78ca6ce7ab55",
+        "metadata": {},
+        "text": "Wildberger N. A rational approach to trigonometry. Math Horiz 2007;15:16-20. Cho H, Kim Y, Lee E, Choi D, Lee Y, Rhee W. Basic enhancement strategies when using bayesian optimization for hyperparameter tuning of deep neural networks. IEEE Access 2020;8:52588-608.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c7737a7b-7ddb-4923-99e1-91bede857c24",
+        "metadata": {},
+        "text": "Zuniga MM, Sinoquet D. Global optimization for mixed categorical-continuous variables based on Gaussian process models with a randomized categorical space exploration step. INFOR Inf Syst Oper Res 2020;58:310-41.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e6dff28e-461f-4252-8340-5a174e42ded6",
+        "metadata": {},
+        "text": "Lindauer M, Eggensperger K, Feurer M, AB, Deng D, Benjamins C, et al. SMAC3: A versatile Bayesian optimization package for hyperparameter optimization. J Mach Learn Res 2022;23:1-9.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "74035034-d1f2-49fa-a556-09ceb4da709f",
+        "metadata": {},
+        "text": "Picheny V, Berkeley J, Moss H, Stojic H, Granta U, Ober S\u00a7, et al. Trieste: Efficiently exploring the depths of black-box functions with TensorFlow. 2023, arXiv.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "70d9f9cd-63e4-4226-b0dc-18880d20b9db",
+        "metadata": {},
+        "text": "Cowen-Rivers Al, Ly W, Wang Z, Tutunov R, Jianye H, Wang J, et al. HEBO: Heteroscedastic evolutionary Bayesian optimisation. 2020, arXiv.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3a4718d7-d7fd-4194-8626-52f00e4be1f6",
+        "metadata": {},
+        "text": "Jiang H, Shen Y, Li Y, Zhang W, Zhang C, Cui B. OpenBox: A Python toolkit for generalized black-box optimization. 2023, arXiv.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b3f66544-b53e-4f19-a964-1a0c39a73f01",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "a6d754cc-1ac1-4ed7-90f2-74961a9deca4",
+        "metadata": {},
+        "text": "P. Saves et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "c252f286-ef51-4bb7-9270-95bc40d8da45",
+        "metadata": {},
+        "text": "[69]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "23106284-24a3-42c1-a684-311a5e999bc8",
+        "metadata": {},
+        "text": "[70]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "55668079-c86f-451c-9f8c-a66c027a6b7b",
+        "metadata": {},
+        "text": "[71]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "dfb94af7-b0bd-446c-9522-729d91293377",
+        "metadata": {},
+        "text": "[72]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "afb3338d-addf-4992-8003-0d7804bfa7a0",
+        "metadata": {},
+        "text": "(73]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9667c4d7-65ea-45f8-87ce-eef6d4af6e24",
+        "metadata": {},
+        "text": "[74] [75]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "766421d6-ba47-4ec5-9eaa-0a18604f7d02",
+        "metadata": {},
+        "text": "[76]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4f02d24f-83cb-49f8-91b5-30f6ebe0813b",
+        "metadata": {},
+        "text": "[7]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "884cfe57-7478-40a8-b6bd-f013aad83dab",
+        "metadata": {},
+        "text": "Kandasamy K, Vysyaraju KR, Neiswanger W, Paria B, Collins C, Schneider J, et al. Tuning hyperparameters without grad students: Scalable and robust bayesian optimisation with dragonfly. J Mach Learn Res 2020;21:3098-124.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "21b16ebc-f8a7-496f-b2d7-8c536fac381c",
+        "metadata": {},
+        "text": "Roy S, Crossley WA, Stanford BK, Moore KT, Gray JS. A mixed integer efficient global optimization algorithm with multiple infill strategy - Applied to a wing topology optimization problem. In: AIAA scitech 2019 forum. 2019.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b268d475-f5a8-4466-bea3-1a0e47cee374",
+        "metadata": {},
+        "text": "Miiller J, Shoemaker CA, Pich\u00e9 R. SO-MI: A surrogate model algorithm for computationally expensive nonlinear mixed-integer black-box global optimization problems. Comput Oper Res 2013;40:1383-400.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6fff2f5d-ab75-44d2-b7b3-4fbd8389905a",
+        "metadata": {},
+        "text": "Tran T, Sinoquet D, Da Veiga S, Mongeau M. Derivative-free mixed binary necklace optimization for cyclic-symmetry optimal design problems. Opt Eng 2021.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ed1b2569-1820-4bcd-b812-b2637145ec40",
+        "metadata": {},
+        "text": "Meliani M, Bartoli N, Lefebvre T, Bouhlel MA, Martins JRRA, Morlier J. Multi- fidelity efficient global optimization: Methodology and application to airfoil shape design. In: AIAA aviation 2019 forum. 2019.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dbcc6605-63b4-44f7-8b13-4a21ee1ab504",
+        "metadata": {},
+        "text": "Lee H. Gaussian processes. Springer Berlin Heidelberg; 2011, p. 575-7. L6pez-Lopera AF, Idier D, Rohmer J, Bachoc F. Multioutput Gaussian processes with functional data: A study on coastal flood hazard assessment. Reliab Eng Syst Saf 2022;218:108139.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "39e4b34c-5a7b-4b80-b3d0-d0d4295b9df4",
+        "metadata": {},
+        "text": "Berthelin G, Dubreuil S, Salaiin M, Bartoli N, Gogu C. Disciplinary proper orthogonal decomposition and interpolation for the resolution of parameterized multidisciplinary analysis. Internat J Numer Methods Engrg 2022;123:3594-626. Cardoso I, Dubreuil S, Bartoli N, Gogu C, Salaiin M, Lafage R. Disciplinary surrogates for gradient-based optimization of multidisciplinary systems. In: ECCOMAS Aerobest. 2023.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "03481e53-acb2-44be-9c8e-d954ef56c1c0",
+        "metadata": {},
+        "text": "16",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "30a8f721-c8c0-4d03-8136-8cd0e7b10d67",
+        "metadata": {},
+        "text": "[78]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ea480694-6711-4782-b757-9d1609ab648d",
+        "metadata": {},
+        "text": "[79]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "69b1048a-c4da-466c-bce5-224ff92d6162",
+        "metadata": {},
+        "text": "[80]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "718bd7f2-acc7-47c6-8656-bebb4b42dd62",
+        "metadata": {},
+        "text": "[81]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "26b46f17-7fc3-4564-a298-8e1a1a664eeb",
+        "metadata": {},
+        "text": "[82]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b7ef7521-425e-478a-a763-ff42d4291be4",
+        "metadata": {},
+        "text": "[83]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f2515990-d593-4228-be1a-fc8a15589edc",
+        "metadata": {},
+        "text": "[84]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ee7f5a1b-5f27-423c-95c1-29eff64fbf87",
+        "metadata": {},
+        "text": "[85]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1e6e8f52-0b64-4c74-8667-ee5fd19a1cbc",
+        "metadata": {},
+        "text": "[86]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b84fecbe-fbdd-4f05-ac5c-90f20e2a5ff5",
+        "metadata": {},
+        "text": "Advances in Engineering Software 188 (2024) 103571",
+        "type": "Title"
+    },
+    {
+        "element_id": "d985a603-55b8-4014-a3c0-875831164f6c",
+        "metadata": {},
+        "text": "Platt J, Penny S, Smith T, Chen T, Abarbanel H. A systematic exploration of reservoir computing for forecasting complex spatiotemporal dynamics. Neural Netw 2022;153:530-52.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8654d2f8-893d-49a3-9221-474801316918",
+        "metadata": {},
+        "text": "Charayron R, Lefebvre T, Bartoli N, Morlier J. Multi-fidelity Bayesian optimiza- tion strategy applied to overall drone design. In: AIAA scitech 2023 forum. 2023.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "086557bd-c3d1-4953-b462-27e56731a2e8",
+        "metadata": {},
+        "text": "Charayron R, Lefebvre T, Bartoli N, Morlier J. Towards a multi-fidelity and multi-objective Bayesian optimization efficient algorithm. Aerosp Sci Technol 2023;142:108673.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1efeea5a-8422-4d33-812e-828a7c00f009",
+        "metadata": {},
+        "text": "Wold H. Soft modelling by latent variables: The non-linear iterative partial least squares (NIPALS) approach. J Appl Probab 1975;12:117-42.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e79f27d2-bd84-49a4-a2e4-60419960e393",
+        "metadata": {},
+        "text": "Priem R, Diouane Y, Bartoli N, Dubreuil $, Saves P. High-dimensional efficient global optimization using both random and supervised embeddings. In: AIAA aviation 2023 forum. 2023.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6a05fa25-c634-4fe7-b66e-ebcb9731c543",
+        "metadata": {},
+        "text": "Betz W, Papaioannou I, Straub D. Numerical methods for the discretization of random fields by means of the Karhunen-Logve expansion. Comput Methods Appl Mech Engrg 2014;271:109-29.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f0070073-ba8e-4609-b52b-8971194f6380",
+        "metadata": {},
+        "text": "Menz M, Dubreuil $, Morio J, Gogu C, Bartoli N, Chiron M. Variance based sen- sitivity analysis for Monte Carlo and importance sampling reliability assessment with Gaussian processes. Struct Saf 2021;93:102116.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2f6627b0-8477-466a-a82c-de5f3a43307c",
+        "metadata": {},
+        "text": "Ginsbourger D, Le Riche R, Carraro L. Kriging is well-suited to parallelize optimization. Springer Berlin Heidelberg; 2010, p. 131-62.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6e30b101-f265-4f4a-83b9-c42f3af1f532",
+        "metadata": {},
+        "text": "Roux E, Tillier Y, Kraria $, Bouchard P-O. An efficient parallel global opti- mization strategy based on Kriging properties suitable for material parameters identification. Arch Mech Eng 2020;67.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6ef8c0ff-9c37-4ad3-99d4-6ccad8633617",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    }
+]

@@ -1,0 +1,296 @@
+[
+    {
+        "element_id": "3a205740-9949-4820-8540-80b2b4862ae9",
+        "metadata": {},
+        "text": "37",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "ae397836-0b75-4d8e-94ad-5a48921775dd",
+        "metadata": {},
+        "text": "Generating Diverse Code Explanations using the GPT-3 Large Language Model Andrew Tran andrew.tran10@temple.edu Temple University Philadelphia, PA, USA",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "d791aa48-3ffa-4cda-95e7-c076471a3e3b",
+        "metadata": {},
+        "text": "Stephen MacNeil stephen.macneil@temple.edu Temple University Philadelphia, PA, USA",
+        "type": "Title"
+    },
+    {
+        "element_id": "452c53e7-cc30-4014-ba79-487ab8506bbe",
+        "metadata": {},
+        "text": "Dan Mogil daniel.mogil@temple.edu Temple University Philadelphia, PA, USA",
+        "type": "Title"
+    },
+    {
+        "element_id": "558a8d09-4b01-4b78-97f1-143ea30a4f37",
+        "metadata": {},
+        "text": "Seth Bernstein seth.bernstein@temple.edu Temple University Philadelphia, PA, USA",
+        "type": "Title"
+    },
+    {
+        "element_id": "f2298180-10c2-4730-a868-263311c918c6",
+        "metadata": {},
+        "text": "Ziheng Huang z8huang@ucsd.edu University of California\u2014San Diego La Jolla, CA, USA",
+        "type": "Title"
+    },
+    {
+        "element_id": "856bf7ea-8333-4484-bb17-62b6574e3d75",
+        "metadata": {},
+        "text": "Erin Ross erinross@temple.edu Temple University Philadelphia, PA, USA",
+        "type": "Title"
+    },
+    {
+        "element_id": "adf8197f-7309-429a-814f-fe633aaaa7bf",
+        "metadata": {},
+        "text": "explanation types to illustrate the explanatory power of GPT-3. The additional types include: 1) tracing the execution of code, 2) fixing bugs and explaining how they were fixed, 3) generating analogies to real world settings, 4) listing relevant programming concepts, and 5) predicting the console output.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f46b3d2a-54e5-4602-89a7-6495f978594a",
+        "metadata": {},
+        "text": "KEYWORDS large language models, natural language processing, code explana- tions, computer science education",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9d0a83d5-fe0b-49ff-8f42-ca7dd9a50757",
+        "metadata": {},
+        "text": "ACM Reference Format: Stephen MacNeil, Andrew Tran, Dan Mogil, Seth Bernstein, Erin Ross, and Ziheng Huang. 2022. Generating Diverse Code Explanations using the GPT-3 Large Language Model. In Proceedings of the 2022 ACM Conference on International Computing Education Research V.2 (ICER 2022), August 7\u201311, 2022, Lugano and Virtual Event, Switzerland. ACM, New York, NY, USA, 3 pages. https://doi.org/10.1145/3501709.3544280",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "27386bbb-5967-46b5-a30e-794ad28cd206",
+        "metadata": {},
+        "text": "1 ABSTRACT Good explanations are essential to efficiently learning introductory programming concepts [10]. To provide high-quality explanations at scale, numerous systems automate the process by tracing the execution of code [8, 12], defining terms [9], giving hints [16], and providing error-specific feedback [10, 16]. However, these ap- proaches often require manual effort to configure and only explain a single aspect of a given code segment. Large language models (LLMs) are also changing how students interact with code [7]. For example, Github\u2019s Copilot can generate code for programmers [4], leading researchers to raise concerns about cheating [7]. Instead, our work focuses on LLMs\u2019 potential to support learning by explain- ing numerous aspects of a given code snippet. This poster features a systematic analysis of the diverse natural language explanations that GPT-3 can generate automatically for a given code snippet. We present a subset of three use cases from our evolving design space of AI Explanations of Code.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ce0d6c2c-07b4-4524-99a2-12cbc6c53442",
+        "metadata": {},
+        "text": "Figure 1: A prompt and explanation based on analogy.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "057c07c6-c13b-486b-ae41-393ed0b70e93",
+        "metadata": {},
+        "text": "2.1 Analyzing and explaining time complexity Instructors rate time complexity as the most difficult programming topic [17]. However, understanding time complexity is important [6, 13] because it facilitates decision-making so students choose an appropriate algorithm for a given problem. This use case shows GPT-3 can identify and explain time complexity.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0e09b838-b445-49c8-8327-d88aaa840bc0",
+        "metadata": {},
+        "text": "2 USE CASES To understand the types of explanations GPT-3 [2] can generate, we issued over 700 prompts across numerous code snippets. An example prompt and resulting explanation is shown in Figure 1. We discovered eight explanation types and Figure 2 includes three",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "233b2785-24f8-4773-b574-ef9549cbd036",
+        "metadata": {},
+        "text": "2.2 Identifying common mistakes made by",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "59037fed-3d74-4cf5-b676-d3f94c5a3f07",
+        "metadata": {},
+        "text": "beginner programmers",
+        "type": "Title"
+    },
+    {
+        "element_id": "1e64ee37-bea1-4114-878c-c70d72c81095",
+        "metadata": {},
+        "text": "Permission to make digital or hard copies of part or all of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for third-party components of this work must be honored. For all other uses, contact the owner/author(s). ICER 2022, August 7\u201311, 2022, Lugano and Virtual Event, Switzerland \u00a9 2022 Copyright held by the owner/author(s). ACM ISBN 978-1-4503-9195-5/22/08. https://doi.org/10.1145/3501709.3544280",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b3140366-683f-4ea3-8828-30e31ccbf989",
+        "metadata": {},
+        "text": "Commonality exists in how students solve programming prob- lems [15] and the mistakes they make [1, 11]. Pedagogical tech- niques, such as the \u2018muddiest point\u2019 highlight these common and most confusing concepts [3, 14]. GPT-3 can automatically create a checklist of common mistakes students might make regarding a given code snippet.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "18b01a40-09eb-4992-bc6b-e3400681776e",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "5598c830-7e5d-49b1-9d81-017bba0424cd",
+        "metadata": {},
+        "text": "38",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "bc7ff66d-b98a-4ab0-bf89-faf93006c5a9",
+        "metadata": {},
+        "text": "ICER 2022, August 7\u201311, 2022, Lugano and Virtual Event, Switzerland",
+        "type": "Title"
+    },
+    {
+        "element_id": "3fb85944-01e5-41ee-8bb4-f6fc9f155f9b",
+        "metadata": {},
+        "text": "MacNeil et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "f162b90a-c3ea-47cd-8dc8-a331af2fabda",
+        "metadata": {},
+        "text": "Figure 2: Three example explanations automatically generated by GPT-3 for an \u2018anonymized\u2019 Binary Search code snippet.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7b355b90-e65d-46cf-a721-46fc8efa3f87",
+        "metadata": {},
+        "text": "2.3 Summarizing code at multiple levels of",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fb9a6118-e4e9-4741-bded-8d9a7e7c6705",
+        "metadata": {},
+        "text": "[5] Kathryn Cunningham, Yike Qiao, Alex Feng, and Eleanor O\u2019Rourke. 2022. Bring- ing \"High-Level\" Down to Earth: Gaining Clarity in Conversational Program- mer Learning Goals. In Proceedings of the 53rd ACM Technical Symposium on Computer Science Education V. 1 (Providence, RI, USA) (SIGCSE 2022). As- https: sociation for Computing Machinery, New York, NY, USA, 551\u2013557. //doi.org/10.1145/3478431.3499370",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2a3bcf7e-a1e1-40ef-a0fb-97ef4a3f92ae",
+        "metadata": {},
+        "text": "abstraction",
+        "type": "Title"
+    },
+    {
+        "element_id": "7b86c26a-fae3-4189-921f-8cf6d29baa38",
+        "metadata": {},
+        "text": "Before understanding how a code snippet executes, it is often useful to understand the purpose of the code [5]. The summary gener- ated by GPT-3 and shown in Figure 2 defines the goal, traces the execution, and highlights relevant CS concepts such as arrays.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d5c171dd-cde7-4b3d-9775-304bef0ef2d0",
+        "metadata": {},
+        "text": "[6] Elvina Elvina and Oscar Karnalim. 2017. Complexitor: An educational tool for learning algorithm time complexity in practical manner. ComTech: Computer, Mathematics and Engineering Applications 8, 1 (2017), 21\u201327.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6aaf8a06-e97d-45a1-bbea-2ed86bc95862",
+        "metadata": {},
+        "text": "[7] James Finnie-Ansley, Paul Denny, Brett A. Becker, Andrew Luxton-Reilly, and James Prather. 2022. The Robots Are Coming: Exploring the Implications of Ope- nAI Codex on Introductory Programming. In Australasian Computing Education Conference (Virtual Event, Australia) (ACE \u201922). ACM, New York, NY, USA, 10\u201319. https://doi.org/10.1145/3511861.3511863",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e27626ad-9206-4611-b5bd-f953020c649c",
+        "metadata": {},
+        "text": "3 DISCUSSION Our three use cases demonstrate the potential for GPT-3 to explain code for intro CS students. Our poster presentation will feature all eight explanation types as a design space of explanations to convey the diversity of explanations that can be generated by LLMs. We will highlight best practices for generating effective explanations and pitfalls that lead to less effective explanations. We are evaluating the usefulness of these explanations in a series of summer classes.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "516fefae-5b4f-441e-92fc-638ce54f8c1c",
+        "metadata": {},
+        "text": "[8] Philip J Guo. 2013. Online python tutor: embeddable web-based program visual- ization for cs education. In Proceeding of the 44th ACM technical symposium on Computer science education. 579\u2013584.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8bea7408-657e-4110-9818-206992e86f28",
+        "metadata": {},
+        "text": "[9] Andrew Head, Codanda Appachu, Marti A Hearst, and Bj\u00f6rn Hartmann. 2015. Tutorons: Generating context-relevant, on-demand explanations and demonstra- tions of online code. In 2015 IEEE Symposium on Visual Languages and Human- Centric Computing (VL/HCC). IEEE, 3\u201312.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d0188015-e95b-456a-888b-525210ba0cde",
+        "metadata": {},
+        "text": "[10] Samiha Marwan, Ge Gao, Susan Fisk, Thomas W. Price, and Tiffany Barnes. 2020. Adaptive Immediate Feedback Can Improve Novice Programming Engagement and Intention to Persist in Computer Science. In Proceedings of the 2020 ACM Conference on International Computing Education Research (Virtual Event, New Zealand) (ICER \u201920). Association for Computing Machinery, New York, NY, USA, 194\u2013203. https://doi.org/10.1145/3372782.3406264",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c7737e39-cbc9-42af-98e0-590589cb8212",
+        "metadata": {},
+        "text": "REFERENCES [1] Amjad Altadmri and Neil CC Brown. 2015. 37 million compilations: Investigating novice programming mistakes in large-scale student data. In Proceedings of the 46th ACM Technical Symposium on Computer Science Education. 522\u2013527. [2] Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. Advances in Neural Information Processing Systems 33 (2020), 1877\u20131901.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ae3645df-e1bd-4eae-b7c3-b6ee7a54fed2",
+        "metadata": {},
+        "text": "[11] Davin McCall and Michael K\u00f6lling. 2014. Meaningful categorisation of novice pro- grammer errors. In 2014 IEEE Frontiers in Education Conference (FIE) Proceedings. IEEE, 1\u20138.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f603355c-c824-4a91-846c-6f85c9fedfe3",
+        "metadata": {},
+        "text": "[12] Greg L Nelson, Benjamin Xie, and Amy J Ko. 2017. Comprehension first: eval- uating a novel pedagogy and tutoring system for program tracing in CS1. In Proceedings of the 2017 ACM conference on international computing education research. 2\u201311.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a52bc10c-f341-43c3-b923-6c84938b57de",
+        "metadata": {},
+        "text": "[3] Adam Carberry, Stephen Krause, Casey Ankeny, and Cynthia Waters. 2013. \u201cUnmuddying\u201d course content using muddiest point reflections. In 2013 IEEE Frontiers in Education Conference (FIE). IEEE, 937\u2013942.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1c72af7c-61ac-4f76-80fc-40f3597578ee",
+        "metadata": {},
+        "text": "[13] Miranda Parker and Colleen Lewis. 2014. What makes big-O analysis difficult: understanding how students understand runtime analysis. Journal of Computing Sciences in Colleges 29, 4 (2014), 164\u2013174.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d8b7d240-8977-4a4d-b210-49a67934e32f",
+        "metadata": {},
+        "text": "[4] Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde de Oliveira Pinto, Jared Kaplan, Harri Edwards, Yuri Burda, Nicholas Joseph, Greg Brockman, et al. 2021. Evaluating large language models trained on code. arXiv preprint arXiv:2107.03374 (2021).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3fec6bc5-ca6b-43d0-84db-5c65c19a2de7",
+        "metadata": {},
+        "text": "[14] Daniel Perez, Leila Zahedi, Monique Ross, Jia Zhu, Tiffany Vinci-Cannava, Laird Kramer, and Maria Charters. 2020. WIP: An exploration into the muddiest points",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5b48d180-de3b-462c-a459-a7b22564eaef",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "cbe05490-cc9f-4a76-8fb5-f9b762b900b3",
+        "metadata": {},
+        "text": "39",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "cbdd4061-170b-4dab-8506-b1d94604f5ed",
+        "metadata": {},
+        "text": "Generating Diverse Explanations with Large Language Models",
+        "type": "Title"
+    },
+    {
+        "element_id": "f34c78fe-cc6b-4d27-a080-5b0f28621393",
+        "metadata": {},
+        "text": "ICER 2022, August 7\u201311, 2022, Lugano and Virtual Event, Switzerland",
+        "type": "Title"
+    },
+    {
+        "element_id": "2531e9fb-3c79-4570-a4a1-eef9443cbda2",
+        "metadata": {},
+        "text": "and self-efficacy of students in introductory computer science courses. In 2020 IEEE Frontiers in Education Conference (FIE). IEEE, 1\u20135.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e13d212f-596e-47b8-9ace-b59e59b525d8",
+        "metadata": {},
+        "text": "iSnap: towards intelligent tutoring in novice programming environments. In Proceedings of the 2017 ACM SIGCSE Technical Symposium on computer science education. 483\u2013488. [17] Carsten Schulte and Jens Bennedsen. 2006. What do teachers teach in introductory programming?. In Proceedings of the second international workshop on Computing education research. 17\u201328.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "53c040b8-d06d-40c4-955b-01c5e96088bc",
+        "metadata": {},
+        "text": "[16] Thomas W Price, Yihuan Dong, and Dragan Lipovac. 2017.",
+        "type": "Title"
+    },
+    {
+        "element_id": "ef039fa1-2761-4dcf-802a-e200e538420e",
+        "metadata": {},
+        "text": "[15] Chris Piech, Mehran Sahami, Jonathan Huang, and Leonidas Guibas. 2015. Au- tonomously generating hints by inferring problem solving policies. In Proceedings of the second (2015) acm conference on learning@ scale. 195\u2013204.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ce5bc610-fd4a-45cd-9059-8213a0fcb4ad",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    }
+]

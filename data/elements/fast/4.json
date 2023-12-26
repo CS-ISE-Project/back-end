@@ -1,0 +1,368 @@
+[
+    {
+        "element_id": "daa06fcc-e600-461c-ac1a-56c6fa5c446a",
+        "metadata": {},
+        "text": "609",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5a91e6c6-e184-4acd-83af-b4591e0d1436",
+        "metadata": {},
+        "text": "How to Teach Software Modeling",
+        "type": "Title"
+    },
+    {
+        "element_id": "2e2ab88b-a9c6-477a-a6ac-01c491c1c10b",
+        "metadata": {},
+        "text": "Tetsuo Tamai Graduate School of Arts and Sciences The University of Tokyo 3-8-1 Komaba, Meguro-ku Tokyo 153-8902, Japan tamai@acm.org",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "13541bc0-2671-426c-9e4e-43eb7d0be0b8",
+        "metadata": {},
+        "text": "ABSTRACT To enhance motivation of students to study software engineering, some way of \ufb01nding balance between the scienti\ufb01c aspect and the practical aspect of software engineering is required. In this paper, we claim that teaching multiple software modeling techniques from a uni\ufb01ed viewpoint is a good way of obtaining the balance and attracting the students\u2019 interest as well.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7cbd7808-c2ae-4bc9-aaf4-e1592f0ff52f",
+        "metadata": {},
+        "text": "technology and may generate anti-intellectualism. A good balance between the scienti\ufb01c aspect and the practical aspect of software engineering should always be pursued.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "03aa1c4a-1e02-47de-bd00-d03d4cbeff07",
+        "metadata": {},
+        "text": "In our view, teaching various software modeling techniques is a good way to achieve balanced software engineering education. It is needless to say that model is a key concept and modeling is an essential skill in software engineering. There are a variety of mod- eling techniques; some are intuitive and quite accessible to novices, while some are highly sophisticated and attract theory oriented stu- dents and researchers.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a05ae787-f149-416c-860d-5d847013e997",
+        "metadata": {},
+        "text": "Categories and Subject Descriptors K.3.2 [Computers and Education]: Computer and Information Science Education\u2014computer science education; D.2.1 [Software Engineering]: Requirements/Speci\ufb01cation\u2014modeling",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "83d03bd0-6e55-40bf-8819-53e246704b02",
+        "metadata": {},
+        "text": "In this paper, we would like to show that it is effective to teach multiple modeling techniques from a uni\ufb01ed viewpoint. It is based on our experience of teaching software engineering courses at sev- eral universities in Japan. Recently, the author published a textbook on software engineering, speci\ufb01cally focused on software model- ing (unfortunately, it is written in Japanese)[1]. The book covers the whole area of software engineering, including design, testing and evolution but the modeling part has a role of attracting inter- ests of intelligent students, who may not have much experience in developing real scale software systems. It also gives a consistent viewpoint penetrating through various techniques employed in dif- ferent stages of software engineering.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "48d6c48e-23e6-41bd-8262-c42c121f8d12",
+        "metadata": {},
+        "text": "General Terms Design",
+        "type": "Title"
+    },
+    {
+        "element_id": "be834976-241b-4403-bb9b-5a9bb0abccce",
+        "metadata": {},
+        "text": "Keywords software modeling, software engineering education, UML",
+        "type": "Title"
+    },
+    {
+        "element_id": "982fd89f-a46f-49c0-a736-7f078e088a52",
+        "metadata": {},
+        "text": "1.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "08bcc658-c0ff-4527-a1f1-7525355b80e4",
+        "metadata": {},
+        "text": "INTRODUCTION",
+        "type": "Title"
+    },
+    {
+        "element_id": "faaf5ab4-f0f5-4734-9b01-1968dfde9dd7",
+        "metadata": {},
+        "text": "2. MODELING TECHNIQUES",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "b777bd44-4228-4ca3-a8ad-72fea62df825",
+        "metadata": {},
+        "text": "Software engineering education at universities faces a common problem; that is regular students do not usually have experience of developing software for practical use and thus are not motivated for software engineering aiming at high quality software production by a project team or a persistent organization. Software projects conducted by students simulating real scale software development may help enhance students\u2019 motivation, although it requires a lot of efforts to prepare such projects and manage them.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e9f98a9c-6d49-42a6-83c6-7f7b69be0619",
+        "metadata": {},
+        "text": "In software engineering, models are used for various purposes, e.g. life cycle model, process model, project model, product model, quality model, domain model, requirements model, design model, object model, data model, etc. In the following, we basically focus on requirements and design models but most of the discussions will hold for other kinds of models.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a618f29e-b4d6-47bb-bea3-6a00e89f57d5",
+        "metadata": {},
+        "text": "Teaching modeling is almost equal to teaching abstraction. Mod- els are constructed through capturing the crucial properties and structure of the target, abstracting away irrelevant details. Thus, learning how to model is a good training for mastering abstraction.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dc025b50-b42e-4cf6-b54e-38d2d76536cc",
+        "metadata": {},
+        "text": "Another way of solving this problem is to teach those who al- ready have real experience in industry. In our case, there are cur- rently \ufb01ve Ph. D. students under the author\u2019s supervision who are working at companies as well as doing research in our lab. As a by-product, interactions between the part-time students and the other regular students stimulate each other, particularly enlighten- ing the regular students to practical software issues. However, too much emphasis on practicality may bring negligence to science and",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7f4ade14-7ab2-4863-8067-316f746de7c5",
+        "metadata": {},
+        "text": "2.1 Graph Representation of Models",
+        "type": "Title"
+    },
+    {
+        "element_id": "e4c20305-1643-42f2-bb48-9c8eb81466d1",
+        "metadata": {},
+        "text": "Many software models are represented with diagrams. Wide ac- ceptance of UML symbolizes the trend that diagrams are often pre- ferred to textual languages. Among many types of diagrams, graph structured diagrams are by far the most widely used. The reasons may be as follows.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "833eef63-f010-4c45-8f4e-306e220ddc70",
+        "metadata": {},
+        "text": "1. A most fundamental way for human mind to understand the world is by regarding it as consisting of a set of conceptual units and a set of relations between them. Conceptual units can be naturally illustrated with boxes or circles or whatever closed \ufb01gures and relations can be illustrated with lines or ar- rows connecting such \ufb01gures, corresponding to vertices and edges of graphs, respectively.",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "5894ac28-64c5-4348-9578-8ebf9ffab947",
+        "metadata": {},
+        "text": "Copyright is held by the author/owner. ICSE\u201905, May 15\u201321, 2005, St. Louis, Missouri, USA. ACM 1-58113-963-2/05/0005.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8e498dde-d34c-479f-96dc-696d27e73411",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "28ca00cb-f564-4578-886b-ec7aadff4915",
+        "metadata": {},
+        "text": "610",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7db10ed4-4d02-4279-bcc4-41be034f2c08",
+        "metadata": {},
+        "text": "Static models and dynamic models may not be easily confused but confusion between different dynamic models are often observed, e.g. data \ufb02ow and control \ufb02ow or state transition and activity tran- sition. Since graphs are intuitively understandable, their semantics are apt to be understood ambiguously or misunderstood.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dc585451-bb1c-4743-bb4d-3543b74cbb4d",
+        "metadata": {},
+        "text": "2. It is easy to draw graph structured diagrams by hand or with drawing tools.",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "1d766fef-c995-45a8-8c58-e62d52a667f8",
+        "metadata": {},
+        "text": "3. Concepts and algorithms of the graph theory are available and often useful in analyzing models represented by graphs. A typical example is reasoning on transitive relations by trac- ing along paths of graphs. Also, the concept of subgraph is highly useful in decomposing higher-level models or cluster- ing lower-level models.",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "40b84562-2d70-4b72-8059-01e25af6ef66",
+        "metadata": {},
+        "text": "3. UML",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "e914a9b0-0721-454b-bfea-3d028524ad92",
+        "metadata": {},
+        "text": "UML diagrams can also be viewed in terms of graph structures.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8046edbe-b3c0-4641-8719-c041cbf57a85",
+        "metadata": {},
+        "text": "Table 2 shows graph structures of \ufb01ve UML diagrams.",
+        "type": "Title"
+    },
+    {
+        "element_id": "f0231a10-6dad-403e-811c-507c7704d175",
+        "metadata": {},
+        "text": "Accordingly, a number of models share the same structure of",
+        "type": "Title"
+    },
+    {
+        "element_id": "4c372789-e275-4971-b1b9-c5f09c34edd6",
+        "metadata": {},
+        "text": "graphs. Table 1 shows graph structures of some typical models.",
+        "type": "Title"
+    },
+    {
+        "element_id": "71db1b76-af42-4b66-b02c-930112f51b0a",
+        "metadata": {},
+        "text": "Table 2: Graph structures of UML diagrams",
+        "type": "Title"
+    },
+    {
+        "element_id": "6e12dc6b-17d0-4012-a828-8753e60bc175",
+        "metadata": {},
+        "text": "Table 1: Graph structures of typical models",
+        "type": "Title"
+    },
+    {
+        "element_id": "7c2261a0-b12e-464a-9944-d510389630a4",
+        "metadata": {},
+        "text": "diagram class diagram",
+        "type": "Title"
+    },
+    {
+        "element_id": "4998947c-c8ca-4807-b8fe-e0c67dc531c7",
+        "metadata": {},
+        "text": "vertex class",
+        "type": "Title"
+    },
+    {
+        "element_id": "086f1dbd-2557-4274-b346-54ecfd9faa1e",
+        "metadata": {},
+        "text": "edge generalization, composition, association transition control \ufb02ow message \ufb02ow message \ufb02ow",
+        "type": "Title"
+    },
+    {
+        "element_id": "2d90ae4c-d495-4659-9803-de0084f7d256",
+        "metadata": {},
+        "text": "model Data \ufb02ow ER State transition JSD",
+        "type": "Title"
+    },
+    {
+        "element_id": "39843a73-89fc-48cf-b080-2ddf8c211279",
+        "metadata": {},
+        "text": "vertex process entity state process",
+        "type": "Title"
+    },
+    {
+        "element_id": "b5c4ef7b-1362-4959-ab5e-f6e8a1a0ec9d",
+        "metadata": {},
+        "text": "edge data \ufb02ow relationship transition data stream connection state vector connection control \ufb02ow \ufb01re and token \ufb02ow",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "18df9d3f-6c43-400c-8c0b-bce2a6256f03",
+        "metadata": {},
+        "text": "state machine activity diagram collaboration diagram object sequence diagram",
+        "type": "Title"
+    },
+    {
+        "element_id": "bbb8d85f-fbfa-4049-a594-d6dd38c796c7",
+        "metadata": {},
+        "text": "state activity",
+        "type": "Title"
+    },
+    {
+        "element_id": "76b4eead-768e-4974-9f5a-3bfe7284c699",
+        "metadata": {},
+        "text": "message anchor point",
+        "type": "Title"
+    },
+    {
+        "element_id": "267523c2-16f6-483d-8cf0-df01f671e841",
+        "metadata": {},
+        "text": "Activity Petri net",
+        "type": "Title"
+    },
+    {
+        "element_id": "8f958b2e-481c-4abf-8c7d-125256adb4c3",
+        "metadata": {},
+        "text": "activity place, transition",
+        "type": "Title"
+    },
+    {
+        "element_id": "2305062c-be05-48aa-8a1a-1a2cde807127",
+        "metadata": {},
+        "text": "It is usually not desirable to teach UML per se. UML is a col- lection of miscellaneous diagrams and its speci\ufb01cation is continu- ously changing. For the pedagogical purpose, UML had better be regarded as a catalogue of analysis and design know-how collected around diagrammatic representations. Diagrams should be selected according to the policy of how to teach modeling methods.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "434df9a5-7a19-49bd-b126-75831b0b6ce0",
+        "metadata": {},
+        "text": "2.2 Commonality and Difference between",
+        "type": "Title"
+    },
+    {
+        "element_id": "93104909-4d70-4fc1-9018-c5282b7e982a",
+        "metadata": {},
+        "text": "Models",
+        "type": "Title"
+    },
+    {
+        "element_id": "880424f8-a2f5-46d2-99d4-ff85f6a50e08",
+        "metadata": {},
+        "text": "It is pedagogical to let students notice the common structure shared by a number of models. However, the apparent resemblance often causes confusion. Such confusion can be observed not only in software modeling graphs but in many diagrams found in daily newspapers, magazines, reports, proposals and other documents. It is often the case that one vertex denotes a type of things and an- other denotes quite a different type on the same diagram or one type of edges co-exist with edges with different meaning. Thus, it is important to make students consciously aware the differences between different models. We often experience that when we let students draw data \ufb02ow diagrams who appear to have understood the data \ufb02ow model perfectly, the diagrams turn out to be some- thing like control \ufb02ow graphs.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0ac2862b-2b6c-4822-88fe-c235a4dc98e1",
+        "metadata": {},
+        "text": "Each UML diagram contains overly rich constructs, which some- times blur the essential property of the model. For example, the activity diagram is essentially a control \ufb02ow diagram but it also in- cludes a notation for data \ufb02ow description. From the stance of em- phasizing differences between various models, it is not appropriate to include such ad hoc constructs. By the same token, the collab- oration diagram (, renamed to \u201ccommunication diagram\u201d in UML 2) is explained to have the equivalent semantics as the sequence diagram. But if that is the case, signi\ufb01cance of the collaboration diagram is considerably limited. The author prefers to regard it as showing collaboration relations between objects, integrating a set of different sequence diagrams.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "af5f2d81-4b28-4f04-a75f-adff0eb3e2d6",
+        "metadata": {},
+        "text": "To show the difference, it is instructive to categorize models rep-",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b2d72b07-cd98-4adc-beae-a36d5ae6c178",
+        "metadata": {},
+        "text": "resented by graphs. Basically, there are two categories.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7dd905e7-33e2-4685-ae94-33917bba5231",
+        "metadata": {},
+        "text": "4. CONCLUSION",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "53d8ce97-376c-481b-a4cd-b35f9e3ac91a",
+        "metadata": {},
+        "text": "1. Static models:",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "32f925e9-5749-4b25-9dc4-fb1fff610bd0",
+        "metadata": {},
+        "text": "Software modeling is important by itself but teaching modeling in the software engineering course has at least two additional mean- ings. One is to give a bird\u2019s-eye view to the whole software engi- neering through the standpoint of modeling technology. The other is to attract interest of good students who may not have much expe- rience in developing a real-scale software but possess intelligence and will to attack complexity of modern software construction.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "95212fff-c514-41e2-8941-ff07fb34b733",
+        "metadata": {},
+        "text": "An edge connecting vertex A and vertex B represents a rela- tion between A and B. When the edge is undirected, it means \u201cA and B are in some relation\u201d and when directed, it means \u201cA has a relation with B\u201d. Typical examples include entity relationship model, class diagram and semantic network.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ac363aa1-f8a2-435c-ba26-5608d8dbe9a6",
+        "metadata": {},
+        "text": "2. Dynamic models:",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "23805312-7d52-43fb-b463-5098c36f2bfe",
+        "metadata": {},
+        "text": "An edge from vertex A to B denotes a move from A to B. The edge in this case is always directed. There are two sub- categories:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "29f7b90a-2743-4a44-bd0f-9919d10d39c9",
+        "metadata": {},
+        "text": "5. REFERENCES [1] T. Tamai. Foundations of Software Engineering. Iwanami Shoten, Tokyo, Japan, 2004. in Japanese.",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "362b0d8a-e54e-47a9-9bcd-125298964c36",
+        "metadata": {},
+        "text": "(a) The case where a view of control moves from A to B. Examples are control \ufb02ow model and state transition model.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4324b69d-ef57-4ebd-bb1e-c3f99fc6eb42",
+        "metadata": {},
+        "text": "(b) The case where data or objects \ufb02ow from A to B. Exam- ples are data \ufb02ow model, work \ufb02ow model, and trans- portation \ufb02ow model.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c8bf7edd-69c6-4bfb-bafb-b5b271779b50",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    }
+]

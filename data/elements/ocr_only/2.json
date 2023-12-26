@@ -1,0 +1,1016 @@
+[
+    {
+        "element_id": "c730f397-4e46-4d80-a8ec-56d6c761c366",
+        "metadata": {},
+        "text": "Check for updates.",
+        "type": "Title"
+    },
+    {
+        "element_id": "e4ccc001-67dc-4979-ad9e-0dd9e6b24679",
+        "metadata": {},
+        "text": "Semantic Analysis and Classification of Emails through Informative Selection of Features and Ensemble AI Model",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a6e2fdff-1283-4ce2-b82f-deb580ad7f61",
+        "metadata": {},
+        "text": "Shivangi Sachan* Khushbu Doulani Mainak Adhikari Department of CSE Vardhaman College of Engineering Department of CSE TIT Lucknow Hyderabad, India TIT Lucknow Lucknow, UP, India khushidoulani@gmail.com UP, India mcs21025@iiitl.ac.in mainak.ism@gmail.com",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "fb36696e-8f5c-4831-a49a-3d3fb3564060",
+        "metadata": {},
+        "text": "ABSTRACT",
+        "type": "Title"
+    },
+    {
+        "element_id": "6cba5d81-7703-4d64-bbd6-9d574007ab98",
+        "metadata": {},
+        "text": "The emergence of novel types of communication, such as email, has been brought on by the development of the internet, which radically concentrated the way in that individuals communicate socially and with one another. It is now establishing itself as a crucial aspect of the communication network which has been adopted by a variety of commercial enterprises such as retail outlets. So in this research paper, we have built a unique spam-detection methodology based on email-body sentiment analysis. The proposed hybrid model is put into practice and preprocessing the data, extracting the proper- ties, and categorizing data are all steps in the process. To examine the emotive and sequential aspects of texts, we use word embed- ding and a bi-directional LSTM network. this model frequently shortens the training period, then utilizes the Convolution Layer to extract text features at a higher level for the BILSTM network. Our model performs better than previous versions, with an accuracy rate of 97-98%. In addition, we show that our model beats not just some well-known machine learning classifiers but also cutting-edge methods for identifying spam communications, demonstrating its superiority on its own. Suggested Ensemble model\u2019s results are examined in terms of recall, accuracy, and precision",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "001971c3-ecb3-44cb-ac42-7dcfb1275118",
+        "metadata": {},
+        "text": "CCS CONCEPTS",
+        "type": "Title"
+    },
+    {
+        "element_id": "932ae278-d1c0-471a-82c0-55693fe64a21",
+        "metadata": {},
+        "text": "+ Computer systems organization \u2014 Embedded systems; Re- dundancy; Robotics; +\u00bb Networks \u2014 Network reliability.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "05f00c63-d12b-4c83-89b2-a7b00331627a",
+        "metadata": {},
+        "text": "KEYWORDS",
+        "type": "Title"
+    },
+    {
+        "element_id": "b93f4449-8d87-4176-a066-ac62aed73079",
+        "metadata": {},
+        "text": "Dataset, KNN, Gaussian Naive Bayes, LSTM, SVM, Bidirectional LSTM, GRU, Word-Embeddings, CNN",
+        "type": "Title"
+    },
+    {
+        "element_id": "53c878bc-c037-4478-a0f4-bafc41128e35",
+        "metadata": {},
+        "text": "ACM Reference Format:",
+        "type": "Title"
+    },
+    {
+        "element_id": "1636d8f9-bd92-487b-b576-ee6f9d9cc820",
+        "metadata": {},
+        "text": "Shivangi Sachan, Khushbu Doulani, and Mainak Adhikari. 2023. Semantic Analysis and Classification of Emails through Informative Selection of Features and Ensemble AI Model. In 2023 Fifteenth International Conference on Contemporary Computing (IC3-2023) (IC3 2023), August 03-05, 2023, Noida, India. ACM, New York, NY, USA, 7 pages. https://doi.org/10.1145/3607947. 3607979",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a9ef5be5-3434-423c-9d5d-15734604a8ad",
+        "metadata": {},
+        "text": "\u201cBoth authors contributed equally to this research.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0ce20a87-f78d-46f5-9a35-535919cffe53",
+        "metadata": {},
+        "text": "Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than the author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f82d1bd0-6e02-4eb1-a983-983c6df6bd7e",
+        "metadata": {},
+        "text": "IC3 2023, August 03-05, 2023, Noida, India",
+        "type": "Title"
+    },
+    {
+        "element_id": "2b1e5ff5-e652-439c-82cc-6ef5b589799a",
+        "metadata": {},
+        "text": "\u00a9 2023 Copyright held by the owner/author(s). Publication rights licensed to ACM. ACM ISBN 979-8-4007-0022-4/23/08. ..$15.00 https://doi.org/10.1145/3607947.3607979",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c71027f4-887b-4ffc-ba67-a0179aa9d6da",
+        "metadata": {},
+        "text": "181",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "69d21514-bfdb-4521-9362-b1a8ca300979",
+        "metadata": {},
+        "text": "1 INTRODUCTION",
+        "type": "Title"
+    },
+    {
+        "element_id": "0e807b61-4349-4a74-8fb1-4ae3e8c394d8",
+        "metadata": {},
+        "text": "Over the past few years, a clear surge of both the amount of spam- mers as well as spam emails. This is likely due to a fact that the investment necessary for engaging in the spamming industry is relatively low. As a result of this, we currently have a system that identifies every email as suspicious, which has caused major expen- ditures in the investment of defense systems [12]. Emails are used for online crimes like fraud, hacking, phishing, E-mail bombing, bul- lying, and spamming. [16]. Algorithms that are based on machine learning (ML) are now the most effective and often used approach to the recognition of spam. Phishing, which is defined as a fraudulent attempt to acquire private information by masquerading as a trust- worthy party in electronic communication, has rapidly advanced past use of simple techniques and the tactic of casting a wide net; instead, spear phishing uses a variety of sophisticated techniques to target a single high-value individual. Other researchers used NB, Decision Trees, and SVM to compare the performance of supervised ML algorithms for spam identification [6]. Spam emails clog up re- cipients\u2019 inboxes with unsolicited communications, which frustrate them and push them into the attacker\u2019s planned traps [7]. As a re- sult, spam messages unquestionably pose a risk to both email users and the Internet community. In addition, Users may occasionally read the entire text of an unsolicited message that is delivered to the target users\u2019 inboxes without realizing that the message is junk and then choosing to avoid it. Building a framework for email spam etection is the aim of this project. In this approach, we combine the Word-Embedding Network with the CNN layer, Bi-LSTM, and GRU (BiLSTM+GRU). CNN layers are used to speed up training time before the Bi-LSTM network, and more advanced textual character- istics are extracted with the use of this network in comparison to the straight LSTM network, in less time. Gated recurrent neural net- works (GRUs) are then added because they train more quickly and perform better for language modeling. To evaluate and investigate various machine learning algorithms for predicting email spam, and develop a hybrid classification algorithm to filter email spam before employing an ensemble classification algorithm to forecast it. To put an innovative technique into practice and compare it to the current method in terms of various metrics. Ensemble learn- ing, a successful machine learning paradigm, combines a group of learners rather than a single learner to forecast unknown target attributes. Bagging, boosting, voting, and stacking are the four main types of ensemble learning techniques. To increase performance, an integrated method and the combining of two or three algorithms are also suggested. Extraction of text-based features takes a long time. Furthermore, it can be challenging to extract all of the crucial information from a short text. Over the span associated with this",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2e332d66-1d44-43f4-89d6-b789bc2db314",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "f16bbd1c-5ce6-4bff-bbf3-b2607b11e6f0",
+        "metadata": {},
+        "text": "1C3 2023, August 03-05, 2023, Noida, India",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "61b9a3b3-f75c-4e1e-aeb6-761835433de0",
+        "metadata": {},
+        "text": "research, we utilize Bidirectional Large Short-Term Memories (Bi- LSTM) in conjunction with Convolutional Neural Networks (CNN) to come up with an innovative method to the detection of spam. Bagging and boosting approaches were widely preferred in this study. Contribution and paper organization is as follows: section 1.1 describes literature study, section 1.2 describe motivation for this research work, section 2 sketches procedure of details implemen- tation, Section 3 present experimental setup, dataset description and evaluation metrics, and section 4 summarizing outcomes of the experiment.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cfc07630-a62f-4904-9514-a1d8dea6038f",
+        "metadata": {},
+        "text": "1.1 Related Work",
+        "type": "Title"
+    },
+    {
+        "element_id": "41aff88b-2886-4360-8876-6d7b94317f26",
+        "metadata": {},
+        "text": "Email is indeed the second most frequently utilized Internet appli- cation as well as the third most common method of cyberbullying, claims one study. Cybercriminals exploit it in a number of ways, including as sending obscene or abusive messages, adding viruses to emails, snatching the private information of victims, and ex- posing it to a broad audience. Spam letters made up 53.95% of all email traffic in March 2020. We examine three main types of un- lawful emails in our study. First are fake emails, which are sent to manipulate recipients to submit sensitive information. The sec- ond as being cyberbullying\u2019s use of harassing emails to threaten individuals. Suspicious emails that describe illegal activities belong to the third category. Many researchers have earlier contributed",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c75b86e3-f521-4ed9-ae07-31e943a6857d",
+        "metadata": {},
+        "text": "massively to this subject. The researcher claims there is some proof that suspicious emails were sent before to the events of 9/11. [14]. When it comes to data labeling, there are also convinced rule-based approaches and technologies ( like VADER) that are used, even though their efficiency of the are together is adversely affected. A hidden layer, which itself is essential for vectorization, is the top layer of the model. We use oversampling methods for this minority class because of the absence of data. Sampling techniques can help with multicollinearity, but they have an impact on simulation re-",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2952b5ed-eea5-4e12-8e4e-0045ad43db23",
+        "metadata": {},
+        "text": "sults. Oversampling causes data to be randomly repeated, which affects test data because dividing data may result in duplicates. Un- ersampling may result in the loss of some strong information. In order to advance email research, it is crucial to provide datasets on criminal activity. P. Garg et al. (2021) [5], which revealed that spam in an email was detected in 70 percent of business emails, spam was stablished as an obstacle for email administrators. Recognizing",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "96c2721c-c70a-4fc8-b11a-c8199b3c5629",
+        "metadata": {},
+        "text": "e spam and getting rid of it were the primary concerns, as spam can be offensive, may lead to other internet sites being tricked, which can offer harmful data, and can feature those who are not particu- lar with their content using NLP. To select the best-trained model, each mail transmission protocol requires precise and effective email classification, a machine learning comparison is done. Our study has suggested that innovative deep learning outperforms learning algorithms like SVM and RF. Current studies on the classification of emails use a variety of machine learning (ML) techniques, with",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c2398853-3d05-4d4c-942e-bb1bf23c8ee9",
+        "metadata": {},
+        "text": "a few of them focusing on the study of the sentiments consisted of within email databases. The lack of datasets is a significant obstacle to email classification. There are few publicly accessible E-mail datasets, thus researchers must use these datasets to test their hy- potheses or gather data on their own. Authors[15] describe supplied two-phased outlier detection models to enhance the IIOT network\u2019s dependability. Artificial Neural Network, SVM, Gaussian NB, and",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9b66c145-38cf-436b-88c4-e3d8ff987e9c",
+        "metadata": {},
+        "text": "182",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9740bb28-7376-4941-bcc2-4dc51f14e231",
+        "metadata": {},
+        "text": "Sachan et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "bc29d91c-170f-491a-a19d-a69a42e34d38",
+        "metadata": {},
+        "text": "RF (random forest) ensemble techniques were performed to forecast class labels, and the outputs were input into a classifying unit to increase accuracy. A method for content-based phishing detection was presented by the authors in [2], to classify phishing emails, they employed RF. They categorize spam and phishing emails. They enhanced phishing email classifiers with more accurate predictions by extracting features. They showed some effective Machine learn- ing spam filtering techniques. When the PCA method is used, it will lower the number of features in the dataset. The collected features go through the PCA algorithm to reduce the number of features. The PCA method is used to make a straightforward representation of the information which illustrates the amount of variability there is in the data. The authors of [20] presented the Fuzzy C-means method for classifying spam email. To stop spam, they implemente: a membership threshold value. A methodology to identify unla- beled data was put forth by the authors of [1] and applied motive analysis to the Enron data collection. They divided the data into categories that were favorable, negative, and neutral. They groupe the data using k-means clustering, an unsupervised ML technique and then classified it using the supervised ML techniques SVM an NB. Hina, Maryam, and colleagues (2021) implemented Sefaced: Deep learning-based semantic analysis and categorization of e-mail data using a forensic technique. For multiclass email classification, SeFACED employs a Gated Recurrent Neural Network (GRU) base: on Long Short-Term Memory (LSTM). Different random weight ini- tializations affect LSTMs [9]. Zhang, Yan, et al.(2019) Experiments on three-way game-theoretic rough set (GTRS) email spam filter- ing show that it is feasible to significantly boost coverage without decreasing accuracy [23]. According to Xia et al. [22], SMS spam has been identified using machine learning model such as naive bayes , vector-space modeling, support vector machines (SVM), long selective memory machines (LSTM), and convolutional neural networks including every instance of a method for categorizing data. Elshoush, Huwaida, et al. (2019) Using adaboost and stochastic gradient descent (sgd) algorithms for e-mail filtering with R and orange software spam [3]. Orange software was used to create the classifications, which included Adaboost and SGD. The majority of researchers focused on text-based email spam classification meth- ods because image-based spam can be filtered in the early stages of pre-processing. There are widely used word bag (BoW) model, which believes that documents are merely unordered collections of words, is the foundation for these techniques. Kumaresan [11] explains SVM with a cuckoo search algorithm was used to extract textual features for spam detection. Renuka and Visalakshi made use of svm [17] spam email identification, followed by selecting features using Latent Semantic Indexing (LSI). Here we have used labeled dataset to train the hybrid classifier. We used TF-IDF for feature extraction [20] and Textual features for spam detection were extracted using SVM and a cuckoo search algorithm. [4] for filtering out the spam email. Combining the integrated strategy to the pure SVM and NB methods, overall accuracy is really improved. Moreover, accurate detection for spam email has been proposed using the Negative Selection Algorithm (NSA) and Particle Swarm Optimization\u2019s (PSO) algorithm. PSO is used in this instance to improve the effectiveness of the classifier.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ce8aa243-514e-477d-8836-5ab232d4d999",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "7ad31481-8450-408d-b4a9-3ea1083a89b6",
+        "metadata": {},
+        "text": "Semantic Analysis and Classification of Emails through Informative Selection of Features and Ensemble Al Model",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "78d65765-4810-4e50-b478-860a618a010d",
+        "metadata": {},
+        "text": "1.2 Motivation and Novelty",
+        "type": "Title"
+    },
+    {
+        "element_id": "edec30eb-e98c-42f2-b0a4-31da165295a8",
+        "metadata": {},
+        "text": "Email is most common form of communication between people in this digital age. Many users have been victims of spam emails, and their personal information has been compromised. The email Classification technique is employed to identify and filter junk mail, junk, and virus-infected emails prior to reach a user\u2019s inbox. Existing email classification methods result in irrelevant emails and/or the loss of valuable information. Keeping these constraints in mind, the following contributions are made in this paper:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a5e1e92b-cf96-4d21-950b-2f89500f47e3",
+        "metadata": {},
+        "text": "e Text-based feature extraction is a lengthy process. Further- more, extracting every important feature from text is difficult. In this paper, we show how to employ GRU with Convo- lutional Neural Networks and Bidirectional-LSTM to find spam.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "39d67305-ca97-4830-a37d-ce37c477de3b",
+        "metadata": {},
+        "text": "\u00ab Used Word-Embeddings, BiLSTM, and Gated Recurrent Neu- ral Networks to examine the relationships, sentimental con- tent, and sequential way of email contents.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1876ce43-82e5-4039-af90-99610c84be73",
+        "metadata": {},
+        "text": "e Applied CNN before the Bi-LSTM network, training time can be sped up. This network can also extract more advanced textual features faster than the Bi-LSTM network alone when combined with the GRU network.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d82d88da-2907-4df7-8b8d-c07ce3bab824",
+        "metadata": {},
+        "text": "e We use Enorn Corpora datasets and compute precision, re- call, and f-score to assess how well the suggested technique performs. Our model outperforms several well-known ma- chine learning techniques as well as more contemporary methods for spam message detection.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "60d6b032-994d-4a12-befa-fb21ce6bcd74",
+        "metadata": {},
+        "text": "2 PROPOSED SYSTEM ARCHITECTURE AND MODEL",
+        "type": "Title"
+    },
+    {
+        "element_id": "5b22b8e0-7a2c-42fb-af61-2006773948fb",
+        "metadata": {},
+        "text": "E-mail is a valuable tool for communicating with other users. Email allows the sender to efficiently forward millions of advertisements at no cost. Unfortunately, this scheme is now being used in a variety of organizations. As a result, a massive amount of redundant emails is known as spam or junk mail, many people are confused about the emails in their E- Mailboxes. Each learning sequence is given for- ward as well as backward to two different LSTM networks that are attached to the same outputs layer in order for bidirectional Lstms to function. This indicates that the Bi-LSTM has detailed sequential information about all points before and following each point in a specific sequence. In other words, we concatenate the outputs from both the forward and the backward LSTM at each time step rather than just encoding the sequence in the forward direction. Each word\u2019s encoded form now comprehends the words that come before and after it. This is a problem for the Internet community. The di- agram depicts various stages that aid in the prediction of email spam:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c9d1b9b4-58b0-44ee-b6f0-8c27e5440605",
+        "metadata": {},
+        "text": "pusranorU",
+        "type": "Title"
+    },
+    {
+        "element_id": "0ff9abc0-71e5-4df7-8db4-e01e84aaf95d",
+        "metadata": {},
+        "text": "Removed \"Sopmer,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5c5ac676-2bd5-48c3-a799-467fcfae8d0d",
+        "metadata": {},
+        "text": "anworse anata",
+        "type": "Title"
+    },
+    {
+        "element_id": "88d17cba-57d8-489c-857c-e17260194652",
+        "metadata": {},
+        "text": "#",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c09e4c40-4f81-4058-98ae-42e2218fcfac",
+        "metadata": {},
+        "text": "Because real-world data is messy and contains unnecessary infor- mation and duplication, data preprocessing is critical in natural",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dc79a50d-a4a2-4718-9a05-017a505dd012",
+        "metadata": {},
+        "text": "183",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "556b3346-75f6-42cf-910a-efe6cf6f79e5",
+        "metadata": {},
+        "text": "1C3 2023, August 03-05, 2023, Noida, India",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6674ba9e-1c77-4068-b673-fa5a75330057",
+        "metadata": {},
+        "text": "language processing (NLP). The major preprocessing steps are de- picted below.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1a03f607-df8b-43ab-be4b-7427bfd9dcda",
+        "metadata": {},
+        "text": "2.1. NLP Tokenization",
+        "type": "Title"
+    },
+    {
+        "element_id": "00c5eb95-91c0-44ac-be21-7a1c56f3b45f",
+        "metadata": {},
+        "text": "Tokenization of documents into words follows predefined rules. The tokenization step is carried out in Python with spacy library.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9c54ef3a-1b13-4242-8eb8-5c5c6ba225ff",
+        "metadata": {},
+        "text": "2.2 Stop Words Removal",
+        "type": "Title"
+    },
+    {
+        "element_id": "943f24f4-1198-42f3-a944-2d2a3eb8392b",
+        "metadata": {},
+        "text": "Stop words appear infrequently or frequently in the document, but they are less significant in terms of importance. As a result, these are removed to improve data processing.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "78b7884d-0718-4b00-86c1-1f4da281ec97",
+        "metadata": {},
+        "text": "2.3. Text Normalization",
+        "type": "Title"
+    },
+    {
+        "element_id": "87e120e9-0ee5-4ac6-bedd-16fd613d85b2",
+        "metadata": {},
+        "text": "A word\u2019s lexicon form or order may differ. Thus, they must all be changed to their root word to be correctly analyzed. Lemmatization and stemming are the two methods that can be used for normal- ization. When a word\u2019s final few characters are removed to create a shorter form, even if that form has no meaning, the procedure is known as stemming. lemmatization [21] is a mixture of cor based an rule-based methods, and it retains the context of a term while changing it back to its root.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "08576227-b0f2-42dc-b76b-0d52fec96dd9",
+        "metadata": {},
+        "text": "us-",
+        "type": "Title"
+    },
+    {
+        "element_id": "7952d8c7-7aa3-47a1-85d2-849751a4e045",
+        "metadata": {},
+        "text": "2.4 Feature Extraction",
+        "type": "Title"
+    },
+    {
+        "element_id": "4eaaf8cc-0da1-415a-8b98-9100debe0e3d",
+        "metadata": {},
+        "text": "feature extraction which transforms the initial text into its features so that it may be used for modeling after being cleaned up and normalized. Before predicting them, we use a specific way to give weights to specific terms in our document. While it is simple for a computer to process numbers, we choose to represent individual words numerically. In such cases, we choose word embeddings. IDF is the count of documents containing the term divided by the total number of documents, and occurrence is the amount of instances a word appears in a document. We derive characteristics based on equations. 1,2,3,4,5, and 6. We use equations to derive properties.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2de8717b-3b9a-41ce-9472-05dcad93d7c1",
+        "metadata": {},
+        "text": "1 pap = tf +(=) (a) Tfldf = tf * Inverse(df) (2) Tfldf(t,d,D) = Tf (t,d).1df(t,D) (3) N TIdf(t.d) = log Fy (4)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "04cd53e5-266c-4e52-b7fb-b7abd4eefa29",
+        "metadata": {},
+        "text": "A word2vec neural network-based approach is the method that is utilized for this goal as the tool. The following equation, referred to as 5, shows how word2vec handles word context through the use of probability-accurate measurements. Here letter D stands for the paired-wise display of a set of words, while the letters w and c0 or cl represent paired word context that originated from a larger collection of set D.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c19d60c4-43a8-4d43-ae95-f423607037bc",
+        "metadata": {},
+        "text": "1 P(D=1 | wy Sik) = 1 + en (wees twee) 2+...4w-eik) (5) P(D=1| weer) , 6) = w, Cy.4) = \u2014\u2014\u2014\u2014\u2014_ RT Te ered)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "28a4e129-9333-4ea7-a98e-290361e1e74b",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "17f454c8-2986-42d0-9bb3-98e978e7ac81",
+        "metadata": {},
+        "text": "1C3 2023, August 03-05, 2023, Noida, India",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "416d913f-3f0b-454f-bffd-f386243eb141",
+        "metadata": {},
+        "text": "2.5 Word-Embeddings",
+        "type": "Title"
+    },
+    {
+        "element_id": "ad303a37-777d-4601-8a08-8fdb7c9a6659",
+        "metadata": {},
+        "text": "Word-Embedding helps to improve on the typical \"bag-of-words\" worldview, which requires a massive sparse feature vector to score every word individually to represent this same entire vocabulary. This perception is sparse because the vocabulary is large, and each word or document is defined by a massive vector. Using a word map-based dictionary, word embedding needs to be converted terms (words) into real value feature vectors. There are two basic issues with standard feature engineering techniques for deep learning. Data is represented using sparse vectors, and the second is that some of the meanings of words are not taken into consideration. Similar phrases will have values in embedding vectors that are almost real-valued. The Input length in our proposed study is set to 700 for our suggested model. If the texts seemed to be integer encoded with value systems between 10 and 20, the vocabulary distance would be 11. Our data is encoded as integers, and the input and output dimensions are both set to 50,000. The embedding layer outcome will be used in successive layers and for BiLSTM and GRU layers.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "06f479f6-8877-4c54-b98e-9570d54ed6ac",
+        "metadata": {},
+        "text": "2.6 Machine Learning Model",
+        "type": "Title"
+    },
+    {
+        "element_id": "88b5bf77-5d75-4a7e-b895-4064a4dec7a9",
+        "metadata": {},
+        "text": "Within the scope of the research, we are using the subsequent ma- chine learning techniques, to examine and compare the overall efficacy of our suggested Bi-LSTM strategy: Support Vector Ma- chine, Gaussian NB, Logistic Regression, K - nearest neighbors, and Random Forest (RF).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4295a633-98ba-4db0-9ad7-861f426d0b86",
+        "metadata": {},
+        "text": "2.7. Convolution Network",
+        "type": "Title"
+    },
+    {
+        "element_id": "97b74470-cabe-48a8-9345-f3a9deacdae7",
+        "metadata": {},
+        "text": "The popular RNN model generally performs well but takes too long to train the model incorporating the textual sequential data. When a layer is added after the RNN layer, the model\u2019s learning duration is considerably decreased. Higher-level feature extraction is another benefit. [19] additionally possible using the convolutional layer. In essence, the convolution layer looks for combinations of the various words or paragraphs in the document that involve the filters. We use features with 128 dimensions and a size 10 for each. For this task, the Relu activation function is utilized. After that, the one-dimensional largest pooling layers with a pooling size of 4 are put on the data in order to obtain higher-level features.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6f4cfe0d-628e-46d0-82eb-b49430ec34ce",
+        "metadata": {},
+        "text": "2.8 BiLSTM Network with GRU",
+        "type": "Title"
+    },
+    {
+        "element_id": "00fd5516-b82a-4fa0-aade-2d6eb9cc41b1",
+        "metadata": {},
+        "text": "Recurrent Neural Network (RNN) technique of text sentiment anal- ysis is particularly well-liked and frequently applied. Recurrent neural networks (RNN) surpass conventional neural networks. be- cause it can remember the information from earlier time steps thanks to its memory. A state vector is combined with an RNN\u2019s data to create a new state vector. The resulting state vector uses the present to recollect past knowledge. The RNN is straightforward and is based on the following equations:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bb4644e6-2db0-42a3-ad80-868df83cf513",
+        "metadata": {},
+        "text": "hy = tanh (Wppht-1 + Wrrhxt) (7)",
+        "type": "Title"
+    },
+    {
+        "element_id": "19a31d4c-a222-4cb2-a736-6231a702138c",
+        "metadata": {},
+        "text": "(8) The vanilla RNN[18]is not very good at remembering previous sequences. In addition to that, RNN struggles with diminishing gradient descent. A kind of RNN is a long short-term recall network (LSTM), solves a vanishing gradient descent problem and learns",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1362edb3-418f-48c0-a8f8-736b08e9af78",
+        "metadata": {},
+        "text": "yt = Wa, he",
+        "type": "Title"
+    },
+    {
+        "element_id": "a81db687-0e29-480f-8316-fb10f583dac4",
+        "metadata": {},
+        "text": "184",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a728ffb5-0b62-4d96-82f1-2a3c7136e3ac",
+        "metadata": {},
+        "text": "Sachan et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "197f3c56-12c4-4562-bd96-9b5f86a9f843",
+        "metadata": {},
+        "text": "long-term dependencies[10]. LSTM was actually created to address the problem of long-term reliance. LSTM has the unique ability to recall. The cell state is the LSTM model\u2019s central concept. With only a small amount of linear interaction, the cell state follows the sequence essentially unmodified from beginning to end. gate of an LSTM is also significant. Under the command of these gates, information is safely inserted to or eliminated from the cell stated. The following equations are used by the LSTM model to update each cell:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ccf85051-c2b1-4034-b221-09513d2edc50",
+        "metadata": {},
+        "text": "fi =o (We [he-1,x1] + bp) (9) In this case, Xt denotes input, and ht is the hidden state at the t time step. The following is the revised cell state Ct:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "40f1798b-b0d6-4b1b-bf6a-1a7e901af2ce",
+        "metadata": {},
+        "text": "ig = 0 (Wi [he-1, x1] + bi) (10) Cr = tanh (We [he-1, xt] + ber) (11) Cr = fe \u00aeCr-1 tip Cr (12)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "a3828a79-e586-4e90-917f-4a9295fb4a56",
+        "metadata": {},
+        "text": "Here, we may compute the output and hidden state at t time steps using the point-wise multiplication operator *.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b2831d4c-6998-4d49-b459-f781ec609f57",
+        "metadata": {},
+        "text": "Or = o (Wo: [he-1, x] + bo) (13)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "8e293ae8-9ba3-4867-80a6-58f4c8c0fe69",
+        "metadata": {},
+        "text": "hy = of * tanh (C;) (14) Due to the reality it only considers all prior contexts from the present one, LSTM does have a few drawbacks. As a result of this, it may accept data from preceding time steps through LSTM as well as RNN. Therefore, in order to avoid this issue, further improve- ments are carried out with the help of a bidirectional recurrent neural network(Bi-RNN). BiRNN [13] can handle two pieces of in- formation from both the front and the back. Bi-LSTM is created by combining the Bi-RNN and LSTM. As a result, operating LSTM has advantages such as cell state storage so that BIRNN have way to acknowledge from the context before and after. As a conse- quence of this, it provides the Bi-LSTM with the advantages of an LSTM with feedback for the next layer. Remembering long-term dependencies is a significant new benefit of Bi-LSTM. The output, which is a feature vector, will be based on the call state. Finally, we forecast the probability of email content as Normal, Fraudu- lent, Harassment, and Suspicious Emails using as an input to the softmax activation function, which is a weighted sum of the dense layer\u2019s outputs. To regulate the information flow, GRU employs the point-wise multiplying function and logistic sigmoid activation. The GRU has hidden states of storage memory and does not have distinct memory cells or units for state control. The W, U, and b vectors, which stand for weights, gates, and biases, respectively, are crucial variables that must be calculated during the creation of the GRU model. For training reasons, the pre-trained word embedding known as the Glove vector is used. They made it clear that GRU is the superior model when there is a large amount of training data for textual groups and word embedding is available. BiLSTM, CNN, and GRU is required so as to compensate for the deletion of the document\u2019s long-term and short-term connections. In our case, the embedding dimension, maximum sequence length, and lexicon size were used to start the LSTM embedding layer in three separate LSTM models. The input vector was modified to make it appropriate for such a Conv1D layer, prior situations\u2019 sequences are returned by LSTM layer. The \"return sequences\" of the LSTM layer must be set to False when the subsequent state is free of the gated",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9fb044d7-4b09-4a9b-9e72-41ef2b84fe16",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "bbe2f6a2-4fad-4341-b9c3-75f5b4d854e0",
+        "metadata": {},
+        "text": "Semantic Analysis and Classification of Emails through Informative Selection of Features and Ensemble Al Model",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "58dddb9d-3060-4b59-bc32-247b9e4835c3",
+        "metadata": {},
+        "text": "architecture. Quantity of learning parameters must be taken into consideration. A 350-unit LSTM layer was set - up, and different LSTM unit combinations were tested. More importantly, because it has more parts, the model made with BiLSTM will take longer to train. Bidirectional LSTM is the name of a particular kind of recurrent neural network that is primarily used for the processing of natural languages. (BiLSTM). It is able to use data from both sides, and, in contrast to regular LSTM, it enables input flow in both directions. It is an effective instrument for demonstrating the logical relationships between words and phrases, and this involves both the forward and backward directions of the sequence. In con- clusion, BiLSTM works by adding one extra layer of LSTM, causing the information flow to travel in the other direction. It only denotes that the input sequence runs in reverse at the next LSTM layer. Mul- tiple operations, including averaging, summation, multiplication, and concatenation, are then applied to the results of the two LSTM layers. The gated design of Bi-LSTM and GRU networks solves the disappearing gradient and exploding problems. A good way to handle more long sequences is to use Bi-LSMT and GRU together. GRU works well with datasets that don\u2019t have text. In two to three rounds, the complicated CNN+BiLSTM+GRU model learns the long sequence of email text well. We have used word embedding, cnn, bidirectional lstm and gru networks as our three building blocks to separate email messages based on their sentiment and text\u2019s sequential features. Also, we succinctly demonstrate below why these blocks help identify email spam:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "25229db9-6b09-4535-ad75-c4e86b55e1ef",
+        "metadata": {},
+        "text": "First, We have used the Sequence - to - sequence Lstm as the current block in the networks since it can retrieve both the previous and next sequences from the current. More so than a straightforward LSTM network, it can also recognize and extract text sentiment and sequential properties.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f7f5b012-59d5-4636-94d2-9a1877dcafa9",
+        "metadata": {},
+        "text": "e Second, we extract the more complex and advanced charac- teristics for Bi-LSTM network using Convolutional Network block, which is the network\u2019s second block after the Bi-LSTM block. Bi-LSTM takes a long time to extract text-based fea- tures, hence one of the reasons for using this block is to reduce the network\u2019s overall training time.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c8b111f4-5557-40a5-a2e8-3ff45818fa23",
+        "metadata": {},
+        "text": "3 EXPERIMENTAL EVALUATION 3.1 Experimental Setup",
+        "type": "Title"
+    },
+    {
+        "element_id": "6ae9bd46-c27d-48ce-87a4-e521b37fdf43",
+        "metadata": {},
+        "text": "We divided the information into training and testing groups of 80/20. We divided the remaining 20% of the 80 percent training data into test data for the model. Construct, compute, and evaluate the efficacy of the suggested method using the Pythonic packages Keras, as TensorFlow and Scikit learn.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "35ebc9aa-4375-4915-8854-8fd4eb5033be",
+        "metadata": {},
+        "text": "3.2 Dataset Description",
+        "type": "Title"
+    },
+    {
+        "element_id": "9bc760f3-f2b3-4f80-b917-aa8497defa80",
+        "metadata": {},
+        "text": "Email spam detection is the foundation of this research project. The dataset includes normal emails from the Enron corpora, deceptive emails from phished email corpora, harassment emails chosen from hate speech, and the offensive dataset. Only the content of the email body is used for analysis; all header information, including sender, topic, CC, and BCC, are eliminated. Word2vector, TF-IDF, and Word Embedding are used to extract characteristics from the email mes- sage and classify them. This dataset[8] is publicly available. The presented model is implemented using Python, and several metrics,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e806bc97-c198-406a-85c1-44e057b12f98",
+        "metadata": {},
+        "text": "185",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1bf1a0d5-9bd3-4ad9-9d64-1d22c9feceb1",
+        "metadata": {},
+        "text": "1C3 2023, August 03-05, 2023, Noida, India",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "8cba280b-08f0-4006-99a5-a0ba67988a38",
+        "metadata": {},
+        "text": "including accuracy, precision, and recall, are used to examine the outcomes.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "692c8746-ebe8-435f-aadf-24ff8ee9297e",
+        "metadata": {},
+        "text": "3.3. Evaluation Metrics and Results",
+        "type": "Title"
+    },
+    {
+        "element_id": "ae892397-1a96-4c77-92df-8755a58b2c1f",
+        "metadata": {},
+        "text": "Classifier performance is assessed Using metrics such as accuracy, precision, and recall. Four terms make up a confusion matrix that is used to calculate these metrics.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "13cb9b3a-6cb5-402b-8fb3-4c5beb3d05e2",
+        "metadata": {},
+        "text": "\u00a2 True positives (TP) are positive values that have been accu- rately assigned the positive label.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "74f8920a-22e9-44da-bf01-6dd0fcbbc3d7",
+        "metadata": {},
+        "text": "e The negative values that are accurately identified as negative are known as True Negatives (TN).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "725abf7a-d330-4521-99af-283af1c0004e",
+        "metadata": {},
+        "text": "e True Negative values are those that can be accurately identi- fied as being negative (TN).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f4059358-2803-4c0c-a1ac-4081e6132358",
+        "metadata": {},
+        "text": "\u00a2 Positive readings that have been mistakenly labeled as nega- tive are known as False Negatives (FN).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b4b5e046-ea01-4a1f-a1f7-4dc1511f2cbc",
+        "metadata": {},
+        "text": "Assess the efficacy of the suggested model is listed below:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5323ce37-ecd7-4914-becd-3eea34275bbd",
+        "metadata": {},
+        "text": "3.3.1 Accuracy. Accuracy reveals how frequently the ML model was overall correct. TP+TN",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e3192878-f061-4c7a-931a-9573ed8ea490",
+        "metadata": {},
+        "text": "Toy (15) TP+TN+FP+FN",
+        "type": "Title"
+    },
+    {
+        "element_id": "f017c593-ab5a-4b5b-bdbc-9f0ac5a01aa5",
+        "metadata": {},
+        "text": "Accuracy =",
+        "type": "Title"
+    },
+    {
+        "element_id": "085101c5-77f3-4db9-a715-ded0e0284e11",
+        "metadata": {},
+        "text": "3.3.2 Precision. The accuracy of the model gauges how effectively it can predict a specific category.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "13db83f9-9983-427c-ab2a-75a241585ce7",
+        "metadata": {},
+        "text": "TP",
+        "type": "Title"
+    },
+    {
+        "element_id": "5c73f531-5cd0-4fe6-935c-983bdf9af14a",
+        "metadata": {},
+        "text": "Precision = \u2014\u2014\u2014\u2014_ TP+FP",
+        "type": "Title"
+    },
+    {
+        "element_id": "aa2e040c-c61a-4cbd-94a0-a70fe583603e",
+        "metadata": {},
+        "text": "(16)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "89dff9d5-1f6a-4c5d-8d15-83b078b53af8",
+        "metadata": {},
+        "text": "3.3.3 Recall. Recall tells us how often the model was able to rec- ognize a specific category.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "289f71bf-7d29-4758-9a4a-02576343af5a",
+        "metadata": {},
+        "text": "Recall = TP (17) TP+FN",
+        "type": "Title"
+    },
+    {
+        "element_id": "ebda9b0b-be25-4bc9-af6c-1b12aea62506",
+        "metadata": {},
+        "text": "Model Accuracy Precision Recall Gaussian NB 91.3 90.1 91.8 Random Forest 88.41 90 88 KNN 86.6 89 87 SVM 92.4 91 92 LSTM 95.2 95 95.7 Proposed Ensemble | 97.32 95.6 95.3 (CNN,BiLSTM+GRU)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b1497ae6-af42-45bd-8e84-47d9df35155b",
+        "metadata": {},
+        "text": "Table 1: Differet Model\u2019s Score on Test Data",
+        "type": "Title"
+    },
+    {
+        "element_id": "015b6a76-3291-43eb-833d-bf985c03dbc0",
+        "metadata": {},
+        "text": "Accuracy, Precision, and Recall metrics are computed. In the given Table 1 where six different classifiers are Gaussian NB, Ran- dom Forest, KNN, SVM, LSTM, and Propose Ensemble Hybrid Model (CNN+BiLSTM+GRU) have been used in this work. In the CNN, Bi-LSTM, and GRU architectures which enable sequence pre- diction, CNN strands for feature extraction on data input which are combined with LSTM. It requires less time training and a higher expandable model. Any bottlenecks are created by predictions and the increasing number of distinct units of information. This model is useful for dealing with issue-related classifications that consist of two or more than two classes. So suggested Ensemble model, out of these six classifiers, produces more accurate findings.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "48a2d6eb-969c-48b9-b122-183eb8acd964",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "1f09996e-c92d-42c6-94d9-2b9996e79cbd",
+        "metadata": {},
+        "text": "1C3 2023, August 03-05, 2023, Noida, India Sachan et al.",
+        "type": "Title"
+    },
+    {
+        "element_id": "2e4d3c83-ba28-48e5-bcbf-5a6342829f2e",
+        "metadata": {},
+        "text": "a LSTM Model: Training and Validation loss \u201c 352 eo \u2014 Taining_Loss os 06 \u2014\u2014 Validation_Loss a) yy as 2 05 7 1 \u201d wea \u00a9 4 04 = 2 9866 a 03 02 u we o1 o 0 1 2 3 4 5 Gaumian Nanay fandom ore. va sum ist ovale CMa STG Number of epochs",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e0b17190-0444-4d95-8209-47729ca92799",
+        "metadata": {},
+        "text": "Model",
+        "type": "Title"
+    },
+    {
+        "element_id": "9464f6b0-0810-43b9-839b-e18a841a0a85",
+        "metadata": {},
+        "text": "sarccursy \u2014\u2014\"Praion Recall",
+        "type": "Title"
+    },
+    {
+        "element_id": "66a22c17-a9da-4999-9aeb-35add65254d7",
+        "metadata": {},
+        "text": "Figure 3: LSTM Model Training and Validation Loss Figure 1: Performance Analysis",
+        "type": "Title"
+    },
+    {
+        "element_id": "9f93d835-a12d-49a6-9a05-3b983e5bb5d3",
+        "metadata": {},
+        "text": "BiLSTM Model: Training and Validation accuracy",
+        "type": "Title"
+    },
+    {
+        "element_id": "8a8befb2-5b3f-483d-ab28-e241ef21ef2d",
+        "metadata": {},
+        "text": "100",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "18c9843b-3fb3-44e7-9ffd-c0b1648ff3a5",
+        "metadata": {},
+        "text": "0.95",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5ef75047-dd23-419f-8f5c-f65abe50cf3f",
+        "metadata": {},
+        "text": "0.90 3.4 Comparative Analysis .",
+        "type": "Title"
+    },
+    {
+        "element_id": "0131d8be-541b-456e-a5f5-235deb0a4a5e",
+        "metadata": {},
+        "text": "0.85 A model\u2019s ability to fit new data is measured by the validation g loss, whereas its ability to fit training data is determined by the \u00a7 0.80 training loss. The two main variables that decide whether in which learning is efficient or not are validation loss and training loss. O78 LSTM and Suggested Ensemble hybrid Models have equivalent loss 070 \u2014 Faining Accuracy and accuracy. In this context, we are contrasting the LSTM with the \u2014\u2014 Validation Accuracy proposed model (CNN, Bilstm, and GRU) in terms of their respective 065 ; T 5 3 ; ; ; validation accuracies and losses. The model\u2019s accuracy was at its Number of epochs",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6c02ef22-f2b4-4dbf-a826-b281b691d33b",
+        "metadata": {},
+        "text": "highest after 14 epochs of operation when it achieved an accuracy",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1cac2cff-952b-4abd-8eea-6bb41d4396c8",
+        "metadata": {},
+        "text": "of roughly 97-98% while minimizing model loss. Figure 4: Ensemble Model (CNN,BiLSTM+GRU) Training and Validation Accuracy",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6af64d46-d7fe-4a95-ad75-f9bcc4bd7604",
+        "metadata": {},
+        "text": "BiLSTM Model: Training and Validation loss",
+        "type": "Title"
+    },
+    {
+        "element_id": "2d356e82-f09c-42f5-8375-0c66385d7069",
+        "metadata": {},
+        "text": "odel 06 | \u2014\u2014 Faining_Loss 100 model accuracy \u2014\u2014\u2014~ Validation_Loss \u2014 Tain 05 0954 \u2014\u2014 Validation 04 0.90 w a > 0.85 203 3 5 3 0.80 % 02 075 ol 0.70 , T t T T : T 065 0 1 2 3 4 5 6 Number of epochs oO 5 10 6 20 2 30 35 epoch Figure 5: Ensemble Model (CNN,BiLSTM+GRU)Training Figure 2: LSTM Model Training and Validation Accuracy and Validation Loss",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6eb69452-2f47-491f-bf65-e71163711977",
+        "metadata": {},
+        "text": "186",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e83d4989-0b41-489d-9406-25ee0f16a851",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "a45d05c0-edbd-4aa4-a201-d410ce219958",
+        "metadata": {},
+        "text": "Semantic Analysis and Classification of Emails through Informative Selection of Features and Ensemble Al Model",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "decb57ea-6efa-4768-bf8f-79d2ea940e0d",
+        "metadata": {},
+        "text": "In this Proposed ensemble hybrid model\u2019s train accuracy is 98.7% Validation accuracy is 97.32% and LSTM has train accuracy of 97.41% and validation accuracy is 95.2%. So based on figures 3 and 5 indicate the validation loss for LSTM and the proposed ensemble hybrid model to be 0.93 and 0.84, respectively, and figures 2 and 4 show the validation accuracy to be 95.2% and 97.3%, respectively. LSTM and the proposed hybrid model used ensemble artificial intelligence, with the proposed hybrid model outperforming the LSTM. We decide on dense architecture as the final model for identifying the text messages as spam or nonspam based on loss, accuracy, and the aforementioned charts. The loss and accuracy over epochs are more stable than LSTM, and the Proposed classifier has a straightforward structure.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d9056523-5884-4149-84a2-a94895c6f42b",
+        "metadata": {},
+        "text": "4 CONCLUSION",
+        "type": "Title"
+    },
+    {
+        "element_id": "b651a26e-6714-407d-9643-a079f57c8b4b",
+        "metadata": {},
+        "text": "The model is composed of four networks Word-Embeddings, CNN, Bi-LSTM, and GRU. We may train the model more quickly by using the convolutional layer first, followed by the word-embedding layer, and then the BiLSTM network. The Bidirectional LSTM network also has higher-level properties that we can extract. We have used a bidirectional LSTM(BiLSTM)and GRU network to memorize a sentence\u2019s contextual meaning and sequential structure, which im- proves the model\u2019s performance accuracy to roughly 97.32 percent.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f43396cd-c46f-467e-b765-ed61ccdd8477",
+        "metadata": {},
+        "text": "REFERENCES",
+        "type": "Title"
+    },
+    {
+        "element_id": "a5259617-a77b-478c-a9c7-c569e4452753",
+        "metadata": {},
+        "text": "1] Rayan Salah Hag Ali and Neamat El Gayar. 2019. Sentiment analysis using unla- beled email data. In 2019 International Conference on Computational Intelligence and Knowledge Economy (ICCIKE). IEEE, 328-333.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6a363a31-7646-4f3d-a795-3ac51ff102b7",
+        "metadata": {},
+        "text": "2] Ali Shafigh Aski and Navid Khalilzadeh Sourati. 2016. Proposed efficient algo- rithm to filter spam using machine learning techniques. Pacific Science Review A: Natural Science and Engineering 18, 2 (2016), 145-149.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2641bdbc-1957-4324-943c-f20120a5e92c",
+        "metadata": {},
+        "text": "3] Huwaida T Elshoush and Esraa A Dinar. 2019. Using adaboost and stochastic gradient descent (sgd) algorithms with R and orange software for filtering e-mail spam. In 2019 11th Computer Science and Electronic Engineering (CEEC). IEEE, 41-46,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "39c26fe7-3086-4af9-9f86-5e94f5814703",
+        "metadata": {},
+        "text": "4] Weimiao Feng, Jianguo Sun, Liguo Zhang, Cuiling Cao, and Qing Yang. 2016. A support vector machine based naive Bayes algorithm for spam filtering. In 2016 IEEE 35th International Performance Computing and Communications Conference (IPCCC). IEEE, 1-8.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "43ebb530-1173-41f3-8889-1ae04f6fbe5e",
+        "metadata": {},
+        "text": "5] Pranjul Garg and Nancy Girdhar. 2021. A Systematic Review on Spam Filtering Techniques based on Natural Language Processing Framework. In 2021 11th Inter national Conference on Cloud Computing, Data Science & Engineering (Confluence). IEEE, 30-35.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "65f8ed6d-a721-4c2d-bca8-9cb1b1725d1f",
+        "metadata": {},
+        "text": "6] Adam Kavon Ghazi-Tehrani and Henry N Pontell. 2021. Phishing evolves: Ana- lyzing the enduring cybercrime. Victims & Offenders 16, 3 (2021), 316-342.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b96777b3-7461-46d2-a148-7d0924849df1",
+        "metadata": {},
+        "text": "7] Radicati Group et al. 2015. Email Statistics Report 2015-2019. Radicati Group. Accessed August 13 (2015), 2019.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "912e5daa-1a79-4122-9e75-cc746fc9b786",
+        "metadata": {},
+        "text": "8] Maryam Hina, Mohsin Ali, and Javed. 2021. Sefaced: Semantic-based forensic analysis and classification of e-mail data using deep learning. IEEE Access 9 (2021), 98398-98411.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e01e2c2e-7253-4eca-a95d-469e26ea048c",
+        "metadata": {},
+        "text": "9] Maryam Hina, Mohsin Ali, Abdul Rehman Javed, Fahad Ghabban, Liaqat Ali Khan, and Zunera Jalil. 2021. Sefaced: Semantic-based forensic analysis and classification of e-mail data using deep learning. IEEE Access 9 (2021), 98398- 98411.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cc178c92-62c1-4ce3-9491-0f4eb779f3b5",
+        "metadata": {},
+        "text": "Weicong Kong, Zhao Yang Dong, Youwei Jia, David J Hill, Yan Xu, and Yuan Zhang. 2017. Short-term residential load forecasting based on LSTM recurrent neural network. JEEE transactions on smart grid 10, 1 (2017), 841-851.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dd4801ff-dd82-42d4-b175-e7221efbe89c",
+        "metadata": {},
+        "text": "T Kumaresan and C Palanisamy. 2017. E-mail spam classification using S-cuckoo search and support vector machine. International Journal of Bio-Inspired Compu- tation 9, 3 (2017), 142-156.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d345666b-3e5a-4b59-a783-54e894dbf7f8",
+        "metadata": {},
+        "text": "Nuha H Marza, Mehdi E Manaa, and Hussein A Lafta. 2021. Classification of spam emails using deep learning. In 2021 Ist Babylon International Conference on Information Technology and Science (BICITS). IEEE, 63-68.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "915c343e-803d-49c6-ae32-9da74acfc9f1",
+        "metadata": {},
+        "text": "Tomas Mikolov and Geoffrey Zweig. 2012. Context dependent recurrent neural network language model. In 2012 IEEE Spoken Language Technology Workshop (SLT). IEEE, 234-239.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e2cdcdeb-1d9e-4d1b-9796-a7535e0a0334",
+        "metadata": {},
+        "text": "Sarwat Nizamani, Nasrullah Memon, Mathies Glasdam, and Dong Duong Nguyen. 2014. Detection of fraudulent emails by employing advanced feature abundance.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "714f411e-1555-41b9-a0ed-df801b369c9d",
+        "metadata": {},
+        "text": "{1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7d14da1d-004f-4515-8775-e7387da2f7fb",
+        "metadata": {},
+        "text": "[12",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "71ce9e2d-b826-415f-a3ef-ab95074b28ae",
+        "metadata": {},
+        "text": "[13",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "bd8584da-3c52-4976-bd9f-23ae19a9726e",
+        "metadata": {},
+        "text": "[14",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "671f1f29-782f-4c1e-b198-173b6700b14d",
+        "metadata": {},
+        "text": "187",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "17f1e85a-f7b8-4d7b-905e-a10f0ffbfcfc",
+        "metadata": {},
+        "text": "1C3 2023, August 03-05, 2023, Noida, India",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "973d0c31-eabb-491d-82f3-7a2b2ae13750",
+        "metadata": {},
+        "text": "Egyptian Informatics Journal 15, 3 (2014), 169-174.",
+        "type": "Title"
+    },
+    {
+        "element_id": "e7242681-48bf-4500-a65d-fe68d4440814",
+        "metadata": {},
+        "text": "V Priya, I Sumaiya Thaseen, Thippa Reddy Gadekallu, Mohamed K Aboudaif, and Emad Abouel Nasr. 2021. Robust attack detection approach for IloT using ensemble classifier. arXiv preprint arXiv:2102.01515 (2021).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "471c66b8-5c85-4857-9449-da9bc9d94b01",
+        "metadata": {},
+        "text": "Justinas Rastenis, Simona Ramanauskait\u00e9, Justinas Janulevidius, Antanas Cenys, Asta Slotkien\u00e9, and Kestutis Pakrijauskas. 2020. E-mail-based phishing attack taxonomy. Applied Sciences 10, 7 (2020), 2363.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "33e159a1-3cc6-4d3a-8030-d4fc55eef8f3",
+        "metadata": {},
+        "text": "Karthika D Renuka and P Visalakshi. 2014. Latent semantic indexing based SVM. model for email spam classification. (2014).",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3de7e288-959a-45c4-a90d-3d1e2ba35ee0",
+        "metadata": {},
+        "text": "Shuvendu Roy, Sk Imran Hossain, MAH Akhand, and N Siddique. 2018. Sequence modeling for intelligent typing assistant with Bangla and English keyboard. In 2018 International Conference on Innovation in Engineering and Technology (ICIET). IEEE, 1-6.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5770d75b-2b65-4fb4-a384-44947e51acc9",
+        "metadata": {},
+        "text": "Tara N Sainath, Oriol Vinyals, Andrew Senior, and Hasim Sak. 2015. Convolu- tional, long short-term memory, fully connected deep neural networks. In 2015 IEEE international conference on acoustics, speech and signal processing (ICASSP). Teee, 4580-4584.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "fffac733-3577-463e-9e68-2a9a0d90a79f",
+        "metadata": {},
+        "text": "Anuj Kumar Singh, Shashi Bhushan, and Sonakshi Vij. 2019. Filtering spam messages and mails using fuzzy C means algorithm. In 2019 4th International Conference on Internet of Things: Smart Innovation and Usages (IoT-SIU). IEEE, 1-5.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ac9a90db-0298-494b-bbf8-2bb5a3c6806f",
+        "metadata": {},
+        "text": "Kristina Toutanova and Colin Cherry. 2009. A global model for joint lemmati- zation and part-of-speech prediction. In Proceedings of the Joint Conference of the 47th Annual Meeting of the ACL and the 4th International Joint Conference on Natural Language Processing of the AFNLP. 486-494.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7da0cb37-95b2-40bc-bcf7-4977d94102a6",
+        "metadata": {},
+        "text": "Tian Xia. 2020. A constant time complexity spam detection algorithm for boosting throughput on rule-based filtering systems. IEEE Access 8 (2020), 82653-82661. Yan Zhang, PengFei Liu, and JingTao Yao. 2019. Three-way email spam filtering with game-theoretic rough sets. In 2019 International conference on computing, networking and communications (ICNC). IEEE, 552-556.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f35ae31c-7a39-4556-9b38-0ee4e62f3571",
+        "metadata": {},
+        "text": "20.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "97ad72c3-b9d9-4b9e-94dd-c0e980d6cb2f",
+        "metadata": {},
+        "text": "21",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "04a46f66-b3a9-4f1b-b109-177c48795e5e",
+        "metadata": {},
+        "text": "22.",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "89e16319-a93f-4537-9f9d-596db49ed79b",
+        "metadata": {},
+        "text": "23,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "fc1c5a6e-ea3f-4cf3-b43e-96b649436527",
+        "metadata": {},
+        "text": "Received 15 April 2023",
+        "type": "Title"
+    },
+    {
+        "element_id": "21cba63c-a4ce-4001-b37a-3c60dc323c92",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    }
+]

@@ -1,0 +1,704 @@
+[
+    {
+        "element_id": "55c2caba-3cbd-49c7-98aa-e9352cf70512",
+        "metadata": {},
+        "text": "2 2 0 2",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "968deeb9-193b-4d10-b8db-ab26ef36c70f",
+        "metadata": {},
+        "text": "l u J",
+        "type": "Title"
+    },
+    {
+        "element_id": "0c632b49-ee1b-4d5f-9ebf-73e8e15f0c6c",
+        "metadata": {},
+        "text": "1 1",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "21d295c6-1190-4c2d-baea-1fcc971a3307",
+        "metadata": {},
+        "text": "]",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9e647702-a51f-4ed8-bf8e-1b1e0cd49049",
+        "metadata": {},
+        "text": "O H . h t a m",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6233319f-272d-4212-b766-5431077524e8",
+        "metadata": {},
+        "text": "[",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "5fd3975d-b175-4b8e-a160-8ae3de2d577f",
+        "metadata": {},
+        "text": "1 v 8 9 6 4 0 . 7 0 2 2 : v i X r a",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "e2ab2a28-6c35-426c-8caf-144e5f60dc9d",
+        "metadata": {},
+        "text": "Numerical computing in engineering mathematics",
+        "type": "Title"
+    },
+    {
+        "element_id": "ed45ad7a-1f9c-4885-931e-38c9228d28a5",
+        "metadata": {},
+        "text": "Firuz Kamalov Department of Electrical Engineering Canadian University Dubai Dubai, UAE \ufb01ruz@cud.ac.ae",
+        "type": "Title"
+    },
+    {
+        "element_id": "f5e1a85b-dae8-4f70-a626-20abaad560ec",
+        "metadata": {},
+        "text": "Ho-Hon Leung Department of Mathematical Sciences United Arab Emirates University Al Ain, UAE hohon.leung@uaeu.ac.ae",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b86d5413-5d79-4e47-a78d-e83d897752f3",
+        "metadata": {},
+        "text": "Abstract\u2014The rapid advances in technology over the last decade have signi\ufb01cantly altered the nature of engineering knowl- edge and skills required in the modern industries. In response to the changing professional requirements, engineering institutions have updated their curriculum and pedagogical practices. How- ever, most of the changes in the curriculum have been focused on the core engineering courses without much consideration for the auxiliary courses in mathematics and sciences. In this paper, we aim to propose a new, augmented mathematics curriculum aimed at meeting the requirements of the modern, technology-based engineering workplace. The proposed updates require minimal resources and can be seamlessly integrated into the existing curriculum.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dcd00668-bcfc-4bc4-937b-ad33869ab373",
+        "metadata": {},
+        "text": "Index Terms\u2014engineering mathematics; numerical computing;",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "42258ecf-f4c2-47d2-b9f0-03e03af77b41",
+        "metadata": {},
+        "text": "education; Industry 4.0",
+        "type": "Title"
+    },
+    {
+        "element_id": "923e886e-a295-4024-ac3e-ce732ac8f41d",
+        "metadata": {},
+        "text": "I. INTRODUCTION",
+        "type": "Title"
+    },
+    {
+        "element_id": "64a1cb80-1466-4c47-b04e-b04116da5330",
+        "metadata": {},
+        "text": "The 4th Industrial Revolution has had a dramatic impact on the engineering profession. The modern technologies such as arti\ufb01cial intelligence, the internet of things, and advanced robotics have altered engineering systems and processes. To- day\u2019s engineers are expected to be able to leverage these resources to produce their products. To meet the new profes- sional requirements, engineering educational institutions have revised their curricula. The changes in the curricula include both updating the existing programs as well as introduc- ing completely new programs. Given the rapid technological progress, universities and colleges around the world are con- tinuously adapting to the ever-changing environment. While a signi\ufb01cant progress in modernizing the engineering curriculum has been achieved, there still remains room for improvement. Catalyzed by the exponential increase in computational power and interconnectedness, the modern industrial revolu- tion has reshaped the skills and competencies required of the engineers. The changes in engineering curricula in response to Industry 4.0 have been threefold: i) modernizing the existing programs, ii) introduction of new programs, and iii) revising the pedagogical approach. Modernizing the existing programs involves introduction of new courses in the study plan related to emerging technologies. In addition, existing courses can be updated with new content. Fresh new programs in emerging",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d32cdb85-a171-415c-b34e-9ce83c3cb0f5",
+        "metadata": {},
+        "text": "\u00a9 2022 IEEE. Personal use of this material is permitted. Permission from IEEE must be obtained for all other uses, in any current or future media, including reprinting/republishing this material for advertising or promotional purposes, creating new collective works, for resale or redistribution to servers or lists, or reuse of any copyrighted component of this work in other works",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dd5b1d39-a61f-4305-960f-769f7fc7f1ef",
+        "metadata": {},
+        "text": "technologies are also introduced by universities and colleges. Many institutions now offer degrees in arti\ufb01cial intelligence and mechatronics which were not there 20 years ago. Finally, universities have revised their approaches to course delivery. Student-centered learning, project-based learning, and applied learning have become popular in the new engineering educa- tional paradigm.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7270b82e-e8d8-4928-8874-a14fd6589e72",
+        "metadata": {},
+        "text": "While signi\ufb01cant effort has been made to revise the core engineering courses, the auxiliary courses in mathematics and sciences received little consideration. The mathematics and sciences courses play a key role in the engineering curriculum. Given their importance, the curriculum updates must also be extended to the auxiliary courses. By implementing a com- prehensive update of the engineering curriculum that includes both the core and auxiliary courses, a more effective outcome can be achieved.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7ee3193b-4a36-48b2-8a6e-18daa4b2e0e9",
+        "metadata": {},
+        "text": "The goal of this paper is to propose a modernized engineer- ing mathematics curriculum in line with the broader efforts to update engineering education to adapt to Industry 4.0. The key feature of the new curriculum is the introduction numerical computing in the existing mathematics courses. The latest industrial revolution has been driven largely by the dramatic increase in computational power. Therefore, today\u2019s engineers must be well-equipped to leverage the computing power in their work.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f9f1a1e2-b3ba-4818-8480-2118703a67f1",
+        "metadata": {},
+        "text": "Since mathematics courses are usually taken at the begin- ning of the study plan, it offers a natural avenue for introducing numerical computing to students. Furthermore, many problems in mathematics can be solved numerically making it natural to integrate numerical computing in mathematics courses. By studying numerical computing in mathematics courses, students will acquire the necessary theoretical and practical skills to apply in their downstream, specialized engineering courses.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f34e3cfc-c209-42b0-a1ce-8ecf608f737c",
+        "metadata": {},
+        "text": "This paper is structured as follows. Section 2 provides an overview of the existing efforts to update the engineering curriculum in response to Industry 4.0. Section 3 discusses the current approaches to integrate scienti\ufb01c computing in mathematics courses. In Section 4, we present our proposal for modernizing the mathematics curriculum to integrate nu- merical computing. Section 5 concludes the paper with \ufb01nal remarks.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "67e0dadb-227e-4c96-988d-10a19963885d",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "6cdfae31-c7f3-4468-a620-f560f7227937",
+        "metadata": {},
+        "text": "II. ENGINEERING EDUCATION AND INDUSTRY 4.0",
+        "type": "Title"
+    },
+    {
+        "element_id": "3b753fd2-10a3-43bd-9f65-1bedbcf501c6",
+        "metadata": {},
+        "text": "Engineering departments in colleges and universities have made signi\ufb01cant changes in their curricula in response to the new environment created by the recent, rapid advances in technology. In particular, the existing programs have been updated to include courses that target emerging technologies. Completely new programs related to AI and mechatronics have also been adopted by universities. Innovations in the \ufb01eld of engineering education continue to take place with new developments on the horizon.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d317c868-a3f4-49ae-b247-2afa9ed9c1cc",
+        "metadata": {},
+        "text": "There exist several studies investigating the modern en- gineering curricula and evaluating their effectiveness. It is argued in [6] that engineering educators must prepare their students to face three key challenges: sustainability, the 4th Industrial Revolution, and employability. The authors \ufb01nd that colleges and universities are responding to these challenges by emphasizing student-centered learning, integration of theory and practice, digital and online learning, and the de\ufb01nition of professional competencies. In particular, response to the needs of Industry 4.0 require interdisciplinary collaboration across several programs and disciplines. Interaction and integration of technologies plays a key role in this process [10], [12]. In- terdisciplinary engineering education requires sound pedagogy and teaming experiences to encourage student in collaborative and interdisciplinary practice [23].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1ba692a0-6ec7-469b-95c2-e3879d5c2cc2",
+        "metadata": {},
+        "text": "Digital and online learning have become an important part of modern education including in the \ufb01eld of engineering. Information technologies play a vital role in delivering digital learning to students. Colleges and universities have made signi\ufb01cant investments to improve their information and com- munication technology (ICT) capacities [7].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5c026210-eff5-42e3-a565-54a2003d38ee",
+        "metadata": {},
+        "text": "In response to the needs of Industry 4.0, some univer- sities have adopted the framework of Education 4.0 [15], [19]. The new education framework consists of four main components: i) competencies, ii) learning methods, iii) ICT, and iv) infrastructure. Students competencies are based on technological knowledge and skills for successful workplace performance, while the learning methods are based on problem solving and challenge-based learning. In particular, active and project-based learning plays an important role in Education 4.0 [4], [8]. Other innovative approaches to learning such as virtual-reality based engineering education can help improve the learning process related to Industry 4.0 [20].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "56a44af7-5ed2-44c0-9070-95d9fe139fdf",
+        "metadata": {},
+        "text": "In addition to technological progress, socio-cultural shifts must be taken into account in revising engineering curriculum. The new generation of students has its unique worldview which needs to be considered by the educators. In particular, the new generation is signi\ufb01cantly affected by mobile devices and digital media. Educational content must be tailored to the new student preferences to achieve effective learning outcomes [16]. Innovative approaches such gami\ufb01cation may help improve the learning process [13], [17].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4cccb15b-a0e8-4278-950f-b82c933c17ef",
+        "metadata": {},
+        "text": "Many universities have also introduced nontechnical updates to their engineering curriculum. The most signi\ufb01cant nontech- nical update has been the introduction of entrepreneurship",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "635ab28f-864f-47f5-89ed-7c44cc372943",
+        "metadata": {},
+        "text": "courses and experiences for students. A lot of attention has recently been given to equipping students with entrepreneurial skills. Students learn about entrepreneurship in their courses as well as through university incubators.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a58e4a7a-9a1c-40e3-8aed-308f2b34f926",
+        "metadata": {},
+        "text": "III. UNIVERSITY MATHEMATICS CURRICULUM",
+        "type": "Title"
+    },
+    {
+        "element_id": "6d7dc5fc-ecaf-4d4a-9072-d519bebd115d",
+        "metadata": {},
+        "text": "The mathematics curriculum changed very little in the current century. It remains a largely analytic domain, where so- lutions are mainly obtained manually. The current mathematics curriculum emphasizes theory over practical approaches. For instance, when \ufb01nding the extreme values of a function, derivative-based approach is preferred over the gradient de- cent. There are two key reasons for why analytical approaches are favored over numerical methods. First, analytical solutions are reliable and elegant. An analytical solution is guaranteed to be exact. Second, mathematics courses are usually taught by pure mathematicians who have an inherent preference for analytical solutions. Pure mathematics which is based on theorem proving is not amenable to numerical methods.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cbf08aa3-8dbf-490e-b758-fa4ea038337f",
+        "metadata": {},
+        "text": "Despite the popularity of analytical approaches to problem solving in mathematics, there has been a growing push to inte- grate computer algebra systems as part of the learning process. Computer algebra systems such as Matlab and Mathematica are now routinely used in many mathematics courses. The study by Cretchley et al. [5] found that engineering students were positive about the use of technology as a learning tool in mathematics courses. The increased use of technology in class helped improve student focus and interest in lectures. Student evaluations also indicated that they had a greater level of enjoyment towards the lectures due to the use of technology. It is noteworthy that students chose not to rely too heavily on technology during the examinations despite the freedom to do so. The students found it extremely important to be competent with analytical mathematical skills as opposed to purely com- putational skills. Some revealed that they learn the subjects equally well without the help of scienti\ufb01c packages, although the perception towards the use of computer is in general highly positive. Almost all students responded positively to Matlab as an effective tool for computation and graphing. Many used Matlab for non-examination purposes. For example, they utilized it to check their handwritten mathematical steps in assignments and practice problems; and others used it for exploration beyond the standard syllabus and curriculum.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cd2f7c64-f10d-48b4-98c9-39d76b761f30",
+        "metadata": {},
+        "text": "The in\ufb02uence of computer technology on students\u2019 aca- demic performance and learning experience has been inves- tigated by several authors. Abdul Majid et al. [1], [2] used Matlab as an aid to teach calculus to engineering students. The software package was used for various course learning outcomes such as graphical display of mathematical functions, exploration, identifying and predicting structural patterns in evaluating a series of complex inde\ufb01nite integrals, and numeri- cal approximations in applied mathematics. The study showed a positive impact on students\u2019 academic performance in the \ufb01nal examinations. The study concluded that the integration of scienti\ufb01c packages into engineering mathematics courses could be effective under certain conditions. Similarly, other",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7133a4bf-5c77-4554-824d-3ecd4a0d4c26",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "5c0030f8-79e5-40b4-8116-a942372ebb98",
+        "metadata": {},
+        "text": "studies [18], [21] also found a positive impact from the use of scienti\ufb01c software packages on students\u2019 motivation in learning mathematics.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "40e7a854-8645-424c-8537-4d6b4f6b08b8",
+        "metadata": {},
+        "text": "In a separate study by Brake [3], the authors investigated the use of Matlab in engineering mathematics courses to increase student con\ufb01dence level and mathematical abilities. Matlab was used to solve concrete engineering problems which require a deep understanding of underlying mathematical principles. The study found generally positive student response to the use of software in their mathematics courses. However, the results of the study must be considered carefully given the small sample size of the subjects.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ec2e1437-3314-4904-a2e9-40766c29f58f",
+        "metadata": {},
+        "text": "Although the majority of the studies were based on the use of Matlab, several other studies considered alternative mathematics software packages. The study by Kilicman et al. [11] focused on the use of Maple to help students understand both the theoretical and computational aspects of linear algebra for engineering students. In particular, it was shown that the use of Maple facilitates the understanding of computational as- pects of eigenvalues and eigenvectors. It allows students more time to focus on the theoretical aspects and the underlying mathematical principles.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "43a3d610-e91c-40ae-9880-c84760b8432f",
+        "metadata": {},
+        "text": "In a recent study by Mezhennaya and Pugachev [14], the authors compared engineering students\u2019 perceptions regarding several mathematical software: Matlab, Mathematica and Ex- cel. The study found that all the scienti\ufb01c packages considered can be used in education, under the condition that the policies for software usage are carefully implemented. The study found that many students lack hands-on experience on how to use the software. The students particularly struggled with Matlab and Mathematica \ufb01nding them non user friendly. The study concluded that additional classes are required to prepare students to use software in their courses.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "5b8790fb-409f-4277-a7fc-cd0ae7f5b70e",
+        "metadata": {},
+        "text": "IV. NUMERICAL COMPUTING IN MATHEMATICS CURRICULUM",
+        "type": "Title"
+    },
+    {
+        "element_id": "8ec45583-f1b1-48e0-a305-ed8b1585bcc2",
+        "metadata": {},
+        "text": "Mathematics lies at the foundation of science and engineer- ing. The importance of mathematics courses in engineering education cannot be underestimated. These courses equip stu- dents with the fundamental skills and knowledge to study the more specialized engineering courses. Thus, student success in engineering studies depends directly on the mathematics and sciences courses. Given the signi\ufb01cance of the mathematics courses in the engineering curriculum, it is paramount to ensure their currency with respect to the Industry 4.0.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f6b85ab4-dbfc-4e72-b2e5-35aad8ef766e",
+        "metadata": {},
+        "text": "The technological advances over the last decade have created demand for more computationally pro\ufb01cient experts. To meet this demand, numerical computing must become a core part of engineering studies. Mathematics courses offer a natural and convenient avenue for introducing numerical computing to engineering students. There are two main fac- tors that make mathematics courses particularly amenable to numerical computing. First, in many cases mathematical problems have numerical solutions. For instance, \ufb01nding the root of a polynomial or the minimum value of a function can be done numerically. Therefore, it is both logical and",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6d7b2a89-f0c8-4dae-ad2c-919699df33cf",
+        "metadata": {},
+        "text": "appropriate to apply numerical computing to mathematical problems. Second, mathematics courses are usually taken at the beginning of the study plan. Thus, students become acquainted with numerical computing at an early stage. The computing and programming skills acquired in this manner will have a positive effect in the more advanced, downstream engineering courses.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4420c329-a223-4bbf-b753-4cd2273ac1ba",
+        "metadata": {},
+        "text": "The key idea for the proposed curriculum update is the addition of computing tutorials (labs) to mathematics courses. In particular, we propose adding weekly computing tutorials (labs) related to the main lecture material. For instance, in the week in which students cover \ufb01nding the extreme values of a function, there will be a computing tutorial where students the gradient descent algorithm. The learn and implement suggested length of each tutorial is enough is 1 hour. It time to implement most of the numerical algorithms at the undergraduate level. At the same time, 1 extra hour per week will not overburden the students.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "650668ac-b5ea-481d-9dda-3db51f7419ca",
+        "metadata": {},
+        "text": "The exact details of numerical computing content is left for individual universities and instructors. Depending on the syllabus and course learning outcomes, the numerical com- puting labs will be different for each university and instructor. Nevertheless, the general ideas will be broadly similar across different curricula. To illustrate the proposed numerical com- puting content, we will focus on the three main concept in calculus: limits, derivatives, and integrals.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e1b008cb-8e72-4909-a920-e0ca8998be67",
+        "metadata": {},
+        "text": "A. Limits",
+        "type": "Title"
+    },
+    {
+        "element_id": "f88b616f-212f-492a-af48-4b2c7eddb081",
+        "metadata": {},
+        "text": "Limit is a fundamental concept in calculus. Students are usually taught to calculate limits using analytical approaches. Although analytical approaches work well, there is no single universal rule for calculating limits. On the other hand, in most cases, limits can be calculated numerically using essentially the same approach. To illustrate, suppose we want to calculate limx\u2192a+ f (x). Then we can loop for k = 0 to n and calculate f (a+ 10\u2212k). As k increases, a+ 10\u2212k approaches a, so f (a+ 10\u2212k) will, in most cases, approach the limit value. We can deduce the limit by observing the values of f (a + 10\u2212k) or determine that the limit does not exist if there is no pattern of convergence. The value of n can be chosen manually or using a stopping criterion. For instance, the algorithm may continue to iterate until the difference between consecutive values of f (a + 10\u2212k) is below a certain threshold. The value of the limit can also be deduced automatically based on the values of f (a + 10\u2212k) using various heuristics.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b7e60186-b270-4426-b923-766440776d2a",
+        "metadata": {},
+        "text": "Another common limit problem is limx\u2192\u221e f (x). In this case, we can loop for k = 0 to n and calculate f (10k). As k increases, 10k approaches \u221e, so f (10k) will, in most cases, approach the limit value. Then the limit can be determined based on the values of f (10k). Various extensions and cus- tomizations of this basic approach can be made. For instance, to avoid issues with periodic functions f (10k + \u01ebk), where \u01ebk are randomly generated, can be used. Other values than 10k can also be used as long as the sequence approaches in\ufb01nity. A degree of automization can be introduced using different heuristics.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c27eab5b-6585-490f-b10a-a802755365ec",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "a4df6198-5755-4c1f-a9cd-a97755f6b77b",
+        "metadata": {},
+        "text": "B. Derivative",
+        "type": "Title"
+    },
+    {
+        "element_id": "e9e756d0-d69c-4eb3-936b-7fd3fb89fb0a",
+        "metadata": {},
+        "text": "Derivative is arguably the most important concept in cal- culus. There exist several rules such as the power rule, the product rule, the chain rule, and others to \ufb01nd the derivative of a function by hand. However, manual differentiation may be cumbersome when dealing with complex function. On the other hand, calculating the derivative at a point numerically is relatively straightforward. To illustrate, suppose that we want to calculate f \u2032(a). Recall that",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d0cad5bb-d87d-4e11-a521-c5e61eb46054",
+        "metadata": {},
+        "text": "f \u2032",
+        "type": "Title"
+    },
+    {
+        "element_id": "1df90b54-9c15-41e5-b1ba-b26c8fe6be1e",
+        "metadata": {},
+        "text": "(a) = lim x\u2192a",
+        "type": "Title"
+    },
+    {
+        "element_id": "459f1450-67e3-41be-919b-67dabc555417",
+        "metadata": {},
+        "text": "f (a + h) \u2212 f (a) h",
+        "type": "Title"
+    },
+    {
+        "element_id": "db0251f4-f646-4b97-83f7-170f35d273c9",
+        "metadata": {},
+        "text": ".",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "b7ce2db4-f12f-4c32-8c76-e783b6f83714",
+        "metadata": {},
+        "text": "Therefore, to calculate f \u2032(a) numerically we use the same approach as with the limits. In particular, we can loop for k = 0 to n and calculate f (a+10 . Then the limit, and by extension the derivative, can be deduced (approximated) based on the calculated values. The accuracy of the approximation depends in large part on the value of n.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "53a1a816-8a9b-4e10-84bb-4eab98b44116",
+        "metadata": {},
+        "text": "\u2212k",
+        "type": "Title"
+    },
+    {
+        "element_id": "1f17dd98-6397-4baa-af23-a44d043aa7f5",
+        "metadata": {},
+        "text": ")\u2212f (a)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "8261591d-7eba-4c8d-ab50-58557fe6d6d3",
+        "metadata": {},
+        "text": "10\u2212k",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "98e66294-2db0-4dec-a7c8-08d064a9331f",
+        "metadata": {},
+        "text": "One of the most important applications of the derivative is \ufb01nding the extreme values of a function. Traditionally, this is done by \ufb01rst \ufb01nding the critical points of the function and then applying the second derivative test. However, \ufb01nding the critical points is not always possible, so numerical approaches can be used in such cases. The most popular numerical approach for \ufb01nding the extreme values is based on the gradient descent (ascent) algorithm. In gradient descent, the optimal value of x is iteratively updated based on the gradient. In particular, for k = 0 to n, the updated optimal value of x is given by",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d65aeff8-6925-49a9-a854-32a413482082",
+        "metadata": {},
+        "text": "xk+1 = xk \u2212 \u03b1\u2207f (xk),",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "4dc4e2d8-bd41-4465-ab8c-74af8fd8be0f",
+        "metadata": {},
+        "text": "where \u2207f (x) is the gradient and \u03b1 is the step size. In the case of a single-variable function, the gradient equals simply to the derivative \u2207f (x) = f \u2032(x). The step size \u03b1 can be either \ufb01xed or dynamic. While a large value of \u03b1 accelerates the convergence at the beginning, it may hurt the convergence in the region near the optimal value.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6b2c68b7-2e17-41d5-8258-7c148f1ad564",
+        "metadata": {},
+        "text": "There exist several extensions of the basic gradient descent algorithm. One such extension is gradient descent with mo- mentum which uses the second derivative to anticipate the location of the next optimal point and thus accelerates the convergence.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "35db1664-4cf8-4bef-bad0-a9a70514e1dc",
+        "metadata": {},
+        "text": "C. Integrals",
+        "type": "Title"
+    },
+    {
+        "element_id": "af6657a0-b1e6-49a7-966e-07b7215d500c",
+        "metadata": {},
+        "text": "Integration is an important concept in engineering mathe- matics. Although there exist a number of rules for \ufb01nding the integral, it is signi\ufb01cantly more challenging than differentia- tion. Moreover, in many cases, the inde\ufb01nite integral does not even exist. Therefore, numerical approaches are particularly useful for integration.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a06f5a7b-176f-4c06-a886-5393d13ed7ae",
+        "metadata": {},
+        "text": "To illustrate the application of numerical integration, sup- b a f (x) dx. There exist several pose that we want to calculate numerical methods for calculating the integral. One simple R method is based on the Riemann sums. The interval [a, b] is divided into n equal subintervals with endpoints x0, x1, ..., xn. Let \u03b4 = xk+1 \u2212 xk be the length of each subinterval. Then the",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f73e39cd-3938-4f0b-a538-9e7d131157e4",
+        "metadata": {},
+        "text": "(1)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1c01b5fa-4b5a-40f2-9467-c812ae9732dd",
+        "metadata": {},
+        "text": "(2)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1620d681-8f52-46f0-98df-45b3186dc30f",
+        "metadata": {},
+        "text": "n k=1 f (xk). The Riemann",
+        "type": "Title"
+    },
+    {
+        "element_id": "bd27fb75-fc12-42c8-8d9f-385b7032e80c",
+        "metadata": {},
+        "text": "right Riemann sum is de\ufb01ned as \u03b4 sum provides an approximation of the integral. Indeed,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6114c969-5749-4b0b-b1a1-846eacb607f3",
+        "metadata": {},
+        "text": "P",
+        "type": "Title"
+    },
+    {
+        "element_id": "e17e0b4c-420e-4d59-bf48-8052ec98b55a",
+        "metadata": {},
+        "text": "b",
+        "type": "Title"
+    },
+    {
+        "element_id": "2d97c186-7532-4f96-96ec-7ed849e39747",
+        "metadata": {},
+        "text": "n",
+        "type": "Title"
+    },
+    {
+        "element_id": "46fc56ab-674b-4cc3-ac5f-ece682b5aabf",
+        "metadata": {},
+        "text": "Z a",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "29d01cf2-9f30-4ff3-9aa9-9a428e50379a",
+        "metadata": {},
+        "text": "f (x) dx = lim n\u2192\u221e",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "22f26457-5301-4f56-bcee-0caa8656b253",
+        "metadata": {},
+        "text": "\u03b4",
+        "type": "Title"
+    },
+    {
+        "element_id": "68fb8d13-8e93-49bf-bb1f-a2fee0b9fb51",
+        "metadata": {},
+        "text": "Xk=1",
+        "type": "Title"
+    },
+    {
+        "element_id": "232fcd85-fe75-4f7c-9e39-05638906acf0",
+        "metadata": {},
+        "text": "f (xk).",
+        "type": "Title"
+    },
+    {
+        "element_id": "3b99eb2a-6acd-4400-b08e-e2b30fa27507",
+        "metadata": {},
+        "text": "(3)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9feaf6f4-c106-478e-8649-0aa0226360fb",
+        "metadata": {},
+        "text": "The Riemann sums can be quickly calculated on a computer providing a simple, yet effective approach to calculating integrals numerically. Other popular integral approximation methods include the trapezoid rule and the Simpson\u2019s rule.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "def43492-d50e-463d-bb5d-a6ce096006c4",
+        "metadata": {},
+        "text": "D. Additional considerations",
+        "type": "Title"
+    },
+    {
+        "element_id": "a5f7d96b-b1ff-449a-8aef-b1eebcde345d",
+        "metadata": {},
+        "text": "The above discussion about numerical methods for cal- culating limits, derivatives, and integrals is easily extended to \ufb01nd the partial to multivariate calculus. For instance, derivative fx(a, b), we can loop for k = 0 to n and calculate f (a+10 . Many problems related to sequences and series can similarly be solved using numerical techniques. In particular, the convergence of a series can be deduced from its partial sums. By calculating the partial sums on the computer and observing the results, we can intuit the nature of the series. Vectorization is an important aspect of numerical com- puting. Since the modern computer chips are optimized for matrix multiplication, it is more ef\ufb01cient to employ vector operations. In particular, some algorithms based on for-loops can be converted into vector operations resulting in higher ef\ufb01ciency and speed. For instance, the Riemann sum can be calculated with a single vector operation:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ee3b178b-4629-40cc-a630-baed63409784",
+        "metadata": {},
+        "text": "\u2212k",
+        "type": "Title"
+    },
+    {
+        "element_id": "bf84f88c-2778-4276-beae-5b578a456e57",
+        "metadata": {},
+        "text": ",b)\u2212f (a,b)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "036e4d0b-e361-4f0c-897f-d8aa90936d96",
+        "metadata": {},
+        "text": "10\u2212k",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1829d83d-1f42-4cd4-a422-f37f644bdf46",
+        "metadata": {},
+        "text": "n",
+        "type": "Title"
+    },
+    {
+        "element_id": "01b14a8e-ef88-440b-b337-0bd190048ebb",
+        "metadata": {},
+        "text": "\u03b4",
+        "type": "Title"
+    },
+    {
+        "element_id": "0a78ceae-f85e-49b0-9ddb-b5942e5e31d8",
+        "metadata": {},
+        "text": "Xk=1",
+        "type": "Title"
+    },
+    {
+        "element_id": "ee08935c-3e98-48f4-98b3-e2182a26b0e6",
+        "metadata": {},
+        "text": "f (xk) = \u03b4S",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6fe2ea8e-dd65-4535-9bab-be466fe447b6",
+        "metadata": {},
+        "text": "f (x) , (cid:1) (cid:0)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7d6a8f53-6daf-46ff-8ae3-6e2f41e2612b",
+        "metadata": {},
+        "text": "(4)",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "f04e1aa5-acb6-4fb8-9439-557af6653de6",
+        "metadata": {},
+        "text": "where x = [x1, ..., xn] is the vector of endpoints, f (x) is a vectorized function operation, and S is the vector func- tion which returns the sum of all the coordinates. Similarly, limit calculations can be vectorized and made more ef\ufb01cient. Vectorization is also useful in multi-variate calculus, where operations can be performed on a vector of variables.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f1eda13d-0bff-427a-b952-20038e676cba",
+        "metadata": {},
+        "text": "The choice of the programming language for numerical computing requires careful consideration. There are several suitable candidates for this purpose including Python, Java, C++, Matlab, and others. Based on our experience with different programming languages, we recommend the use of Python. Python is currently the most popular programming language on the planet. It has a simple and intuitive syntax making it easy to learn and apply. Python has libraries to \ufb01t any purpose including an extensive collection of libraries related to numerical computing. The basic Python libraries related to computing are NumPy, SciPy, and SymPy. More advanced packages such as OR-Tools are also available for optimization tasks. Since Python is a universal programming language, it can be used for almost any task. Thus, students who learn Python in their mathematics courses can employ it in their other courses. In addition, numerical computing implemented in Python can be connected to other applications.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "70901ffb-062e-4c6a-a228-ddca49b857f6",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "dc46c23d-9d3a-4161-b803-1f4c2085c09f",
+        "metadata": {},
+        "text": "V. CONCLUSION",
+        "type": "Title"
+    },
+    {
+        "element_id": "121aa251-d76f-4ed0-a100-ce19d1edf69f",
+        "metadata": {},
+        "text": "Although the classical approach to teaching mathematics is still relevant for certain student cohorts, it is outdated for engineering students. Modern engineering is increasingly re- liant on computing [9], [22]. Therefore, universities must equip the student with appropriate computing skills. In particular, mathematics courses must be revised to include numerical computing content.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b1900a59-1da1-44bc-83bb-44dfa25ac9d3",
+        "metadata": {},
+        "text": "Given the ef\ufb01ciency of computer-based calculations, numer- ical computing provides a convenient approach to problem solving in engineering mathematics. It can be integrated into the existing curriculum with little hassle and cost. In this paper, we proposed a framework for integrating numerical computing into the existing mathematics curriculum. We demonstrated how numerical approaches can be used some of the most common problems encountered in calculus. The proposed framework can be customized by individual universities to \ufb01t their special needs.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d6f67c20-cbca-4f31-85e4-b48d15436445",
+        "metadata": {},
+        "text": "REFERENCES",
+        "type": "Title"
+    },
+    {
+        "element_id": "2f2e8e11-54be-4f22-84ef-339fcf1265a2",
+        "metadata": {},
+        "text": "[1] Abdul Majid, M., Huneiti, Z., Balachandran, W., & Al-Naafa, M. A. (2012) A study of the effects of using MATLAB as a pedagogical tool for engineering mathematics students. 15th International Conference on Interactive Collaborative Learning (ICL), 10.1109/ICL.2012.6402183, Villach, Austria.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "197c99b9-6904-4be9-afb7-836c08b70443",
+        "metadata": {},
+        "text": "[2] Abdul Majid, M., Huneiti, Z. A., Balachandran, W., & Balarabe, Y. (2013) MATLAB as a teaching and learning tool for Mathematics: A literature review. International Journal of Arts and Sciences, 6(3), 23-44. [3] Brake, M. L. (2007) MATLAB as a Tool to Increase the Math Self- Con\ufb01dence and the Math Ability of First-Year Engineering Technology Students. The Scholarship of Teaching and Learning at EMU: Vol. 1, Article 5.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0df843b1-226a-43a8-bd6e-d39bec277336",
+        "metadata": {},
+        "text": "[4] Chen, J., Kolmos, A., & Du, X. (2021). Forms of implementation and challenges of PBL in engineering education: a review of literature. European Journal of Engineering Education, 46(1), 90-115.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ec11154d-e73c-42de-9dfe-1468c1869280",
+        "metadata": {},
+        "text": "[5] Cretchley, P., Harman, C., Ellerton, N., & Fogarty, G. (2000) MATLAB in Early Undergraduate Mathematics: An investigation into the Effects of Scienti\ufb01c Software on Learning. Mathematics Education Research Journal, 12(3), 219-233.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b0195609-1235-4999-af23-3d342634fa75",
+        "metadata": {},
+        "text": "[6] Hadgraft, R. G., & Kolmos, A. (2020). Emerging learning environments in engineering education. Australasian Journal of Engineering Educa- tion, 25(1), 3-16.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8d62fa73-946b-430a-b167-a4dd2f1cc829",
+        "metadata": {},
+        "text": "[7] Hernandez-de-Menendez, M., & Morales-Menendez, R. (2019). Tech- nological innovations and practices in engineering education: a review. International Journal on Interactive Design and Manufacturing (IJIDeM), 13(2), 713-728.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "87966768-5625-4bc0-b35f-f8d893c217c5",
+        "metadata": {},
+        "text": "[8] Hern\u00b4andez-de-Men\u00b4endez, M., Guevara, A. V., Mart\u00b4\u0131nez, J. C. T., Alc\u00b4antara, D. H., & Morales-Menendez, R. (2019). Active learning in engineering education. A review of fundamentals, best practices and ex- periences. International Journal on Interactive Design and Manufacturing (IJIDeM), 13(3), 909-922.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a7d1a6c1-828a-470b-8129-2efba2d9f93f",
+        "metadata": {},
+        "text": "[9] Kamalov, F., Moussa, S., Zgheib, R., & Mashaal, O. (2020, December). Feature selection for intrusion detection systems. In 2020 13th Interna- tional Symposium on Computational Intelligence and Design (ISCID) (pp. 265-269). IEEE.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b71f38bd-823f-4832-a13a-8b74ff7eb7ab",
+        "metadata": {},
+        "text": "[10] Kamalov, F., Sulieman, H., & Santandreu Calonge, D. (2021). Machine learning based approach to exam cheating detection. Plos one, 16(8), e0254340.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f5378af9-03ec-4c5c-b6e0-bf188f54ae71",
+        "metadata": {},
+        "text": "[11] Kilicman, A., Hassan, M. A., & Said Husain, S. K. (2010) Teaching and Learning using Mathematics Software \u2019The New Challenge\u2019. Procedia Social and Behavioral Sciences, 8, 613-619.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3ad427bf-ab7b-47bd-89c4-4c3a2a2e3840",
+        "metadata": {},
+        "text": "[12] Lorenz, M., R\u00a8u\u00dfmann, M., Strack, R., Lueth, K. L., & Bolle, M. (2015). Man and machine in industry 4.0: How will technology transform the industrial workforce through 2025. The Boston Consulting Group, 2.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cdca5dac-bf7a-40b2-86a8-2af525cfb5aa",
+        "metadata": {},
+        "text": "[13] Maur\u00b4\u0131cio, R. D. A., Veado, L., Moreira, R. T., Figueiredo, E., & Costa, H. (2018). A systematic mapping study on game-related methods for software engineering education. Information and software technology, 95, 201-218.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "0ec4823f-5239-4509-95d5-b210e07c3a5b",
+        "metadata": {},
+        "text": "[14] Mezhennaya, N. M. & Pugachev, O. V. (2019) On perception of computer algebra systems and microsoft excel by engineering students. Problems on Education in the 21st Century, 77(3), 379-395.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2f169576-6f26-4e88-ae22-a2e176cd1c6a",
+        "metadata": {},
+        "text": "[15] Miranda, J., Navarrete, C., Noguez, J., Molina-Espinosa, J. M., Ram\u00b4\u0131rez- Montoya, M. S., Navarro-Tuch, S. A., ... & Molina, A. (2021). The core components of education 4.0 in higher education: Three case studies in engineering education. Computers & Electrical Engineering, 93, 107278. [16] Moore, K., & Frazier, R. S. (2017). Engineering education for generation Z. American Journal of Engineering Education (AJEE), 8(2), 111-126. [17] Ortiz-Rojas, M., Chiluiza, K., & Valcke, M. (2019). Gami\ufb01cation through leaderboards: An empirical study in engineering education. Computer Applications in Engineering Education, 27(4), 777-788. [18] Puhak, R. I. (2011). Teaching applied Calculus utilizing MATLAB, Proceedings of the Twenty-Third Annual International Conference on Technology in Collegiate Mathematics, ISBN 0-321-68984-4, Copyright (C) 2012 by Pearson Education, Inc.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1c6706fe-a788-4d7f-8ce0-e71fe03d5212",
+        "metadata": {},
+        "text": "[19] Ramirez-Mendoza, R. A., Morales-Menendez, R., Iqbal, H., & Parra- Saldivar, R. (2018, April). Engineering Education 4.0:\u2014proposal for a new Curricula. In 2018 IEEE Global Engineering Education Conference (EDUCON) (pp. 1273-1282). IEEE.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f1a263c6-832e-4c42-a17b-97b57d77df52",
+        "metadata": {},
+        "text": "[20] Salah, B., Abidi, M. H., Mian, S. H., Krid, M., Alkhalefah, H., & Abdo, A. (2019). Virtual reality-based engineering education to enhance manufacturing sustainability in industry 4.0. Sustainability, 11(5), 1477. [21] Strayhorn, T. L. (2006). College in the information age: Gains associated with students\u2019 use of technology. Journal of Interactive Online Learning, 5(2), 143-155.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cdb29bab-3dee-4290-8208-0224b6ddde7c",
+        "metadata": {},
+        "text": "[22] Thabtah, F., Kamalov, F., & Rajab, K. (2018). A new computational intelligence approach to detect autistic features for autism screening. International journal of medical informatics, 117, 112-124.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "43eaed45-8002-442e-9c06-44c80ea72c9a",
+        "metadata": {},
+        "text": "[23] Van den Beemt, A., MacLeod, M., Van der Veen, J., Van de Ven, A., van Baalen, S., Klaassen, R., & Boon, M. (2020). Interdisciplinary engineering education: A review of vision, teaching, and support. Journal of engineering education, 109(3), 508-555.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ede40b70-331b-4afd-97c4-b65d6ee46d16",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    }
+]

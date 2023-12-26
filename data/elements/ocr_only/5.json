@@ -1,0 +1,530 @@
+[
+    {
+        "element_id": "5229b964-74d8-4371-a10b-e6b6d265098c",
+        "metadata": {},
+        "text": "Check for updates.",
+        "type": "Title"
+    },
+    {
+        "element_id": "597b96b7-4ae5-4cd4-ab12-fc236f584326",
+        "metadata": {},
+        "text": "2020 IEEE/ACM 42nd International Conference on Software Engineering Workshops (ICSEW)",
+        "type": "Title"
+    },
+    {
+        "element_id": "bfa33142-fc70-442e-8c7b-ddbf068f1d17",
+        "metadata": {},
+        "text": "Towards a Quantum Software Modeling Language",
+        "type": "Title"
+    },
+    {
+        "element_id": "f2d773b9-dbc0-4214-8ab0-8edd98c8b6d9",
+        "metadata": {},
+        "text": "Carlos A. P\u00e9rez-Delgado* University of Kent Canterbury, Kent, United Kingdom c.perez@kent.ac.uk",
+        "type": "Title"
+    },
+    {
+        "element_id": "130e052c-5ad9-4520-af20-0b29d953b351",
+        "metadata": {},
+        "text": "ABSTRACT",
+        "type": "Title"
+    },
+    {
+        "element_id": "2257d59d-1906-4c11-9af1-0b37a8360f0d",
+        "metadata": {},
+        "text": "We set down the principles behind a modeling language for quan- tum software. We present a minimal set of extensions to the well- known Unified Modeling Language (UML) that allows it to effec- tively model quantum software. These extensions are separate and independent of UML as a whole. As such they can be used to ex- tend any other software modeling language, or as a basis for a completely new language. We argue that these extensions are both necessary and sufficient to model, abstractly, any piece of quantum software. Finally, we provide a small set of examples that showcase the effectiveness of the extension set.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "f5ad73ff-7d17-40ee-9ca7-a3345075401a",
+        "metadata": {},
+        "text": "CCS CONCEPTS",
+        "type": "Title"
+    },
+    {
+        "element_id": "283386f2-a079-4008-8e75-0b0a033fbb94",
+        "metadata": {},
+        "text": "+ General and reference \u2014 General conference proceedings; Design; + Software and its engineering \u2014> System descrip- tion languages; Unified Modeling Language (UML); Software design engineering; - Theory of computation \u2014 Quantum computation theory; Quantum information theory.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "946b937d-c60e-410f-b19d-2cb1cc8638f0",
+        "metadata": {},
+        "text": "KEYWORDS quantum computing, software engineering, UML",
+        "type": "Title"
+    },
+    {
+        "element_id": "e41eda66-d7ce-4285-afff-6c9307aa2014",
+        "metadata": {},
+        "text": "ACM Reference Format:",
+        "type": "Title"
+    },
+    {
+        "element_id": "adcaf396-1761-436d-a300-a2e8f63904bb",
+        "metadata": {},
+        "text": "Carlos A. P\u00e9rez-Delgado and Hector G. Perez-Gonzalez. 2020. Towards a Quantum Software Modeling Language. In IEEE/ACM 42nd International Conference on Software Engineering Workshops (ICSEW\u201920), May 23-29, 2020, Seoul, Republic of Korea. ACM, New York, NY, USA, 3 pages. https://doi.org/ 10.1145/3387940.3392183",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7720f1ef-403c-431b-a842-0cf7f5e9f3d0",
+        "metadata": {},
+        "text": "1 INTRODUCTION",
+        "type": "Title"
+    },
+    {
+        "element_id": "a88b340f-830d-4815-b669-2f8d98d535c4",
+        "metadata": {},
+        "text": "Quantum computation rose to prominence after the discovery of quantum algorithms[5, 7] that can efficiently perform tasks that are intractable classically. These discoveries propelled research and interest in quantum computation. Today, there exists prototype quantum hardware with computational capabilities beyond that of any classical machine[1]. Further applications of quantum theory to computation have also been made in several areas of theory of computing, such as models of computation[6], data structures[8], and cryptography[2].",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "87335b50-59d9-47b9-9c11-292dcb546ef1",
+        "metadata": {},
+        "text": "\u201cBoth authors contributed equally to this research.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d4a2cd57-d374-463a-b2ae-f321246f5d3a",
+        "metadata": {},
+        "text": "Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than the author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "07e97592-2496-413d-80f7-3046ddaf791d",
+        "metadata": {},
+        "text": "ICSEW\u201920, May 23-29, 2020, Seoul, Republic of Korea",
+        "type": "Title"
+    },
+    {
+        "element_id": "2962eaa8-74d6-47a0-9a02-c3b0e853089f",
+        "metadata": {},
+        "text": "\u00a9 2020 Copyright held by the owner/author(s). Publication rights licensed to ACM. ACM ISBN 978-1-4503-7963-2/20/05...$15.00 https://doi.org/10.1145/3387940.3392183",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "2023eb4a-918c-4836-87bd-d32f9beb47f3",
+        "metadata": {},
+        "text": "442",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "9d08f583-c256-4d71-98e0-7943d760fce1",
+        "metadata": {},
+        "text": "Hector G. Perez-Gonzalez Universidad Autonoma de San Luis Potosi San Luis Potosi, SLP, M\u00e9xico hectorgerardo@uaslp.mx",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c689bf5e-723d-49b6-8ab5-c7662c59ef05",
+        "metadata": {},
+        "text": "Quantum computation has, until today, been studied almost exclusively \u2018in the small\u2019 A general understanding of quantum computation, or, quantum programming \u2018in the large\u2019 is yet to be developed. Here we aim to set the foundations of a general frame- work for studying, developing, and conveying quantum programs. We aim to do so by developing a universal modeling language for quantum software. Rather than develop such a language from scratch, we have decided to start from the well-known Unified Modeling Language (UML)[3], and introduce a minimum set of extensions that allow it to effectively model quantum software.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6050e025-e96f-4421-b43b-7ecc172bb813",
+        "metadata": {},
+        "text": "Assuming UML to be a shared common-language upon which we can build, allows us to convey our original extensions much more succinctly. Our extension set can, however, be applied with little or no modification to any other modeling language.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b78ecef8-4992-47c6-824e-8e1a4f02e0e7",
+        "metadata": {},
+        "text": "2 Q-UML",
+        "type": "Title"
+    },
+    {
+        "element_id": "9ed524c2-dc4e-4856-aa69-378fe098465f",
+        "metadata": {},
+        "text": "Before discussing in depth the extensions we are introducing, we make a few fundamental observations on which we base the guiding principles for our extension set.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "6fc5ac0a-002b-4c38-9a91-f50ee46ef3bb",
+        "metadata": {},
+        "text": "Our first observation is about the nature of quantum computa- tion. The central difference between quantum and classical com- putation is in how it achieves its goals. Quantum computers have access to quantum algorithms[7], and quantum data-structures[8], that are unavailable to classical computers\u2014hence their perfor- mance advantage. Algorithms and data-structures are, however, implementation details. Algorithms are an essential design choice while programming in the small. However, they are more often than not completely ignored in large-scale software architectural design. For instance, UML diagrams seldom portray algorithms an data-structures beyond a very high-level design perspective.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4b059e28-02ab-496d-a5a3-a5ae1ca98483",
+        "metadata": {},
+        "text": "It would seem then that quantum computation introduces noth- ing to computation that needs to be captured in a software design diagram. This is not the case, and the reason for this is our secon observation. Quantum computation changes the very nature of in- formation itself. Quantum information is much richer than classical information. It is also much more challenging to store, transmit, and receive. If a module (class, object, etc.) needs to store, transmit or receive quantum information, then this is an important design consideration\u2014which needs to be included in any effective software design.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9d108c17-52f8-4c25-9074-39fd463a1d5b",
+        "metadata": {},
+        "text": "A third observation here is that the classical vs. quantum nature of the information used by a module is an important consideration both when discussing its internal implementation and its interface. Furthermore, these two are separate and independent considera- tions.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1b4c82f7-826b-48cb-b78e-7f350929418a",
+        "metadata": {},
+        "text": "A classical module, implementing some classical behavior, would have no need, or capability, to communicate quantum data. A quan- tum module may or may not have to; i.e. a module\u2019s quantum behavior may be completely part of its internal implementation",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a7dc8eda-9148-4e5e-a71f-6718caf8a30d",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "fc2c6b73-912f-42e7-9a2a-b2467796da55",
+        "metadata": {},
+        "text": "and not appear as part of its interface. For instance, take a module implementing Shor\u2019s algorithm. Shor\u2019s algorithm uses quantum effects to efficiently factor a large integer into its prime factors. The implementation of this module must necessarily be quantum. Both the input (the large integer) and the output (the prime factors), consist of classical information. And hence, the interface of such a module can be strictly classical.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c939665a-2097-4164-affa-31c58422692b",
+        "metadata": {},
+        "text": "More generally, we can conceive of quantum software modules that have all classical inputs and outputs (like the above example), all quantum inputs and outputs, or a mix of both. A quantum soft- ware design must address, for each individual interface element, whether it is classical input/output, or if it is quantum. In short, whether a module communicates classically or via quantum infor- mation, and whether its internal implementation requires quantum hardware are important considerations that need to be captured in a design document.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1908f40c-e19f-4005-b34d-3b8cc3a87fea",
+        "metadata": {},
+        "text": "The importance of such labelling should be clear. Quantum data can only be stored and transmitted with special hardware designed to do so. More importantly, from an abstract, device-independent, strictly software perspective: quantum and classical information are not interchangeable. Classical information is clone-able and admits fanout operations, while quantum information (in general) does not. On the other hand, quantum information has a much larger state-space.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "94efe2fd-a93d-4069-a510-3fab836c7da5",
+        "metadata": {},
+        "text": "Finally, it is true that quantum information is strictly a super-set of classical information\u2014and hence a quantum module can commu- nicate any classical information it desires using a quantum interface element. We argue, however, that using a quantum interface ele- ment and messaging when classical would suffice is bad quantum software design, for the reasons stated above.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "89c7cf05-c1e1-495e-a18e-784922e9dd4b",
+        "metadata": {},
+        "text": "In summary, the guiding principles behind any quantum software modeling language must include the following:",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "faef0901-b859-4f9d-a649-db368e2acf25",
+        "metadata": {},
+        "text": "(1) (Quantum Classes): Whenever a software module makes use of quantum information, either as part of its internal state/implementation, or as part of its interface, this must be clearly established in a design document.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "06044bc3-a2c3-46ad-9e2d-27913c59a414",
+        "metadata": {},
+        "text": "(2) (Quantum Elements): Each module interface element (e.g. public functions/methods, public variables) and internal state variables can be either classical or quantum, and must be labelled accordingly.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "091033b1-1d45-4eb0-8734-c82d597be5eb",
+        "metadata": {},
+        "text": "(a) (Quantum Variables): Each variable should be labelled as classical or quantum. If the model represents data types, the variables should also specify the classical (e.g. integer, string) or quantum (e.g. qubit, qubit array, quantum graph state) data type,",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "ebb2b7ed-1d57-4bfd-9471-3ec3679faa36",
+        "metadata": {},
+        "text": "(b) (Quantum Operations): For each operation, both the in- put and output should be clearly labelled as either classical or quantum. Whether the operation internally operates quantumly should also be labelled.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d88beafb-bae4-4b51-9a45-ee9296d61e2f",
+        "metadata": {},
+        "text": "(3) (Quantum Supremacy): A module that has at least one quantum element is to be considered a quantum software module, otherwise it is a classical module. Quantum and classical modules should be clearly labelled as such.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3834b53d-0b5e-4b9a-8e38-5e9c908ffca8",
+        "metadata": {},
+        "text": "(4) (Quantum Aggregation): Any module that is composed of one or more quantum modules will itself be considered a quantum module, and must be labelled as such.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "a464a3af-8cdb-4c40-99ea-c12c295221b9",
+        "metadata": {},
+        "text": "(5) (Quantum Communication): Quantum and classical mod- ules can communicate with each other as long as their inter- faces are compatible, i.e. the quantum module has classical inputs and/or outputs that can interface with the classical module.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "b0fec367-4326-43e4-a83d-906d83322cf9",
+        "metadata": {},
+        "text": "We will argue in Sec. 2.3 how these extensions are not only nec- essary, but also sufficient in order to design and represent quantum software. First, in the following two sections we put these principles into practice as a set of concrete extensions to UML.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "12df695b-9279-4eca-83b8-adf655b3a1c9",
+        "metadata": {},
+        "text": "2.1 Class Diagram Extensions",
+        "type": "Title"
+    },
+    {
+        "element_id": "20df5013-68b1-4970-b676-07df26161e95",
+        "metadata": {},
+        "text": "UML is a very graphical language, meant to convey a lot of meaning in a very small amount of space. As such, it makes sense to use a graphical way to represent quantum software elements. We chose to do this by use of bold text to denote quantum elements, and double",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1ad00668-9fae-4155-ade0-f131f2557629",
+        "metadata": {},
+        "text": "lines to denote a quantum relationship or quantum communication. ShorApplication -N\u00e9int start) Euclidian QFT -aValue:int -piqint -bValuesint",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3ae9ed2c-ee35-4d4a-8237-a32d9be33cab",
+        "metadata": {},
+        "text": "++get-QFT-0> 0) : gint",
+        "type": "Title"
+    },
+    {
+        "element_id": "9b09ef46-ec9a-42cf-be04-57fefa4d4799",
+        "metadata": {},
+        "text": "on +evaluateGCD() SEMA PED",
+        "type": "Title"
+    },
+    {
+        "element_id": "a5901387-87b7-411a-a5ca-76c78b7a97ed",
+        "metadata": {},
+        "text": "Performs a quantum",
+        "type": "Title"
+    },
+    {
+        "element_id": "7c398d0d-4506-46b5-9c07-f3387929c49b",
+        "metadata": {},
+        "text": "ShorFactor | Get the greatest Fourier transform on,",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "c3726dbe-573a-4608-9b7f-88a5875e2ce4",
+        "metadata": {},
+        "text": "Oo\u2014 common factor (GCD) the input state over the",
+        "type": "Title"
+    },
+    {
+        "element_id": "aabd1133-8343-4f9f-9102-3cdc308d0f8e",
+        "metadata": {},
+        "text": "Ncint of aValue and bValue group G. The group is set by subclass. +actor():int ShorOrder Given an integer N, 1 find one of its prime -N:int QFT_n factors. Naan -acint 1 torderFind():int (Q@\u2014",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "707f0bf8-a4d4-488f-9e67-5600396a303a",
+        "metadata": {},
+        "text": "Performs a quantum whe tesa Fasiengemt man positive integer such the input state over the that a\u2019r = 1 mod N. CEEDERER)",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "8e421f5b-a8c1-4e29-82e7-ef5f3d945c8c",
+        "metadata": {},
+        "text": "Figure 1: Q-UML class diagram of Shor\u2019s Algorithm. Quan- tum classes and interface elements are presented in bold text, and quantum relationships use double-lines.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "1f677351-208a-4dcf-87ad-82b591e2d628",
+        "metadata": {},
+        "text": "For attributes, the name will be bold if it is represented using quantum information. For methods, we use the following conven- tion. If any of the inputs are quantum, these are bold. If the output or datatype of the method is quantum, then the datatype should also be bold. For backwards compatibility with regular UML, whenever the input or output datatypes of a method are omitted, these will be assumed to be classical in nature. If a class/object has any quantum attributes or methods then it itself is considered quantum, and its name shall also be bold.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "36afb946-40c0-4fe4-b559-2cd7e522c9f0",
+        "metadata": {},
+        "text": "Relationships between classes will use double-lines whenever the relationship is quantum in nature. For inheritance, if the superclass is quantum then the subclass, and the inheritance relationship, will also be quantum. (the converse is not necessarily true however). In the case of aggregation and composition, if a class/object being aggregated/composed is quantum, then the class/object to which it is aggregated/composed into, as well as that relationship will",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7357afa0-1f72-4650-948b-444b5cad6092",
+        "metadata": {},
+        "text": "443",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "6444ab46-b8f1-4617-b338-df3492d1c6e4",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    },
+    {
+        "element_id": "fc983184-6e6a-4149-bfca-3f1504803547",
+        "metadata": {},
+        "text": "also be quantum. Association relationships do not have any special tules, beyond the need of a quantum class/object to have a classical interface if it is to associate with classical classes/objects.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3cae3df8-39a9-4d39-b826-e8eb6009172f",
+        "metadata": {},
+        "text": "Fig. 1 showcases a Q-UML diagram that exemplifies the above rules.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e8e6f0fb-57ba-4602-9fb2-b3085c064425",
+        "metadata": {},
+        "text": "2.2 Sequence Diagram Extensions",
+        "type": "Title"
+    },
+    {
+        "element_id": "17ca3559-e4da-43bf-a803-bff13976f438",
+        "metadata": {},
+        "text": "Sequence diagrams in UML allow us to portray the dynamic rela- tionship between modules in a software program. As we did before for static relationships, we extend the existing language in order to allow us to differentiate between classical and quantum messages. As previously discussed, this is essential information. Quantum information behaves differently from classical information; it can store/portray different data; it admits different operations; and, it requires different hardware to store, send, and receive.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dcc97e17-b530-46d6-8d03-a25a12e4eee9",
+        "metadata": {},
+        "text": "|",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "1b3ca299-b90e-4d03-b372-085dee68bfa9",
+        "metadata": {},
+        "text": "sewn \u2014>|",
+        "type": "Title"
+    },
+    {
+        "element_id": "48751807-9fa7-466b-8117-072ed6bd74f9",
+        "metadata": {},
+        "text": "coo \u2014>|",
+        "type": "Title"
+    },
+    {
+        "element_id": "a6d90c1b-20d9-47e2-a54d-d883dfac966f",
+        "metadata": {},
+        "text": "[iseeaniann-of",
+        "type": "Title"
+    },
+    {
+        "element_id": "dd0ffa89-dfe4-44e6-b82e-a94b038f4027",
+        "metadata": {},
+        "text": "Iys0ded or expfa2) #1 mod N] [Levatuxtescooe|",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9521bde4-d938-4eb3-9825-9ecde4c865e7",
+        "metadata": {},
+        "text": "aerate",
+        "type": "Title"
+    },
+    {
+        "element_id": "bdc3d012-19ee-464f-912e-1e0dc3df6152",
+        "metadata": {},
+        "text": "iteco(an) #4]",
+        "type": "Title"
+    },
+    {
+        "element_id": "13bc284a-1dc0-465f-a8a0-682a7682b166",
+        "metadata": {},
+        "text": "Figure 2: Q-UML sequence diagram of Shor\u2019s Algorithm. Quantum classes are presented in bold text, and quantum messages use double-lines.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "179a8d62-f9dc-477a-bed2-077da61b4bc0",
+        "metadata": {},
+        "text": "Like before, we make use of bold text to markup quantum mod- ules, and double lines to portray quantum messages. Fig. 2 shows a Q-UML sequence diagram. Note how even though the relationship between Shorfactor and ShorOrder is quantum, the messaging between them is not. This illustrates an important point. A module is marked as quantum if it uses quantum resources in any form, either directly as part of its internal implementation or as part of an aggregated module. If a sub-module (in UML a composed class or object) is quantum, then the encompassing module must also be marked as quantum. In a static (e.g. class) diagram, the quantum composition relationships inform us\u2014especially in the case of a seemingly classical module that does not in itself use quantum resources\u2014which composed modules are using quantum resources.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "28ff67ee-918b-470d-a943-fa3e5169e6da",
+        "metadata": {},
+        "text": "Also, note the communication between the objects ShorOrder and QFT_n. The module QFT_n operates on a quantum state. Hence, both \u2018set\u2019 messages are quantum. Likewise, the return mes- sages p and p\u2019 are quantum states. However, the request to perform a quantum Fourier transform (QFT) or a QFT inverse operation",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "3aacb5df-f384-432c-bcd9-76b6dfcb4995",
+        "metadata": {},
+        "text": "444",
+        "type": "UncategorizedText"
+    },
+    {
+        "element_id": "7e26e2e4-2072-4252-96de-85a162e5a6fa",
+        "metadata": {},
+        "text": "can (and therefore should) be communicated classically. This dia- gram showcases the level of granularity available to us using these diagrams with the proposed extensions.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "dba4227a-a648-494e-9811-de3a5405ee6d",
+        "metadata": {},
+        "text": "2.3 Discussion",
+        "type": "Title"
+    },
+    {
+        "element_id": "acc94d49-ae8b-4621-a13c-f14c515205e0",
+        "metadata": {},
+        "text": "We have proposed a minimal series of extensions to existing soft- ware modeling languages. We exemplify our additions in UML, but these extensions are easily applicable to any other modeling language, or be used as the basis for a new modeling language.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "c2d85e1a-2dba-45d7-a1d2-a62ef27e7d53",
+        "metadata": {},
+        "text": "We've argued the necessity of each of the extensions in previous sections. We can argue as well, that these extensions are not only necessary, but also sufficient to fully model quantum software. To make this argument, we appeal to the fact that all quantum computation is simulable using classical computation albeit with an efficiency loss. Other than their use of quantum information and algorithms, quantum computers are indistinct from classical ones. Hence, from a high-level design perspective, the only information element that needs to be considered when developing quantum software is when quantum (rather than classical) information is being used.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "07adebae-c8f7-4ffb-b46b-2fa46bfe4939",
+        "metadata": {},
+        "text": "The one remaining information element we have not discussed is algorithm efficiency. If quantum computation is to be used, it will most likely be due to the efficient algorithms at its disposal. That said, algorithm efficiency is not a solely quantum consider- ation. UML itself does not inherently have language elements for algorithm efficiency (beyond user-defined notes). It does, however, have several extensions used and proposed for this purpose(see e.g.[4]). Other modeling languages may also have definite algorithm efficiency elements. We argue that it is best to use existing language elements when they are available.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "7e0b4155-a9f7-44cc-a272-f0267cce1f8a",
+        "metadata": {},
+        "text": "ACKNOWLEDGMENTS",
+        "type": "Title"
+    },
+    {
+        "element_id": "ad4b5507-013e-4ef6-9393-8240937ea856",
+        "metadata": {},
+        "text": "CP-D would like to acknowledge funding through the EPSRC Quan- tum Communications Hub (EP/T001011/1). The authors would also ike to thank Joanna I. Ziembicka for useful comments during the preparation on this manuscript.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "e0ecb211-76b0-4cae-9401-52e07b0657ab",
+        "metadata": {},
+        "text": "REFERENCES",
+        "type": "Title"
+    },
+    {
+        "element_id": "c806398f-5802-401b-ba63-27bf32cf24b0",
+        "metadata": {},
+        "text": "1) Frank Arute et. al. 2019. Quantum supremacy using a programmable supercon- ducting processor. Nature 574, 7779 (2019), 505-510. https://doi.org/10.1038/ s41586-019- 1666-5",
+        "type": "ListItem"
+    },
+    {
+        "element_id": "78eca7b1-33d0-4eb4-9fdf-6dea1f37af60",
+        "metadata": {},
+        "text": "Charles H Bennett and Gilles Brassard. 2014. Quantum cryptography: public key distribution and coin tossing. Theor. Comput. Sci. 560, 12 (2014), 7-11.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "bac5e234-f9d5-4b37-b633-38670a19c36f",
+        "metadata": {},
+        "text": "Grady Booch, James Rumbaugh, and Ivar Jacobson. 2005. Unified Modeling Lan- guage User Guide, The (2nd Edition) (Addison-Wesley Object Technology Series). \u2018Addison-Wesley Professional.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "9cac2847-f68c-4e02-89da-a8a3f9ce29bb",
+        "metadata": {},
+        "text": "C. Canevet, S. Gilmore, J. Hillston, M. Prowse, and P. Stevens. 2003. Performance modelling with the Unified Modelling Language and stochastic process algebras. IEE Proceedings - Computers and Digital Techniques 150, 2 (March 2003), 107-120. https://doi.org/10.1049/ip-cdt:20030084",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "4a44cae6-11c5-471d-8f6e-2cdab04ea19e",
+        "metadata": {},
+        "text": "Lov K. Grover. 1996. A Fast Quantum Mechanical Algorithm for Database Search. In Proceedings of the Twenty-eighth Annual ACM Symposium on The- ory of Computing (STOC 96). ACM, New York, NY, USA, 212-219. _ https: /[doi.org/10.1145/237814.237866",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "d79c4936-353a-4768-81f8-82ac97267c0f",
+        "metadata": {},
+        "text": "Carlos A. P\u00e9rez-Delgado and Donny Cheung. 2007. Local unitary quantum cellular automata. Phys. Rev. A 76 (Sep 2007), 032320. Issue 3. https://doi.org/10.1103/ PhysRevA.76.032320",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "310ba594-ddb3-407f-8770-96bc9b49ef17",
+        "metadata": {},
+        "text": "Peter W Shor. 1994. Algorithms for quantum computation: Discrete logarithms and factoring. In Proceedings 35th annual symposium on foundations of computer science. Ieee, 124-134.",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "81cd0a73-ae41-4792-9662-e588d210e6eb",
+        "metadata": {},
+        "text": "Liming Zhao, Carlos A. P\u00e9rez-Delgado, and Joseph F. Fitzsimons. 2016. Fast graph operations in quantum computation. Phys. Rev. A 93 (Mar 2016), 032314. Issue 3. https://doi.org/10.1103/PhysRevA.93.032314",
+        "type": "NarrativeText"
+    },
+    {
+        "element_id": "cbe73e24-87da-4b0c-a92f-c6d611f297ff",
+        "metadata": {},
+        "text": "",
+        "type": "PageBreak"
+    }
+]
