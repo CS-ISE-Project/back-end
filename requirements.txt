@@ -5,4 +5,6 @@ fastapi
 uvicorn
 sqlalchemy
 elasticsearch
+langchain
 psycopg2-binary
+pymupdf
