@@ -15,6 +15,4 @@ class User(Base):
     password = Column(String, index=True)
     
     
-    # ! here is the problem, but removing it will strip the
-    # ! the possibility of basculating between the tables.
     favorites = relationship('Favorite')
