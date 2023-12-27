@@ -11,7 +11,7 @@ from app.schemas.article import Base as ArticleBase
 
 engine = create_engine(DATABASE_URL)
 
-Base.metadata.create_all(bind=engine)
+
 ArticleBase.metadata.create_all(bind=engine)
 print('Article table created!')
 #FavoriteBase.metadata.create_all(bind=engine)
@@ -22,6 +22,8 @@ ModeratorBase.metadata.create_all(bind=engine)
 print('Moderator table created!')   
 #UserBase.metadata.create_all(bind=engine)
 #print('User table created!')  
+Base.metadata.create_all(bind=engine)
+print('Favorite, User table created!')
 
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
