@@ -16,4 +16,4 @@ class Article(Base):
     institues = Column(String, index=True)
     references = Column(String, index=True)
     
-    favorites = relationship('Favorite', back_populates='article')
+    favorites = relationship('Favorite')
