@@ -20,3 +20,7 @@ def simple_query_search(query: str):
 @router.post("/advance_query_search/")
 def advance_query_search(query: AdvanceQueryModel):
     return advance_query_search_controler(query)
+
+@router.post("/delete_document")
+def delete_document(id_document : int):
+    return delete_document_controler(id_document)

@@ -56,3 +56,6 @@ def advance_quey_search(query : AdvanceQueryModel):
                 }
             }
         )
+        
+def delete_document(id_document : int):
+    return es.delete(index=INDEX_NAME,id=id_document)
