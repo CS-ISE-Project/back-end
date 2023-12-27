@@ -43,3 +43,12 @@ def delete_document_controler(id_document : int):
         print("error while deleting")
         print(e)
         raise e
+    
+def index_multiple_documents_controler(documents : list[ArticleModel]):
+    try:
+        response = index_multiple_documents(documents)
+        return response
+    except Exception as e:
+        print("error while deleting")
+        print(e)
+        raise e

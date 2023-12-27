@@ -7,7 +7,6 @@ from app.elasticsearch.setup import es
 def get_document(document_id: int):
     return es.get(index=INDEX_NAME, id=document_id)
     
-        
 def index_document(document: ArticleModel,document_id: int):
     return es.index(index=INDEX_NAME,id=document_id, body=document.dict())
 
@@ -59,3 +58,10 @@ def advance_quey_search(query : AdvanceQueryModel):
         
 def delete_document(id_document : int):
     return es.delete(index=INDEX_NAME,id=id_document)
+
+def index_multiple_documents(documents : list[ArticleModel]):
+    responses = []
+    for doc in documents:
+        response = es.index(index=INDEX_NAME,document=doc.dict())
+        responses.append(response)
+    return responses
