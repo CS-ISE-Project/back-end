@@ -9,7 +9,7 @@ class Article(Base):
     __tablename__ = "articles"
 
     id = Column(Integer, primary_key=True, index=True)
-    url = Column(String, index=True)
+    url = Column(String, index=True , nullable=True)
     title = Column(String, index=True)
     abstract = Column(String, index=True)
     content = Column(String, index=True)
