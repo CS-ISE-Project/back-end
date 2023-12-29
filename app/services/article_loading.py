@@ -1,7 +1,7 @@
 import os
 import json
 
-from langchain.document_loaders import UnstructuredPDFLoader, PyPDFLoader, PyMuPDFLoader
+from langchain.document_loaders import UnstructuredPDFLoader, PyPDFLoader, PyMuPDFLoader, AmazonTextractPDFLoader
 
 modes = ["paged", "elements"]
 
@@ -23,6 +23,7 @@ for file_name in os.listdir(articles_path):
         # loader = UnstructuredPDFLoader(article_path, mode=mode)
         # loader = PyPDFLoader(article_path)
         loader = PyMuPDFLoader(article_path)
+        # loader = AmazonTextractPDFLoader(article_path)
         
         data = loader.load()
         

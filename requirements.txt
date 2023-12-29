@@ -8,3 +8,5 @@ elasticsearch
 langchain
 psycopg2-binary
 pymupdf
+amazon-textract-caller
+amazon-textract-textractor
