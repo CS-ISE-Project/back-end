@@ -1,12 +1,9 @@
 -e .
 python-dotenv
-pydantic-settings
 fastapi
 uvicorn
 sqlalchemy
 elasticsearch
+openai
 langchain
-psycopg2-binary
 pymupdf
-amazon-textract-caller
-amazon-textract-textractor
