@@ -34,3 +34,21 @@ def advance_query_search_controler(query: AdvanceQueryModel):
         print("error with the advance search !")
         print(e)
         raise e
+    
+def delete_document_controler(id_document : int):
+    try:
+        response = delete_document(id_document)
+        return response
+    except Exception as e:
+        print("error while deleting")
+        print(e)
+        raise e
+    
+def index_multiple_documents_controler(documents : list[ArticleModel]):
+    try:
+        response = index_multiple_documents(documents)
+        return response
+    except Exception as e:
+        print("error while deleting")
+        print(e)
+        raise e
