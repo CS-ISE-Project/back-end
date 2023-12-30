@@ -1,0 +1,58 @@
+{
+    "1.json": {
+        "extraction_time": 12.36,
+        "extraction_cost": 0.003464
+    },
+    "2.json": {
+        "extraction_time": 16.18,
+        "extraction_cost": 0.0043905
+    },
+    "3.json": {
+        "extraction_time": 14.74,
+        "extraction_cost": 0.00416
+    },
+    "4.json": {
+        "extraction_time": 12.87,
+        "extraction_cost": 0.0034505
+    },
+    "5.json": {
+        "extraction_time": 15.18,
+        "extraction_cost": 0.004048
+    },
+    "6.json": {
+        "extraction_time": 10.95,
+        "extraction_cost": 0.003202
+    },
+    "7.json": {
+        "extraction_time": 20.06,
+        "extraction_cost": 0.0050215
+    },
+    "8.json": {
+        "extraction_time": 15.68,
+        "extraction_cost": 0.0042595
+    },
+    "9.json": {
+        "extraction_time": 12.38,
+        "extraction_cost": 0.003165
+    },
+    "10.json": {
+        "extraction_time": 12.35,
+        "extraction_cost": 0.0034935
+    },
+    "11.json": {
+        "extraction_time": 11.60,
+        "extraction_cost": 0.0031545
+    },
+    "12.json": {
+        "extraction_time": 12.08,
+        "extraction_cost": 0.003657
+    },
+    "13.json": {
+        "extraction_time": 10.75,
+        "extraction_cost": 0.0037065
+    },
+    "14.json": {
+        "extraction_time": 14.02,
+        "extraction_cost": 0.0035225
+    }
+}

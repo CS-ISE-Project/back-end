@@ -1,0 +1,24 @@
+{
+    "title": "The Programmers Assistant: Conversational Interaction with a Large Language Model for Software Development",
+    "authors": [
+        "Steven I. Ross",
+        "Fernando Martinez",
+        "Stephanie Houde",
+        "Michael Muller",
+        "Justin D. Weisz"
+    ],
+    "institutes": [
+        "IBM Research AI Cambridge, MA, USA",
+        "IBM Argentina La Plata, Buenos Aires, Argentina",
+        "IBM Research AI Yorktown Heights, NY, USA"
+    ],
+    "keywords": [
+        "codefluent large language models",
+        "foundation models",
+        "conversational interaction",
+        "humancentered AI"
+    ],
+    "abstract": "Large language models (LLMs) have recently been applied in software engineering to perform tasks such as translating code between programming languages, generating code from natural language, and autocompleting code as it is being written. When used within development tools, these systems typically treat each model invocation independently from all previous invocations, and only a specific limited functionality is exposed within the user interface. This approach to user interaction misses an opportunity for users to more deeply engage with the model by having the context of their previous interactions, as well as the context of their code, inform the model's responses. We developed a prototype system, the Programmers Assistant, in order to explore the utility of conversational interactions grounded in code, as well as software engineers' receptiveness to the idea of conversing with, rather than invoking, a code-fluent LLM. Through an evaluation with 42 participants with varied levels of programming experience, we found that our system was capable of conducting extended, multi-turn discussions, and that it enabled additional knowledge and capabilities beyond code generation to emerge from the LLM. Despite skeptical initial expectations for conversational programming assistance, participants were impressed by the breadth of the assistant's capabilities, the quality of its responses, and its potential for improving their productivity. Our work demonstrates the unique potential of conversational interactions with LLMs for co-creative processes like software development.",
+    "permissions": "This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs International 4.0 License.",
+    "content": "1 INTRODUCTION Software development is a highly skilled task that requires knowledge, focus, and creativity [27, 28]. Many techniques have been developed to enhance the productivity of software engineers, such as advanced code repositories [86], knowledge repositories [39], Q&A sites [1], and pair programming practices [18]. Collaborative software engineering is especially promising, given that professional software development is rarely a solo activity and relevant knowledge and expertise are typically distributed widely within an organization [68]. Many efforts have focused on incorporating collaborative technologies into software development environments (e.g. [8, 25, 26, 58, 101]). The pioneering work of Rich and Waters on The Programmers Apprentice [70] presented a novel concept of a knowledgeable automated assistant - in effect, an artificial collaborative partner that could help software engineers with writing code, designing software systems, and creating requirements specifications. At the time, AI technologies and computing resources were not sufficient to fully implement their vision. In the intervening years, an increase in computational power, the availability of large corpora of language and code data, and the development of deep neural networks have made new approaches to achieving their goals worth exploring. Recently, models leveraging the transformer architecture [96] have been developed to perform domain-specific software engineering tasks, such as translating code between languages [75], generating documentation for code [36, 38, 97, 98], and generating unit tests for code [92] (see Talamadupula [90] and Allamanis et al. [5] for surveys). Recently developed foundation models - large language models that can be adapted to multiple tasks and which exhibit emergent behaviors for which they have not been explicitly trained [14] - have also proven to be capable with source code."
+}
