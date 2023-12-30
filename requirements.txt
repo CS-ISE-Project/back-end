@@ -8,3 +8,4 @@ openai
 tiktoken
 langchain
 pymupdf
+unstructured[pdf]

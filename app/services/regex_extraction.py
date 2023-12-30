@@ -4,9 +4,10 @@ import json
 import time
 
 from app.utils.time import format_time
+from app.utils.text import get_reference_index
 
 def extract_content_and_references(article_content): 
-    references_pattern = re.compile(r'\bREFERENCES\b')
+    references_pattern = re.compile(r'\breferences\b', re.IGNORECASE)
     reference_pattern = re.compile(r'\[\d+\]\s+.*?(?=\[\d+\]|\Z)', re.DOTALL)
     
     references = []
@@ -22,12 +23,14 @@ def extract_content_and_references(article_content):
                 refs = page[match.end():]
                 matches = reference_pattern.findall(refs)
                 for ref_match in matches:
-                    references.append(ref_match)
+                    if get_reference_index(ref_match) == len(references) + 1:
+                        references.append(ref_match)
         else:
             refs = page
             matches = reference_pattern.findall(refs)
             for ref_match in matches:
-                references.append(ref_match)
+                if get_reference_index(ref_match) == len(references) + 1:
+                    references.append(ref_match)
                 
     return references
 
