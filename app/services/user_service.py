@@ -4,6 +4,8 @@ from app.schemas.user import User
 from app.models.user import UserModel
 
 
+def get_all_users(db: Session) :
+    return db.query(User).all()
 
 def get_user(user_id: int , db : Session):
     return db.query(User).filter(User.id == user_id).first()

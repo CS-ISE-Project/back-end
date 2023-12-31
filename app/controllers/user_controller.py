@@ -1,7 +1,15 @@
 from app.models.user import UserModel
 from sqlalchemy.orm import Session
-from app.services.user_service import create_user, get_user , update_user , delete_user
- 
+from app.services.user_service import create_user, get_user , update_user , delete_user , get_all_users
+
+
+def get_all_users_controller(db : Session):
+    try:
+        db_users = get_all_users(db)
+        return db_users
+    except Exception as e:
+        raise e
+     
     
 def get_user_controller(user_id: int , db : Session):
     try:

@@ -7,3 +7,13 @@ class UserModel(BaseModel):
     last_name : str
     email: str
     password : str
+    
+    
+class CompleteUserModel(BaseModel) :
+    id: int | None
+    first_name: str
+    last_name : str
+    email: str
+    password : str
+    
+    
