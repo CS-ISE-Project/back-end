@@ -33,7 +33,7 @@ def login_User(email : str, password : str, db: Session) :
             headers={"WWW-Authenticate": "Bearer"},
         )
     token = create_access_token(
-        data ={"sub" : user.first_name+ "_" +user.last_name },  role="user"
+        data ={"id" : user.id , "sub" : user.first_name+ "_" +user.last_name },  role="user"
     )
     
     return {"access_token" : token, "token_type" : "bearer"}

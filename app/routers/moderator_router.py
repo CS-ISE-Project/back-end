@@ -15,11 +15,11 @@ def create_moderator(mod: ModeratorModel , db : Session = Depends(get_db)):
     return create_moderator_controller(mod , db)
 
 @router.put("/{mod_id}", response_model=ModeratorModel) 
-def update_admin(mod_id: int, updated_mod : ModeratorModel , db : Session = Depends(get_db) ) :
+def update_moderator(mod_id: int, updated_mod : ModeratorModel , db : Session = Depends(get_db) ) :
     return update_moderator_controller(mod_id, updated_mod, db)
 
 
 # TODO : Refactor the code so there no response body (and use the 204 status code)
 @router.delete("/{mod_id}" , response_model=ModeratorModel )
-def delete_admin(mod_id: int, db : Session = Depends(get_db)):
+def delete_moderator(mod_id: int, db : Session = Depends(get_db)):
     return delete_moderator_controller(mod_id,db)        

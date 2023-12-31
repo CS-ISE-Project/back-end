@@ -11,7 +11,7 @@ def signup_controller(user: UserModel , db : Session):
     
 def login_User_controller(email : str, password : str , db : Session) :  
     try : 
-        token = login(email, password, db) 
+        token = login_User(email, password, db) 
         return token
     except Exception as e : 
         raise e

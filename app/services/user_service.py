@@ -9,6 +9,7 @@ from app.models.user import UserModel , UpdateUserModel
 # ? in nest for example : we say, fat models/services and thin controller.
 
 
+
 def get_all_users(db: Session) :
     return db.query(User).all()
 
