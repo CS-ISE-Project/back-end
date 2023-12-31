@@ -4,6 +4,8 @@ from passlib.context import CryptContext
 from datetime import datetime, timedelta
 from app.config.creds import SECRET_KEY , ACCESS_TOKEN_EXPIRE_MINUTES , ALGORITHM
 
+
+
 def create_access_token(data: dict, expires_delta: timedelta = None):
     to_encode = data.copy()
     if expires_delta:
@@ -13,3 +15,11 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
     to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
+
+
+def decode_access_token(token: str) -> dict:
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        return payload
+    except JWTError:
+        return None

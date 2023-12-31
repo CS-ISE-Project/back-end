@@ -8,6 +8,9 @@ from app.models.user import UserModel
 def get_user(user_id: int , db : Session):
     return db.query(User).filter(User.id == user_id).first()
 
+def get_user_by_email(user_email: str , db: Session) :
+    return db.query(User).filter(User.email == user_email).first()
+
 
 def create_user(user: UserModel , db: Session) :
     db_user = User(
