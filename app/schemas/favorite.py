@@ -16,5 +16,5 @@ class Favorite(Base):
     id_user = Column(Integer, ForeignKey(User.__table__.c.id))
     id_article = Column(Integer, ForeignKey(Article.__table__.c.id))
     
-    user = relationship('User')    
-    #article = relationship('Article', back_populates='favorites')
+    user = relationship('User' , back_populates='favorites')    
+    article = relationship('Article', back_populates='favorites')

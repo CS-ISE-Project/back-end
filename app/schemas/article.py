@@ -1,9 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
 from app.schemas.base import Base
 
-#Base = declarative_base()
 
 class Article(Base):
     __tablename__ = "articles"
@@ -17,4 +15,4 @@ class Article(Base):
     institues = Column(String, index=True)
     references = Column(String, index=True)
     
-    #favorites = relationship('Favorite')
+    favorites = relationship('Favorite' , back_populates='article')

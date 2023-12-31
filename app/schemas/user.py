@@ -13,4 +13,4 @@ class User(Base):
     password = Column(String)
     
     
-    favorites = relationship('Favorite')
+    favorites = relationship('Favorite' , back_populates='user')
