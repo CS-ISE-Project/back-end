@@ -1,58 +1,58 @@
 {
-    "1.json": {
-        "extraction_time": 12.36,
-        "extraction_cost": 0.003464
+    "14.pdf": {
+        "extraction_time": 11.13,
+        "extraction_cost": 0.0038
     },
-    "2.json": {
-        "extraction_time": 16.18,
-        "extraction_cost": 0.0043905
+    "13.pdf": {
+        "extraction_time": 9.75,
+        "extraction_cost": 0.0037
     },
-    "3.json": {
-        "extraction_time": 14.74,
-        "extraction_cost": 0.00416
+    "12.pdf": {
+        "extraction_time": 10.51,
+        "extraction_cost": 0.0037
     },
-    "4.json": {
-        "extraction_time": 12.87,
-        "extraction_cost": 0.0034505
+    "11.pdf": {
+        "extraction_time": 9.89,
+        "extraction_cost": 0.0034
     },
-    "5.json": {
-        "extraction_time": 15.18,
-        "extraction_cost": 0.004048
+    "10.pdf": {
+        "extraction_time": 10.15,
+        "extraction_cost": 0.0037
     },
-    "6.json": {
-        "extraction_time": 10.95,
-        "extraction_cost": 0.003202
+    "9.pdf": {
+        "extraction_time": 10.94,
+        "extraction_cost": 0.0035
     },
-    "7.json": {
-        "extraction_time": 20.06,
-        "extraction_cost": 0.0050215
+    "8.pdf": {
+        "extraction_time": 12.86,
+        "extraction_cost": 0.0043
     },
-    "8.json": {
-        "extraction_time": 15.68,
-        "extraction_cost": 0.0042595
+    "7.pdf": {
+        "extraction_time": 14.7,
+        "extraction_cost": 0.005
     },
-    "9.json": {
-        "extraction_time": 12.38,
-        "extraction_cost": 0.003165
+    "6.pdf": {
+        "extraction_time": 10.78,
+        "extraction_cost": 0.0036
     },
-    "10.json": {
-        "extraction_time": 12.35,
-        "extraction_cost": 0.0034935
+    "5.pdf": {
+        "extraction_time": 9.87,
+        "extraction_cost": 0.0038
     },
-    "11.json": {
-        "extraction_time": 11.60,
-        "extraction_cost": 0.0031545
+    "4.pdf": {
+        "extraction_time": 11.76,
+        "extraction_cost": 0.0037
     },
-    "12.json": {
-        "extraction_time": 12.08,
-        "extraction_cost": 0.003657
+    "3.pdf": {
+        "extraction_time": 10.19,
+        "extraction_cost": 0.0041
     },
-    "13.json": {
-        "extraction_time": 10.75,
-        "extraction_cost": 0.0037065
+    "2.pdf": {
+        "extraction_time": 11.84,
+        "extraction_cost": 0.0044
     },
-    "14.json": {
-        "extraction_time": 14.02,
-        "extraction_cost": 0.0035225
+    "1.pdf": {
+        "extraction_time": 11.96,
+        "extraction_cost": 0.0039
     }
 }

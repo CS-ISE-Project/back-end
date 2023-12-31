@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict
 
 from pydantic import BaseModel
 
@@ -10,9 +10,10 @@ class ArticleModel(BaseModel):
     institues: List[str]
     keywords: List[str]
     abstract : str
-    permissions: str
     content : str
     references: List[str]
     
 class ArticlePDF(BaseModel):
-    pages: List[str]
+    info: Dict[str, str | List[str]]
+    sections: Dict[str, str]
+    references: List[str]

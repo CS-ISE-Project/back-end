@@ -1,24 +1,19 @@
-import os
-
 from app.models.article import ArticlePDF
-from app.utils.pdf import articlePDF_to_json
-from app.utils.text import clean_text
+from app.utils.extraction import get_content_and_references, get_content_sections
 
 from langchain.document_loaders import PyMuPDFLoader
+from app.services.llm_extraction import extract_article_information
 
 def load_article(path: str) -> ArticlePDF:
     loader = PyMuPDFLoader(path)
     data = loader.load()
-    pages = []
-    for document in data:
-        pages.append(clean_text(document.page_content))
-    return ArticlePDF(pages=pages)
-
-if __name__ == "__main__":
-    pdf_dir = "app/data/articles/"
-    content_dir = "app/data/content/"
+        
+    info = extract_article_information(data[0].page_content)
+    content_dump = info['content'] + '\n'
+    info.pop('content')
     
-    for pdf in os.listdir(pdf_dir):
-        pdf_path = os.path.join(pdf_dir, pdf)
-        article = load_article(pdf_path)
-        articlePDF_to_json(article, os.path.join(content_dir, pdf.replace(".pdf", ".json")))
+    later_content, references = get_content_and_references(data[1:])
+    content_dump += later_content
+    sections = get_content_sections(content_dump)
+    
+    return ArticlePDF(info=info, sections=sections, references=references)
