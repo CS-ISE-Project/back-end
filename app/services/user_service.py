@@ -1,8 +1,8 @@
 import traceback
-from fastapi import Depends, HTTPException , status
+from fastapi import Depends, HTTPException, Response , status
 from sqlalchemy.orm import Session
 from app.schemas.user import User
-from app.models.user import UserModel , UpdateUserModel
+from app.models.user import UserModel , UpdateUserModel , UserAndFavoritesModel
 
 
 # ? It is a good practice to throw the HTTP Exceptions in the service
@@ -21,13 +21,41 @@ def get_user(user_id: int , db : Session):
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"User with id {user_id} not found"
         )
-    return user
+        
+    user_favorites = []
+    for favorite in user.favorites:
+        article = favorite.article
+        user_favorites.append(vars(article))
+
+        
+        
+    return {'user': user, 'favorites': user_favorites}
+
+
+def get_only_user(user_id : int , db: Session) :
+    user =  db.query(User).filter(User.id == user_id).first()
+    if user is None :
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"User with id {user_id} not found"
+        )
+        
 
 
 # ** Doesnt need an exception, because its main use is to provide None as a response
 def get_user_by_email(user_email: str , db: Session) :
     return db.query(User).filter(User.email == user_email).first()
 
+  
+def get_user_favorites(user_id: int, db: Session):
+    user = db.query(User).filter(User.id == user_id).first()
+    if user is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"User with id {user_id} not found"
+        )
+    return user.favorites
+    
 
 def create_user(user: UserModel , db: Session) :
     try : 
@@ -71,12 +99,15 @@ def update_user(user_id: int, updated_user: UpdateUserModel, db: Session):
         return db_user
     except Exception as e:
         db.rollback()
+        trace = traceback.format_exec()
+        # ! for Debug purposes
+        #print("THE ERROR STACK IS : " , trace) 
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"An error occurred while updating the user. Error: {str(e)}"
+            detail=f"An error occurred while creating the user. Error: {str(e)}"
         )
-
-
+            
+        
 def delete_user(user_id: int, db: Session):
     db_user = db.query(User).filter(User.id == user_id).first()
 
@@ -89,10 +120,15 @@ def delete_user(user_id: int, db: Session):
     try:
         db.delete(db_user)
         db.commit()
-        return db_user
+        return Response(status_code=status.HTTP_204_NO_CONTENT)
+    
+    
     except Exception as e:
         db.rollback()
+        trace = traceback.format_exec()
+        # ! for Debug purposes
+        #print("THE ERROR STACK IS : " , trace) 
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"An error occurred while deleting the user. Error: {str(e)}"
+            detail=f"An error occurred while creating the user. Error: {str(e)}"
         )

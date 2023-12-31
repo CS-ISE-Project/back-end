@@ -6,7 +6,6 @@ from datetime import datetime, timedelta
 from app.config.creds import SECRET_KEY , ACCESS_TOKEN_EXPIRE_MINUTES , ALGORITHM
 
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/loginUser")
 
 def create_access_token(data: dict, role: str, expires_delta: timedelta = None):
     to_encode = data.copy()
