@@ -6,6 +6,7 @@ from app.models.moderator import ModeratorModel
 from app.models.admin import AdminModel 
 from app.services.user_service import get_user_by_email , create_user
 from app.services.admin_service import get_admin_by_email , create_admin
+from app.services.moderator_service import get_moderator_by_email , create_moderator
 from app.utils.password_handler import get_password_hash , verify_password
 from app.utils.jwt_handler import create_access_token
 
@@ -77,3 +78,39 @@ def login_Admin(email : str, password : str, db: Session) :
     
     return {"access_token" : token, "token_type" : "bearer"}
 
+
+
+## ************************************* MODERATOR **********************************
+
+
+def signup_moderator(mod : ModeratorModel , db: Session) :
+    existing_mod = get_moderator_by_email(mod.email, db)
+    if existing_mod:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Email already registered",
+        )
+
+    hashed_password = get_password_hash(mod.password)
+    mod = ModeratorModel(
+        first_name=mod.first_name,
+        last_name=mod.last_name,
+        email = mod.email,
+        password=hashed_password)
+    return create_moderator(mod , db)
+
+
+
+def login_Moderator(email : str, password : str, db: Session) :
+    mod = get_moderator_by_email(email,db)
+    if not mod or not verify_password(password,mod.password) :
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Incorrect username or password",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    token = create_access_token(
+        data ={"id" : mod.id , "sub" : mod.first_name+ "_" + mod.last_name },  role="moderator"
+    )
+    
+    return {"access_token" : token, "token_type" : "bearer"}

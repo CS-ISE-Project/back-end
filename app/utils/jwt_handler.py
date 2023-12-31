@@ -1,3 +1,4 @@
+from typing import List, Union
 from fastapi import Depends, HTTPException , status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
@@ -27,8 +28,31 @@ def decode_access_token(token: str) -> dict:
     except JWTError:
         return None
     
+# def verify_token(token: str, role: str ) -> bool:
+#     try:
+#         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+#         if payload is None:
+#             raise HTTPException(
+#                 status_code=status.HTTP_401_UNAUTHORIZED,
+#                 detail="Could not validate credentials",
+#                 headers={"WWW-Authenticate": "Bearer"},
+#             )
+#         if payload.get('role') != role:
+#             raise HTTPException(
+#                 status_code=status.HTTP_403_FORBIDDEN,
+#                 detail="Operation not permitted",
+#                 headers={"WWW-Authenticate": "Bearer"},
+#             )
+#         return True
+#     except JWTError:
+#         raise HTTPException(
+#             status_code=status.HTTP_401_UNAUTHORIZED,
+#             detail="Could not validate credentials",
+#             headers={"WWW-Authenticate": "Bearer"},
+#         )
+        
     
-def verify_token(token: str, role: str ) -> bool:
+def verify_token(token: str, role: Union[str, List[str]] ) -> bool:
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         if payload is None:
@@ -37,12 +61,23 @@ def verify_token(token: str, role: str ) -> bool:
                 detail="Could not validate credentials",
                 headers={"WWW-Authenticate": "Bearer"},
             )
-        if payload.get('role') != role:
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="Operation not permitted",
-                headers={"WWW-Authenticate": "Bearer"},
-            )
+        if isinstance(role,str) : 
+            if payload.get('role') != role:
+                raise HTTPException(
+                    status_code=status.HTTP_403_FORBIDDEN,
+                    detail="Operation not permitted",
+                    headers={"WWW-Authenticate": "Bearer"},
+                )
+                
+        if isinstance(role,list) :
+            if payload.get('role') not in role : 
+                raise HTTPException(
+                    status_code=status.HTTP_403_FORBIDDEN,
+                    detail="Operation not permitted",
+                    headers={"WWW-Authenticate": "Bearer"},
+                )
+            
+            
         return True
     except JWTError:
         raise HTTPException(

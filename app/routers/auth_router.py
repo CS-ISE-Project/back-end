@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
-from app.controllers.auth_controller import signup_User_controller , login_User_controller , signup_Admin_controller , login_Admin_controller
+from app.controllers.auth_controller import signup_User_controller , login_User_controller , signup_Admin_controller , login_Admin_controller , signup_Moderator_controller , login_Moderator_controller
 from app.models.user import UserModel 
-from app.models.moderator import ModeratorModel 
+from app.models.moderator import ModeratorModel  , CompleteModeratorModel , UpdateModeratorModel
 from app.models.admin import AdminModel 
 from app.scripts.database.setup import get_db
 from sqlalchemy.orm import Session
@@ -33,3 +33,15 @@ def create_admin(admin: AdminModel , db : Session = Depends(get_db)):
 @router.post("/MYSUPERSECRETEROUTERTOADMINAUTH/login")
 def login(email : str , password : str , db : Session = Depends(get_db)) :
     return login_Admin_controller(email, password, db)
+
+
+## ************************************* MODERATOR **********************************
+
+@router.post("/MYSECRETEROUTERTOMODERATORAUTH/signup", response_model=CompleteModeratorModel)
+def create_moderator(mod: ModeratorModel , db : Session = Depends(get_db)):
+    return signup_Moderator_controller(mod , db)
+
+@router.post("/MYSECRETEROUTERTOMODERATORAUTH/login")
+def login(email : str , password : str , db : Session = Depends(get_db)) :
+    return login_Moderator_controller(email, password, db)
+

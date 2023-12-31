@@ -19,7 +19,7 @@ def read_all_admin( db : Session = Depends(get_db) , token: HTTPAuthorizationCre
     return get_all_admins_controller(db)
 
 
-@router.get("/{admin_id}", response_model=AdminModel)
+@router.get("/{admin_id}", response_model=CompleteAdminModel)
 def read_admin(admin_id: int, db : Session = Depends(get_db) , token: HTTPAuthorizationCredentials = Depends(auth_scheme)):
     verify_token(token.credentials , 'admin')
     return get_admin_controller(admin_id,db)
