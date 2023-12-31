@@ -12,7 +12,7 @@ class User(Base):
     first_name = Column(String, index=True)
     last_name = Column(String, index=True)
     email = Column(String, index=True)
-    password = Column(String, index=True)
+    password = Column(String)
     
     
     favorites = relationship('Favorite')
