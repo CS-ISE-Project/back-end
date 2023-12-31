@@ -11,26 +11,15 @@ from app.models.user import UserModel , UpdateUserModel , UserAndFavoritesModel
 
 
 def get_all_users(db: Session) :
-    return db.query(User).all()
+    users = db.query(User).all()
+    if not users : 
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No users found"
+        )
+    return users
 
 
-
-# def get_user(user_id: int , db : Session):
-#     user =  db.query(User).filter(User.id == user_id).first()
-#     if user is None :
-#         raise HTTPException(
-#             status_code=status.HTTP_404_NOT_FOUND,
-#             detail=f"User with id {user_id} not found"
-#         )
-        
-#     user_favorites = []
-#     for favorite in user.favorites:
-#         article = favorite.article
-#         user_favorites.append(vars(article))
-
-        
-        
-#     return {'user': user, 'favorites': user_favorites}
 
 def get_user(user_id: int , db : Session):
     user =  db.query(User).filter(User.id == user_id).first()
@@ -55,6 +44,7 @@ def get_only_user(user_id : int , db: Session) :
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"User with id {user_id} not found"
         )
+    return user
         
 
 # ** Doesnt need an exception, because its main use is to provide None as a response
@@ -116,7 +106,6 @@ def update_user(user_id: int, updated_user: UpdateUserModel, db: Session):
         
 def delete_user(user_id: int, db: Session):
     db_user = db.query(User).filter(User.id == user_id).first()
-
     if db_user is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,

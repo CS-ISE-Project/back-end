@@ -1,6 +1,6 @@
 from app.models.user import UserModel , UpdateUserModel
 from sqlalchemy.orm import Session
-from app.services.user_service import create_user, get_user , update_user , delete_user , get_all_users
+from app.services.user_service import create_user, get_user  , get_only_user , update_user , delete_user , get_all_users
 
 
 def get_all_users_controller(db : Session):
@@ -11,13 +11,19 @@ def get_all_users_controller(db : Session):
         raise e
      
     
-def get_user_controller(user_id: int , db : Session):
+def get_full_user_controller(user_id: int , db : Session):
     try:
         db_user = get_user(user_id, db)
         return db_user
     except Exception as e:
         raise e
     
+def get_user_controller(user_id: int , db : Session):
+    try:
+        db_user = get_only_user(user_id, db)
+        return db_user
+    except Exception as e:
+        raise e
     
 def create_user_controller(user: UserModel , db : Session) :
     try : 
