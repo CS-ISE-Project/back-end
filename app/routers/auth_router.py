@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends
-from app.controllers.auth_controller import signup_controller , login_controller
+from app.controllers.auth_controller import signup_controller , login_User_controller
 from app.models.user import UserModel
 from app.scripts.database.setup import get_db
 from sqlalchemy.orm import Session
@@ -14,6 +14,6 @@ def create_user(user: UserModel , db : Session = Depends(get_db)):
     return signup_controller(user , db)
 
 
-@router.post("/login")
+@router.post("/loginUser")
 def login(email : str , password : str , db : Session = Depends(get_db)) :
-    return login_controller(email, password, db)
+    return login_User_controller(email, password, db)

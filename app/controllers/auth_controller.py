@@ -1,6 +1,6 @@
 from app.models.user import UserModel
 from sqlalchemy.orm import Session
-from app.services.auth_service import signup , login
+from app.services.auth_service import signup , login_User
 
 def signup_controller(user: UserModel , db : Session):
     try:
@@ -9,7 +9,7 @@ def signup_controller(user: UserModel , db : Session):
     except Exception as e:
         raise e
     
-def login_controller(email : str, password : str , db : Session) :  
+def login_User_controller(email : str, password : str , db : Session) :  
     try : 
         token = login(email, password, db) 
         return token

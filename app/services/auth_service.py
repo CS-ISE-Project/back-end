@@ -24,7 +24,7 @@ def signup(user : UserModel, db: Session) :
     return create_user(user , db)
 
 
-def login(email : str, password : str, db: Session) :
+def login_User(email : str, password : str, db: Session) :
     user = get_user_by_email(email,db)
     if not user or not verify_password(password,user.password) :
         raise HTTPException(
