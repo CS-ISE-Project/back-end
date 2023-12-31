@@ -14,6 +14,7 @@ def get_all_users(db: Session) :
     return db.query(User).all()
 
 
+
 def get_user(user_id: int , db : Session):
     user =  db.query(User).filter(User.id == user_id).first()
     if user is None :
@@ -41,21 +42,11 @@ def get_only_user(user_id : int , db: Session) :
         )
         
 
-
 # ** Doesnt need an exception, because its main use is to provide None as a response
 def get_user_by_email(user_email: str , db: Session) :
     return db.query(User).filter(User.email == user_email).first()
 
   
-def get_user_favorites(user_id: int, db: Session):
-    user = db.query(User).filter(User.id == user_id).first()
-    if user is None:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"User with id {user_id} not found"
-        )
-    return user.favorites
-    
 
 def create_user(user: UserModel , db: Session) :
     try : 
