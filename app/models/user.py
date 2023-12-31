@@ -1,5 +1,5 @@
 from pydantic import BaseModel , EmailStr
-from typing import List
+from typing import List , Dict
 from app.models.article import ArticleModel
 
 
@@ -25,7 +25,7 @@ class CompleteUserModel(BaseModel) :
 # ? User and favorites Model : 
 class UserAndFavoritesModel(BaseModel):
     user : CompleteUserModel
-    favorites : List[ArticleModel]
+    favorites : Dict[int , ArticleModel]
 
 
 

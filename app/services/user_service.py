@@ -15,6 +15,23 @@ def get_all_users(db: Session) :
 
 
 
+# def get_user(user_id: int , db : Session):
+#     user =  db.query(User).filter(User.id == user_id).first()
+#     if user is None :
+#         raise HTTPException(
+#             status_code=status.HTTP_404_NOT_FOUND,
+#             detail=f"User with id {user_id} not found"
+#         )
+        
+#     user_favorites = []
+#     for favorite in user.favorites:
+#         article = favorite.article
+#         user_favorites.append(vars(article))
+
+        
+        
+#     return {'user': user, 'favorites': user_favorites}
+
 def get_user(user_id: int , db : Session):
     user =  db.query(User).filter(User.id == user_id).first()
     if user is None :
@@ -23,12 +40,10 @@ def get_user(user_id: int , db : Session):
             detail=f"User with id {user_id} not found"
         )
         
-    user_favorites = []
+    user_favorites = {}
     for favorite in user.favorites:
         article = favorite.article
-        user_favorites.append(vars(article))
-
-        
+        user_favorites[favorite.id] = vars(article)
         
     return {'user': user, 'favorites': user_favorites}
 
