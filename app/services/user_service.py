@@ -2,7 +2,7 @@ import traceback
 from fastapi import Depends, HTTPException , status
 from sqlalchemy.orm import Session
 from app.schemas.user import User
-from app.models.user import UserModel
+from app.models.user import UserModel , UpdateUserModel
 
 
 # ? It is a good practice to throw the HTTP Exceptions in the service
@@ -21,6 +21,7 @@ def get_user(user_id: int , db : Session):
             detail=f"User with id {user_id} not found"
         )
     return user
+
 
 # ** Doesnt need an exception, because its main use is to provide None as a response
 def get_user_by_email(user_email: str , db: Session) :
@@ -50,20 +51,29 @@ def create_user(user: UserModel , db: Session) :
         )
         
 
-
-# TODO : A better solution to do is to separate the password modification from the update endpoint
-def update_user(user_id : int , updated_user : UserModel , db: Session) : 
+def update_user(user_id: int, updated_user: UpdateUserModel, db: Session):
     db_user = db.query(User).filter(User.id == user_id).first()
-    
-    db_user.first_name=updated_user.first_name,
-    db_user.last_name=updated_user.last_name,
-    db_user.email = updated_user.email,
-    db_user.password = updated_user.password
-    
-    db.commit()
-    db.refresh(db_user)
-    return db_user
 
+    if db_user is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"User with id {user_id} not found"
+        )
+
+    try:
+        db_user.first_name = updated_user.first_name
+        db_user.last_name = updated_user.last_name
+        db_user.email = updated_user.email
+
+        db.commit()
+        db.refresh(db_user)
+        return db_user
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"An error occurred while updating the user. Error: {str(e)}"
+        )
 
 
 def delete_user(user_id: int, db: Session):

@@ -1,4 +1,4 @@
-from app.models.user import UserModel
+from app.models.user import UserModel , UpdateUserModel
 from sqlalchemy.orm import Session
 from app.services.user_service import create_user, get_user , update_user , delete_user , get_all_users
 
@@ -27,7 +27,7 @@ def create_user_controller(user: UserModel , db : Session) :
         raise e
     
     
-def update_user_controller(user_id : int , updated_user: UserModel , db : Session) : 
+def update_user_controller(user_id : int , updated_user: UpdateUserModel , db : Session) : 
     try : 
         db_user = update_user(user_id, updated_user , db)
         return db_user

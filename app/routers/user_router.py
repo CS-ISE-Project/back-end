@@ -1,7 +1,7 @@
 from typing import List
 from fastapi import APIRouter, Depends
 from app.controllers.user_controller import get_all_users_controller, create_user_controller, get_user_controller , update_user_controller , delete_user_controller
-from app.models.user import UserModel , CompleteUserModel
+from app.models.user import UserModel , CompleteUserModel , UpdateUserModel
 from app.scripts.database.setup import get_db
 from sqlalchemy.orm import Session
 
@@ -19,8 +19,8 @@ def read_user(user_id: int, db : Session = Depends(get_db)):
 def create_user(user: UserModel , db : Session = Depends(get_db)):
     return create_user_controller(user , db)
 
-@router.put("/{user_id}", response_model=UserModel) 
-def update_admin(user_id: int, updated_user : UserModel , db : Session = Depends(get_db) ) :
+@router.put("/{user_id}", response_model=CompleteUserModel) 
+def update_admin(user_id: int, updated_user : UpdateUserModel , db : Session = Depends(get_db) ) :
     return update_user_controller(user_id, updated_user, db)
 
 
