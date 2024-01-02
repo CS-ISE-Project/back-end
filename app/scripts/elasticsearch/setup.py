@@ -8,11 +8,3 @@ es = Elasticsearch(
     ],
     basic_auth=(ELASTICSEARCH_USERNAME, ELASTICSEARCH_PASSWORD)
 )
-
-# def creat_es_instance():
-#     return Elasticsearch(
-#         [
-#             {'host': ELASTICSEARCH_HOST, 'port': int(ELASTICSEARCH_PORT), "scheme": ELASTICSEARCH_SCHEME}
-#         ],
-#             basic_auth=(ELASTICSEARCH_USERNAME, ELASTICSEARCH_PASSWORD)
-#     )
