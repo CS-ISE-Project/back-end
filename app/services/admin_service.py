@@ -2,8 +2,6 @@ from sqlalchemy.orm import Session
 from app.schemas.admin import Admin
 from app.models.admin import AdminModel
 
-
-
 def get_admin(admin_id: int , db : Session):
     return db.query(Admin).filter(Admin.id == admin_id).first()
 

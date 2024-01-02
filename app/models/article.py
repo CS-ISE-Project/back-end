@@ -15,5 +15,5 @@ class ArticleModel(BaseModel):
     
 class ArticlePDF(BaseModel):
     info: Dict[str, str | List[str]]
-    sections: Dict[str, str]
+    content: str
     references: List[str]

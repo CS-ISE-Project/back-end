@@ -14,25 +14,7 @@ def detect_references(text):
     if match:
         return match.start()
     else:
-        return None   
-    
-def detect_section_titles(text):
-    pattern = r'((?:\d+\.)+\d*\s[A-Z][^\n\.]+)'
-    matches = re.finditer(pattern, text)
-    
-    last_section = None
-    true_matches = []
-    
-    for match in matches:
-        indices = match.group(1).split()[0].split('.')
-        if last_section == None and int(indices[0]) == 1:
-            true_matches.append(match)
-            last_section = indices
-        elif last_section != None and (int(indices[0]) == int(last_section[0]) + 1 or int(indices[0]) == int(last_section[0])):
-            true_matches.append(match)
-            last_section = indices
-            
-    return true_matches 
+        return None
 
 def get_content_and_references(documents): 
     content = ''
@@ -61,15 +43,3 @@ def get_content_and_references(documents):
                         references.append(ref_match)
                         
     return content, references
-
-def get_content_sections(content_dump):
-    sections = {}
-    section_matches = detect_section_titles(content_dump)
-    for i in range(len(section_matches)):
-        if i == len(section_matches) - 1:
-            sections[clean_text(section_matches[i].group(1))] = clean_text(content_dump[section_matches[i].end():])
-        else:
-            sections[clean_text(section_matches[i].group(1))] = clean_text(content_dump[section_matches[i].end():section_matches[i+1].start()])
-            
-    return sections
-    
