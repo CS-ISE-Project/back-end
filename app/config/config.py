@@ -1,9 +1,3 @@
-# PDF Configurations
-
-STRATEGY = 'fast'
-MIN_CATEGORIZED_ELEMENT_LENGTH = 5
-MIN_UNCATEGORIZED_ELEMENT_LENGTH = 10
-
 # LLM Configurations
 
 MODEL_NAME = 'gpt-3.5-turbo'

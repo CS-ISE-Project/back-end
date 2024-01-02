@@ -15,7 +15,6 @@ class Article(Base):
     institues = Column(String)
     keywords = Column(String)
     abstract = Column(String)
-    permissions = Column(String)
     content = Column(String)
     references = Column(String)
     
