@@ -1,8 +1,5 @@
 -e .
 python-dotenv
-passlib[bcrypt]
-python-jose[cryptography]
-pydantic[email]
 fastapi
 uvicorn
 sqlalchemy
@@ -11,3 +8,7 @@ openai
 tiktoken
 langchain
 pymupdf
+passlib[bcrypt]
+python-jose[cryptography]
+pydantic[email]
+psycopg2-binary
