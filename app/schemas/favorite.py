@@ -4,7 +4,6 @@ from app.schemas.user import User
 from app.schemas.article import Article
 from app.schemas.base import Base 
 
-
 class Favorite(Base):
     __tablename__ = "favorites"
 

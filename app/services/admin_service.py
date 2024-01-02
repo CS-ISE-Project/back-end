@@ -15,8 +15,6 @@ def get_all_admins(db : Session) :
         )
     return admins
 
-
-
 def get_admin(admin_id: int , db : Session):
     admin = db.query(Admin).filter(Admin.id == admin_id).first()
     if admin is None : 

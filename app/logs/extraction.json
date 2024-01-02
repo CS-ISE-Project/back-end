@@ -1,0 +1,58 @@
+{
+    "14.pdf": {
+        "extraction_time": 11.13,
+        "extraction_cost": 0.0038
+    },
+    "13.pdf": {
+        "extraction_time": 9.75,
+        "extraction_cost": 0.0037
+    },
+    "12.pdf": {
+        "extraction_time": 10.51,
+        "extraction_cost": 0.0037
+    },
+    "11.pdf": {
+        "extraction_time": 9.89,
+        "extraction_cost": 0.0034
+    },
+    "10.pdf": {
+        "extraction_time": 10.15,
+        "extraction_cost": 0.0037
+    },
+    "9.pdf": {
+        "extraction_time": 10.94,
+        "extraction_cost": 0.0035
+    },
+    "8.pdf": {
+        "extraction_time": 12.86,
+        "extraction_cost": 0.0043
+    },
+    "7.pdf": {
+        "extraction_time": 14.7,
+        "extraction_cost": 0.005
+    },
+    "6.pdf": {
+        "extraction_time": 10.78,
+        "extraction_cost": 0.0036
+    },
+    "5.pdf": {
+        "extraction_time": 9.87,
+        "extraction_cost": 0.0038
+    },
+    "4.pdf": {
+        "extraction_time": 11.76,
+        "extraction_cost": 0.0037
+    },
+    "3.pdf": {
+        "extraction_time": 10.19,
+        "extraction_cost": 0.0041
+    },
+    "2.pdf": {
+        "extraction_time": 11.84,
+        "extraction_cost": 0.0044
+    },
+    "1.pdf": {
+        "extraction_time": 11.96,
+        "extraction_cost": 0.0039
+    }
+}

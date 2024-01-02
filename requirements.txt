@@ -1,11 +1,13 @@
 -e .
 python-dotenv
-pydantic-settings
 fastapi
 uvicorn
 sqlalchemy
 elasticsearch
-psycopg2-binary
 python-jose[cryptography]
 passlib[bcrypt]
 pydantic[email]   
+openai
+tiktoken
+langchain
+pymupdf
