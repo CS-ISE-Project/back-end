@@ -1,8 +1,10 @@
 -e .
 python-dotenv
-pydantic-settings
 fastapi
 uvicorn
 sqlalchemy
 elasticsearch
-psycopg2-binary
+openai
+tiktoken
+langchain
+pymupdf
