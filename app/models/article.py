@@ -3,8 +3,8 @@ from typing import List, Dict
 from pydantic import BaseModel
 
 class ArticleModel(BaseModel):
-    id: int | None
-    url: str
+    #id: int | None
+    url: str | None
     title: str
     authors : List[str]
     institues: List[str]

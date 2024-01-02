@@ -4,6 +4,9 @@ fastapi
 uvicorn
 sqlalchemy
 elasticsearch
+python-jose[cryptography]
+passlib[bcrypt]
+pydantic[email]   
 openai
 tiktoken
 langchain
