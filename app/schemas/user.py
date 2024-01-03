@@ -1,7 +1,6 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
-from app.schemas.base import Base 
-
+from app.schemas.relations.favorite import Base 
 
 class User(Base):
     __tablename__ = "users"
@@ -11,6 +10,5 @@ class User(Base):
     last_name = Column(String, index=True)
     email = Column(String, index=True)
     password = Column(String)
-    
     
     favorites = relationship('Favorite' , back_populates='user')

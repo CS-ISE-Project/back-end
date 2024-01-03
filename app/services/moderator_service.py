@@ -1,42 +1,33 @@
-import traceback
 from fastapi import Depends, HTTPException, Response , status
+
 from sqlalchemy.orm import Session
+
 from app.schemas.moderator import Moderator
-from app.models.moderator import ModeratorModel , UpdateModeratorModel , CompleteModeratorModel
+from app.models.moderator import ModeratorModel, UpdateModeratorModel, CompleteModeratorModel
 
-
-
-def get_all_moderators(db : Session) : 
+def get_all_moderators(db: Session):
     mods = db.query(Moderator).all()
     if not mods : 
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail="No admins found"
+            detail="No moderators found"
         )
     return mods
 
-
-
 def get_moderator_by_email(mod_mail: str , db: Session) :
     return db.query(Moderator).filter(Moderator.email == mod_mail).first()
-
-
 
 def get_moderator(mod_id: int , db : Session):
     mod =  db.query(Moderator).filter(Moderator.id == mod_id).first()
     if mod is None : 
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Admin with id {mod_id} not found"
+            detail=f"Moderator with id {mod_id} not found"
         )
     return mod
 
-
-
-
-def create_moderator(mod: ModeratorModel , db: Session) :
-    
-    try : 
+def create_moderator(mod: ModeratorModel , db: Session):
+    try:
         db_mod = Moderator(
             first_name=mod.first_name,
             last_name=mod.last_name,
@@ -48,18 +39,14 @@ def create_moderator(mod: ModeratorModel , db: Session) :
         db.refresh(db_mod)
         return db_mod
     
-    except Exception as e : 
+    except Exception as e: 
         db.rollback()
-        trace = traceback.format_exec()
-        # ! for Debug purposes
-        #print("THE ERROR STACK IS : " , trace) 
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"An error occurred while creating the user. Error: {str(e)}"
+            detail=f"An error occurred while creating the moderator. Error: {str(e)}"
         )        
 
-# TODO : A better solution to do is to separate the password modification from the update endpoint
-def update_moderator(mod_id : int , updated_mod : UpdateModeratorModel   , db: Session) : 
+def update_moderator(mod_id: int , updated_mod: UpdateModeratorModel, db: Session) : 
     db_mod = db.query(Moderator).filter(Moderator.id == mod_id).first()
     if db_mod is None : 
         raise HTTPException(
@@ -70,23 +57,16 @@ def update_moderator(mod_id : int , updated_mod : UpdateModeratorModel   , db: S
         db_mod.first_name=updated_mod.first_name,
         db_mod.last_name=updated_mod.last_name,
         db_mod.email = updated_mod.email,
-        db_mod.password = updated_mod.password
     
         db.commit()
         db.refresh(db_mod)
         return db_mod
     except Exception as e:
         db.rollback()
-        trace = traceback.format_exec()
-        # ! for Debug purposes
-        #print("THE ERROR STACK IS : " , trace) 
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"An error occurred while creating the user. Error: {str(e)}"
         )
-
-
-
 
 def delete_moderator(mod_id : int , db : Session) :
     db_mod = db.query(Moderator).filter(Moderator.id == mod_id).first()
@@ -96,19 +76,14 @@ def delete_moderator(mod_id : int , db : Session) :
             detail=f"Moderator with id {mod_id} not found"
         )  
         
-    try :        
+    try:        
         db.delete(db_mod)
         db.commit()
         return Response(status_code=status.HTTP_204_NO_CONTENT)
     
     except Exception as e:
         db.rollback()
-        trace = traceback.format_exec()
-        # ! for Debug purposes
-        #print("THE ERROR STACK IS : " , trace) 
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"An error occurred while creating the user. Error: {str(e)}"
+            detail=f"An error occurred while creating the moderator. Error: {str(e)}"
         )
-
-        

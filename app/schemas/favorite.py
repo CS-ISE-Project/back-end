@@ -1,8 +1,9 @@
 from sqlalchemy import Column, Integer, ForeignKey
 from sqlalchemy.orm import relationship
+from app.schemas.relations.favorite import Base 
+
 from app.schemas.user import User
 from app.schemas.article import Article
-from app.schemas.base import Base 
 
 class Favorite(Base):
     __tablename__ = "favorites"

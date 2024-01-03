@@ -1,19 +1,21 @@
 from fastapi import Depends, HTTPException , status
-from sqlalchemy.orm import Session
-from app.schemas.user import User
-from app.models.user import UserModel
-from app.models.moderator import ModeratorModel 
-from app.models.admin import AdminModel 
-from app.services.user_service import get_user_by_email , create_user
-from app.services.admin_service import get_admin_by_email , create_admin
-from app.services.moderator_service import get_moderator_by_email , create_moderator
-from app.utils.password_handler import get_password_hash , verify_password
-from app.utils.jwt_handler import create_access_token
 
+from sqlalchemy.orm import Session
+
+from app.models.user import UserModel
+from app.models.admin import AdminModel
+from app.models.moderator import ModeratorModel
+
+from app.services.admin_service import get_admin_by_email, create_admin
+from app.services.moderator_service import get_moderator_by_email, create_moderator
+from app.services.user_service import get_user_by_email, create_user
+
+from app.utils.hash import get_password_hash, verify_password
+from app.utils.jwt import create_access_token
 
 ## ********************************** USER **********************************
 
-def signup_User(user : UserModel , db: Session) :
+def signup_user(user: UserModel, db: Session):
     existing_user = get_user_by_email(user.email, db)
     if existing_user:
         raise HTTPException(
@@ -29,8 +31,7 @@ def signup_User(user : UserModel , db: Session) :
         password=hashed_password)
     return create_user(user , db)
 
-
-def login_User(email : str, password : str, db: Session) :
+def login_user(email: str, password: str, db: Session) :
     user = get_user_by_email(email,db)
     if not user or not verify_password(password,user.password) :
         raise HTTPException(
@@ -44,10 +45,9 @@ def login_User(email : str, password : str, db: Session) :
     
     return {"access_token" : token, "token_type" : "bearer"}
 
-
 ## ************************************* ADMIN **********************************
 
-def signup_Admin(admin : AdminModel , db: Session) :
+def signup_admin(admin: AdminModel, db: Session) :
     existing_admin = get_admin_by_email(admin.email, db)
     if existing_admin:
         raise HTTPException(
@@ -61,10 +61,9 @@ def signup_Admin(admin : AdminModel , db: Session) :
         last_name=admin.last_name,
         email = admin.email,
         password=hashed_password)
-    return create_admin(admin , db)
+    return create_admin(admin, db)
 
-
-def login_Admin(email : str, password : str, db: Session) :
+def login_admin(email: str, password: str, db: Session):
     admin = get_admin_by_email(email,db)
     if not admin or not verify_password(password,admin.password) :
         raise HTTPException(
@@ -73,17 +72,14 @@ def login_Admin(email : str, password : str, db: Session) :
             headers={"WWW-Authenticate": "Bearer"},
         )
     token = create_access_token(
-        data ={"id" : admin.id , "sub" : admin.first_name+ "_" +admin.last_name },  role="admin"
+        data ={"id": admin.id , "sub": admin.first_name+ "_" +admin.last_name },  role="admin"
     )
     
     return {"access_token" : token, "token_type" : "bearer"}
 
-
-
 ## ************************************* MODERATOR **********************************
 
-
-def signup_moderator(mod : ModeratorModel , db: Session) :
+def signup_moderator(mod: ModeratorModel, db: Session):
     existing_mod = get_moderator_by_email(mod.email, db)
     if existing_mod:
         raise HTTPException(
@@ -99,9 +95,7 @@ def signup_moderator(mod : ModeratorModel , db: Session) :
         password=hashed_password)
     return create_moderator(mod , db)
 
-
-
-def login_Moderator(email : str, password : str, db: Session) :
+def login_moderator(email: str, password: str, db: Session) :
     mod = get_moderator_by_email(email,db)
     if not mod or not verify_password(password,mod.password) :
         raise HTTPException(
@@ -110,7 +104,7 @@ def login_Moderator(email : str, password : str, db: Session) :
             headers={"WWW-Authenticate": "Bearer"},
         )
     token = create_access_token(
-        data ={"id" : mod.id , "sub" : mod.first_name+ "_" + mod.last_name },  role="moderator"
+        data ={"id": mod.id, "sub": mod.first_name+ "_" + mod.last_name},  role="moderator"
     )
     
     return {"access_token" : token, "token_type" : "bearer"}

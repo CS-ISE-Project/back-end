@@ -1,15 +1,17 @@
+from app.config.creds import INDEX_NAME
+
+from app.scripts.es.setup import es
+
 from app.models.article import ArticleModel
 from app.models.advanced_query import AdvanceQueryModel
-from app.config.creds import INDEX_NAME
-from app.scripts.elasticsearch.setup import es
 
 def get_document(document_id: int):
     return es.get(index=INDEX_NAME, id=document_id)
     
-def index_document(document: ArticleModel,document_id: int):
-    return es.index(index=INDEX_NAME,id=document_id, body=document.dict())
+def index_document(document: ArticleModel, document_id: int):
+    return es.index(index=INDEX_NAME,id=document_id, body=document.model_dump())
 
-def simple_query_search(query:str):
+def simple_query_search(query: str):
     return es.search(
         index=INDEX_NAME,
         query={
@@ -20,7 +22,7 @@ def simple_query_search(query:str):
         }
     )
     
-def advance_quey_search(query : AdvanceQueryModel):
+def advance_quey_search(query: AdvanceQueryModel):
     if(query.restricted):
         print("int the damn restricted query !!!! ")
         must_clauses = [
@@ -55,12 +57,12 @@ def advance_quey_search(query : AdvanceQueryModel):
             }
         )
         
-def delete_document(id_document : int):
+def delete_document(id_document: int):
     return es.delete(index=INDEX_NAME,id=id_document)
 
-def index_multiple_documents(documents : list[ArticleModel]):
+def index_multiple_documents(documents: list[ArticleModel]):
     responses = []
     for doc in documents:
-        response = es.index(index=INDEX_NAME,document=doc.dict())
+        response = es.index(index=INDEX_NAME,document=doc.model_dump())
         responses.append(response)
     return responses
