@@ -11,7 +11,7 @@ from app.models.admin import AdminModel, CompleteAdminModel, UpdateAdminModel
 
 from app.controllers.admin_controller import get_admin_controller, get_all_admins_controller, create_admin_controller, update_admin_controller, delete_admin_controller
 
-auth_scheme=HTTPBearer()
+auth_scheme = HTTPBearer()
 router = APIRouter()
 
 @router.get("/", response_model=List[CompleteAdminModel])
@@ -24,7 +24,7 @@ def read_admin(admin_id: int, db: Session = Depends(get_db), token: HTTPAuthoriz
     verify_token(token.credentials , 'admin')
     return get_admin_controller(admin_id,db)
 
-@router.post("/", response_model=AdminModel) 
+@router.post("/", response_model=AdminModel)
 def create_admin(admin: AdminModel, db: Session = Depends(get_db), token: HTTPAuthorizationCredentials = Depends(auth_scheme)) :
     verify_token(token.credentials , 'admin')
     return create_admin_controller(admin, db)

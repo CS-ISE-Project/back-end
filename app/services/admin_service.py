@@ -44,7 +44,7 @@ def create_admin(admin: AdminModel , db: Session):
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"An error occurred while creating the admin. Error: {str(e)}"
-        )        
+        )
 
 def update_admin(admin_id: int , updated_admin: UpdateAdminModel , db: Session): 
     db_admin = db.query(Admin).filter(Admin.id == admin_id).first()
@@ -55,7 +55,7 @@ def update_admin(admin_id: int , updated_admin: UpdateAdminModel , db: Session):
             detail=f"Admin with id {db_admin} not found"
         )
      
-    try :   
+    try:
         db_admin.first_name=updated_admin.first_name,
         db_admin.last_name=updated_admin.last_name,
         db_admin.email = updated_admin.email,
