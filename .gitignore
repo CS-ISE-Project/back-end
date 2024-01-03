@@ -1,4 +1,5 @@
+test.py
+.env
 .venv/
 __pycache__/
-.env
 ise_project.egg-info/

@@ -1,7 +1,14 @@
 -e .
-pydantic-settings
-fastapi
-sqlalchemy
 python-dotenv
+fastapi
 uvicorn
+sqlalchemy
+elasticsearch<7.14.0
+openai
+tiktoken
+langchain
+pymupdf
+passlib[bcrypt]
+python-jose[cryptography]
+pydantic[email]
 psycopg2-binary
