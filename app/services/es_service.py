@@ -1,5 +1,7 @@
 from app.config.creds import INDEX_NAME
 
+from typing import List
+
 from app.scripts.es.setup import es
 
 from app.models.article import ArticleModel
@@ -60,7 +62,7 @@ def advance_quey_search(query: AdvanceQueryModel):
 def delete_document(id_document: int):
     return es.delete(index=INDEX_NAME,id=id_document)
 
-def index_multiple_documents(documents: list[ArticleModel]):
+def index_multiple_documents(documents: List[ArticleModel]):
     responses = []
     for doc in documents:
         response = es.index(index=INDEX_NAME,document=doc.model_dump())
