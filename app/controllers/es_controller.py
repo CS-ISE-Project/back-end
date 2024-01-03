@@ -1,3 +1,5 @@
+from typing import List
+
 from app.models.article import ArticleModel
 from app.models.advanced_query import AdvanceQueryModel
 
@@ -19,7 +21,7 @@ def index_document_controller(document: ArticleModel, document_id: int):
         print("Error indexing document!")
         raise e
         
-def index_multiple_documents_controller(documents: list[ArticleModel]):
+def index_multiple_documents_controller(documents: List[ArticleModel]):
     try:
         response = index_multiple_documents(documents)
         return response
