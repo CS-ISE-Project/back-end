@@ -7,7 +7,7 @@ class AdminModel(BaseModel):
     password : str
 
 class CompleteAdminModel(BaseModel) :
-    id: int | None
+    id: int
     first_name: str
     last_name : str
     email: str
