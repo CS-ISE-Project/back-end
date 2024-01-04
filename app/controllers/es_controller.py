@@ -52,3 +52,11 @@ def delete_document_controller(id_document : int):
     except Exception as e:
         print(f"Error deleting document with id: {id}!")
         raise e
+    
+def filter_search_controller(search : str|AdvanceSearchModel , filter : FilterModel):
+    try:
+        response = filter_search(search,filter)
+        return response
+    except Exception as e:
+        print(f"Error while filtering a search")
+        raise e

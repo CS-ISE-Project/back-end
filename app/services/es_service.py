@@ -67,7 +67,7 @@ def index_multiple_documents(documents: List[ArticleModel]):
         responses.append(response)
     return responses
 
-def filter_documents(search : str|AdvanceSearchModel , filter : FilterModel):
+def filter_search(search : str|AdvanceSearchModel , filter : FilterModel):
     filter_clauses = [
             {"terms": {"authors": filter.authors}} if filter.authors else None,
             {"terms": {"keywords": filter.keywords}} if filter.keywords else None,
