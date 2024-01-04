@@ -1,9 +1,9 @@
 from pydantic import BaseModel
+from typing import List
 
-class AdvanceQueryModel(BaseModel):
+class AdvanceSearchModel(BaseModel):
     restricted : bool
     title : str
-    keywords : str
+    keywords: List[str]
+    authors : List[str]
     content : str
-    authors : str
-    institutes : str
