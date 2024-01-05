@@ -11,6 +11,7 @@ class CompleteModeratorModel(BaseModel):
     first_name: str
     last_name : str
     email: str
+    is_active : bool
 
 class UpdateModeratorModel(BaseModel):
     first_name: str
