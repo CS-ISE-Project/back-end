@@ -9,7 +9,7 @@ class Article(Base):
     url = Column(String, index=True)
     title = Column(String)
     authors = Column(String)
-    institues = Column(String)
+    institutes = Column(String)
     keywords = Column(String)
     abstract = Column(String)
     content = Column(String)

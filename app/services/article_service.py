@@ -42,7 +42,7 @@ def update_article(article_id: int, updated_article: ArticleModel, db: Session):
         db_article.title=updated_article.title,
         db_article.url = updated_article.url
         db_article.authors = updated_article.authors,
-        db_article.institues = updated_article.institues,
+        db_article.institutes = updated_article.institutes,
         db_article.keywords = updated_article.keywords,
         db_article.abstract=updated_article.abstract,
         db_article.content = updated_article.content,
