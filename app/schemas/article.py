@@ -13,6 +13,6 @@ class Article(Base):
     keywords = Column(String)
     abstract = Column(String)
     content = Column(String)
-    references = Column(String) 
+    references = Column(String)
     
     favorites = relationship('Favorite' , back_populates='article')
