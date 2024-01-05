@@ -15,7 +15,7 @@ auth_scheme = HTTPBearer()
 router = APIRouter()
 
 @router.get("/", response_model=List[CompleteAdminModel])
-def read_all_admin(db: Session = Depends(get_db) , token: HTTPAuthorizationCredentials = Depends(auth_scheme)):
+def read_all_admin(db: Session = Depends(get_db), token: HTTPAuthorizationCredentials = Depends(auth_scheme)):
     verify_token(token.credentials , 'admin')
     return get_all_admins_controller(db)
 
