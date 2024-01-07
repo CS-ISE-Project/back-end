@@ -18,7 +18,17 @@ def get_article(article_id: int , db: Session):
 
 def create_article(article: ArticleModel, db: Session):
     try:
-        db_article = model_to_db(article)
+        article_model = model_to_db(article)
+        db_article = Article(
+            title = article_model.title,
+            url = article_model.url,
+            authors = article_model.authors,
+            institutes = article_model.institutes,
+            keywords = article_model.keywords,
+            abstract = article_model.abstract,
+            content = article_model.content,
+            references = article_model.references
+        )
         db.add(db_article)
         db.commit()
         db.refresh(db_article)
