@@ -1,49 +1,87 @@
-from fastapi import Depends, HTTPException
+from fastapi import HTTPException, status
 
 from sqlalchemy.orm import Session
 
 from app.schemas.article import Article
 from app.models.article import ArticleModel
 
+from app.utils.article import model_to_db
+
 def get_article(article_id: int , db: Session):
-    return db.query(Article).filter(Article.id == article_id).first()
+    article = db.query(Article).filter(Article.id == article_id).first()
+    if article is None : 
+        raise HTTPException(
+            status_code=404,
+            detail=f"Article with id {article_id} not found"
+        )
+    return article
 
-def create_article(article: ArticleModel, db: Session) :
-    db_article = Article(
-        title = article.title,
-        url = article.url,
-        authors = article.authors,
-        institues = article.institues,
-        keywords = article.keywords,
-        abstract = article.abstract,
-        content = article.content,
-        references = article.references
-    )
-    
-    db.add(db_article)
-    db.commit()
-    db.refresh(db_article)
-    return db_article
-
+def create_article(article: ArticleModel, db: Session):
+    try:
+        article_model = model_to_db(article)
+        db_article = Article(
+            title = article_model.title,
+            url = article_model.url,
+            authors = article_model.authors,
+            institutes = article_model.institutes,
+            keywords = article_model.keywords,
+            abstract = article_model.abstract,
+            content = article_model.content,
+            references = article_model.references
+        )
+        db.add(db_article)
+        db.commit()
+        db.refresh(db_article)
+        return db_article
+    except Exception as e : 
+        db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"An error occurred while creating the article. Error: {str(e)}"
+        )
+        
 def update_article(article_id: int, updated_article: ArticleModel, db: Session): 
     db_article = db.query(Article).filter(Article.id == article_id).first()
-    
-    db_article.title=updated_article.title,
-    db_article.url = updated_article.url
-    db_article.authors = updated_article.authors,
-    db_article.institues = updated_article.institues,
-    db_article.keywords = updated_article.keywords,
-    db_article.abstract=updated_article.abstract,
-    db_article.content = updated_article.content,
-    db_article.references = updated_article.references,
-    
-    db.commit()
-    db.refresh(db_article)
-    return db_article
+    if db_article is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Article with id {db_article} not found"
+        )
+    updated_article = model_to_db(updated_article)
+    try:
+        db_article.title=updated_article.title,
+        db_article.url = updated_article.url
+        db_article.authors = updated_article.authors,
+        db_article.institutes = updated_article.institutes,
+        db_article.keywords = updated_article.keywords,
+        db_article.abstract=updated_article.abstract,
+        db_article.content = updated_article.content,
+        db_article.references = updated_article.references,
+        
+        db.commit()
+        db.refresh(db_article)
+        return db_article
+    except Exception as e :
+        db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"An error occurred while updating the article. Error: {str(e)}"
+        )
 
-def delete_article(article_id : int , db : Session) :
+def delete_article(article_id: int , db: Session):
     db_article = db.query(Article).filter(Article.id == article_id).first()
-    
-    db.delete(db_article)
-    db.commit()
-    return db_article
+    if db_article is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Article with id {db_article} not found"
+        )
+    try:
+        db.delete(db_article)
+        db.commit()
+        return db_article
+    except Exception as e :
+        db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"An error occurred while deleting the article. Error: {str(e)}"
+        )

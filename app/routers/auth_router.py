@@ -21,7 +21,7 @@ def create_user(user: UserModel , db : Session = Depends(get_db)):
     return signup_user_controller(user , db)
 
 @router.post("/login")
-def login(email : str , password : str , db : Session = Depends(get_db)) :
+def login(email: str, password: str, db: Session = Depends(get_db)):
     return login_user_controller(email, password, db)
 
 ## ************************************* ADMIN **********************************
