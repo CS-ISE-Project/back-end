@@ -30,5 +30,8 @@ def get_db():
         yield db
     finally:
         db.close()
+        
+def get_db_session():
+    return SessionLocal()
 
 print('Database setup complete!')

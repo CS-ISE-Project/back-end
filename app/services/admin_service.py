@@ -4,6 +4,8 @@ from sqlalchemy.orm import Session
 
 from app.schemas.admin import Admin
 from app.models.admin import AdminModel, CompleteAdminModel, UpdateAdminModel
+from app.services.moderator_service import update_isActive
+
 
 def get_all_admins(db : Session) :
     admins = db.query(Admin).all()
@@ -44,7 +46,7 @@ def create_admin(admin: AdminModel , db: Session):
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"An error occurred while creating the admin. Error: {str(e)}"
-        )        
+        )
 
 def update_admin(admin_id: int , updated_admin: UpdateAdminModel , db: Session): 
     db_admin = db.query(Admin).filter(Admin.id == admin_id).first()
@@ -55,7 +57,7 @@ def update_admin(admin_id: int , updated_admin: UpdateAdminModel , db: Session):
             detail=f"Admin with id {db_admin} not found"
         )
      
-    try :   
+    try:
         db_admin.first_name=updated_admin.first_name,
         db_admin.last_name=updated_admin.last_name,
         db_admin.email = updated_admin.email,
@@ -89,4 +91,15 @@ def delete_admin(admin_id: int , db: Session):
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"An error occurred while creating the admin. Error: {str(e)}"
+        )
+
+def activate_moderator(mod_id : int , db : Session) : 
+    try :
+        activated_mod = update_isActive(mod_id , True , db)
+        return activated_mod
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"An error occurred while activating the moderator. Error: {str(e)}"
         )

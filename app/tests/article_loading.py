@@ -8,6 +8,8 @@ from app.utils.time import format_time
 from app.services.article_loading_service import load_article
 
 if __name__ == "__main__":
+    save_articles = True
+    
     times = {}
     pdf_dir = "app/data/articles/"
     content_dir = "app/data/content/"
@@ -21,7 +23,8 @@ if __name__ == "__main__":
         format_time(f'Loading {pdf}', s, e)
         times[pdf] = round(e-s, 2)
         
-        jsonify(article, os.path.join(content_dir, pdf.replace(".pdf", ".json")))
+        if save_articles:
+            jsonify(article, os.path.join(content_dir, pdf.replace(".pdf", ".json")))
         
     with open('app/logs/loading.json', 'w') as f:
         json.dump(times, f, indent=4)
