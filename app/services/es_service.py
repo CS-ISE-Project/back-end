@@ -5,7 +5,7 @@ from fastapi import HTTPException, status
 from app.scripts.es.setup import es
 
 from app.models.article import ArticleModel
-from app.models.advanced_query import AdvanceQueryModel
+from app.models.query import AdvanceQueryModel
 
 def get_document(document_id: int):
     document = es.get(index=INDEX_NAME, id=document_id)
@@ -40,22 +40,27 @@ def simple_query_search(query: str):
     try:
         res = es.search(
             index=INDEX_NAME,
-            query={
-                "multi_match": {
-                    "query": query,
-                    "fields": ["title","headline","content","authors","institutes","refrecnces"]
+            body={
+                "query": {
+                    "multi_match": {
+                        "query": query,
+                        "fields": ["title", "abstract", "keywords", "content", "authors", "institutes", "references"]
+                    }
                 }
             }
         )
-        return res
+        if res['hits']['total']['value'] == 0:
+            return []
+        return [ArticleModel(**r['_source']) for r in res['hits']['hits']]
+    
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"An error occurred while searching the document. Error: {str(e)}"
+            detail=f"An error occurred while performing simple search. Error: {str(e)}"
         )
     
-def advance_quey_search(query: AdvanceQueryModel):
-    if(query.restricted):
+def advanced_query_search(query: AdvanceQueryModel):
+    if query.restricted:
         must_clauses = [
             {"match": {"title": query.title}} if query.title else None,
             {"match": {"keywords": query.keywords}} if query.keywords else None,
@@ -67,37 +72,46 @@ def advance_quey_search(query: AdvanceQueryModel):
         try:
             res = es.search(
                 index=INDEX_NAME,
-                query={
-                    "bool" : {
-                        "must" : must_clauses
+                body={
+                    "query": {
+                        "bool" : {
+                            "must" : must_clauses
+                        }
                     }
                 }
             )
-            return res
+            if res['hits']['total']['value'] == 0:
+                return []
+            return [ArticleModel(**r['_source']) for r in res['hits']['hits']]
+        
         except Exception as e:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail=f"An error occurred while searching the document. Error: {str(e)}"
+                detail=f"An error occurred while performing advanced restricted search. Error: {str(e)}"
             )
     else:
         try:
             res = es.search(
                 index=INDEX_NAME,
-                query={
-                    "bool" : {
-                        "should" : [
-                            { "match" : {"title" : query.title} },
-                            { "match" : {"keywords" : query.keywords} },
-                            { "match" : {"content" : query.content} },
-                            { "match" : {"authors" : query.authors} },
-                            { "match" : {"institutes" : query.institutes} },
-                        ]
+                body={
+                    "query": {
+                        "bool" : {
+                            "should" : [
+                                { "match" : {"title" : query.title} },
+                                { "match" : {"keywords" : query.keywords} },
+                                { "match" : {"content" : query.content} },
+                                { "match" : {"authors" : query.authors} },
+                                { "match" : {"institutes" : query.institutes} },
+                            ]
+                        }
                     }
                 }
             )
-            return res
+            if res['hits']['total']['value'] == 0:
+                return []
+            return [ArticleModel(**r['_source']) for r in res['hits']['hits']]
         except Exception as e:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail=f"An error occurred while searching the document. Error: {str(e)}"
+                detail=f"An error occurred while performing advanced non restricted search. Error: {str(e)}"
             )
