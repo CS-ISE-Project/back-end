@@ -1,0 +1,26 @@
+{
+    "publication_date": "03-08-2023",
+    "title": "Semantic Analysis and Classification of Emails through Informative Selection of Features and Ensemble AI Model",
+    "authors": [
+        "Shivangi Sachan",
+        "Khushbu Doulani",
+        "Mainak Adhikari"
+    ],
+    "institutes": [
+        "Department of CSE IIIT Lucknow",
+        "Vardhaman College of Engineering"
+    ],
+    "keywords": [
+        "Dataset",
+        "KNN",
+        "Gaussian Naive Bayes",
+        "LSTM",
+        "SVM",
+        "Bidirectional LSTM",
+        "GRU",
+        "Word-Embeddings",
+        "CNN"
+    ],
+    "abstract": "The emergence of novel types of communication, such as email, has been brought on by the development of the internet, which radically concentrated the way in that individuals communicate socially and with one another. It is now establishing itself as a crucial aspect of the communication network which has been adopted by a variety of commercial enterprises such as retail outlets. So in this research paper, we have built a unique spam-detection methodology based on email-body sentiment analysis. The proposed hybrid model is put into practice and preprocessing the data, extracting the proper- ties, and categorizing data are all steps in the process. To examine the emotive and sequential aspects of texts, we use word embed- ding and a bi-directional LSTM network. this model frequently shortens the training period, then utilizes the Convolution Layer to extract text features at a higher level for the BiLSTM network. Our model performs better than previous versions, with an accuracy rate of 97\u201398%. In addition, we show that our model beats not just some well-known machine learning classifiers but also cutting-edge methods for identifying spam communications, demonstrating its superiority on its own. Suggested Ensemble models results are examined in terms of recall, accuracy, and precision",
+    "content": "1 INTRODUCTION\nOver the past few years, a clear surge of both the amount of spam- mers as well as spam emails. This is likely due to a fact that the investment necessary for engaging in the spamming industry is relatively low. As a result of this, we currently have a system that identifies every email as suspicious, which has caused major expen- ditures in the investment of defense systems [12]. Emails are used for online crimes like fraud, hacking, phishing, E-mail bombing, bul- lying, and spamming. [16]. Algorithms that are based on machine learning (ML) are now the most effective and often used approach to the recognition of spam. Phishing, which is defined as a fraudulent attempt to acquire private information by masquerading as a trust- worthy party in electronic communication, has rapidly advanced past use of simple techniques and the tactic of casting a wide net; instead, spear phishing uses a variety of sophisticated techniques to target a single high-value individual. Other researchers used NB, Decision Trees, and SVM to compare the performance of supervised ML algorithms for spam identification [6]. Spam emails clog up re- cipients inboxes with unsolicited communications, which frustrate them and push them into the attackers planned traps [7]. As a re- sult, spam messages unquestionably pose a risk to both email users and the Internet community. In addition, Users may occasionally read the entire text of an unsolicited message that is delivered to the target users inboxes without realizing that the message is junk and then choosing to avoid it. Building a framework for email spam detection is the aim of this project. In this approach, we combine the Word-Embedding Network with the CNN layer, Bi-LSTM, and GRU (BiLSTM+GRU). CNN layers are used to speed up training time before the Bi-LSTM network, and more advanced textual character- istics are extracted with the use of this network in comparison to the straight LSTM network, in less time. Gated recurrent neural net- works (GRUs) are then added because they train more quickly and perform better for language modeling. To evaluate and investigate various machine learning algorithms for predicting email spam, and develop a hybrid classification algorithm to filter email spam before employing an ensemble classification algorithm to forecast it. To put an innovative technique into practice and compare it to the current method in terms of various metrics. Ensemble learn- ing, a successful machine learning paradigm, combines a group of learners rather than a single learner to forecast unknown target attributes. Bagging, boosting, voting, and stacking are the four main types of ensemble learning techniques. To increase performance, an integrated method and the combining of two or three algorithms are also suggested. Extraction of text-based features takes a long time. Furthermore, it can be challenging to extract all of the crucial information from a short text. Over the span associated with this 181"
+}

@@ -7,7 +7,7 @@ from app.models.moderator import ModeratorModel, UpdateModeratorModel, CompleteM
 
 def get_all_moderators(db: Session):
     mods = db.query(Moderator).all()
-    if not mods : 
+    if not mods:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="No moderators found"

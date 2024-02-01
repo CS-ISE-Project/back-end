@@ -1,7 +1,7 @@
 import re
 
 def clean_text(text: str):
-    cleaned_text = re.sub(r'[^\w\s.,:;/?!\'"-+=()[\]{}*%$@]', '', text)
+    cleaned_text = re.sub(r'[^\w\s.,:;/?!\'"-–_+=()[\]{}*%$@]', '', text)
     cleaned_text = ' '.join(cleaned_text.split())      
     return cleaned_text
 

@@ -6,12 +6,18 @@ from app.utils.jwt import verify_token
 from sqlalchemy.orm import Session
 from app.scripts.database.setup import get_db
 
+from typing import List
 from app.models.article import ArticleModel
 
-from app.controllers.article_controller import get_article_controller, create_article_controller, update_article_controller, delete_article_controller
+from app.controllers.article_controller import get_article_controller, create_article_controller, update_article_controller, delete_article_controller, get_all_articles_controller
 
 auth_scheme=HTTPBearer()
 router = APIRouter()
+
+@router.get("/", response_model=List[ArticleModel])
+def read_all_articles(db: Session = Depends(get_db), token: HTTPAuthorizationCredentials = Depends(auth_scheme)):
+    verify_token(token.credentials, ['moderator', 'admin'])
+    return get_all_articles_controller(db)
 
 @router.get("/{article_id}", response_model=ArticleModel)
 def read_article(article_id: int, db: Session = Depends(get_db), token: HTTPAuthorizationCredentials = Depends(auth_scheme)):
