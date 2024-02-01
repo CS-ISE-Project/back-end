@@ -1,0 +1,19 @@
+{
+    "publication_date": "23-05-2020",
+    "title": "Towards a Quantum Software Modeling Language",
+    "authors": [
+        "Carlos A. P\u00e9rez-Delgado",
+        "Hector G. Perez-Gonzalez"
+    ],
+    "institutes": [
+        "University of Kent Canterbury, Kent, United Kingdom",
+        "Universidad Aut\u00f3noma de San Luis Potos\u00ed San Luis Potos\u00ed, SLP, M\u00e9xico"
+    ],
+    "keywords": [
+        "quantum computing",
+        "software engineering",
+        "UML"
+    ],
+    "abstract": "We set down the principles behind a modeling language for quantum software. We present a minimal set of extensions to the well-known Unified Modeling Language (UML) that allows it to effectively model quantum software. These extensions are separate and independent of UML as a whole. As such they can be used to extend any other software modeling language, or as a basis for a completely new language. We argue that these extensions are both necessary and sufficient to model, abstractly, any piece of quantum software. Finally, we provide a small set of examples that showcase the effectiveness of the extension set.",
+    "content": "1. INTRODUCTION\n\nQuantum computation rose to prominence after the discovery of quantum algorithms[5, 7] that can efficiently perform tasks that are intractable classically. These discoveries propelled research and interest in quantum computation. Today, there exists prototype quantum hardware with computational capabilities beyond that of any classical machine[1]. Further applications of quantum theory to computation have also been made in several areas of theory of computing, such as models of computation[6], data structures[8], and cryptography[2]. Both authors contributed equally to this research.\n\n2. Q-UML\n\nBefore discussing in depth the extensions we are introducing, we make a few fundamental observations on which we base the guiding principles for our extension set. Our first observation is about the nature of quantum computation. The central difference between quantum and classical computation is in how it achieves its goals. Quantum computers have access to quantum algorithms[7], and quantum data-structures[8], that are unavailable to classical computers hence their performance advantage. Algorithms and data-structures are, however, implementation details. Algorithms are an essential design choice while programming in the small. However, they are more often than not completely ignored in large-scale software architectural design. For instance, UML diagrams seldom portray algorithms and data-structures beyond a very high-level design perspective. It would seem then that quantum computation introduces nothing to computation that needs to be captured in a software design diagram. This is not the case, and the reason for this is our second observation. Quantum computation changes the very nature of information itself. Quantum information is much richer than classical information. It is also much more challenging to store, transmit, and receive. If a module (class, object, etc.) needs to store, transmit or receive quantum information, then this is an important design consideration which needs to be included in any effective software design. A third observation here is that the classical vs. quantum nature of the information used by a module is an important consideration both when discussing its internal implementation and its interface. Furthermore, these two are separate and independent considerations. A classical module, implementing some classical behavior, would have no need, or capability, to communicate quantum data. A quantum module may or may not have to; i.e. a module's quantum behavior may be completely part of its internal implementation."
+}

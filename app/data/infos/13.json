@@ -1,0 +1,34 @@
+{
+    "publication_date": "7-12-2023",
+    "title": "SMT 2.0: A Surrogate Modeling Toolbox with a focus on hierarchical and mixed variables Gaussian processes",
+    "authors": [
+        "Paul Saves",
+        "R\u00e9mi Lafage",
+        "Nathalie Bartoli",
+        "Youssef Diouane",
+        "Jasper Bussemaker",
+        "Thierry Lefebvre",
+        "John T. Hwang",
+        "Joseph Morlier",
+        "Joaquim R.R.A. Martins"
+    ],
+    "institutes": [
+        "ONERA/DTIS, Universit\u00e9 de Toulouse, Toulouse, France",
+        "ISAE-SUPAERO, Universit\u00e9 de Toulouse, Toulouse, France",
+        "Polytechnique Montr\u00e9al, Montreal, QC, Canada",
+        "German Aerospace Center (DLR), Institute of System Architectures in Aeronautics, Hamburg, Germany",
+        "University of California San Diego, Department of Mechanical and Aerospace Engineering, La Jolla, CA, USA",
+        "ICA, Universit\u00e9 de Toulouse, ISAE\u2013SUPAERO, INSA, CNRS, MINES ALBI, UPS, Toulouse, France",
+        "University of Michigan, Department of Aerospace Engineering, Ann Arbor, MI, USA"
+    ],
+    "keywords": [
+        "Surrogate modeling",
+        "Gaussian process",
+        "Kriging",
+        "Hierarchical problems",
+        "Hierarchical and mixed-categorical inputs",
+        "Meta variables"
+    ],
+    "abstract": "The Surrogate Modeling Toolbox (SMT) is an open-source Python package that offers a collection of surrogate modeling methods, sampling techniques, and a set of sample problems. This paper presents SMT 2.0, a major new release of SMT that introduces significant upgrades and new features to the toolbox. This release adds the capability to handle mixed-variable surrogate models and hierarchical variables. These types of variables are becoming increasingly important in several surrogate modeling applications. SMT 2.0 also improves SMT by extending sampling methods, adding new surrogate models, and computing variance and kernel derivatives for Kriging. This release also includes new functions to handle noisy and use multi-fidelity data. To the best of our knowledge, SMT 2.0 is the first open-source surrogate library to propose surrogate models for hierarchical and mixed inputs. This open-source software is distributed under the New BSD license.",
+    "content": "1. Motivation and significance\n\nWith the increasing complexity and accuracy of numerical models, it has become more challenging to run complex simulations and computer codes [1,2]. As a consequence, surrogate models have been recognized as a key tool for engineering tasks such as design space exploration, uncertainty quantification, and optimization [3]. In practice, surrogate models are used to reduce the computational effort of these tasks by replacing expensive numerical simulations with closed-form approximations [4, Ch. 10]. To build such a model, we start by evaluating the original expensive simulation at a set of points through a Design of Experiments (DoE). Then, the corresponding evaluations are used to build the surrogate model according to the chosen approximation, such as Kriging, quadratic interpolation, or least squares regression. The Surrogate Modeling Toolbox (SMT) is an open-source frame- work that provides functions to efficiently build surrogate models [5]."
+}

@@ -9,7 +9,7 @@ from langchain.document_loaders import PyMuPDFLoader
 from app.services.llm_extraction import prompt, extract_article_information
 
 if __name__ == '__main__':
-    save_infos = False
+    save_infos = True
     logs = {}
     
     for filname in os.listdir('app/data/articles'):
@@ -26,7 +26,7 @@ if __name__ == '__main__':
         print(f'Cost: {extraction_cost}')
         
         if save_infos:
-            with open(f'app/data/infos/{filname}', 'w') as f:
+            with open(f"app/data/infos/{filname.replace('.pdf', '.json')}", 'w') as f:
                 json.dump(info, f, indent=4)
             
         logs[filname] = {

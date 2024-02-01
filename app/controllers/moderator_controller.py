@@ -9,7 +9,7 @@ def get_all_moderator_controller(db: Session):
         db_mod = get_all_moderators(db)
         return db_mod
     except Exception as e:
-        raise e 
+        raise e
     
 def get_moderator_controller(mod_id: int, db: Session):
     try:
