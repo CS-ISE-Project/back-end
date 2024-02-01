@@ -5,16 +5,25 @@ from sqlalchemy.orm import Session
 from app.schemas.article import Article
 from app.models.article import ArticleModel
 
-from app.utils.article import model_to_db
+from app.utils.article import model_to_db, db_to_model
+
+def get_all_articles(db: Session):
+    articles = db.query(Article).all()
+    if not articles:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No articles found"
+        )
+    return articles
 
 def get_article(article_id: int , db: Session):
     article = db.query(Article).filter(Article.id == article_id).first()
-    if article is None : 
+    if article is None:
         raise HTTPException(
             status_code=404,
             detail=f"Article with id {article_id} not found"
         )
-    return article
+    return db_to_model(article)
 
 def create_article(article: ArticleModel, db: Session):
     try:
@@ -33,7 +42,7 @@ def create_article(article: ArticleModel, db: Session):
         db.commit()
         db.refresh(db_article)
         return db_article
-    except Exception as e : 
+    except Exception as e:
         db.rollback()
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

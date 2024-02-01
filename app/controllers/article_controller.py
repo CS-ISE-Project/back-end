@@ -2,11 +2,19 @@ from sqlalchemy.orm import Session
 
 from app.models.article import ArticleModel
 
-from app.services.article_service import create_article, get_article, update_article, delete_article
+from app.services.article_service import create_article, get_article, update_article, delete_article, get_all_articles
 from app.services.es_service import get_document, index_document, delete_document
 
 from app.utils.article import db_to_model
- 
+
+def get_all_articles_controller(db: Session):
+    try:
+        db_articles = get_all_articles(db)
+        articles = [db_to_model(db_article) for db_article in db_articles]
+        return articles
+    except Exception as e:
+        raise e
+
 def get_article_controller(article_id: int , db: Session):
     try:
         db_article = get_article(article_id, db)
