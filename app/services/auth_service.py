@@ -40,7 +40,7 @@ def login_user(email: str, password: str, db: Session) :
             headers={"WWW-Authenticate": "Bearer"},
         )
     token = create_access_token(
-        data ={"id" : user.id , "sub" : user.first_name+ "_" +user.last_name },  role="user"
+        data ={"id" : user.id , "sub" : user.first_name+ " " +user.last_name },  role="user"
     )
     
     return {"access_token" : token, "token_type" : "bearer"}
@@ -72,7 +72,7 @@ def login_admin(email: str, password: str, db: Session):
             headers={"WWW-Authenticate": "Bearer"},
         )
     token = create_access_token(
-        data ={"id": admin.id , "sub": admin.first_name+ "_" +admin.last_name },  role="admin"
+        data ={"id": admin.id , "sub": admin.first_name+ " " +admin.last_name },  role="admin"
     )
     
     return {"access_token" : token, "token_type" : "bearer"}
@@ -104,7 +104,7 @@ def login_moderator(email: str, password: str, db: Session) :
             headers={"WWW-Authenticate": "Bearer"},
         )
     token = create_access_token(
-        data ={"id": mod.id, "sub": mod.first_name+ "_" + mod.last_name},  role="moderator"
+        data ={"id": mod.id, "sub": mod.first_name+ " " + mod.last_name},  role="moderator"
     )
     
     return {"access_token" : token, "token_type" : "bearer"}
