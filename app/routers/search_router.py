@@ -11,7 +11,7 @@ from app.controllers.search_controller import simple_search_controller, advanced
 auth_scheme=HTTPBearer()
 router = APIRouter()
 
-@router.post("/simple", response_model=List[ArticleModel]) 
+@router.post("/simple", response_model=List[ArticleModel])
 def simple_search(query: str, token: HTTPAuthorizationCredentials = Depends(auth_scheme)):
     verify_token(token.credentials, 'user')
     return simple_search_controller(query)

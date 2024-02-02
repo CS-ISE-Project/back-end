@@ -1,5 +1,5 @@
 from app.models.article import ArticleModel
-from app.utils.text import clean_content
+from app.utils.text import clean_content, is_date
 from app.utils.extraction import get_content_and_references
 
 from langchain.document_loaders import PyMuPDFLoader
@@ -18,7 +18,8 @@ def load_article(path: str) -> ArticleModel:
     content = clean_content(content)
     
     return ArticleModel(
-        url = 'dummy',
+        url = '',
+        publication_date = info['publication_date'] if is_date(info['publication_date']) else '',
         title = info['title'],
         authors = info['authors'],
         institutes = info['institutes'],

@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from app.schemas.article import Article
 from app.models.article import ArticleModel
 
-from app.utils.article import model_to_db, db_to_model
+from app.utils.article import model_to_db
 
 def get_all_articles(db: Session):
     articles = db.query(Article).all()
@@ -23,14 +23,15 @@ def get_article(article_id: int , db: Session):
             status_code=404,
             detail=f"Article with id {article_id} not found"
         )
-    return db_to_model(article)
+    return article
 
 def create_article(article: ArticleModel, db: Session):
     try:
         article_model = model_to_db(article)
         db_article = Article(
-            title = article_model.title,
             url = article_model.url,
+            publication_date = article_model.publication_date,
+            title = article_model.title,
             authors = article_model.authors,
             institutes = article_model.institutes,
             keywords = article_model.keywords,
@@ -58,8 +59,9 @@ def update_article(article_id: int, updated_article: ArticleModel, db: Session):
         )
     updated_article = model_to_db(updated_article)
     try:
-        db_article.title=updated_article.title,
         db_article.url = updated_article.url
+        db_article.publication_date = updated_article.publication_date,
+        db_article.title=updated_article.title,
         db_article.authors = updated_article.authors,
         db_article.institutes = updated_article.institutes,
         db_article.keywords = updated_article.keywords,
