@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Union
 from app.config.creds import INDEX_NAME
 
 from fastapi import HTTPException, status
@@ -117,7 +117,7 @@ def advanced_query_search(query: AdvanceQueryModel):
                 detail=f"An error occurred while performing advanced non restricted search. Error: {str(e)}"
             )
 
-def filter_search(search : str|AdvanceQueryModel , filter : FilterModel):
+def filter_search(query: Union(str, AdvanceQueryModel) , filter: FilterModel):
     filter_clauses = [
             {"terms": {"authors": filter.authors}} if filter.authors else None,
             {"terms": {"keywords": filter.keywords}} if filter.keywords else None,
@@ -133,7 +133,7 @@ def filter_search(search : str|AdvanceQueryModel , filter : FilterModel):
     filter_clauses = [clause for clause in filter_clauses if clause is not None]
     
     # Filtering from a simple Search
-    if isinstance(search,str):
+    if isinstance(query, str):
         try:
             res = es.search(
                 index=INDEX_NAME,
@@ -142,7 +142,7 @@ def filter_search(search : str|AdvanceQueryModel , filter : FilterModel):
                         "bool": {
                             "must" : {
                                 "multi_match": {
-                                    "query": search,
+                                    "query": query,
                                     "fields": ["title", "abstract", "keywords", "content", "authors", "institutes", "references"]
                                 }
                             },
@@ -162,7 +162,7 @@ def filter_search(search : str|AdvanceQueryModel , filter : FilterModel):
             )
     
     # Filtering from an Advanced Search
-    elif isinstance(search,AdvanceQueryModel):
+    elif isinstance(query, AdvanceQueryModel):
         if(query.restricted):
             must_clauses = [
                 {"match": {"title": query.title}} if query.title else None,
