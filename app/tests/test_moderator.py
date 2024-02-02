@@ -2,7 +2,8 @@ import unittest
 from unittest.mock import MagicMock
 from fastapi import HTTPException, status
 from app.services.moderator_service import get_all_moderators,get_moderator_by_email,get_moderator,create_moderator,update_moderator,delete_moderator,update_moderator_state
-from app.models.moderator import ModeratorModel,CompleteModeratorModel,UpdateModeratorModel
+from app.models.moderator import UpdateModeratorModel
+from app.schemas.moderator import Moderator
 
 
 class TestGetAllMods(unittest.TestCase): 
@@ -11,8 +12,8 @@ class TestGetAllMods(unittest.TestCase):
         mock_db_with_mods = MagicMock()
         # Mock the query method to return some admins
         mock_db_with_mods.query.return_value.all.return_value = [
-            CompleteModeratorModel(id=1, first_name="Moderator1_first", last_name="Moderator1_last", email="moderator1@example.com", is_active=True),
-            CompleteModeratorModel(id=2, first_name="Moderator2_first", last_name="Moderator2_last", email="moderator2@example.com", is_active=False)
+            Moderator(id=1, first_name="Moderator1_first", last_name="anything", email="example@example.com",password="123",is_active=False),
+            Moderator(id=2, first_name="Moderator2_first", last_name="anything", email="example2@example.com",password="123",is_active=False)
         ]
 
         # Call the function
@@ -44,7 +45,7 @@ class TestGetModeratorByEmail(unittest.TestCase):
         mock_db = MagicMock()
         
         # Mock the query method to return a moderator with the specified email
-        mock_db.query().filter().first.return_value = CompleteModeratorModel(id=1, first_name="Moderator1_first", last_name="Moderator1_last", email="moderator@example.com", is_active=True)
+        mock_db.query().filter().first.return_value = Moderator(id=1, first_name="Moderator1_first", last_name="anything", email="moderator@example.com",password="123",is_active=False)
 
         # Call the function
         moderator = get_moderator_by_email("moderator@example.com", mock_db)
@@ -72,7 +73,7 @@ class TestGetModerator(unittest.TestCase):
         mock_db = MagicMock()
         
         # Mock the query method to return a moderator with the specified id
-        mock_db.query().filter().first.return_value = CompleteModeratorModel(id=1, first_name="Moderator1_first", last_name="Moderator1_last", email="moderator@example.com", is_active=True)
+        mock_db.query().filter().first.return_value = Moderator(id=1, first_name="Moderator1_first", last_name="Moderator1_last", email="moderator@example.com",password="123",is_active=False)
 
         # Call the function
         moderator = get_moderator(1, mock_db)
@@ -100,7 +101,7 @@ class TestGetModerator(unittest.TestCase):
 class TestCreateModerator(unittest.TestCase):
     def test_create_moderator_success(self):
         # Mock the ModeratorModel instance
-        mod_model = ModeratorModel(first_name="Test", last_name="Moderator", email="test@example.com", password="password123")
+        mod_model = Moderator(id=1, first_name="Test", last_name="Moderator", email="test@example.com",password="123",is_active=False)
 
         # Mock the database session
         mock_db = MagicMock()
@@ -115,14 +116,19 @@ class TestCreateModerator(unittest.TestCase):
 
 class TestUpdateModerator(unittest.TestCase):
     def test_update_moderator_success(self):
-        # Mock the UpdateModeratorModel instance
-        updated_mod_model = UpdateModeratorModel(first_name="Updated", last_name="Moderator", email="updated@example.com")
-
         # Mock the database session
         mock_db = MagicMock()
 
+        existing_mod = Moderator(id=1, first_name="Moderator1_first", last_name="anything", email="example@example.com",password="123",is_active=False)
+        # Mock the UpdateModeratorModel instance
+        updated_mod_model = UpdateModeratorModel(
+            first_name="Updated",
+            last_name="Moderator",
+            email="updated@example.com"
+        )
+
         # Mock the query method to return an existing moderator
-        mock_db.query().filter().first.return_value = CompleteModeratorModel(id=1, first_name="Moderator1_first", last_name="anything", email="example@example.com", is_active=True),
+        mock_db.query.return_value.filter.return_value.first.return_value = existing_mod
 
         # Call the function
         updated_mod = update_moderator(1, updated_mod_model, mock_db)
@@ -152,14 +158,14 @@ class TestUpdateIsActive(unittest.TestCase):
         # Mock the database session
         mock_db = MagicMock()
 
+        existing_mod = Moderator(id=1, first_name="Moderator1_first", last_name="anything", email="example@example.com",password="123",is_active=False)
         # Mock the query method to return an existing moderator
-        mock_db.query().filter().first.return_value = CompleteModeratorModel(id=1, first_name="Moderator1_first", last_name="anything", email="example@example.com", is_active=False),
+        mock_db.query().filter().first.return_value = existing_mod
 
         # Call the function
         updated_mod = update_moderator_state(1, True, mock_db)
-
         # Assert that the function returns the updated moderator
-        self.assertIsInstance(updated_mod, CompleteModeratorModel)
+        self.assertIsInstance(updated_mod, Moderator)
         self.assertEqual(updated_mod.id, 1)
         self.assertEqual(updated_mod.is_active, True)
 
@@ -182,7 +188,7 @@ class TestDeleteModerator(unittest.TestCase):
         mock_db = MagicMock()
 
         # Mock the query method to return an existing moderator
-        mock_db.query().filter().first.return_value = CompleteModeratorModel(id=1, first_name="Moderator1_first", last_name="anything", email="example@example.com", is_active=False),
+        mock_db.query().filter().first.return_value = Moderator(id=1, first_name="Moderator1_first", last_name="anything", email="example@example.com",password="123",is_active=False),
 
         # Call the function
         response = delete_moderator(1, mock_db)
