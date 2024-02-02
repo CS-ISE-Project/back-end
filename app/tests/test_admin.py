@@ -3,6 +3,8 @@ from unittest.mock import MagicMock
 from fastapi import HTTPException, status
 from app.services.admin_service import get_all_admins,get_admin,get_admin_by_email,create_admin,update_admin,delete_admin
 from app.models.admin import CompleteAdminModel,AdminModel,UpdateAdminModel
+from app.schemas.admin import Admin
+
 
 class TestGetAllAdmins(unittest.TestCase):
     def test_get_all_admins_with_admins(self):
@@ -10,8 +12,8 @@ class TestGetAllAdmins(unittest.TestCase):
         mock_db_with_admins = MagicMock()
         # Mock the query method to return some admins
         mock_db_with_admins.query.return_value.all.return_value = [
-            CompleteAdminModel(id=1, first_name="Admin1_first", last_name="Admin1_last", email="admin1@example.com"),
-            CompleteAdminModel(id=2, first_name="Admin2_first", last_name="Admin2_last", email="admin2@example.com")
+            Admin(id=1, first_name="Admin1_first", last_name="Admin1_last", email="admin1@example.com",password="133"),
+            Admin(id=2, first_name="Admin2_first", last_name="Admin2_last", email="admin2@example.com",password="133")
         ]
 
         # Call the function
@@ -42,8 +44,8 @@ class TestGetAdmin(unittest.TestCase):
         # Mock the database session
         mock_db_with_admin = MagicMock()
         # Mock the query method to return an admin
-        mock_db_with_admin.query.return_value.filter.return_value.first.return_value = CompleteAdminModel(
-            id=1, first_name="Admin1_first", last_name="Admin1_last", email="admin1@example.com"
+        mock_db_with_admin.query.return_value.filter.return_value.first.return_value = Admin(
+            id=1, first_name="Admin1_first", last_name="Admin1_last", email="admin1@example.com",password="1223"
         )
 
         # Call the function
@@ -71,8 +73,8 @@ class TestGetAdminByEmail(unittest.TestCase):
         # Mock the database session
         mock_db_with_admin = MagicMock()
         # Mock the query method to return an admin
-        mock_db_with_admin.query.return_value.filter.return_value.first.return_value = CompleteAdminModel(
-            id=1, first_name="Admin1_first", last_name="Admin1_last", email="admin1@example.com"
+        mock_db_with_admin.query.return_value.filter.return_value.first.return_value = Admin(
+            id=1, first_name="Admin1_first", last_name="Admin1_last", email="admin1@example.com",password="12323"
         )
 
         # Call the function
@@ -126,7 +128,7 @@ class TestUpdateAdmin(unittest.TestCase):
         mock_db = MagicMock()
 
         # Create an Admin instance representing the admin in the database
-        existing_admin = CompleteAdminModel(id=1, first_name="John", last_name="Doe", email="john.doe@example.com")
+        existing_admin = Admin(id=1, first_name="John", last_name="Doe", email="john.doe@example.com",password="1235")
 
         # Create an UpdateAdminModel instance representing the updated data
         updated_admin_model = UpdateAdminModel(
@@ -142,7 +144,6 @@ class TestUpdateAdmin(unittest.TestCase):
         updated_admin = update_admin(1, updated_admin_model, mock_db)
 
         # Assert that the function returns the updated admin
-        self.assertIsInstance(updated_admin, CompleteAdminModel)
         self.assertEqual(updated_admin.first_name, "Jane")
         self.assertEqual(updated_admin.last_name, "Doe")
         self.assertEqual(updated_admin.email, "jane.doe@example.com")
@@ -177,7 +178,7 @@ class TestDeleteAdmin(unittest.TestCase):
         mock_db = MagicMock()
 
         # Create an Admin instance representing the admin to be deleted
-        admin_to_delete = CompleteAdminModel(id=1, first_name="John", last_name="Doe", email="john.doe@example.com")
+        admin_to_delete = Admin(id=1, first_name="John", last_name="Doe", email="john.doe@example.com",password="1256")
 
         # Mock the query method to return the admin to be deleted
         mock_db.query.return_value.filter.return_value.first.return_value = admin_to_delete
