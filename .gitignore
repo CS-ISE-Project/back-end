@@ -1,5 +1,6 @@
 test.py
 test.json
+test.pdf
 .env
 .venv/
 __pycache__/

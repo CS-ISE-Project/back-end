@@ -75,7 +75,7 @@ def update_article(article_id: int, updated_article: ArticleModel, db: Session):
         return db_article
     except Exception as e :
         db.rollback()
-        raise HTTPException(
+        raise HTTPException(    
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"An error occurred while updating the article. Error: {str(e)}"
         )
