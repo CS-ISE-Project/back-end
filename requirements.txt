@@ -12,3 +12,4 @@ passlib[bcrypt]
 python-jose[cryptography]
 pydantic[email]
 psycopg2-binary
+pytest
