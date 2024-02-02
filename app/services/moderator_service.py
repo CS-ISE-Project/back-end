@@ -3,7 +3,7 @@ from fastapi import Depends, HTTPException, Response , status
 from sqlalchemy.orm import Session
 
 from app.schemas.moderator import Moderator
-from app.models.moderator import ModeratorModel, UpdateModeratorModel, CompleteModeratorModel , ActiveModeratorModel
+from app.models.moderator import ModeratorModel, UpdateModeratorModel
 
 def get_all_moderators(db: Session):
     mods = db.query(Moderator).all()
@@ -77,7 +77,6 @@ def update_moderator_state(mod_id: int, is_active: bool, db: Session):
         ) 
     try : 
         db_mod.is_active = is_active
-        
         db.commit()
         db.refresh(db_mod)
         return db_mod
