@@ -1,10 +1,12 @@
-from typing import List, Union
 from app.config.creds import INDEX_NAME
+
+from app.utils.article import es_to_model
+from app.utils.text import get_es_date, is_date
 
 from fastapi import HTTPException, status
 from app.scripts.es.setup import es
 
-from app.models.article import ArticleModel
+from app.models.article import ArticleModel, CompleteArticleModel
 from app.models.query import AdvanceQueryModel
 from app.models.filter import FilterModel
 
@@ -18,8 +20,10 @@ def get_document(document_id: int):
     return document
     
 def index_document(document_id: int, document: ArticleModel):
+    article_dump = document.model_dump()
+    article_dump['publication_date'] = get_es_date(article_dump['publication_date']) if is_date(article_dump['publication_date']) else None   
     try:
-        res = es.index(index=INDEX_NAME, id=document_id, body=document.model_dump())
+        res = es.index(index=INDEX_NAME, id=document_id, body=article_dump)
         return res
     except Exception as e:
         raise HTTPException(
@@ -52,7 +56,7 @@ def simple_query_search(query: str):
         )
         if res['hits']['total']['value'] == 0:
             return []
-        return [ArticleModel(**r['_source']) for r in res['hits']['hits']]
+        return [es_to_model(hit) for hit in res['hits']['hits']]
     
     except Exception as e:
         raise HTTPException(
@@ -83,7 +87,7 @@ def advanced_query_search(query: AdvanceQueryModel):
             )
             if res['hits']['total']['value'] == 0:
                 return []
-            return [ArticleModel(**r['_source']) for r in res['hits']['hits']]
+            return [es_to_model(hit) for hit in res['hits']['hits']]
         
         except Exception as e:
             raise HTTPException(
@@ -110,7 +114,7 @@ def advanced_query_search(query: AdvanceQueryModel):
             )
             if res['hits']['total']['value'] == 0:
                 return []
-            return [ArticleModel(**r['_source']) for r in res['hits']['hits']]
+            return [es_to_model(hit) for hit in res['hits']['hits']]
         except Exception as e:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -153,7 +157,7 @@ def filter_search(query: str | AdvanceQueryModel, filter: FilterModel):
             )
             if res['hits']['total']['value'] == 0:
                 return []
-            return [ArticleModel(**r['_source']) for r in res['hits']['hits']]
+            return [es_to_model(hit) for hit in res['hits']['hits']]
         
         except Exception as e:
             raise HTTPException(
@@ -186,7 +190,7 @@ def filter_search(query: str | AdvanceQueryModel, filter: FilterModel):
                 )
                 if res['hits']['total']['value'] == 0:
                     return []
-                return [ArticleModel(**r['_source']) for r in res['hits']['hits']]
+                return [es_to_model(hit) for hit in res['hits']['hits']]
             
             except Exception as e:
                 raise HTTPException(
@@ -214,7 +218,7 @@ def filter_search(query: str | AdvanceQueryModel, filter: FilterModel):
                 )
                 if res['hits']['total']['value'] == 0:
                     return []
-                return [ArticleModel(**r['_source']) for r in res['hits']['hits']]
+                return [es_to_model(hit) for hit in res['hits']['hits']]
             except Exception as e:
                 raise HTTPException(
                     status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

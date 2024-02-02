@@ -25,7 +25,7 @@ SECTIONS NEEDED:
 - Article Content: Sections that proceed the Abstract. Please preserve the title of any section you encounter with its indexing as it is crucial for further regex preprocessing, example: 1. Introduction, 2. Other section (That is only an example, authenticity is highly needed, so be careful on section indexing and naming) Add a new line after the title, and assemble all section content in one paragraph.
 OUTPUT FORMAT: The output should be a JSON object with the following structure:
 {{
-    "publication_date": str (convert to DD-MM-YYYY format),
+    "publication_date": str (convert to DD-MM-YYYY format, 2-2-4 lengths are mandatory),
     "title": str,
     "authors": list[str],
     "institutes": list[str],

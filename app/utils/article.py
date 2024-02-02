@@ -42,3 +42,8 @@ def db_to_model(article: Article, include_id: bool = True):
             content = article.content,
             references = eval(article.references)
         )
+
+def es_to_model(hit):
+    return CompleteArticleModel(
+        id = hit['_id'], **hit['_source']
+    )

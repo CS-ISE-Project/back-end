@@ -6,6 +6,7 @@ from app.schemas.article import Article
 from app.models.article import ArticleModel
 
 from app.utils.article import model_to_db
+from app.utils.text import get_date
 
 def get_all_articles(db: Session):
     articles = db.query(Article).all()
