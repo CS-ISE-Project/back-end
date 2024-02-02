@@ -68,8 +68,7 @@ def update_moderator(mod_id: int , updated_mod: UpdateModeratorModel, db: Sessio
             detail=f"An error occurred while updating the user. Error: {str(e)}"
         )
 
-
-def update_isActive (mod_id : int, activate : bool, db: Session) :
+def update_moderator_state(mod_id: int, is_active: bool, db: Session):
     db_mod = db.query(Moderator).filter(Moderator.id == mod_id).first()
     if db_mod is None : 
         raise HTTPException(
@@ -77,7 +76,7 @@ def update_isActive (mod_id : int, activate : bool, db: Session) :
             detail=f"Moderator with id {mod_id} not found"
         ) 
     try : 
-        db_mod.is_active = activate
+        db_mod.is_active = is_active
         
         db.commit()
         db.refresh(db_mod)
@@ -88,7 +87,6 @@ def update_isActive (mod_id : int, activate : bool, db: Session) :
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"An error occurred while updating the moderator. Error: {str(e)}"
         )
-
 
 def delete_moderator(mod_id : int , db : Session) :
     db_mod = db.query(Moderator).filter(Moderator.id == mod_id).first()
