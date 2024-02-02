@@ -117,7 +117,7 @@ def advanced_query_search(query: AdvanceQueryModel):
                 detail=f"An error occurred while performing advanced non restricted search. Error: {str(e)}"
             )
 
-def filter_search(query: Union(str, AdvanceQueryModel) , filter: FilterModel):
+def filter_search(query: str | AdvanceQueryModel, filter: FilterModel):
     filter_clauses = [
             {"terms": {"authors": filter.authors}} if filter.authors else None,
             {"terms": {"keywords": filter.keywords}} if filter.keywords else None,
