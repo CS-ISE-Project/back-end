@@ -42,7 +42,7 @@ def delete_admin(admin_id: int, db: Session = Depends(get_db), token: HTTPAuthor
     verify_session(token.credentials,admin_id)
     return delete_admin_controller(admin_id,db)
 
-@router.put("/update_moderator_activation/{mod_id}", response_model=ActiveModeratorModel) 
+@router.put("/update_moderator_activation", response_model=ActiveModeratorModel) 
 def update_moderator_activation(mod_id: int, is_active, db: Session = Depends(get_db), token: HTTPAuthorizationCredentials = Depends(auth_scheme)):
     verify_token(token.credentials , 'admin')
     return update_moderator_activation_controller(mod_id, is_active, db)
