@@ -54,9 +54,9 @@ def update_moderator(mod_id: int , updated_mod: UpdateModeratorModel, db: Sessio
             detail=f"Moderator with id {mod_id} not found"
         )    
     try :     
-        db_mod.first_name=updated_mod.first_name,
-        db_mod.last_name=updated_mod.last_name,
-        db_mod.email = updated_mod.email,
+        db_mod.first_name=updated_mod.first_name
+        db_mod.last_name=updated_mod.last_name
+        db_mod.email = updated_mod.email
     
         db.commit()
         db.refresh(db_mod)

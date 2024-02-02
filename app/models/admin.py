@@ -12,7 +12,7 @@ class CompleteAdminModel(BaseModel) :
     last_name : str
     email: str
 
-class UpdateAdminModel(BaseModel) :
+class UpdateAdminModel(BaseModel):
     first_name: str
-    last_name : str
+    last_name: str
     email: str
