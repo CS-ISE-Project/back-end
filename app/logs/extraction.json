@@ -1,58 +1,58 @@
 {
     "1.pdf": {
-        "extraction_time": 19.91,
-        "extraction_cost": 0.004
+        "extraction_time": 18.06,
+        "extraction_cost": 0.0042
     },
     "10.pdf": {
-        "extraction_time": 15.73,
-        "extraction_cost": 0.0038
-    },
-    "11.pdf": {
-        "extraction_time": 15.87,
-        "extraction_cost": 0.0036
-    },
-    "12.pdf": {
-        "extraction_time": 18.88,
-        "extraction_cost": 0.0039
-    },
-    "13.pdf": {
-        "extraction_time": 15.74,
-        "extraction_cost": 0.0038
-    },
-    "14.pdf": {
-        "extraction_time": 15.72,
+        "extraction_time": 14.56,
         "extraction_cost": 0.0037
     },
-    "2.pdf": {
-        "extraction_time": 21.94,
-        "extraction_cost": 0.0046
+    "11.pdf": {
+        "extraction_time": 13.46,
+        "extraction_cost": 0.0035
     },
-    "3.pdf": {
-        "extraction_time": 15.77,
-        "extraction_cost": 0.0043
-    },
-    "4.pdf": {
-        "extraction_time": 17.18,
+    "12.pdf": {
+        "extraction_time": 15.16,
         "extraction_cost": 0.0038
     },
-    "5.pdf": {
-        "extraction_time": 13.09,
-        "extraction_cost": 0.004
+    "13.pdf": {
+        "extraction_time": 18.65,
+        "extraction_cost": 0.0047
     },
-    "6.pdf": {
-        "extraction_time": 12.14,
-        "extraction_cost": 0.0034
+    "14.pdf": {
+        "extraction_time": 14.91,
+        "extraction_cost": 0.0038
     },
-    "7.pdf": {
-        "extraction_time": 19.74,
-        "extraction_cost": 0.0048
-    },
-    "8.pdf": {
-        "extraction_time": 17.21,
+    "2.pdf": {
+        "extraction_time": 17.68,
         "extraction_cost": 0.0045
     },
-    "9.pdf": {
-        "extraction_time": 12.67,
+    "3.pdf": {
+        "extraction_time": 14.61,
+        "extraction_cost": 0.0041
+    },
+    "4.pdf": {
+        "extraction_time": 15.45,
+        "extraction_cost": 0.0037
+    },
+    "5.pdf": {
+        "extraction_time": 14.6,
+        "extraction_cost": 0.0042
+    },
+    "6.pdf": {
+        "extraction_time": 13.27,
         "extraction_cost": 0.0033
+    },
+    "7.pdf": {
+        "extraction_time": 19.52,
+        "extraction_cost": 0.0047
+    },
+    "8.pdf": {
+        "extraction_time": 18.81,
+        "extraction_cost": 0.0043
+    },
+    "9.pdf": {
+        "extraction_time": 15.24,
+        "extraction_cost": 0.0036
     }
 }
