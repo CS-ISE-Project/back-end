@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from app.schemas.admin import Admin
 from app.models.admin import AdminModel, CompleteAdminModel, UpdateAdminModel
-from app.services.moderator_service import update_isActive
+from app.services.moderator_service import update_moderator_state
 
 
 def get_all_admins(db : Session) :
@@ -93,13 +93,13 @@ def delete_admin(admin_id: int , db: Session):
             detail=f"An error occurred while creating the admin. Error: {str(e)}"
         )
 
-def activate_moderator(mod_id : int , db : Session) : 
-    try :
-        activated_mod = update_isActive(mod_id , True , db)
-        return activated_mod
+def update_moderator_activation(mod_id: int, is_active: bool, db: Session):
+    try:
+        updated_moderator = update_moderator_state(mod_id, is_active, db)
+        return updated_moderator
     except Exception as e:
         db.rollback()
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"An error occurred while activating the moderator. Error: {str(e)}"
+            detail=f"An error occurred while updating the moderator state. Error: {str(e)}"
         )

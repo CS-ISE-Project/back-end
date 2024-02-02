@@ -10,7 +10,7 @@ from typing import List
 from app.models.admin import AdminModel, CompleteAdminModel, UpdateAdminModel
 from app.models.moderator import ActiveModeratorModel
 
-from app.controllers.admin_controller import get_admin_controller, get_all_admins_controller, create_admin_controller, update_admin_controller, delete_admin_controller , activate_moderator_controller
+from app.controllers.admin_controller import get_admin_controller, get_all_admins_controller, create_admin_controller, update_admin_controller, delete_admin_controller , update_moderator_activation_controller
 
 auth_scheme = HTTPBearer()
 router = APIRouter()
@@ -42,7 +42,7 @@ def delete_admin(admin_id: int, db: Session = Depends(get_db), token: HTTPAuthor
     verify_session(token.credentials,admin_id)
     return delete_admin_controller(admin_id,db)
 
-@router.put("/modActivate/{mod_id}", response_model=ActiveModeratorModel) 
-def activate_moderator(mod_id : int, db: Session = Depends(get_db), token: HTTPAuthorizationCredentials = Depends(auth_scheme)) :
+@router.put("/update_moderator_activation/{mod_id}", response_model=ActiveModeratorModel) 
+def update_moderator_activation(mod_id: int, is_active, db: Session = Depends(get_db), token: HTTPAuthorizationCredentials = Depends(auth_scheme)):
     verify_token(token.credentials , 'admin')
-    return activate_moderator_controller(mod_id, db)
+    return update_moderator_activation_controller(mod_id, is_active, db)
