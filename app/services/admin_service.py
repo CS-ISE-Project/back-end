@@ -58,9 +58,9 @@ def update_admin(admin_id: int , updated_admin: UpdateAdminModel , db: Session):
         )
      
     try:
-        db_admin.first_name=updated_admin.first_name,
-        db_admin.last_name=updated_admin.last_name,
-        db_admin.email = updated_admin.email,
+        db_admin.first_name=updated_admin.first_name
+        db_admin.last_name=updated_admin.last_name
+        db_admin.email = updated_admin.email
     
         db.commit()
         db.refresh(db_admin)
