@@ -123,24 +123,25 @@ def advanced_query_search(query: AdvanceQueryModel):
 
 def filter_simple_search(query: str, filter: FilterModel):
     filter_clauses = [
-            {"terms": {"authors": filter.authors}} if filter.authors else None,
-            {"terms": {"keywords": filter.keywords}} if filter.keywords else None,
-            {"terms": {"institues": filter.institues}} if filter.institues else None,
+            {"terms": {"authors.keyword": filter.authors}} if filter.authors else None,
+            {"terms": {"keywords.keyword": filter.keywords}} if filter.keywords else None,
+            {"terms": {"institues.keyword": filter.institues}} if filter.institues else None,
             {"range": {
-                "dateField": {
+                "publication_date": {
                     "gte": filter.date_interval[0],
                     "lt": filter.date_interval[1]
                     }
                 }
-            } if filter.date_interval else None
+            } if (filter.date_interval[0] and filter.date_interval[1]) else None
         ]
     filter_clauses = [clause for clause in filter_clauses if clause is not None]
+    print("the filter clauses : ",filter_clauses)
     try:
         res = es.search(
             index=INDEX_NAME,
             body={
                 "query": {
-                    "bool": {
+                    "bool" : {
                         "must" : {
                             "multi_match": {
                                 "query": query,
@@ -164,16 +165,16 @@ def filter_simple_search(query: str, filter: FilterModel):
         
 def filter_advanced_search(query : AdvanceQueryModel , filter: FilterModel):
     filter_clauses = [
-            {"terms": {"authors": filter.authors}} if filter.authors else None,
-            {"terms": {"keywords": filter.keywords}} if filter.keywords else None,
-            {"terms": {"institues": filter.institues}} if filter.institues else None,
+            {"terms": {"authors.keyword": filter.authors}} if filter.authors else None,
+            {"terms": {"keywords.keyword": filter.keywords}} if filter.keywords else None,
+            {"terms": {"institues.keyword": filter.institues}} if filter.institues else None,
             {"range": {
-                "dateField": {
+                "publication_date": {
                     "gte": filter.date_interval[0],
                     "lt": filter.date_interval[1]
                     }
                 }
-            } if filter.date_interval else None
+            } if (filter.date_interval[0] and filter.date_interval[1]) else None
         ]
     filter_clauses = [clause for clause in filter_clauses if clause is not None]
     if(query.restricted):
