@@ -27,7 +27,7 @@ def get_user(user_id: int, db: Session):
     user_favorites = {}
     for favorite in user.favorites:
         article = favorite.article
-        user_favorites[favorite.id] = db_to_model(article)
+        user_favorites[favorite.id] = db_to_model(article)                  
         
     return {'user': user, 'favorites': user_favorites}
 
