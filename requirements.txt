@@ -13,3 +13,4 @@ python-jose[cryptography]
 pydantic[email]
 psycopg2-binary
 pytest
+python-multipart

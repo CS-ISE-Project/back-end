@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  app:
+    build: ./
+    container_name: api_c
+    ports:
+      - '8000:8000'
+      - '5432:5432'
+      - '433:433'
+

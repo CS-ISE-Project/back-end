@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 from app.scripts.database.setup import get_db
 
 from typing import List
-from app.models.moderator import ModeratorModel, ActiveModeratorModel, UpdateModeratorModel, CompleteModeratorModel
+from app.models.moderator import ModeratorModel, UpdateModeratorModel, CompleteModeratorModel
 
 from app.controllers.moderator_controller import get_all_moderator_controller, create_moderator_controller, get_moderator_controller , update_moderator_controller , delete_moderator_controller
 
