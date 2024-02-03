@@ -18,5 +18,6 @@ class UpdateModeratorModel(BaseModel):
     last_name : str
     email: str
 
-class ActiveModeratorModel(BaseModel):
-    is_active : bool
+class ModeratorStateModel(BaseModel):
+    id: int
+    is_active: bool

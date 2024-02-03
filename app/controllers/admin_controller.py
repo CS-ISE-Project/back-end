@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 
 from app.models.admin import AdminModel, UpdateAdminModel, CompleteAdminModel
 
-from app.services.admin_service import get_admin, create_admin, update_admin, delete_admin, get_all_admins , update_moderator_activation
+from app.services.admin_service import get_admin, create_admin, update_admin, delete_admin, get_all_admins
 
 def get_all_admins_controller(db: Session):
     try:
@@ -37,11 +37,4 @@ def delete_admin_controller(admin_id: int, db: Session):
         db_admin = delete_admin(admin_id,db)
         return db_admin
     except Exception as e : 
-        raise e
-
-def update_moderator_activation_controller(mod_id: int, is_active: bool, db: Session):
-    try: 
-        db_mod = update_moderator_activation(mod_id, is_active, db) 
-        return db_mod
-    except Exception as e :
         raise e
