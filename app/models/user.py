@@ -1,6 +1,6 @@
 from pydantic import BaseModel , EmailStr
 from typing import Dict
-from app.models.article import ArticleModel
+from app.models.article import CompleteArticleModel
 
 class UserModel(BaseModel):
     first_name: str
@@ -16,7 +16,7 @@ class CompleteUserModel(BaseModel):
     
 class UserFavoritesModel(BaseModel):
     user : CompleteUserModel
-    favorites : Dict[int , ArticleModel]
+    favorites : Dict[int , CompleteArticleModel]
 
 class UpdateUserModel(BaseModel):
     first_name: str
