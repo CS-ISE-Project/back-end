@@ -5,6 +5,8 @@ from sqlalchemy.orm import Session
 from app.schemas.user import User
 from app.models.user import UserModel, UpdateUserModel
 
+from app.utils.article import db_to_model
+
 def get_all_users(db: Session):
     users = db.query(User).all()
     if not users : 
@@ -16,7 +18,7 @@ def get_all_users(db: Session):
 
 def get_user(user_id: int, db: Session):
     user =  db.query(User).filter(User.id == user_id).first()
-    if user is None :
+    if user is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"User with id {user_id} not found"
@@ -25,7 +27,7 @@ def get_user(user_id: int, db: Session):
     user_favorites = {}
     for favorite in user.favorites:
         article = favorite.article
-        user_favorites[favorite.id] = vars(article)
+        user_favorites[favorite.id] = db_to_model(article)
         
     return {'user': user, 'favorites': user_favorites}
 
