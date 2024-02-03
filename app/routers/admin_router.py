@@ -8,9 +8,8 @@ from app.scripts.database.setup import get_db
 
 from typing import List
 from app.models.admin import AdminModel, CompleteAdminModel
-from app.models.moderator import CompleteModeratorModel
 
-from app.controllers.admin_controller import get_admin_controller, get_all_admins_controller, create_admin_controller, update_admin_controller, delete_admin_controller , update_moderator_activation_controller
+from app.controllers.admin_controller import get_admin_controller, get_all_admins_controller, create_admin_controller, update_admin_controller, delete_admin_controller
 
 auth_scheme = HTTPBearer()
 router = APIRouter()
@@ -41,8 +40,3 @@ def delete_admin(admin_id: int, db: Session = Depends(get_db), token: HTTPAuthor
     verify_token(token.credentials , 'admin')
     verify_session(token.credentials,admin_id)
     return delete_admin_controller(admin_id,db)
-
-@router.put("/update_moderator_activation", response_model=CompleteModeratorModel)
-def update_moderator_activation(mod_id: int, is_active, db: Session = Depends(get_db), token: HTTPAuthorizationCredentials = Depends(auth_scheme)):
-    verify_token(token.credentials , 'admin')
-    return update_moderator_activation_controller(mod_id, is_active, db)

@@ -1,11 +1,9 @@
-from fastapi import Depends, HTTPException, Response , status
+from fastapi import Depends, HTTPException, Response, status
 
 from sqlalchemy.orm import Session
 
 from app.schemas.admin import Admin
 from app.models.admin import AdminModel, CompleteAdminModel, UpdateAdminModel
-from app.services.moderator_service import update_moderator_state
-
 
 def get_all_admins(db : Session) :
     admins = db.query(Admin).all()
@@ -91,15 +89,4 @@ def delete_admin(admin_id: int , db: Session):
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"An error occurred while creating the admin. Error: {str(e)}"
-        )
-
-def update_moderator_activation(mod_id: int, is_active: bool, db: Session):
-    try:
-        updated_moderator = update_moderator_state(mod_id, is_active, db)
-        return updated_moderator
-    except Exception as e:
-        db.rollback()
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"An error occurred while updating the moderator state. Error: {str(e)}"
         )
