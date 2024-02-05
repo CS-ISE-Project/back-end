@@ -10,6 +10,7 @@ from typing import List
 from app.models.article import ArticleModel, CompleteArticleModel
 
 from app.controllers.article_controller import get_article_controller, create_article_controller, create_uploaded_article_controller, update_article_controller, delete_article_controller, get_all_articles_controller
+from app.controllers.modification_controller import add_modification_controller
 
 auth_scheme=HTTPBearer()
 router = APIRouter()
@@ -37,7 +38,9 @@ def create_uploaded_article(article_key: str, db: Session = Depends(get_db), tok
 @router.put("/{article_id}", response_model=CompleteArticleModel) 
 def update_article(article_id: int, updated_article: ArticleModel, db: Session = Depends(get_db), token: HTTPAuthorizationCredentials = Depends(auth_scheme)):
     verify_token(token.credentials, ['moderator'])
-    return update_article_controller(article_id, updated_article, db)
+    updated_article = update_article_controller(article_id, updated_article, db)
+    modification = add_modification_controller(token.credentials, article_id, db)
+    return updated_article
 
 @router.delete("/{article_id}" , response_model=CompleteArticleModel)
 def delete_article(article_id: int, db: Session = Depends(get_db), token: HTTPAuthorizationCredentials = Depends(auth_scheme)):

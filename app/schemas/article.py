@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Date
 from sqlalchemy.orm import relationship
-from app.schemas.relations.favorite import Base
+from app.schemas.relations.base import Base
 
 class Article(Base):
     __tablename__ = "articles"
@@ -17,3 +17,4 @@ class Article(Base):
     references = Column(String)
     
     favorites = relationship('Favorite' , back_populates='article')
+    modifications = relationship('Modification' , back_populates='article')

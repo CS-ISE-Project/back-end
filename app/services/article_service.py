@@ -3,7 +3,10 @@ from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 
 from app.schemas.article import Article
+from app.schemas.modification import Modification
+
 from app.models.article import ArticleModel
+from app.models.modification import ModificationModel
 
 from app.utils.article import model_to_db
 from app.utils.text import get_date

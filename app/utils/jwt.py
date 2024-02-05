@@ -59,7 +59,7 @@ def verify_token(token: str, role: Union[str, List[str]] ) -> bool:
         )
               
 def verify_session(token : str , id : str) -> bool : 
-    try : 
+    try: 
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         if payload is None:
             raise HTTPException(
@@ -81,4 +81,3 @@ def verify_session(token : str , id : str) -> bool :
             detail="Could not validate credentials",
             headers={"WWW-Authenticate": "Bearer"},
         )
-     

@@ -4,4 +4,5 @@ test.pdf
 .env
 .venv/
 __pycache__/
+.pytest_cache/
 ise_project.egg-info/
