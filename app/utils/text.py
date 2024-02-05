@@ -1,6 +1,6 @@
 import re
 
-from datetime import date
+from datetime import date, datetime
 
 def clean_text(text: str):
     cleaned_text = re.sub(r'[^\w\s.,:;/?!\'"-–_+=()[\]{}*%$@]', '', text)
@@ -18,7 +18,13 @@ def get_date(date_string):
         return date(*[int(x) for x in date_string.split('-')][::-1])
     else:
         return None
+    
+def get_date_string(date_obj: date):
+    return date_obj.strftime('%d-%m-%Y')
 
+def get_time_string(time_obj: datetime):
+    return time_obj.strftime('%H:%M')
+    
 def get_es_date(date_string):
     if is_date(date_string):
         d, m, y = date_string.split('-')

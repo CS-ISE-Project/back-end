@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, String, Boolean
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from sqlalchemy.orm import relationship
+from app.schemas.relations.base import Base
 
 class Moderator(Base):
     __tablename__ = "moderators"
@@ -12,3 +11,5 @@ class Moderator(Base):
     email = Column(String, index=True)
     password = Column(String)
     is_active  = Column(Boolean, default=False)
+    
+    modifications = relationship('Modification' , back_populates='moderator')
