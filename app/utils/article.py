@@ -45,5 +45,14 @@ def db_to_model(article: Article, include_id: bool = True):
 
 def es_to_model(hit):
     return CompleteArticleModel(
-        id = hit['_id'], **hit['_source']
+        id = hit['_id'],
+        url = hit['_source']['url'],
+        publication_date = str(hit['_source']['publication_date']),
+        title = hit['_source']['title'],
+        authors = hit['_source']['authors'],
+        institutes = hit['_source']['institutes'],
+        keywords = hit['_source']['keywords'],
+        abstract = hit['_source']['abstract'],
+        content = hit['_source']['content'],
+        references = hit['_source']['references']
     )
