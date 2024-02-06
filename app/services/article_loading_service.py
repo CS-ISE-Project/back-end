@@ -27,7 +27,7 @@ def load_article(path: str) -> ArticleModel:
         )
     
     return ArticleModel(
-        url = '',
+        url = path,
         publication_date = info['publication_date'] if is_date(info['publication_date']) else '',
         title = info['title'],
         authors = info['authors'],
