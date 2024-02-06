@@ -57,7 +57,7 @@ def create_uploaded_article_controller(article_key: str, db: Session):
         except Exception as e:
             raise e
         raise e
-    delete_pdf(article_key)
+    # delete_pdf(article_key)
     return db_to_model(db_article)
     
 def update_article_controller(article_id: int, updated_article: ArticleModel, db: Session): 

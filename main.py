@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from pathlib import Path
+from fastapi.staticfiles import StaticFiles
+
 from app.routers import user_router, admin_router, moderator_router, article_router, favorite_router, auth_router, search_router, upload_router, moderation_router, modifications_router
 
 app = FastAPI()
@@ -12,6 +15,9 @@ app.add_middleware(
     allow_headers=["*"],
     allow_methods=['GET', 'POST', 'PUT', 'DELETE'],
 )
+
+from app.config.config import UPLOAD_DIR
+app.mount("/files", StaticFiles(directory=Path(UPLOAD_DIR)), name="files")
 
 @app.get("/")
 async def root():
