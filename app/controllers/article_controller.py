@@ -24,7 +24,7 @@ def get_article_controller(article_id: int, db: Session):
         return article
     except Exception as e:
         raise e
-   
+
 def create_article_controller(article: ArticleModel, db: Session):
     try:
         db_article = create_article(article, db)
